@@ -1,0 +1,9 @@
+# ZooKeeper mínimo (1 servidor) para a demonstração. Versão fixada.
+services:
+  zookeeper:
+    image: zookeeper:3.9.3
+    container_name: tp2-zk
+    ports:
+      - "2181:2181"
+    environment:
+      ZOO_4LW_COMMANDS_WHITELIST: "mntr,ruok,stat"
