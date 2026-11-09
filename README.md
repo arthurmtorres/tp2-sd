@@ -25,6 +25,11 @@ mvn -q clean package                  # gera target/tp2-sync.jar
 scripts/run.sh normal 1               # um cenário, semente 1
 scripts/run_all.sh                    # bateria completa (3 repetições + 10 nós)
 ```
+Sem JDK 17 no sistema? Use Docker para tudo:
+```bash
+docker run --rm -u $(id -u):$(id -g) -v "$PWD":/app -w /app -e MAVEN_CONFIG=/app/.m2 maven:3.9-eclipse-temurin-17 mvn -q -Dmaven.repo.local=/app/.m2/repository clean package
+USE_DOCKER=1 scripts/run.sh normal 1
+```
 Variáveis: `N` (nós = clientes, padrão 5), `REQ` (acessos por cliente, padrão 10; o enunciado pede 10–50), `ZK`, `TIMEOUT`.
 
 | Cenário | O que faz |

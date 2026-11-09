@@ -10,7 +10,12 @@ JAR=target/tp2-sync.jar
 OBS_PORT=9000; BASE=7000
 RUN="${SCEN}-n${N}-s${SEED}-$(date +%s)"
 LOGDIR="logs/${RUN}"; mkdir -p "$LOGDIR" results
-JAVA="java -Dorg.slf4j.simpleLogger.defaultLogLevel=warn -cp $JAR"
+if [ "${USE_DOCKER:-0}" = "1" ]; then
+  # Roda cada processo Java num container (não depende do Java do sistema).
+  JAVA="docker run --rm --network host -u $(id -u):$(id -g) -v $PWD:/app -w /app eclipse-temurin:17-jre java -Dorg.slf4j.simpleLogger.defaultLogLevel=warn -cp $JAR"
+else
+  JAVA="java -Dorg.slf4j.simpleLogger.defaultLogLevel=warn -cp $JAR"
+fi
 
 SYNC_FLAG=""; BARRIER_FLAG=""; TMIN=1000; TMAX=5000; UNEQ=$((REQ*4))
 EXPECTED=$((N*REQ))
