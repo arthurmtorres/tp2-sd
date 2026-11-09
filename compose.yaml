@@ -43,7 +43,7 @@ services:
     <<: *app
     build:
       context: .
-    command: br.ufop.bcc362.tp2.observer.ObserverServer
+    command: br.ufop.bcc362.tp2.ObserverServer
     environment:
       OBSERVER_PORT: 7000
     ports:
@@ -51,7 +51,7 @@ services:
 
   cluster-1:
     <<: *app
-    command: br.ufop.bcc362.tp2.cluster.ClusterNode
+    command: br.ufop.bcc362.tp2.ClusterNode
     environment:
       <<: *cluster-environment
       NODE_ID: cluster-1
@@ -65,7 +65,7 @@ services:
 
   cluster-2:
     <<: *app
-    command: br.ufop.bcc362.tp2.cluster.ClusterNode
+    command: br.ufop.bcc362.tp2.ClusterNode
     environment:
       <<: *cluster-environment
       NODE_ID: cluster-2
@@ -79,7 +79,7 @@ services:
 
   cluster-3:
     <<: *app
-    command: br.ufop.bcc362.tp2.cluster.ClusterNode
+    command: br.ufop.bcc362.tp2.ClusterNode
     environment:
       <<: *cluster-environment
       NODE_ID: cluster-3
@@ -93,7 +93,7 @@ services:
 
   cluster-4:
     <<: *app
-    command: br.ufop.bcc362.tp2.cluster.ClusterNode
+    command: br.ufop.bcc362.tp2.ClusterNode
     environment:
       <<: *cluster-environment
       NODE_ID: cluster-4
@@ -107,7 +107,7 @@ services:
 
   cluster-5:
     <<: *app
-    command: br.ufop.bcc362.tp2.cluster.ClusterNode
+    command: br.ufop.bcc362.tp2.ClusterNode
     environment:
       <<: *cluster-environment
       NODE_ID: cluster-5
@@ -121,7 +121,7 @@ services:
 
   client-1:
     <<: *app
-    command: br.ufop.bcc362.tp2.client.LoadClient
+    command: br.ufop.bcc362.tp2.LoadClient
     environment:
       <<: *client-environment
       CLIENT_ID: client-1
@@ -134,7 +134,7 @@ services:
 
   client-2:
     <<: *app
-    command: br.ufop.bcc362.tp2.client.LoadClient
+    command: br.ufop.bcc362.tp2.LoadClient
     environment:
       <<: *client-environment
       CLIENT_ID: client-2
@@ -145,7 +145,7 @@ services:
 
   client-3:
     <<: *app
-    command: br.ufop.bcc362.tp2.client.LoadClient
+    command: br.ufop.bcc362.tp2.LoadClient
     environment:
       <<: *client-environment
       CLIENT_ID: client-3
@@ -156,7 +156,7 @@ services:
 
   client-4:
     <<: *app
-    command: br.ufop.bcc362.tp2.client.LoadClient
+    command: br.ufop.bcc362.tp2.LoadClient
     environment:
       <<: *client-environment
       CLIENT_ID: client-4
@@ -167,7 +167,7 @@ services:
 
   client-5:
     <<: *app
-    command: br.ufop.bcc362.tp2.client.LoadClient
+    command: br.ufop.bcc362.tp2.LoadClient
     environment:
       <<: *client-environment
       CLIENT_ID: client-5

@@ -67,6 +67,23 @@ imagem oficial. Clientes da linha 3.9 são compatíveis com esse servidor. Consu
 [Apache Curator](https://curator.apache.org/docs/recipes/) e os
 [releases do ZooKeeper](https://zookeeper.apache.org/releases/).
 
+## Estrutura do código
+
+O código Java foi mantido em um único pacote, com uma classe por responsabilidade principal:
+
+```text
+ClusterNode.java      processo intermediário e seção crítica de R
+LoadClient.java       geração dos pedidos dos clientes
+CuratorSync.java      mutex e barreira dupla do Curator
+ObserverServer.java   auditoria de BEGIN/END
+WireProtocol.java     mensagens e protocolo TCP
+Environment.java      leitura das configurações
+EventLog.java         formato comum dos logs
+```
+
+Os records `AccessRequest`, `AccessResponse` e `AuditEvent` ficam dentro de `WireProtocol`, pois são
+usados somente na comunicação entre esses processos.
+
 ## Compilação e testes
 
 Para executar os testes unitários e os testes das receitas com um ZooKeeper embutido:
