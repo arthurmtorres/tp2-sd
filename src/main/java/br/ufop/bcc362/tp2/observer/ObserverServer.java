@@ -52,6 +52,7 @@ public final class ObserverServer {
             AuditorState.Result result = state.register(event);
             AuditorState.Snapshot snapshot = result.snapshot();
             EventLog.info("observer", event.type().name(),
+                    "sequence", result.sequence(),
                     "process_id", event.processId(),
                     "request_id", event.requestId(),
                     "round", event.round(),

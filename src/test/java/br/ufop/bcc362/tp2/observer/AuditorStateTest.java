@@ -17,8 +17,10 @@ class AuditorStateTest {
 
         assertTrue(first.accepted());
         assertFalse(first.overlap());
+        assertEquals(1, first.sequence());
         assertTrue(second.accepted());
         assertTrue(second.overlap());
+        assertEquals(2, second.sequence());
         assertEquals(2, state.snapshot().maximumConcurrentAccesses());
         assertEquals(1, state.snapshot().overlapViolations());
 

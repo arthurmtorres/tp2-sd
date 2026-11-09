@@ -33,7 +33,9 @@ class CuratorRecipesIntegrationTest {
     @AfterEach
     void stopZooKeeper() throws Exception {
         clients.forEach(CuratorFramework::close);
-        server.close();
+        if (server != null) {
+            server.close();
+        }
     }
 
     @Test

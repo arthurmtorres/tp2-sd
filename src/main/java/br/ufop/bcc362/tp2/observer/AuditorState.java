@@ -12,6 +12,7 @@ public final class AuditorState {
     private long completedAccesses;
     private long overlapViolations;
     private long invalidEvents;
+    private long eventSequence;
 
     public synchronized Result register(AuditEvent event) {
         return switch (event.type()) {
@@ -30,7 +31,8 @@ public final class AuditorState {
     private Result begin(AuditEvent event) {
         if (activeRequests.containsKey(event.requestId())) {
             invalidEvents++;
-            return new Result(false, false, "BEGIN duplicado para " + event.requestId(), snapshot());
+            return new Result(false, false, eventSequence,
+                    "BEGIN duplicado para " + event.requestId(), snapshot());
         }
 
         boolean overlap = !activeRequests.isEmpty();
@@ -39,22 +41,31 @@ public final class AuditorState {
         }
         activeRequests.put(event.requestId(), event.processId());
         beginEvents++;
+        eventSequence++;
         maximumConcurrentAccesses = Math.max(maximumConcurrentAccesses, activeRequests.size());
-        return new Result(true, overlap, overlap ? "sobreposição detectada" : "BEGIN registrado", snapshot());
+        return new Result(true, overlap, eventSequence,
+                overlap ? "sobreposição detectada" : "BEGIN registrado", snapshot());
     }
 
     private Result end(AuditEvent event) {
         String processId = activeRequests.get(event.requestId());
         if (processId == null || !processId.equals(event.processId())) {
             invalidEvents++;
-            return new Result(false, false, "END sem BEGIN correspondente", snapshot());
+            return new Result(false, false, eventSequence, "END sem BEGIN correspondente", snapshot());
         }
         activeRequests.remove(event.requestId());
         completedAccesses++;
-        return new Result(true, false, "END registrado", snapshot());
+        eventSequence++;
+        return new Result(true, false, eventSequence, "END registrado", snapshot());
     }
 
-    public record Result(boolean accepted, boolean overlap, String message, Snapshot snapshot) {
+    public record Result(
+            boolean accepted,
+            boolean overlap,
+            long sequence,
+            String message,
+            Snapshot snapshot
+    ) {
     }
 
     public record Snapshot(

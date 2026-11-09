@@ -9,7 +9,6 @@ import br.ufop.bcc362.tp2.observer.ObserverClient;
 import br.ufop.bcc362.tp2.protocol.WireProtocol;
 import br.ufop.bcc362.tp2.sync.CuratorMutexSynchronizer;
 import br.ufop.bcc362.tp2.sync.DistributedSynchronizer;
-import br.ufop.bcc362.tp2.sync.NoOpSynchronizer;
 import br.ufop.bcc362.tp2.sync.RoundBarrier;
 import org.apache.curator.framework.CuratorFramework;
 import org.apache.curator.framework.CuratorFrameworkFactory;
@@ -23,6 +22,7 @@ import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.time.Duration;
+import java.util.Objects;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
@@ -33,7 +33,7 @@ public final class ClusterNode {
 
     private final Config config;
     private final CuratorFramework curator;
-    private final ObserverClient observer;
+    private final SimulatedResource resource;
     private final DistributedSynchronizer synchronizer;
     private final ExecutorService localQueue;
 
@@ -43,10 +43,12 @@ public final class ClusterNode {
                 config.zookeeperConnect(),
                 new ExponentialBackoffRetry(1_000, 5)
         );
-        this.observer = new ObserverClient(config.observerHost(), config.observerPort(), Duration.ofSeconds(10));
+        ObserverClient observer = new ObserverClient(
+                config.observerHost(), config.observerPort(), Duration.ofSeconds(10));
+        this.resource = new SimulatedResource(config.nodeId(), observer);
         this.synchronizer = config.lockEnabled()
                 ? new CuratorMutexSynchronizer(curator, LOCK_PATH)
-                : new NoOpSynchronizer();
+                : DistributedSynchronizer.disabled();
         this.localQueue = Executors.newSingleThreadExecutor(runnable -> {
             Thread thread = new Thread(runnable, config.nodeId() + "-local-queue");
             thread.setDaemon(false);
@@ -107,7 +109,6 @@ public final class ClusterNode {
                 : null;
         DistributedSynchronizer.Lease lease = null;
         boolean enteredBarrier = false;
-        boolean auditActive = false;
         boolean released = false;
 
         EventLog.info(config.nodeId(), "REQUEST", "request_id", requestId, "round", request.sequence());
@@ -127,15 +128,7 @@ public final class ClusterNode {
                     "wait_ns", waitNanos,
                     "lock_enabled", config.lockEnabled());
 
-            observer.register(new AuditEvent(AuditEvent.Type.BEGIN, config.nodeId(), requestId, request.sequence()));
-            auditActive = true;
-            EventLog.info(config.nodeId(), "ENTER", "request_id", requestId, "round", request.sequence());
-
-            Thread.sleep(request.criticalSectionMillis());
-
-            EventLog.info(config.nodeId(), "EXIT", "request_id", requestId, "round", request.sequence());
-            observer.register(new AuditEvent(AuditEvent.Type.END, config.nodeId(), requestId, request.sequence()));
-            auditActive = false;
+            resource.write(request);
 
             lease.close();
             released = true;
@@ -156,14 +149,6 @@ public final class ClusterNode {
             EventLog.info(config.nodeId(), "ERROR", "request_id", requestId, "message", exception.getMessage());
             return AccessResponse.error(requestId, exception.getMessage() == null ? exception.getClass().getSimpleName() : exception.getMessage());
         } finally {
-            if (auditActive) {
-                try {
-                    observer.register(new AuditEvent(AuditEvent.Type.END, config.nodeId(), requestId, request.sequence()));
-                } catch (Exception cleanupException) {
-                    EventLog.info(config.nodeId(), "CLEANUP_ERROR", "request_id", requestId,
-                            "step", "audit_end", "message", cleanupException.getMessage());
-                }
-            }
             if (lease != null && !released) {
                 try {
                     lease.close();
@@ -180,6 +165,32 @@ public final class ClusterNode {
                     EventLog.info(config.nodeId(), "CLEANUP_ERROR", "request_id", requestId,
                             "step", "barrier_leave", "message", cleanupException.getMessage());
                 }
+            }
+        }
+    }
+
+    /** Seção crítica que representa o recurso hipotético R; não conhece o mecanismo de lock. */
+    private static final class SimulatedResource {
+        private final String processId;
+        private final ObserverClient observer;
+
+        private SimulatedResource(String processId, ObserverClient observer) {
+            this.processId = Objects.requireNonNull(processId, "processId");
+            this.observer = Objects.requireNonNull(observer, "observer");
+        }
+
+        private void write(AccessRequest request) throws IOException, InterruptedException {
+            observer.register(new AuditEvent(
+                    AuditEvent.Type.BEGIN, processId, request.requestId(), request.sequence()));
+            EventLog.info(processId, "ENTER", "resource", "R",
+                    "request_id", request.requestId(), "round", request.sequence());
+            try {
+                Thread.sleep(request.criticalSectionMillis());
+            } finally {
+                EventLog.info(processId, "EXIT", "resource", "R",
+                        "request_id", request.requestId(), "round", request.sequence());
+                observer.register(new AuditEvent(
+                        AuditEvent.Type.END, processId, request.requestId(), request.sequence()));
             }
         }
     }
