@@ -139,11 +139,11 @@ public class Observer {
             code = (overlaps + barrierViol > 0) ? 2 : (incomplete ? 3 : 0);
             String status = code == 0 ? "OK" : code == 2 ? "VIOLACAO" : "INCOMPLETO";
 
-            Util.log("OBS", "SUMMARY", String.format(
+            Util.log("OBS", "SUMMARY", String.format(java.util.Locale.ROOT, 
                     "status=%s completed=%d expected=%d total_s=%.1f median_wait_ms=%.0f p95_wait_ms=%.0f "
                             + "max_active=%d overlaps=%d barrier_violations=%d per_client=%s",
                     status, ends, expected, total, median, p95, maxActive, overlaps, barrierViol, pc));
-            summary = String.format("%s,%s,%d,%d,%d,%.1f,%.0f,%.0f,%.2f,%d,%d,%d,%s,%s",
+            summary = String.format(java.util.Locale.ROOT, "%s,%s,%d,%d,%d,%.1f,%.0f,%.0f,%.2f,%d,%d,%d,%s,%s",
                     label, seed, n, expected, ends, total, median, p95,
                     total > 0 ? ends / total : 0, maxActive, overlaps, barrierViol, status, pc);
         }
