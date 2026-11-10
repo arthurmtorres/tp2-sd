@@ -1,0 +1,22 @@
+run_id=barrier-n5-s11-1794269552-692
+scenario=barrier
+seed=11
+nodes=5
+clients=5
+requests=10
+unequal_requests=40
+expected=50
+think_min_ms=1000
+think_max_ms=5000
+critical_min_ms=200
+critical_max_ms=1000
+zk=host.docker.internal:2181
+namespace=barrier-n5-s11-1794269552-692
+timeout_s=1800
+use_docker=0
+unequal_client_think_ms=0
+curator=5.7.1
+zookeeper_image=zookeeper:3.9.3
+openjdk version "17.0.20.1" 2026-08-18
+OpenJDK Runtime Environment Temurin-17.0.20.1+1 (build 17.0.20.1+1)
+OpenJDK 64-Bit Server VM Temurin-17.0.20.1+1 (build 17.0.20.1+1, mixed mode, sharing)

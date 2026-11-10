@@ -1,0 +1,74 @@
+[main-SendThread(host.docker.internal:2181)] ERROR org.apache.zookeeper.ClientCnxnSocketNIO - Unable to open socket to host.docker.internal/[fdc4:f303:9324:0:0:0:0:254]:2181
+[main-SendThread(host.docker.internal:2181)] WARN org.apache.zookeeper.ClientCnxn - Session 0x0 for server host.docker.internal/[fdc4:f303:9324:0:0:0:0:254]:2181, Closing socket connection. Attempting reconnect except it is a SessionExpiredException.
+java.net.SocketException: Network is unreachable
+	at java.base/sun.nio.ch.Net.connect0(Native Method)
+	at java.base/sun.nio.ch.Net.connect(Net.java:591)
+	at java.base/sun.nio.ch.Net.connect(Net.java:598)
+	at java.base/sun.nio.ch.SocketChannelImpl.connect(SocketChannelImpl.java:853)
+	at org.apache.zookeeper.ClientCnxnSocketNIO.registerAndConnect(ClientCnxnSocketNIO.java:260)
+	at org.apache.zookeeper.ClientCnxnSocketNIO.connect(ClientCnxnSocketNIO.java:270)
+	at org.apache.zookeeper.ClientCnxn$SendThread.startConnect(ClientCnxn.java:1158)
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1192)
+00:12:00.255 n3 ZK_STATE CONNECTED
+00:12:00.315 n3 READY port=7003 sync=true barrier=false participants=5
+00:12:03.526 n3 REQUEST request_id=c3-1 round=1
+00:12:03.640 n3 ACQUIRE request_id=c3-1 wait_ms=96 holder_znode=_c_e3e05e4b-04a4-4935-a7f7-753a4d9cf14b-lock-0000000000 queue_size=5
+00:12:03.650 n3 ENTER request_id=c3-1
+00:12:04.386 n3 EXIT request_id=c3-1
+00:12:04.468 n3 RELEASE request_id=c3-1
+00:12:04.469 n3 COMMITTED request_id=c3-1
+00:12:04.477 n3 REQUEST request_id=c3-2 round=2
+00:12:06.909 n3 ACQUIRE request_id=c3-2 wait_ms=2429 holder_znode=_c_62618f7b-0f94-4ab9-9378-a61194d4eae3-lock-0000000005 queue_size=5
+00:12:06.911 n3 ENTER request_id=c3-2
+00:12:07.503 n3 EXIT request_id=c3-2
+00:12:07.512 n3 RELEASE request_id=c3-2
+00:12:07.513 n3 COMMITTED request_id=c3-2
+00:12:07.518 n3 REQUEST request_id=c3-3 round=3
+00:12:10.089 n3 ACQUIRE request_id=c3-3 wait_ms=2564 holder_znode=_c_ee0f2702-7b40-4cbb-84cf-695b66dffae9-lock-0000000010 queue_size=4
+00:12:10.093 n3 ENTER request_id=c3-3
+00:12:11.084 n3 EXIT request_id=c3-3
+00:12:11.095 n3 RELEASE request_id=c3-3
+00:12:11.099 n3 COMMITTED request_id=c3-3
+00:12:11.102 n3 REQUEST request_id=c3-4 round=4
+00:12:13.422 n3 ACQUIRE request_id=c3-4 wait_ms=2316 holder_znode=_c_251748c8-e7b6-46da-8b89-b0e4ce9ec62c-lock-0000000015 queue_size=5
+00:12:13.423 n3 ENTER request_id=c3-4
+00:12:14.096 n3 EXIT request_id=c3-4
+00:12:14.107 n3 RELEASE request_id=c3-4
+00:12:14.108 n3 COMMITTED request_id=c3-4
+00:12:14.109 n3 REQUEST request_id=c3-5 round=5
+00:12:16.948 n3 ACQUIRE request_id=c3-5 wait_ms=2837 holder_znode=_c_c31f9bdf-a54e-4f15-ba50-f2c7a9b4288d-lock-0000000020 queue_size=4
+00:12:16.951 n3 ENTER request_id=c3-5
+00:12:17.802 n3 EXIT request_id=c3-5
+00:12:17.820 n3 RELEASE request_id=c3-5
+00:12:17.822 n3 COMMITTED request_id=c3-5
+00:12:17.825 n3 REQUEST request_id=c3-6 round=6
+00:12:20.152 n3 ACQUIRE request_id=c3-6 wait_ms=2323 holder_znode=_c_a2c5ea48-906e-4743-a632-19e6c8b2b337-lock-0000000025 queue_size=4
+00:12:20.154 n3 ENTER request_id=c3-6
+00:12:21.126 n3 EXIT request_id=c3-6
+00:12:21.140 n3 RELEASE request_id=c3-6
+00:12:21.142 n3 COMMITTED request_id=c3-6
+00:12:21.144 n3 REQUEST request_id=c3-7 round=7
+00:12:23.781 n3 ACQUIRE request_id=c3-7 wait_ms=2632 holder_znode=_c_608d00b2-680e-4b49-92f0-dbee88ab38da-lock-0000000030 queue_size=4
+00:12:23.786 n3 ENTER request_id=c3-7
+00:12:23.995 n3 EXIT request_id=c3-7
+00:12:24.007 n3 RELEASE request_id=c3-7
+00:12:24.007 n3 COMMITTED request_id=c3-7
+00:12:24.009 n3 REQUEST request_id=c3-8 round=8
+00:12:27.004 n3 ACQUIRE request_id=c3-8 wait_ms=2993 holder_znode=_c_b11a6da7-18d0-46f9-90b4-b2dc3bfc1e3f-lock-0000000035 queue_size=4
+00:12:27.008 n3 ENTER request_id=c3-8
+00:12:27.344 n3 EXIT request_id=c3-8
+00:12:27.350 n3 RELEASE request_id=c3-8
+00:12:27.351 n3 COMMITTED request_id=c3-8
+00:12:27.352 n3 REQUEST request_id=c3-9 round=9
+00:12:29.335 n3 ACQUIRE request_id=c3-9 wait_ms=1980 holder_znode=_c_a5ef1439-3aa5-47ac-b149-278b252c1aef-lock-0000000040 queue_size=4
+00:12:29.336 n3 ENTER request_id=c3-9
+00:12:28.456 n3 EXIT request_id=c3-9
+00:12:28.464 n3 RELEASE request_id=c3-9
+00:12:28.464 n3 COMMITTED request_id=c3-9
+00:12:28.465 n3 REQUEST request_id=c3-10 round=10
+00:12:29.772 n3 ACQUIRE request_id=c3-10 wait_ms=1303 holder_znode=_c_05914589-5049-4ee0-ac46-0f403e180f66-lock-0000000045 queue_size=4
+00:12:29.778 n3 ENTER request_id=c3-10
+00:12:30.167 n3 EXIT request_id=c3-10
+00:12:30.176 n3 RELEASE request_id=c3-10
+00:12:30.177 n3 COMMITTED request_id=c3-10
+00:12:30.180 n3 DONE rounds=10

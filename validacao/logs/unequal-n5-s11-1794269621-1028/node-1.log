@@ -1,0 +1,265 @@
+[main-SendThread(host.docker.internal:2181)] ERROR org.apache.zookeeper.ClientCnxnSocketNIO - Unable to open socket to host.docker.internal/[fdc4:f303:9324:0:0:0:0:254]:2181
+[main-SendThread(host.docker.internal:2181)] WARN org.apache.zookeeper.ClientCnxn - Session 0x0 for server host.docker.internal/[fdc4:f303:9324:0:0:0:0:254]:2181, Closing socket connection. Attempting reconnect except it is a SessionExpiredException.
+java.net.SocketException: Network is unreachable
+	at java.base/sun.nio.ch.Net.connect0(Native Method)
+	at java.base/sun.nio.ch.Net.connect(Net.java:591)
+	at java.base/sun.nio.ch.Net.connect(Net.java:598)
+	at java.base/sun.nio.ch.SocketChannelImpl.connect(SocketChannelImpl.java:853)
+	at org.apache.zookeeper.ClientCnxnSocketNIO.registerAndConnect(ClientCnxnSocketNIO.java:260)
+	at org.apache.zookeeper.ClientCnxnSocketNIO.connect(ClientCnxnSocketNIO.java:270)
+	at org.apache.zookeeper.ClientCnxn$SendThread.startConnect(ClientCnxn.java:1158)
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1192)
+[main-SendThread(host.docker.internal:2181)] ERROR org.apache.zookeeper.ClientCnxnSocketNIO - Unable to open socket to host.docker.internal/[fdc4:f303:9324:0:0:0:0:254]:2181
+[main-SendThread(host.docker.internal:2181)] WARN org.apache.zookeeper.ClientCnxn - Session 0x0 for server host.docker.internal/[fdc4:f303:9324:0:0:0:0:254]:2181, Closing socket connection. Attempting reconnect except it is a SessionExpiredException.
+java.net.SocketException: Network is unreachable
+	at java.base/sun.nio.ch.Net.connect0(Native Method)
+	at java.base/sun.nio.ch.Net.connect(Net.java:591)
+	at java.base/sun.nio.ch.Net.connect(Net.java:598)
+	at java.base/sun.nio.ch.SocketChannelImpl.connect(SocketChannelImpl.java:853)
+	at org.apache.zookeeper.ClientCnxnSocketNIO.registerAndConnect(ClientCnxnSocketNIO.java:260)
+	at org.apache.zookeeper.ClientCnxnSocketNIO.connect(ClientCnxnSocketNIO.java:270)
+	at org.apache.zookeeper.ClientCnxn$SendThread.startConnect(ClientCnxn.java:1158)
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1192)
+00:13:44.472 n1 ZK_STATE CONNECTED
+00:13:44.536 n1 READY port=7001 sync=true barrier=false participants=5
+00:13:48.462 n1 REQUEST request_id=c1-1 round=1
+00:13:50.719 n1 ACQUIRE request_id=c1-1 wait_ms=2240 holder_znode=_c_3d107832-44f1-45e3-85e4-1400d851af07-lock-0000000003 queue_size=2
+00:13:50.723 n1 ENTER request_id=c1-1
+00:13:51.469 n1 EXIT request_id=c1-1
+00:13:51.486 n1 RELEASE request_id=c1-1
+00:13:51.486 n1 COMMITTED request_id=c1-1
+00:13:51.491 n1 REQUEST request_id=c1-2 round=2
+00:13:51.738 n1 ACQUIRE request_id=c1-2 wait_ms=243 holder_znode=_c_bb579ea8-45d9-49ad-bf17-5dbc5d1d8eac-lock-0000000005 queue_size=1
+00:13:51.740 n1 ENTER request_id=c1-2
+00:13:52.105 n1 EXIT request_id=c1-2
+00:13:52.111 n1 RELEASE request_id=c1-2
+00:13:52.111 n1 COMMITTED request_id=c1-2
+00:13:52.113 n1 REQUEST request_id=c1-3 round=3
+00:13:52.118 n1 ACQUIRE request_id=c1-3 wait_ms=3 holder_znode=_c_eec6ca67-c033-4002-9a59-398b958405c1-lock-0000000006 queue_size=1
+00:13:52.119 n1 ENTER request_id=c1-3
+00:13:52.936 n1 EXIT request_id=c1-3
+00:13:52.944 n1 RELEASE request_id=c1-3
+00:13:52.945 n1 COMMITTED request_id=c1-3
+00:13:52.946 n1 REQUEST request_id=c1-4 round=4
+00:13:53.345 n1 ACQUIRE request_id=c1-4 wait_ms=397 holder_znode=_c_15f16023-b0d4-48f9-9e73-ff47f3714781-lock-0000000008 queue_size=2
+00:13:53.347 n1 ENTER request_id=c1-4
+00:13:54.182 n1 EXIT request_id=c1-4
+00:13:54.189 n1 RELEASE request_id=c1-4
+00:13:54.190 n1 COMMITTED request_id=c1-4
+00:13:54.191 n1 REQUEST request_id=c1-5 round=5
+00:13:54.795 n1 ACQUIRE request_id=c1-5 wait_ms=602 holder_znode=_c_cd894e90-373f-4b69-b423-f2f6a89b89d6-lock-0000000010 queue_size=3
+00:13:54.799 n1 ENTER request_id=c1-5
+00:13:55.076 n1 EXIT request_id=c1-5
+00:13:55.083 n1 RELEASE request_id=c1-5
+00:13:55.084 n1 COMMITTED request_id=c1-5
+00:13:55.085 n1 REQUEST request_id=c1-6 round=6
+00:13:57.075 n1 ACQUIRE request_id=c1-6 wait_ms=2694 holder_znode=_c_81828af4-8ec8-4282-96f2-3e31f102be4c-lock-0000000014 queue_size=2
+00:13:57.077 n1 ENTER request_id=c1-6
+00:13:57.386 n1 EXIT request_id=c1-6
+00:13:57.393 n1 RELEASE request_id=c1-6
+00:13:57.394 n1 COMMITTED request_id=c1-6
+00:13:57.395 n1 REQUEST request_id=c1-7 round=7
+00:13:58.386 n1 ACQUIRE request_id=c1-7 wait_ms=989 holder_znode=_c_c091870c-16da-4a43-82a8-f4d381599b54-lock-0000000017 queue_size=2
+00:13:58.387 n1 ENTER request_id=c1-7
+00:13:58.842 n1 EXIT request_id=c1-7
+00:13:58.849 n1 RELEASE request_id=c1-7
+00:13:58.850 n1 COMMITTED request_id=c1-7
+00:13:58.851 n1 REQUEST request_id=c1-8 round=8
+00:13:59.858 n1 ACQUIRE request_id=c1-8 wait_ms=1005 holder_znode=_c_4a4b6f01-f847-4120-ac52-66c2fb42abbd-lock-0000000019 queue_size=1
+00:13:59.859 n1 ENTER request_id=c1-8
+00:14:00.482 n1 EXIT request_id=c1-8
+00:14:00.488 n1 RELEASE request_id=c1-8
+00:14:00.488 n1 COMMITTED request_id=c1-8
+00:14:00.489 n1 REQUEST request_id=c1-9 round=9
+00:14:01.138 n1 ACQUIRE request_id=c1-9 wait_ms=646 holder_znode=_c_c5551b38-ad77-4735-99e1-bfc974142c82-lock-0000000021 queue_size=3
+00:14:01.140 n1 ENTER request_id=c1-9
+00:14:01.448 n1 EXIT request_id=c1-9
+00:14:01.456 n1 RELEASE request_id=c1-9
+00:14:01.456 n1 COMMITTED request_id=c1-9
+00:14:01.457 n1 REQUEST request_id=c1-10 round=10
+00:14:02.405 n1 ACQUIRE request_id=c1-10 wait_ms=944 holder_znode=_c_0b429454-6593-4f84-9e96-b326b0102623-lock-0000000024 queue_size=2
+00:14:02.406 n1 ENTER request_id=c1-10
+00:14:02.626 n1 EXIT request_id=c1-10
+00:14:02.633 n1 RELEASE request_id=c1-10
+00:14:02.634 n1 COMMITTED request_id=c1-10
+00:14:02.634 n1 REQUEST request_id=c1-11 round=11
+00:14:03.151 n1 ACQUIRE request_id=c1-11 wait_ms=514 holder_znode=_c_d2094436-b2a6-4f02-a47c-63cba3d30075-lock-0000000026 queue_size=1
+00:14:03.153 n1 ENTER request_id=c1-11
+00:14:03.503 n1 EXIT request_id=c1-11
+00:14:03.512 n1 RELEASE request_id=c1-11
+00:14:03.513 n1 COMMITTED request_id=c1-11
+00:14:03.516 n1 REQUEST request_id=c1-12 round=12
+00:14:03.523 n1 ACQUIRE request_id=c1-12 wait_ms=4 holder_znode=_c_898a1f2b-75c2-4ebc-ac3c-7c54a4f344a5-lock-0000000027 queue_size=1
+00:14:03.525 n1 ENTER request_id=c1-12
+00:14:04.471 n1 EXIT request_id=c1-12
+00:14:04.482 n1 RELEASE request_id=c1-12
+00:14:04.483 n1 COMMITTED request_id=c1-12
+00:14:04.484 n1 REQUEST request_id=c1-13 round=13
+00:14:05.067 n1 ACQUIRE request_id=c1-13 wait_ms=580 holder_znode=_c_faa795c0-4cd5-4c14-aff0-64b8c7f2a12c-lock-0000000029 queue_size=2
+00:14:05.070 n1 ENTER request_id=c1-13
+00:14:05.968 n1 EXIT request_id=c1-13
+00:14:05.975 n1 RELEASE request_id=c1-13
+00:14:05.976 n1 COMMITTED request_id=c1-13
+00:14:05.977 n1 REQUEST request_id=c1-14 round=14
+00:14:07.633 n1 ACQUIRE request_id=c1-14 wait_ms=1654 holder_znode=_c_7def4ab0-0f60-4d63-ad51-935f8e0ead4f-lock-0000000032 queue_size=3
+00:14:07.634 n1 ENTER request_id=c1-14
+00:14:07.964 n1 EXIT request_id=c1-14
+00:14:07.972 n1 RELEASE request_id=c1-14
+00:14:07.972 n1 COMMITTED request_id=c1-14
+00:14:07.973 n1 REQUEST request_id=c1-15 round=15
+00:14:09.344 n1 ACQUIRE request_id=c1-15 wait_ms=1368 holder_znode=_c_3dba8b14-6d2d-4e1c-b2b6-1271fc44b6c5-lock-0000000035 queue_size=2
+00:14:09.346 n1 ENTER request_id=c1-15
+00:14:10.095 n1 EXIT request_id=c1-15
+00:14:10.104 n1 RELEASE request_id=c1-15
+00:14:10.105 n1 COMMITTED request_id=c1-15
+00:14:10.107 n1 REQUEST request_id=c1-16 round=16
+00:14:10.984 n1 ACQUIRE request_id=c1-16 wait_ms=875 holder_znode=_c_3123e0c4-81e7-439f-96a0-7fe5ca75fc57-lock-0000000037 queue_size=2
+00:14:10.985 n1 ENTER request_id=c1-16
+00:14:11.378 n1 EXIT request_id=c1-16
+00:14:11.385 n1 RELEASE request_id=c1-16
+00:14:11.385 n1 COMMITTED request_id=c1-16
+00:14:11.386 n1 REQUEST request_id=c1-17 round=17
+00:14:12.230 n1 ACQUIRE request_id=c1-17 wait_ms=842 holder_znode=_c_90cd3465-7712-498a-91d7-6bbd51cb2588-lock-0000000039 queue_size=2
+00:14:12.232 n1 ENTER request_id=c1-17
+00:14:12.951 n1 EXIT request_id=c1-17
+00:14:12.958 n1 RELEASE request_id=c1-17
+00:14:12.959 n1 COMMITTED request_id=c1-17
+00:14:12.961 n1 REQUEST request_id=c1-18 round=18
+00:14:14.386 n1 ACQUIRE request_id=c1-18 wait_ms=1423 holder_znode=_c_932c7960-f8c1-4397-aa1f-4b306bfb40e5-lock-0000000042 queue_size=2
+00:14:14.387 n1 ENTER request_id=c1-18
+00:14:14.719 n1 EXIT request_id=c1-18
+00:14:14.726 n1 RELEASE request_id=c1-18
+00:14:14.726 n1 COMMITTED request_id=c1-18
+00:14:14.727 n1 REQUEST request_id=c1-19 round=19
+00:14:15.722 n1 ACQUIRE request_id=c1-19 wait_ms=992 holder_znode=_c_22f6f3f7-6b11-48cb-8ec2-28c4c5397360-lock-0000000044 queue_size=2
+00:14:15.723 n1 ENTER request_id=c1-19
+00:14:16.722 n1 EXIT request_id=c1-19
+00:14:16.731 n1 RELEASE request_id=c1-19
+00:14:16.731 n1 COMMITTED request_id=c1-19
+00:14:16.732 n1 REQUEST request_id=c1-20 round=20
+00:14:17.898 n1 ACQUIRE request_id=c1-20 wait_ms=1164 holder_znode=_c_af44d5bc-eb78-4fb4-a1c5-e7d2b66a3655-lock-0000000047 queue_size=2
+00:14:17.900 n1 ENTER request_id=c1-20
+00:14:18.483 n1 EXIT request_id=c1-20
+00:14:18.490 n1 RELEASE request_id=c1-20
+00:14:18.491 n1 COMMITTED request_id=c1-20
+00:14:18.492 n1 REQUEST request_id=c1-21 round=21
+00:14:19.330 n1 ACQUIRE request_id=c1-21 wait_ms=836 holder_znode=_c_875c7cc3-92f3-4902-bde8-8383b4a0a97f-lock-0000000050 queue_size=1
+00:14:19.331 n1 ENTER request_id=c1-21
+00:14:20.126 n1 EXIT request_id=c1-21
+00:14:20.137 n1 RELEASE request_id=c1-21
+00:14:20.138 n1 COMMITTED request_id=c1-21
+00:14:20.138 n1 REQUEST request_id=c1-22 round=22
+00:14:20.502 n1 ACQUIRE request_id=c1-22 wait_ms=361 holder_znode=_c_97d830a1-de8e-4a88-9bf2-b3129bf646f7-lock-0000000052 queue_size=1
+00:14:20.503 n1 ENTER request_id=c1-22
+00:14:21.278 n1 EXIT request_id=c1-22
+00:14:21.285 n1 RELEASE request_id=c1-22
+00:14:21.286 n1 COMMITTED request_id=c1-22
+00:14:21.287 n1 REQUEST request_id=c1-23 round=23
+00:14:21.293 n1 ACQUIRE request_id=c1-23 wait_ms=3 holder_znode=_c_1cac1cb4-02bc-4d96-9541-24e67d30879f-lock-0000000053 queue_size=1
+00:14:21.294 n1 ENTER request_id=c1-23
+00:14:21.863 n1 EXIT request_id=c1-23
+00:14:21.870 n1 RELEASE request_id=c1-23
+00:14:21.871 n1 COMMITTED request_id=c1-23
+00:14:21.872 n1 REQUEST request_id=c1-24 round=24
+00:14:23.125 n1 ACQUIRE request_id=c1-24 wait_ms=1251 holder_znode=_c_73556e46-ad28-465e-95a1-3c45eac2ac18-lock-0000000056 queue_size=2
+00:14:23.126 n1 ENTER request_id=c1-24
+00:14:23.719 n1 EXIT request_id=c1-24
+00:14:23.727 n1 RELEASE request_id=c1-24
+00:14:23.728 n1 COMMITTED request_id=c1-24
+00:14:23.729 n1 REQUEST request_id=c1-25 round=25
+00:14:24.222 n1 ACQUIRE request_id=c1-25 wait_ms=492 holder_znode=_c_a90e5be5-14c7-4189-8af0-5a5d993b1c3a-lock-0000000058 queue_size=2
+00:14:24.224 n1 ENTER request_id=c1-25
+00:14:23.415 n1 EXIT request_id=c1-25
+00:14:23.423 n1 RELEASE request_id=c1-25
+00:14:23.426 n1 COMMITTED request_id=c1-25
+00:14:23.427 n1 REQUEST request_id=c1-26 round=26
+00:14:23.747 n1 ACQUIRE request_id=c1-26 wait_ms=318 holder_znode=_c_53e0969b-3ff8-4fcb-b256-c2eabce10778-lock-0000000060 queue_size=1
+00:14:23.748 n1 ENTER request_id=c1-26
+00:14:24.402 n1 EXIT request_id=c1-26
+00:14:24.412 n1 RELEASE request_id=c1-26
+00:14:24.413 n1 COMMITTED request_id=c1-26
+00:14:24.414 n1 REQUEST request_id=c1-27 round=27
+00:14:24.420 n1 ACQUIRE request_id=c1-27 wait_ms=3 holder_znode=_c_e149de61-9f65-4059-855e-04d63291d6ec-lock-0000000061 queue_size=1
+00:14:24.421 n1 ENTER request_id=c1-27
+00:14:25.177 n1 EXIT request_id=c1-27
+00:14:25.186 n1 RELEASE request_id=c1-27
+00:14:25.187 n1 COMMITTED request_id=c1-27
+00:14:25.188 n1 REQUEST request_id=c1-28 round=28
+00:14:25.193 n1 ACQUIRE request_id=c1-28 wait_ms=3 holder_znode=_c_8eb6ee2e-3cc9-456e-9b89-7486a99eee5a-lock-0000000062 queue_size=1
+00:14:25.195 n1 ENTER request_id=c1-28
+00:14:25.814 n1 EXIT request_id=c1-28
+00:14:25.823 n1 RELEASE request_id=c1-28
+00:14:25.824 n1 COMMITTED request_id=c1-28
+00:14:25.826 n1 REQUEST request_id=c1-29 round=29
+00:14:25.833 n1 ACQUIRE request_id=c1-29 wait_ms=5 holder_znode=_c_2155fbb1-c5cb-48c8-8eef-c92d401ae20e-lock-0000000063 queue_size=1
+00:14:25.835 n1 ENTER request_id=c1-29
+00:14:26.539 n1 EXIT request_id=c1-29
+00:14:26.545 n1 RELEASE request_id=c1-29
+00:14:26.545 n1 COMMITTED request_id=c1-29
+00:14:26.546 n1 REQUEST request_id=c1-30 round=30
+00:14:27.271 n1 ACQUIRE request_id=c1-30 wait_ms=723 holder_znode=_c_ccd3dab8-b1de-4dcc-bc6d-890a9983cc88-lock-0000000065 queue_size=2
+00:14:27.273 n1 ENTER request_id=c1-30
+00:14:27.871 n1 EXIT request_id=c1-30
+00:14:27.880 n1 RELEASE request_id=c1-30
+00:14:27.880 n1 COMMITTED request_id=c1-30
+00:14:27.882 n1 REQUEST request_id=c1-31 round=31
+00:14:28.280 n1 ACQUIRE request_id=c1-31 wait_ms=396 holder_znode=_c_4a6ceb85-08fa-4b10-b55a-f624d490fdca-lock-0000000067 queue_size=1
+00:14:28.281 n1 ENTER request_id=c1-31
+00:14:28.790 n1 EXIT request_id=c1-31
+00:14:28.794 n1 RELEASE request_id=c1-31
+00:14:28.794 n1 COMMITTED request_id=c1-31
+00:14:28.796 n1 REQUEST request_id=c1-32 round=32
+00:14:29.415 n1 ACQUIRE request_id=c1-32 wait_ms=617 holder_znode=_c_a58f7cbf-f065-4dd1-8f00-dcd85ca9ee56-lock-0000000069 queue_size=1
+00:14:29.417 n1 ENTER request_id=c1-32
+00:14:29.969 n1 EXIT request_id=c1-32
+00:14:29.976 n1 RELEASE request_id=c1-32
+00:14:29.977 n1 COMMITTED request_id=c1-32
+00:14:29.978 n1 REQUEST request_id=c1-33 round=33
+00:14:29.983 n1 ACQUIRE request_id=c1-33 wait_ms=3 holder_znode=_c_60da0d88-8637-4841-afca-99a88d332204-lock-0000000070 queue_size=1
+00:14:29.985 n1 ENTER request_id=c1-33
+00:14:30.923 n1 EXIT request_id=c1-33
+00:14:30.930 n1 RELEASE request_id=c1-33
+00:14:30.930 n1 COMMITTED request_id=c1-33
+00:14:30.931 n1 REQUEST request_id=c1-34 round=34
+00:14:31.657 n1 ACQUIRE request_id=c1-34 wait_ms=724 holder_znode=_c_8ec68b1c-2919-459b-b65f-600afb3f55a2-lock-0000000073 queue_size=1
+00:14:31.658 n1 ENTER request_id=c1-34
+00:14:32.185 n1 EXIT request_id=c1-34
+00:14:32.193 n1 RELEASE request_id=c1-34
+00:14:32.194 n1 COMMITTED request_id=c1-34
+00:14:32.197 n1 REQUEST request_id=c1-35 round=35
+00:14:32.203 n1 ACQUIRE request_id=c1-35 wait_ms=4 holder_znode=_c_b410b3bf-d020-4d4f-aab3-5854fe8eb86f-lock-0000000074 queue_size=1
+00:14:32.204 n1 ENTER request_id=c1-35
+00:14:32.592 n1 EXIT request_id=c1-35
+00:14:32.602 n1 RELEASE request_id=c1-35
+00:14:32.603 n1 COMMITTED request_id=c1-35
+00:14:32.604 n1 REQUEST request_id=c1-36 round=36
+00:14:32.610 n1 ACQUIRE request_id=c1-36 wait_ms=3 holder_znode=_c_3380773a-3ed2-4167-803d-e1f71e255699-lock-0000000075 queue_size=1
+00:14:32.611 n1 ENTER request_id=c1-36
+00:14:33.311 n1 EXIT request_id=c1-36
+00:14:33.317 n1 RELEASE request_id=c1-36
+00:14:33.317 n1 COMMITTED request_id=c1-36
+00:14:33.318 n1 REQUEST request_id=c1-37 round=37
+00:14:33.324 n1 ACQUIRE request_id=c1-37 wait_ms=3 holder_znode=_c_a22b87e1-53cf-44c9-9b3d-d988465090f4-lock-0000000076 queue_size=1
+00:14:33.325 n1 ENTER request_id=c1-37
+00:14:34.291 n1 EXIT request_id=c1-37
+00:14:34.302 n1 RELEASE request_id=c1-37
+00:14:34.303 n1 COMMITTED request_id=c1-37
+00:14:34.306 n1 REQUEST request_id=c1-38 round=38
+00:14:34.312 n1 ACQUIRE request_id=c1-38 wait_ms=4 holder_znode=_c_45fa3133-1c80-47e5-9a8e-e7a15bf5b1fd-lock-0000000077 queue_size=1
+00:14:34.313 n1 ENTER request_id=c1-38
+00:14:34.972 n1 EXIT request_id=c1-38
+00:14:34.980 n1 RELEASE request_id=c1-38
+00:14:34.980 n1 COMMITTED request_id=c1-38
+00:14:34.982 n1 REQUEST request_id=c1-39 round=39
+00:14:34.987 n1 ACQUIRE request_id=c1-39 wait_ms=3 holder_znode=_c_fbbf74fd-cfc8-45c0-bf1c-2d466720b9cf-lock-0000000078 queue_size=1
+00:14:34.988 n1 ENTER request_id=c1-39
+00:14:35.660 n1 EXIT request_id=c1-39
+00:14:35.669 n1 RELEASE request_id=c1-39
+00:14:35.670 n1 COMMITTED request_id=c1-39
+00:14:35.672 n1 REQUEST request_id=c1-40 round=40
+00:14:35.677 n1 ACQUIRE request_id=c1-40 wait_ms=3 holder_znode=_c_a1e15060-a64f-42e9-982b-3a0c8d16c57b-lock-0000000079 queue_size=1
+00:14:35.679 n1 ENTER request_id=c1-40
+00:14:36.687 n1 EXIT request_id=c1-40
+00:14:36.695 n1 RELEASE request_id=c1-40
+00:14:36.696 n1 COMMITTED request_id=c1-40
+00:14:36.698 n1 DONE rounds=40

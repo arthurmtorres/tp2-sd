@@ -1,0 +1,104 @@
+[main-SendThread(host.docker.internal:2181)] ERROR org.apache.zookeeper.ClientCnxnSocketNIO - Unable to open socket to host.docker.internal/[fdc4:f303:9324:0:0:0:0:254]:2181
+[main-SendThread(host.docker.internal:2181)] WARN org.apache.zookeeper.ClientCnxn - Session 0x0 for server host.docker.internal/[fdc4:f303:9324:0:0:0:0:254]:2181, Closing socket connection. Attempting reconnect except it is a SessionExpiredException.
+java.net.SocketException: Network is unreachable
+	at java.base/sun.nio.ch.Net.connect0(Native Method)
+	at java.base/sun.nio.ch.Net.connect(Net.java:591)
+	at java.base/sun.nio.ch.Net.connect(Net.java:598)
+	at java.base/sun.nio.ch.SocketChannelImpl.connect(SocketChannelImpl.java:853)
+	at org.apache.zookeeper.ClientCnxnSocketNIO.registerAndConnect(ClientCnxnSocketNIO.java:260)
+	at org.apache.zookeeper.ClientCnxnSocketNIO.connect(ClientCnxnSocketNIO.java:270)
+	at org.apache.zookeeper.ClientCnxn$SendThread.startConnect(ClientCnxn.java:1158)
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1192)
+00:12:35.924 n2 ZK_STATE CONNECTED
+00:12:35.992 n2 READY port=7002 sync=true barrier=true participants=5
+00:12:40.797 n2 REQUEST request_id=c2-1 round=1
+00:12:40.803 n2 BARRIER_ENTER_WAIT round=1
+00:12:40.914 n2 BARRIER_PASSED round=1
+00:12:40.958 n2 ACQUIRE request_id=c2-1 wait_ms=26 holder_znode=_c_46021d98-ef98-4b8f-b5f3-817cf2bdedda-lock-0000000000 queue_size=5
+00:12:40.967 n2 ENTER request_id=c2-1
+00:12:41.837 n2 EXIT request_id=c2-1
+00:12:41.898 n2 RELEASE request_id=c2-1
+00:12:41.898 n2 COMMITTED request_id=c2-1
+00:12:44.135 n2 BARRIER_LEFT round=1
+00:12:44.923 n2 REQUEST request_id=c2-2 round=2
+00:12:44.925 n2 BARRIER_ENTER_WAIT round=2
+00:12:48.544 n2 BARRIER_PASSED round=2
+00:12:51.444 n2 ACQUIRE request_id=c2-2 wait_ms=2879 holder_znode=_c_d8b03145-9206-4fd6-b922-f021551b7879-lock-0000000009 queue_size=1
+00:12:51.456 n2 ENTER request_id=c2-2
+00:12:51.841 n2 EXIT request_id=c2-2
+00:12:51.870 n2 RELEASE request_id=c2-2
+00:12:51.879 n2 COMMITTED request_id=c2-2
+00:12:51.920 n2 BARRIER_LEFT round=2
+00:12:53.205 n2 REQUEST request_id=c2-3 round=3
+00:12:53.207 n2 BARRIER_ENTER_WAIT round=3
+00:12:54.063 n2 BARRIER_PASSED round=3
+00:12:54.646 n2 ACQUIRE request_id=c2-3 wait_ms=580 holder_znode=_c_b543a596-82f4-42cb-8333-378d8d301be8-lock-0000000012 queue_size=3
+00:12:54.653 n2 ENTER request_id=c2-3
+00:12:55.575 n2 EXIT request_id=c2-3
+00:12:55.620 n2 RELEASE request_id=c2-3
+00:12:55.637 n2 COMMITTED request_id=c2-3
+00:12:57.606 n2 BARRIER_LEFT round=3
+00:12:57.612 n2 REQUEST request_id=c2-4 round=4
+00:12:57.621 n2 BARRIER_ENTER_WAIT round=4
+00:13:02.443 n2 BARRIER_PASSED round=4
+00:13:04.655 n2 ACQUIRE request_id=c2-4 wait_ms=2182 holder_znode=_c_0896e9ac-329d-4805-a4f9-d565db7fdc4a-lock-0000000018 queue_size=2
+00:13:04.657 n2 ENTER request_id=c2-4
+00:13:05.397 n2 EXIT request_id=c2-4
+00:13:05.409 n2 RELEASE request_id=c2-4
+00:13:05.410 n2 COMMITTED request_id=c2-4
+00:13:06.135 n2 BARRIER_LEFT round=4
+00:13:07.465 n2 REQUEST request_id=c2-5 round=5
+00:13:07.467 n2 BARRIER_ENTER_WAIT round=5
+00:13:09.489 n2 BARRIER_PASSED round=5
+00:13:12.421 n2 ACQUIRE request_id=c2-5 wait_ms=2928 holder_znode=_c_6ba5932d-6156-4ec1-952c-927354d6dde5-lock-0000000024 queue_size=1
+00:13:12.469 n2 ENTER request_id=c2-5
+00:13:13.145 n2 EXIT request_id=c2-5
+00:13:13.190 n2 RELEASE request_id=c2-5
+00:13:13.211 n2 COMMITTED request_id=c2-5
+00:13:13.298 n2 BARRIER_LEFT round=5
+00:13:14.305 n2 REQUEST request_id=c2-6 round=6
+00:13:14.334 n2 BARRIER_ENTER_WAIT round=6
+00:13:14.854 n2 BARRIER_PASSED round=6
+00:13:18.169 n2 ACQUIRE request_id=c2-6 wait_ms=3304 holder_znode=_c_9d24d848-52e0-4719-909c-230a84157007-lock-0000000029 queue_size=1
+00:13:18.185 n2 ENTER request_id=c2-6
+00:13:18.697 n2 EXIT request_id=c2-6
+00:13:18.731 n2 RELEASE request_id=c2-6
+00:13:18.741 n2 COMMITTED request_id=c2-6
+00:13:18.811 n2 BARRIER_LEFT round=6
+00:13:21.027 n2 REQUEST request_id=c2-7 round=7
+00:13:21.030 n2 BARRIER_ENTER_WAIT round=7
+00:13:21.277 n2 BARRIER_PASSED round=7
+00:13:21.289 n2 ACQUIRE request_id=c2-7 wait_ms=5 holder_znode=_c_e4874f9b-6084-4d2b-82b6-d4b6c5bf6494-lock-0000000030 queue_size=3
+00:13:21.291 n2 ENTER request_id=c2-7
+00:13:22.252 n2 EXIT request_id=c2-7
+00:13:22.259 n2 RELEASE request_id=c2-7
+00:13:22.260 n2 COMMITTED request_id=c2-7
+00:13:24.529 n2 BARRIER_LEFT round=7
+00:13:26.777 n2 REQUEST request_id=c2-8 round=8
+00:13:26.779 n2 BARRIER_ENTER_WAIT round=8
+00:13:27.266 n2 BARRIER_PASSED round=8
+00:13:27.075 n2 ACQUIRE request_id=c2-8 wait_ms=646 holder_znode=_c_a5e68374-6d78-4c12-a616-f647d7f06f3e-lock-0000000036 queue_size=4
+00:13:27.081 n2 ENTER request_id=c2-8
+00:13:27.555 n2 EXIT request_id=c2-8
+00:13:27.572 n2 RELEASE request_id=c2-8
+00:13:27.578 n2 COMMITTED request_id=c2-8
+00:13:28.811 n2 BARRIER_LEFT round=8
+00:13:30.226 n2 REQUEST request_id=c2-9 round=9
+00:13:30.228 n2 BARRIER_ENTER_WAIT round=9
+00:13:32.897 n2 BARRIER_PASSED round=9
+00:13:33.616 n2 ACQUIRE request_id=c2-9 wait_ms=717 holder_znode=_c_c108390c-3826-44a5-ba9d-a67c80ac3323-lock-0000000042 queue_size=3
+00:13:33.618 n2 ENTER request_id=c2-9
+00:13:33.852 n2 EXIT request_id=c2-9
+00:13:33.859 n2 RELEASE request_id=c2-9
+00:13:33.859 n2 COMMITTED request_id=c2-9
+00:13:35.011 n2 BARRIER_LEFT round=9
+00:13:37.290 n2 REQUEST request_id=c2-10 round=10
+00:13:37.300 n2 BARRIER_ENTER_WAIT round=10
+00:13:39.078 n2 BARRIER_PASSED round=10
+00:13:40.322 n2 ACQUIRE request_id=c2-10 wait_ms=1241 holder_znode=_c_fc30ae23-7e0d-47a4-8b0b-4668485e98b9-lock-0000000048 queue_size=2
+00:13:40.323 n2 ENTER request_id=c2-10
+00:13:41.221 n2 EXIT request_id=c2-10
+00:13:41.228 n2 RELEASE request_id=c2-10
+00:13:41.228 n2 COMMITTED request_id=c2-10
+00:13:41.563 n2 BARRIER_LEFT round=10
+00:13:41.564 n2 DONE rounds=10

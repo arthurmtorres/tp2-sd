@@ -1,11 +1,15 @@
 #!/usr/bin/env bash
-# Bateria completa: 3 repetições (sementes 1..3) de cada cenário, com 5 nós; escala com 10 nós.
+set -uo pipefail
 cd "$(dirname "$0")/.."
+failed=0; passed=0
+run() {
+ if bash scripts/run.sh "$@"; then passed=$((passed+1)); else
+  rc=$?; failed=$((failed+1)); echo "FALHOU: cenário=$1 semente=$2 N=${N:-5} rc=$rc"
+ fi
+}
 for s in 1 2 3; do
-  for c in nosync normal contention unequal barrier; do
-    scripts/run.sh "$c" "$s"
-  done
+ for c in nosync normal contention unequal barrier; do run "$c" "$s"; done
 done
-# Comparação 5 vs 10 processos (mesma carga e mesma duração de seção crítica)
-for s in 1 2 3; do N=10 scripts/run.sh contention "$s"; done
-echo "Resultados em results/summary.csv"
+for s in 1 2 3; do N=10 run contention "$s"; done
+echo "Bateria: aprovadas=$passed falhas=$failed. Resultados em results/summary.csv"
+((failed==0))

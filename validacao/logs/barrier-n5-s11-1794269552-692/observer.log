@@ -1,0 +1,302 @@
+00:12:32.872 OBS LISTENING nodes=5 barrier=true
+00:12:40.801 OBS ARRIVE node=n1 round=1
+00:12:40.802 OBS ARRIVE node=n2 round=1
+00:12:40.805 OBS ARRIVE node=n3 round=1
+00:12:40.806 OBS ARRIVE node=n4 round=1
+00:12:40.836 OBS ARRIVE node=n5 round=1
+00:12:40.912 OBS PASS node=n4 round=1
+00:12:40.913 OBS PASS node=n2 round=1
+00:12:40.914 OBS PASS node=n3 round=1
+00:12:40.914 OBS PASS node=n1 round=1
+00:12:40.918 OBS PASS node=n5 round=1
+00:12:40.966 OBS BEGIN node=n2 request_id=c2-1 active=1
+00:12:41.874 OBS END node=n2 request_id=c2-1 active=0
+00:12:41.899 OBS LEAVE_READY node=n2 round=1
+00:12:41.919 OBS BEGIN node=n4 request_id=c4-1 active=1
+00:12:42.265 OBS END node=n4 request_id=c4-1 active=0
+00:12:42.282 OBS LEAVE_READY node=n4 round=1
+00:12:42.306 OBS BEGIN node=n3 request_id=c3-1 active=1
+00:12:43.047 OBS END node=n3 request_id=c3-1 active=0
+00:12:43.059 OBS LEAVE_READY node=n3 round=1
+00:12:43.079 OBS BEGIN node=n1 request_id=c1-1 active=1
+00:12:43.840 OBS END node=n1 request_id=c1-1 active=0
+00:12:43.860 OBS LEAVE_READY node=n1 round=1
+00:12:43.886 OBS BEGIN node=n5 request_id=c5-1 active=1
+00:12:44.094 OBS END node=n5 request_id=c5-1 active=0
+00:12:44.109 OBS LEAVE_READY node=n5 round=1
+00:12:44.130 OBS LEFT node=n1 round=1
+00:12:44.133 OBS LEFT node=n5 round=1
+00:12:44.134 OBS LEFT node=n3 round=1
+00:12:44.134 OBS LEFT node=n2 round=1
+00:12:44.135 OBS LEFT node=n4 round=1
+00:12:44.924 OBS ARRIVE node=n2 round=2
+00:12:45.754 OBS ARRIVE node=n3 round=2
+00:12:45.959 OBS ARRIVE node=n4 round=2
+00:12:47.479 OBS ARRIVE node=n5 round=2
+00:12:48.516 OBS ARRIVE node=n1 round=2
+00:12:48.533 OBS PASS node=n1 round=2
+00:12:48.540 OBS PASS node=n3 round=2
+00:12:48.542 OBS PASS node=n5 round=2
+00:12:48.543 OBS PASS node=n4 round=2
+00:12:48.544 OBS PASS node=n2 round=2
+00:12:48.552 OBS BEGIN node=n1 request_id=c1-2 active=1
+00:12:48.930 OBS END node=n1 request_id=c1-2 active=0
+00:12:48.936 OBS LEAVE_READY node=n1 round=2
+00:12:48.939 OBS BEGIN node=n3 request_id=c3-2 active=1
+00:12:49.547 OBS END node=n3 request_id=c3-2 active=0
+00:12:49.595 OBS BEGIN node=n5 request_id=c5-2 active=1
+00:12:49.619 OBS LEAVE_READY node=n3 round=2
+00:12:50.610 OBS END node=n5 request_id=c5-2 active=0
+00:12:50.616 OBS LEAVE_READY node=n5 round=2
+00:12:50.624 OBS BEGIN node=n4 request_id=c4-2 active=1
+00:12:51.407 OBS END node=n4 request_id=c4-2 active=0
+00:12:51.444 OBS LEAVE_READY node=n4 round=2
+00:12:51.450 OBS BEGIN node=n2 request_id=c2-2 active=1
+00:12:51.856 OBS END node=n2 request_id=c2-2 active=0
+00:12:51.893 OBS LEAVE_READY node=n2 round=2
+00:12:51.917 OBS LEFT node=n2 round=2
+00:12:51.921 OBS LEFT node=n4 round=2
+00:12:51.923 OBS LEFT node=n3 round=2
+00:12:51.924 OBS LEFT node=n5 round=2
+00:12:51.926 OBS LEFT node=n1 round=2
+00:12:51.933 OBS ARRIVE node=n1 round=3
+00:12:52.996 OBS ARRIVE node=n4 round=3
+00:12:53.206 OBS ARRIVE node=n2 round=3
+00:12:53.919 OBS ARRIVE node=n3 round=3
+00:12:54.044 OBS ARRIVE node=n5 round=3
+00:12:54.061 OBS PASS node=n5 round=3
+00:12:54.061 OBS PASS node=n4 round=3
+00:12:54.063 OBS PASS node=n2 round=3
+00:12:54.063 OBS PASS node=n1 round=3
+00:12:54.064 OBS PASS node=n3 round=3
+00:12:54.075 OBS BEGIN node=n5 request_id=c5-3 active=1
+00:12:54.390 OBS END node=n5 request_id=c5-3 active=0
+00:12:54.403 OBS LEAVE_READY node=n5 round=3
+00:12:54.405 OBS BEGIN node=n4 request_id=c4-3 active=1
+00:12:54.635 OBS END node=n4 request_id=c4-3 active=0
+00:12:54.646 OBS LEAVE_READY node=n4 round=3
+00:12:54.649 OBS BEGIN node=n2 request_id=c2-3 active=1
+00:12:55.601 OBS END node=n2 request_id=c2-3 active=0
+00:12:55.638 OBS BEGIN node=n1 request_id=c1-3 active=1
+00:12:55.669 OBS LEAVE_READY node=n2 round=3
+00:12:56.513 OBS END node=n1 request_id=c1-3 active=0
+00:12:56.521 OBS LEAVE_READY node=n1 round=3
+00:12:56.525 OBS BEGIN node=n3 request_id=c3-3 active=1
+00:12:57.528 OBS END node=n3 request_id=c3-3 active=0
+00:12:57.558 OBS LEAVE_READY node=n3 round=3
+00:12:57.582 OBS LEFT node=n5 round=3
+00:12:57.588 OBS LEFT node=n4 round=3
+00:12:57.593 OBS LEFT node=n3 round=3
+00:12:57.599 OBS LEFT node=n2 round=3
+00:12:57.606 OBS LEFT node=n1 round=3
+00:12:57.612 OBS ARRIVE node=n5 round=4
+00:12:57.618 OBS ARRIVE node=n2 round=4
+00:12:58.712 OBS ARRIVE node=n4 round=4
+00:12:59.219 OBS ARRIVE node=n1 round=4
+00:13:02.281 OBS ARRIVE node=n3 round=4
+00:13:02.360 OBS PASS node=n1 round=4
+00:13:02.384 OBS PASS node=n5 round=4
+00:13:02.408 OBS PASS node=n4 round=4
+00:13:02.425 OBS PASS node=n2 round=4
+00:13:02.443 OBS PASS node=n3 round=4
+00:13:02.488 OBS BEGIN node=n1 request_id=c1-4 active=1
+00:13:03.386 OBS END node=n1 request_id=c1-4 active=0
+00:13:03.420 OBS BEGIN node=n5 request_id=c5-4 active=1
+00:13:03.423 OBS LEAVE_READY node=n1 round=4
+00:13:03.994 OBS END node=n5 request_id=c5-4 active=0
+00:13:04.005 OBS LEAVE_READY node=n5 round=4
+00:13:04.008 OBS BEGIN node=n4 request_id=c4-4 active=1
+00:13:04.646 OBS END node=n4 request_id=c4-4 active=0
+00:13:04.655 OBS LEAVE_READY node=n4 round=4
+00:13:04.656 OBS BEGIN node=n2 request_id=c2-4 active=1
+00:13:05.399 OBS END node=n2 request_id=c2-4 active=0
+00:13:05.411 OBS LEAVE_READY node=n2 round=4
+00:13:05.413 OBS BEGIN node=n3 request_id=c3-4 active=1
+00:13:06.100 OBS END node=n3 request_id=c3-4 active=0
+00:13:06.119 OBS LEAVE_READY node=n3 round=4
+00:13:06.130 OBS LEFT node=n3 round=4
+00:13:06.133 OBS LEFT node=n5 round=4
+00:13:06.133 OBS LEFT node=n2 round=4
+00:13:06.135 OBS LEFT node=n4 round=4
+00:13:06.136 OBS LEFT node=n1 round=4
+00:13:06.136 OBS ARRIVE node=n5 round=5
+00:13:07.438 OBS ARRIVE node=n1 round=5
+00:13:07.466 OBS ARRIVE node=n2 round=5
+00:13:07.712 OBS ARRIVE node=n3 round=5
+00:13:09.462 OBS ARRIVE node=n4 round=5
+00:13:09.475 OBS PASS node=n3 round=5
+00:13:09.479 OBS PASS node=n4 round=5
+00:13:09.484 OBS PASS node=n1 round=5
+00:13:09.486 OBS PASS node=n5 round=5
+00:13:09.487 OBS PASS node=n2 round=5
+00:13:09.494 OBS BEGIN node=n3 request_id=c3-5 active=1
+00:13:10.383 OBS END node=n3 request_id=c3-5 active=0
+00:13:10.429 OBS BEGIN node=n4 request_id=c4-5 active=1
+00:13:10.449 OBS LEAVE_READY node=n3 round=5
+00:13:11.179 OBS END node=n4 request_id=c4-5 active=0
+00:13:11.232 OBS BEGIN node=n1 request_id=c1-5 active=1
+00:13:11.256 OBS LEAVE_READY node=n4 round=5
+00:13:11.603 OBS END node=n1 request_id=c1-5 active=0
+00:13:11.662 OBS BEGIN node=n5 request_id=c5-5 active=1
+00:13:11.680 OBS LEAVE_READY node=n1 round=5
+00:13:12.382 OBS END node=n5 request_id=c5-5 active=0
+00:13:12.449 OBS BEGIN node=n2 request_id=c2-5 active=1
+00:13:12.469 OBS LEAVE_READY node=n5 round=5
+00:13:13.162 OBS END node=n2 request_id=c2-5 active=0
+00:13:13.235 OBS LEAVE_READY node=n2 round=5
+00:13:13.275 OBS LEFT node=n2 round=5
+00:13:13.298 OBS LEFT node=n3 round=5
+00:13:13.318 OBS LEFT node=n4 round=5
+00:13:13.346 OBS LEFT node=n1 round=5
+00:13:13.365 OBS LEFT node=n5 round=5
+00:13:13.880 OBS ARRIVE node=n3 round=6
+00:13:14.064 OBS ARRIVE node=n1 round=6
+00:13:14.192 OBS ARRIVE node=n5 round=6
+00:13:14.323 OBS ARRIVE node=n2 round=6
+00:13:14.700 OBS ARRIVE node=n4 round=6
+00:13:14.790 OBS PASS node=n4 round=6
+00:13:14.805 OBS PASS node=n3 round=6
+00:13:14.821 OBS PASS node=n1 round=6
+00:13:14.833 OBS PASS node=n5 round=6
+00:13:14.846 OBS PASS node=n2 round=6
+00:13:14.863 OBS BEGIN node=n4 request_id=c4-6 active=1
+00:13:15.817 OBS END node=n4 request_id=c4-6 active=0
+00:13:15.855 OBS BEGIN node=n3 request_id=c3-6 active=1
+00:13:15.866 OBS LEAVE_READY node=n4 round=6
+00:13:16.853 OBS END node=n3 request_id=c3-6 active=0
+00:13:16.883 OBS BEGIN node=n1 request_id=c1-6 active=1
+00:13:16.902 OBS LEAVE_READY node=n3 round=6
+00:13:17.241 OBS END node=n1 request_id=c1-6 active=0
+00:13:17.283 OBS BEGIN node=n5 request_id=c5-6 active=1
+00:13:17.296 OBS LEAVE_READY node=n1 round=6
+00:13:18.151 OBS END node=n5 request_id=c5-6 active=0
+00:13:18.178 OBS BEGIN node=n2 request_id=c2-6 active=1
+00:13:18.185 OBS LEAVE_READY node=n5 round=6
+00:13:18.715 OBS END node=n2 request_id=c2-6 active=0
+00:13:18.752 OBS LEAVE_READY node=n2 round=6
+00:13:18.777 OBS LEFT node=n1 round=6
+00:13:18.788 OBS LEFT node=n5 round=6
+00:13:18.798 OBS LEFT node=n3 round=6
+00:13:18.803 OBS LEFT node=n2 round=6
+00:13:18.811 OBS LEFT node=n4 round=6
+00:13:18.825 OBS ARRIVE node=n4 round=7
+00:13:19.461 OBS ARRIVE node=n3 round=7
+00:13:20.339 OBS ARRIVE node=n1 round=7
+00:13:21.028 OBS ARRIVE node=n2 round=7
+00:13:21.263 OBS ARRIVE node=n5 round=7
+00:13:21.275 OBS PASS node=n2 round=7
+00:13:21.278 OBS PASS node=n5 round=7
+00:13:21.282 OBS PASS node=n1 round=7
+00:13:21.285 OBS PASS node=n4 round=7
+00:13:21.287 OBS PASS node=n3 round=7
+00:13:21.290 OBS BEGIN node=n2 request_id=c2-7 active=1
+00:13:22.254 OBS END node=n2 request_id=c2-7 active=0
+00:13:22.260 OBS LEAVE_READY node=n2 round=7
+00:13:22.263 OBS BEGIN node=n5 request_id=c5-7 active=1
+00:13:23.171 OBS END node=n5 request_id=c5-7 active=0
+00:13:23.185 OBS LEAVE_READY node=n5 round=7
+00:13:23.187 OBS BEGIN node=n1 request_id=c1-7 active=1
+00:13:23.645 OBS END node=n1 request_id=c1-7 active=0
+00:13:23.651 OBS LEAVE_READY node=n1 round=7
+00:13:23.653 OBS BEGIN node=n4 request_id=c4-7 active=1
+00:13:24.269 OBS END node=n4 request_id=c4-7 active=0
+00:13:24.295 OBS LEAVE_READY node=n4 round=7
+00:13:24.298 OBS BEGIN node=n3 request_id=c3-7 active=1
+00:13:24.505 OBS END node=n3 request_id=c3-7 active=0
+00:13:24.511 OBS LEAVE_READY node=n3 round=7
+00:13:24.524 OBS LEFT node=n5 round=7
+00:13:24.526 OBS LEFT node=n1 round=7
+00:13:24.527 OBS LEFT node=n3 round=7
+00:13:24.528 OBS LEFT node=n2 round=7
+00:13:24.529 OBS LEFT node=n4 round=7
+00:13:24.918 OBS ARRIVE node=n5 round=8
+00:13:26.740 OBS ARRIVE node=n3 round=8
+00:13:26.778 OBS ARRIVE node=n2 round=8
+00:13:27.218 OBS ARRIVE node=n4 round=8
+00:13:27.252 OBS ARRIVE node=n1 round=8
+00:13:27.264 OBS PASS node=n1 round=8
+00:13:27.265 OBS PASS node=n2 round=8
+00:13:27.266 OBS PASS node=n3 round=8
+00:13:27.267 OBS PASS node=n4 round=8
+00:13:27.267 OBS PASS node=n5 round=8
+00:13:27.274 OBS BEGIN node=n1 request_id=c1-8 active=1
+00:13:27.065 OBS END node=n1 request_id=c1-8 active=0
+00:13:27.079 OBS BEGIN node=n2 request_id=c2-8 active=1
+00:13:27.081 OBS LEAVE_READY node=n1 round=8
+00:13:27.559 OBS END node=n2 request_id=c2-8 active=0
+00:13:27.581 OBS BEGIN node=n3 request_id=c3-8 active=1
+00:13:27.585 OBS LEAVE_READY node=n2 round=8
+00:13:27.927 OBS END node=n3 request_id=c3-8 active=0
+00:13:27.942 OBS BEGIN node=n4 request_id=c4-8 active=1
+00:13:27.948 OBS LEAVE_READY node=n3 round=8
+00:13:28.431 OBS END node=n4 request_id=c4-8 active=0
+00:13:28.438 OBS LEAVE_READY node=n4 round=8
+00:13:28.441 OBS BEGIN node=n5 request_id=c5-8 active=1
+00:13:28.791 OBS END node=n5 request_id=c5-8 active=0
+00:13:28.798 OBS LEAVE_READY node=n5 round=8
+00:13:28.807 OBS LEFT node=n5 round=8
+00:13:28.810 OBS LEFT node=n3 round=8
+00:13:28.810 OBS LEFT node=n1 round=8
+00:13:28.811 OBS LEFT node=n2 round=8
+00:13:28.811 OBS LEFT node=n4 round=8
+00:13:28.811 OBS ARRIVE node=n1 round=9
+00:13:30.227 OBS ARRIVE node=n2 round=9
+00:13:32.348 OBS ARRIVE node=n5 round=9
+00:13:32.592 OBS ARRIVE node=n3 round=9
+00:13:32.884 OBS ARRIVE node=n4 round=9
+00:13:32.894 OBS PASS node=n4 round=9
+00:13:32.895 OBS PASS node=n1 round=9
+00:13:32.896 OBS PASS node=n2 round=9
+00:13:32.897 OBS PASS node=n5 round=9
+00:13:32.897 OBS PASS node=n3 round=9
+00:13:32.904 OBS BEGIN node=n4 request_id=c4-9 active=1
+00:13:33.292 OBS END node=n4 request_id=c4-9 active=0
+00:13:33.299 OBS LEAVE_READY node=n4 round=9
+00:13:33.301 OBS BEGIN node=n1 request_id=c1-9 active=1
+00:13:33.607 OBS END node=n1 request_id=c1-9 active=0
+00:13:33.614 OBS LEAVE_READY node=n1 round=9
+00:13:33.617 OBS BEGIN node=n2 request_id=c2-9 active=1
+00:13:33.853 OBS END node=n2 request_id=c2-9 active=0
+00:13:33.860 OBS LEAVE_READY node=n2 round=9
+00:13:33.863 OBS BEGIN node=n5 request_id=c5-9 active=1
+00:13:34.178 OBS END node=n5 request_id=c5-9 active=0
+00:13:34.185 OBS LEAVE_READY node=n5 round=9
+00:13:34.188 OBS BEGIN node=n3 request_id=c3-9 active=1
+00:13:34.916 OBS END node=n3 request_id=c3-9 active=0
+00:13:34.948 OBS LEAVE_READY node=n3 round=9
+00:13:34.971 OBS LEFT node=n3 round=9
+00:13:34.979 OBS LEFT node=n1 round=9
+00:13:34.987 OBS LEFT node=n5 round=9
+00:13:34.995 OBS LEFT node=n2 round=9
+00:13:35.011 OBS LEFT node=n4 round=9
+00:13:35.207 OBS ARRIVE node=n1 round=10
+00:13:35.619 OBS ARRIVE node=n4 round=10
+00:13:37.295 OBS ARRIVE node=n2 round=10
+00:13:38.027 OBS ARRIVE node=n3 round=10
+00:13:39.065 OBS ARRIVE node=n5 round=10
+00:13:39.077 OBS PASS node=n5 round=10
+00:13:39.077 OBS PASS node=n1 round=10
+00:13:39.078 OBS PASS node=n3 round=10
+00:13:39.078 OBS PASS node=n2 round=10
+00:13:39.078 OBS PASS node=n4 round=10
+00:13:39.085 OBS BEGIN node=n5 request_id=c5-10 active=1
+00:13:39.684 OBS END node=n5 request_id=c5-10 active=0
+00:13:39.690 OBS LEAVE_READY node=n5 round=10
+00:13:39.692 OBS BEGIN node=n1 request_id=c1-10 active=1
+00:13:39.912 OBS END node=n1 request_id=c1-10 active=0
+00:13:39.921 OBS LEAVE_READY node=n1 round=10
+00:13:39.922 OBS BEGIN node=n3 request_id=c3-10 active=1
+00:13:40.312 OBS END node=n3 request_id=c3-10 active=0
+00:13:40.320 OBS LEAVE_READY node=n3 round=10
+00:13:40.323 OBS BEGIN node=n2 request_id=c2-10 active=1
+00:13:41.222 OBS END node=n2 request_id=c2-10 active=0
+00:13:41.229 OBS LEAVE_READY node=n2 round=10
+00:13:41.232 OBS BEGIN node=n4 request_id=c4-10 active=1
+00:13:41.540 OBS END node=n4 request_id=c4-10 active=0
+00:13:41.548 OBS LEAVE_READY node=n4 round=10
+00:13:41.560 OBS LEFT node=n3 round=10
+00:13:41.562 OBS LEFT node=n4 round=10
+00:13:41.563 OBS LEFT node=n2 round=10
+00:13:41.563 OBS LEFT node=n1 round=10
+00:13:41.564 OBS LEFT node=n5 round=10
+00:13:41.572 OBS SUMMARY status=OK completed=50 expected=50 total_s=61.652 median_wait_ms=1088.500 p95_wait_ms=2942.000 max_active=1 overlaps=0 barrier_violations=0 protocol_violations=0 per_client=c1=10;c2=10;c3=10;c4=10;c5=10

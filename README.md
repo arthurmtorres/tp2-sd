@@ -47,8 +47,8 @@ A barreira exige que todos os participantes cheguem em cada rodada; por isso só
 - **Exclusão mútua**: `max_active` deve ser 1 e `overlaps = 0` (no `nosync` deve ser > 1).
 - **Barreira de entrada**: ninguém passa/inicia a rodada *r* antes de todos terem chegado.
 - **Barreira de saída**: ninguém chega à rodada *r+1* antes de todos terminarem a rodada *r*.
-- **Conclusão**: `completed == expected`.
-- Códigos de saída: `0` ok · `2` violação · `3` incompleto.
+- **Conclusão**: `completed == expected`, com pedidos únicos e nenhum pedido ativo.
+- Códigos do observador: `0` ok · `2` violação · `3` incompleto · `4` erro de CSV. O script retorna `0` quando o resultado corresponde ao cenário, inclusive `nosync`, e falha para resultados inesperados.
 
 As mensagens do observador são síncronas (o nó espera o `OK`), então a ordem causal dos eventos é preservada sem comparar relógios físicos. A espera de aquisição é medida no próprio nó com `System.nanoTime()`.
 
@@ -66,5 +66,26 @@ O `InterProcessMutex` é reentrante por thread e cooperativo: só vale se todos 
 - Sem falhas, quedas ou perda de mensagens; ZooKeeper com 1 servidor. Não tratamos perda de sessão nem *fencing tokens* (apenas logamos `ZK_STATE`).
 - Ordem de atendimento = ordem de criação dos znodes no ZooKeeper, **não** a ordem de Lamport dos clientes.
 - Timeouts de 120 s no mutex e na barreira; se um participante não chegar, a execução aborta.
-- Mensagens por entrada **não** são instrumentadas (uma chamada Curator gera várias requisições ao ZooKeeper); o custo é discutido teoricamente e comparado via tempo/vazão. Mensagens do observador devem ser contadas à parte.
+- Mensagens por entrada **não** são instrumentadas (uma chamada Curator gera várias requisições ao ZooKeeper); o custo é discutido teoricamente e comparado sem usar tempo ou vazão como substitutos de contagem de mensagens. Mensagens do observador devem ser contadas à parte.
 - Ausência de starvation em execução curta é observação, não prova.
+
+
+## Correções desta versão
+
+- O observador valida IDs de nós (`n1` a `nN`), pedidos ativos e concluídos e a sequência das rodadas. Eventos duplicados ou inconsistentes recebem `ERROR` e entram no total de violações de protocolo. `OK` confirma somente o registro, sem autorizar acesso.
+- A barreira registra `LEAVE_READY` antes de `leave()` e `LEFT` depois. O observador exige que todos tenham terminado antes de qualquer `LEFT`, inclusive na última rodada.
+- Mediana para número par de amostras usa a média dos valores centrais. O CSV usa ponto decimal independentemente da localidade.
+- Cada execução salva `manifest.txt` e `summary.csv` em sua pasta de logs. O resumo acumulado inclui `run_id`, que identifica o manifesto.
+- O script valida pedidos entre 10 e 50. `UNEQUAL_REQ` configura o cliente mais ativo, limitado a 50. O padrão continua sendo quatro vezes `REQ`, limitado a 50.
+- `TIMEOUT` envolve toda a execução. Falhas de clientes e nós são consideradas. A limpeza encerra os processos iniciados. A bateria retorna falha se algum cenário não corresponder ao esperado.
+- O teste `nosync` passa somente com pedidos concluídos, sobreposição detectada e ausência de violações de barreira ou protocolo.
+
+### Regressões do observador
+
+Depois de compilar, execute `python3 tests/test_observer.py` (Python 3 e Java no PATH). O teste exercita TCP real e cobre mediana, localidade portuguesa, END sem BEGIN, duplicações, sobreposição e barreira dupla, incluindo saída prematura na última rodada.
+
+### Execução dos scripts
+
+Use `bash scripts/run.sh normal 1` ou `bash scripts/run_all.sh`. Em Linux com os scripts executáveis, a chamada direta também funciona. A opção `USE_DOCKER=1` exige suporte a rede host no Docker. As validações desta versão executaram JVMs independentes dentro de um contêiner de teste, conectadas por TCP a um ZooKeeper separado.
+
+Não use resultados de versões anteriores no mesmo CSV acumulado, pois o cabeçalho mudou. Arquive o CSV antigo antes de iniciar uma nova bateria.

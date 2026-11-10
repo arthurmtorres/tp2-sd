@@ -128,8 +128,10 @@ public class SyncNode {
             Util.log(id, "COMMITTED", "request_id=" + r.id());
 
             if (barrier) {
+                obs.send("LEAVE_READY " + id + " " + round);
                 if (!bar.leave(TIMEOUT_S, TimeUnit.SECONDS))
                     throw new IllegalStateException("Timeout na saída da barreira, rodada " + round);
+                obs.send("LEFT " + id + " " + round);
                 Util.log(id, "BARRIER_LEFT", "round=" + round);
             }
         }
@@ -151,6 +153,6 @@ public class SyncNode {
                 if (p[0].equals("REQUEST")) queue.put(new Req(p[1], out));
                 else if (p[0].equals("BYE")) { queue.put(POISON); break; }
             }
-        } catch (Exception ignored) { /* conexão encerrada */ }
+        } catch (Exception e) { Util.log("SYNC", "CLIENT_ERROR", e.toString()); }
     }
 }

@@ -1,0 +1,93 @@
+00:12:34.772 n4 ZK_STATE CONNECTED
+00:12:34.858 n4 READY port=7004 sync=true barrier=true participants=5
+00:12:40.801 n4 REQUEST request_id=c4-1 round=1
+00:12:40.807 n4 BARRIER_ENTER_WAIT round=1
+00:12:40.913 n4 BARRIER_PASSED round=1
+00:12:41.914 n4 ACQUIRE request_id=c4-1 wait_ms=986 holder_znode=_c_4760922d-1271-4cf5-a7e5-78d3f188ea54-lock-0000000001 queue_size=4
+00:12:41.921 n4 ENTER request_id=c4-1
+00:12:42.261 n4 EXIT request_id=c4-1
+00:12:42.280 n4 RELEASE request_id=c4-1
+00:12:42.281 n4 COMMITTED request_id=c4-1
+00:12:44.136 n4 BARRIER_LEFT round=1
+00:12:45.957 n4 REQUEST request_id=c4-2 round=2
+00:12:45.961 n4 BARRIER_ENTER_WAIT round=2
+00:12:48.544 n4 BARRIER_PASSED round=2
+00:12:50.623 n4 ACQUIRE request_id=c4-2 wait_ms=2073 holder_znode=_c_663eb66e-1628-43c2-b0e0-8e8f74018e71-lock-0000000008 queue_size=2
+00:12:50.625 n4 ENTER request_id=c4-2
+00:12:51.393 n4 EXIT request_id=c4-2
+00:12:51.422 n4 RELEASE request_id=c4-2
+00:12:51.430 n4 COMMITTED request_id=c4-2
+00:12:51.923 n4 BARRIER_LEFT round=2
+00:12:52.984 n4 REQUEST request_id=c4-3 round=3
+00:12:53.005 n4 BARRIER_ENTER_WAIT round=3
+00:12:54.062 n4 BARRIER_PASSED round=3
+00:12:54.404 n4 ACQUIRE request_id=c4-3 wait_ms=339 holder_znode=_c_d63434dc-21cc-47ec-a03b-453c130186e9-lock-0000000011 queue_size=4
+00:12:54.408 n4 ENTER request_id=c4-3
+00:12:54.634 n4 EXIT request_id=c4-3
+00:12:54.643 n4 RELEASE request_id=c4-3
+00:12:54.645 n4 COMMITTED request_id=c4-3
+00:12:57.593 n4 BARRIER_LEFT round=3
+00:12:58.711 n4 REQUEST request_id=c4-4 round=4
+00:12:58.714 n4 BARRIER_ENTER_WAIT round=4
+00:13:02.425 n4 BARRIER_PASSED round=4
+00:13:04.006 n4 ACQUIRE request_id=c4-4 wait_ms=1561 holder_znode=_c_7fe01cb5-4f3b-4960-88ca-90177134b928-lock-0000000017 queue_size=3
+00:13:04.009 n4 ENTER request_id=c4-4
+00:13:04.645 n4 EXIT request_id=c4-4
+00:13:04.652 n4 RELEASE request_id=c4-4
+00:13:04.654 n4 COMMITTED request_id=c4-4
+00:13:06.136 n4 BARRIER_LEFT round=4
+00:13:09.460 n4 REQUEST request_id=c4-5 round=5
+00:13:09.463 n4 BARRIER_ENTER_WAIT round=5
+00:13:09.484 n4 BARRIER_PASSED round=5
+00:13:10.419 n4 ACQUIRE request_id=c4-5 wait_ms=932 holder_znode=_c_2feef83d-d83a-47d0-8995-2eca7fdbd5ed-lock-0000000021 queue_size=4
+00:13:10.446 n4 ENTER request_id=c4-5
+00:13:11.152 n4 EXIT request_id=c4-5
+00:13:11.205 n4 RELEASE request_id=c4-5
+00:13:11.231 n4 COMMITTED request_id=c4-5
+00:13:13.346 n4 BARRIER_LEFT round=5
+00:13:14.681 n4 REQUEST request_id=c4-6 round=6
+00:13:14.732 n4 BARRIER_ENTER_WAIT round=6
+00:13:14.805 n4 BARRIER_PASSED round=6
+00:13:14.853 n4 ACQUIRE request_id=c4-6 wait_ms=5 holder_znode=_c_8f969ae5-b3ea-410d-86d4-168672fee3c0-lock-0000000025 queue_size=1
+00:13:14.873 n4 ENTER request_id=c4-6
+00:13:15.803 n4 EXIT request_id=c4-6
+00:13:15.844 n4 RELEASE request_id=c4-6
+00:13:15.855 n4 COMMITTED request_id=c4-6
+00:13:18.818 n4 BARRIER_LEFT round=6
+00:13:18.821 n4 REQUEST request_id=c4-7 round=7
+00:13:18.835 n4 BARRIER_ENTER_WAIT round=7
+00:13:21.287 n4 BARRIER_PASSED round=7
+00:13:23.652 n4 ACQUIRE request_id=c4-7 wait_ms=2363 holder_znode=_c_6ab50ba8-56ec-4f01-be53-38b801ad0ec7-lock-0000000033 queue_size=2
+00:13:23.653 n4 ENTER request_id=c4-7
+00:13:24.267 n4 EXIT request_id=c4-7
+00:13:24.294 n4 RELEASE request_id=c4-7
+00:13:24.295 n4 COMMITTED request_id=c4-7
+00:13:24.529 n4 BARRIER_LEFT round=7
+00:13:27.214 n4 REQUEST request_id=c4-8 round=8
+00:13:27.220 n4 BARRIER_ENTER_WAIT round=8
+00:13:27.267 n4 BARRIER_PASSED round=8
+00:13:27.936 n4 ACQUIRE request_id=c4-8 wait_ms=1505 holder_znode=_c_db267a99-0bdb-4a7a-8fd8-9ec83816e539-lock-0000000038 queue_size=2
+00:13:27.948 n4 ENTER request_id=c4-8
+00:13:28.430 n4 EXIT request_id=c4-8
+00:13:28.437 n4 RELEASE request_id=c4-8
+00:13:28.437 n4 COMMITTED request_id=c4-8
+00:13:28.811 n4 BARRIER_LEFT round=8
+00:13:32.883 n4 REQUEST request_id=c4-9 round=9
+00:13:32.884 n4 BARRIER_ENTER_WAIT round=9
+00:13:32.895 n4 BARRIER_PASSED round=9
+00:13:32.903 n4 ACQUIRE request_id=c4-9 wait_ms=5 holder_znode=_c_1a7e04b6-50c3-4ee6-926c-e4d255901879-lock-0000000040 queue_size=5
+00:13:32.904 n4 ENTER request_id=c4-9
+00:13:33.291 n4 EXIT request_id=c4-9
+00:13:33.297 n4 RELEASE request_id=c4-9
+00:13:33.298 n4 COMMITTED request_id=c4-9
+00:13:35.021 n4 BARRIER_LEFT round=9
+00:13:35.618 n4 REQUEST request_id=c4-10 round=10
+00:13:35.620 n4 BARRIER_ENTER_WAIT round=10
+00:13:39.079 n4 BARRIER_PASSED round=10
+00:13:41.231 n4 ACQUIRE request_id=c4-10 wait_ms=2150 holder_znode=_c_db080ecd-5ebd-42dc-90e7-9ea59e2f4208-lock-0000000049 queue_size=1
+00:13:41.232 n4 ENTER request_id=c4-10
+00:13:41.539 n4 EXIT request_id=c4-10
+00:13:41.546 n4 RELEASE request_id=c4-10
+00:13:41.547 n4 COMMITTED request_id=c4-10
+00:13:41.563 n4 BARRIER_LEFT round=10
+00:13:41.565 n4 DONE rounds=10

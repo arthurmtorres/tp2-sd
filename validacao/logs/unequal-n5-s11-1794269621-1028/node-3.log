@@ -1,0 +1,63 @@
+00:13:42.232 n3 ZK_STATE CONNECTED
+00:13:42.282 n3 READY port=7003 sync=true barrier=false participants=5
+00:13:48.456 n3 REQUEST request_id=c3-1 round=1
+00:13:49.540 n3 ACQUIRE request_id=c3-1 wait_ms=1065 holder_znode=_c_70dc1941-55fc-42bb-9c0d-8d2671b5ff4f-lock-0000000001 queue_size=4
+00:13:49.544 n3 ENTER request_id=c3-1
+00:13:50.292 n3 EXIT request_id=c3-1
+00:13:50.310 n3 RELEASE request_id=c3-1
+00:13:50.311 n3 COMMITTED request_id=c3-1
+00:13:53.005 n3 REQUEST request_id=c3-2 round=2
+00:13:54.193 n3 ACQUIRE request_id=c3-2 wait_ms=1185 holder_znode=_c_a6fa9f89-59e4-4b58-8bda-9647da83ffd1-lock-0000000009 queue_size=1
+00:13:54.194 n3 ENTER request_id=c3-2
+00:13:54.785 n3 EXIT request_id=c3-2
+00:13:54.792 n3 RELEASE request_id=c3-2
+00:13:54.794 n3 COMMITTED request_id=c3-2
+00:13:58.378 n3 REQUEST request_id=c3-3 round=3
+00:13:58.852 n3 ACQUIRE request_id=c3-3 wait_ms=472 holder_znode=_c_cae20953-281a-43f6-a02e-9f819816eb23-lock-0000000018 queue_size=1
+00:13:58.854 n3 ENTER request_id=c3-3
+00:13:59.843 n3 EXIT request_id=c3-3
+00:13:59.855 n3 RELEASE request_id=c3-3
+00:13:59.855 n3 COMMITTED request_id=c3-3
+00:14:04.780 n3 REQUEST request_id=c3-4 round=4
+00:14:05.978 n3 ACQUIRE request_id=c3-4 wait_ms=1195 holder_znode=_c_9c5c585d-5408-42d9-a257-27594a1d8104-lock-0000000030 queue_size=2
+00:14:05.981 n3 ENTER request_id=c3-4
+00:14:06.654 n3 EXIT request_id=c3-4
+00:14:06.661 n3 RELEASE request_id=c3-4
+00:14:06.662 n3 COMMITTED request_id=c3-4
+00:14:08.256 n3 REQUEST request_id=c3-5 round=5
+00:14:10.107 n3 ACQUIRE request_id=c3-5 wait_ms=1849 holder_znode=_c_5a39f578-f75b-4342-9740-c69fc376afee-lock-0000000036 queue_size=1
+00:14:10.109 n3 ENTER request_id=c3-5
+00:14:10.960 n3 EXIT request_id=c3-5
+00:14:10.981 n3 RELEASE request_id=c3-5
+00:14:10.981 n3 COMMITTED request_id=c3-5
+00:14:14.326 n3 REQUEST request_id=c3-6 round=6
+00:14:14.729 n3 ACQUIRE request_id=c3-6 wait_ms=401 holder_znode=_c_cedb8f4c-4860-4a51-9ec7-148349cf06d4-lock-0000000043 queue_size=1
+00:14:14.731 n3 ENTER request_id=c3-6
+00:14:15.703 n3 EXIT request_id=c3-6
+00:14:15.719 n3 RELEASE request_id=c3-6
+00:14:15.720 n3 COMMITTED request_id=c3-6
+00:14:18.272 n3 REQUEST request_id=c3-7 round=7
+00:14:19.114 n3 ACQUIRE request_id=c3-7 wait_ms=839 holder_znode=_c_018c5393-c333-45f7-be3e-dd37875e3d59-lock-0000000049 queue_size=2
+00:14:19.115 n3 ENTER request_id=c3-7
+00:14:19.320 n3 EXIT request_id=c3-7
+00:14:19.327 n3 RELEASE request_id=c3-7
+00:14:19.327 n3 COMMITTED request_id=c3-7
+00:14:21.557 n3 REQUEST request_id=c3-8 round=8
+00:14:22.778 n3 ACQUIRE request_id=c3-8 wait_ms=1218 holder_znode=_c_bbda899f-81a4-4ae9-a87e-ca70dc0c5ef3-lock-0000000055 queue_size=3
+00:14:22.780 n3 ENTER request_id=c3-8
+00:14:23.115 n3 EXIT request_id=c3-8
+00:14:23.123 n3 RELEASE request_id=c3-8
+00:14:23.123 n3 COMMITTED request_id=c3-8
+00:14:26.161 n3 REQUEST request_id=c3-9 round=9
+00:14:26.548 n3 ACQUIRE request_id=c3-9 wait_ms=383 holder_znode=_c_d77f4b6b-bcbc-43a6-aac5-581459fbf197-lock-0000000064 queue_size=1
+00:14:26.549 n3 ENTER request_id=c3-9
+00:14:27.263 n3 EXIT request_id=c3-9
+00:14:27.269 n3 RELEASE request_id=c3-9
+00:14:27.269 n3 COMMITTED request_id=c3-9
+00:14:30.340 n3 REQUEST request_id=c3-10 round=10
+00:14:30.934 n3 ACQUIRE request_id=c3-10 wait_ms=590 holder_znode=_c_170af796-d5f4-4168-927e-53ce2b0dc5d1-lock-0000000071 queue_size=3
+00:14:30.935 n3 ENTER request_id=c3-10
+00:14:31.325 n3 EXIT request_id=c3-10
+00:14:31.333 n3 RELEASE request_id=c3-10
+00:14:31.333 n3 COMMITTED request_id=c3-10
+00:14:31.335 n3 DONE rounds=10

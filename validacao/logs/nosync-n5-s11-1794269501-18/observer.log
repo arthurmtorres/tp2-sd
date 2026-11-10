@@ -1,0 +1,151 @@
+00:11:41.817 OBS LISTENING nodes=5 barrier=false
+00:11:49.713 OBS BEGIN node=n5 request_id=c5-1 active=1
+00:11:49.717 OBS VIOLATION_OVERLAP request_id=c3-1 active=2
+00:11:49.721 OBS BEGIN node=n3 request_id=c3-1 active=2
+00:11:49.722 OBS VIOLATION_OVERLAP request_id=c4-1 active=3
+00:11:49.722 OBS BEGIN node=n4 request_id=c4-1 active=3
+00:11:49.723 OBS VIOLATION_OVERLAP request_id=c2-1 active=4
+00:11:49.724 OBS BEGIN node=n2 request_id=c2-1 active=4
+00:11:49.939 OBS END node=n5 request_id=c5-1 active=3
+00:11:49.948 OBS VIOLATION_OVERLAP request_id=c5-2 active=4
+00:11:49.949 OBS BEGIN node=n5 request_id=c5-2 active=4
+00:11:50.068 OBS END node=n4 request_id=c4-1 active=3
+00:11:50.077 OBS VIOLATION_OVERLAP request_id=c4-2 active=4
+00:11:50.078 OBS BEGIN node=n4 request_id=c4-2 active=4
+00:11:50.464 OBS END node=n3 request_id=c3-1 active=3
+00:11:50.475 OBS VIOLATION_OVERLAP request_id=c3-2 active=4
+00:11:50.476 OBS BEGIN node=n3 request_id=c3-2 active=4
+00:11:50.602 OBS END node=n2 request_id=c2-1 active=3
+00:11:50.619 OBS VIOLATION_OVERLAP request_id=c2-2 active=4
+00:11:50.619 OBS BEGIN node=n2 request_id=c2-2 active=4
+00:11:50.836 OBS END node=n4 request_id=c4-2 active=3
+00:11:50.841 OBS VIOLATION_OVERLAP request_id=c4-3 active=4
+00:11:50.842 OBS BEGIN node=n4 request_id=c4-3 active=4
+00:11:50.901 OBS VIOLATION_OVERLAP request_id=c1-1 active=5
+00:11:50.901 OBS BEGIN node=n1 request_id=c1-1 active=5
+00:11:50.920 OBS END node=n5 request_id=c5-2 active=4
+00:11:50.924 OBS VIOLATION_OVERLAP request_id=c5-3 active=5
+00:11:50.924 OBS BEGIN node=n5 request_id=c5-3 active=5
+00:11:51.005 OBS END node=n2 request_id=c2-2 active=4
+00:11:51.008 OBS VIOLATION_OVERLAP request_id=c2-3 active=5
+00:11:51.008 OBS BEGIN node=n2 request_id=c2-3 active=5
+00:11:51.073 OBS END node=n4 request_id=c4-3 active=4
+00:11:51.079 OBS END node=n3 request_id=c3-2 active=3
+00:11:51.081 OBS VIOLATION_OVERLAP request_id=c4-4 active=4
+00:11:51.082 OBS BEGIN node=n4 request_id=c4-4 active=4
+00:11:51.087 OBS VIOLATION_OVERLAP request_id=c3-3 active=5
+00:11:51.090 OBS BEGIN node=n3 request_id=c3-3 active=5
+00:11:51.225 OBS END node=n5 request_id=c5-3 active=4
+00:11:51.234 OBS VIOLATION_OVERLAP request_id=c5-4 active=5
+00:11:51.234 OBS BEGIN node=n5 request_id=c5-4 active=5
+00:11:51.660 OBS END node=n1 request_id=c1-1 active=4
+00:11:51.673 OBS VIOLATION_OVERLAP request_id=c1-2 active=5
+00:11:51.674 OBS BEGIN node=n1 request_id=c1-2 active=5
+00:11:51.717 OBS END node=n4 request_id=c4-4 active=4
+00:11:51.729 OBS VIOLATION_OVERLAP request_id=c4-5 active=5
+00:11:51.730 OBS BEGIN node=n4 request_id=c4-5 active=5
+00:11:51.805 OBS END node=n5 request_id=c5-4 active=4
+00:11:51.812 OBS VIOLATION_OVERLAP request_id=c5-5 active=5
+00:11:51.813 OBS BEGIN node=n5 request_id=c5-5 active=5
+00:11:51.937 OBS END node=n2 request_id=c2-3 active=4
+00:11:51.944 OBS VIOLATION_OVERLAP request_id=c2-4 active=5
+00:11:51.945 OBS BEGIN node=n2 request_id=c2-4 active=5
+00:11:52.043 OBS END node=n1 request_id=c1-2 active=4
+00:11:52.050 OBS VIOLATION_OVERLAP request_id=c1-3 active=5
+00:11:52.050 OBS BEGIN node=n1 request_id=c1-3 active=5
+00:11:52.092 OBS END node=n3 request_id=c3-3 active=4
+00:11:52.104 OBS VIOLATION_OVERLAP request_id=c3-4 active=5
+00:11:52.108 OBS BEGIN node=n3 request_id=c3-4 active=5
+00:11:52.420 OBS END node=n4 request_id=c4-5 active=4
+00:11:52.431 OBS VIOLATION_OVERLAP request_id=c4-6 active=5
+00:11:52.435 OBS BEGIN node=n4 request_id=c4-6 active=5
+00:11:52.488 OBS END node=n5 request_id=c5-5 active=4
+00:11:52.495 OBS VIOLATION_OVERLAP request_id=c5-6 active=5
+00:11:52.496 OBS BEGIN node=n5 request_id=c5-6 active=5
+00:11:52.690 OBS END node=n2 request_id=c2-4 active=4
+00:11:52.710 OBS VIOLATION_OVERLAP request_id=c2-5 active=5
+00:11:52.711 OBS BEGIN node=n2 request_id=c2-5 active=5
+00:11:52.789 OBS END node=n3 request_id=c3-4 active=4
+00:11:52.799 OBS VIOLATION_OVERLAP request_id=c3-5 active=5
+00:11:52.800 OBS BEGIN node=n3 request_id=c3-5 active=5
+00:11:52.870 OBS END node=n1 request_id=c1-3 active=4
+00:11:52.882 OBS VIOLATION_OVERLAP request_id=c1-4 active=5
+00:11:52.883 OBS BEGIN node=n1 request_id=c1-4 active=5
+00:11:53.334 OBS END node=n5 request_id=c5-6 active=4
+00:11:53.338 OBS VIOLATION_OVERLAP request_id=c5-7 active=5
+00:11:53.339 OBS BEGIN node=n5 request_id=c5-7 active=5
+00:11:53.347 OBS END node=n2 request_id=c2-5 active=4
+00:11:53.356 OBS VIOLATION_OVERLAP request_id=c2-6 active=5
+00:11:53.359 OBS BEGIN node=n2 request_id=c2-6 active=5
+00:11:53.360 OBS END node=n4 request_id=c4-6 active=4
+00:11:53.371 OBS VIOLATION_OVERLAP request_id=c4-7 active=5
+00:11:53.373 OBS BEGIN node=n4 request_id=c4-7 active=5
+00:11:53.656 OBS END node=n3 request_id=c3-5 active=4
+00:11:53.663 OBS VIOLATION_OVERLAP request_id=c3-6 active=5
+00:11:53.666 OBS BEGIN node=n3 request_id=c3-6 active=5
+00:11:53.727 OBS END node=n1 request_id=c1-4 active=4
+00:11:53.732 OBS VIOLATION_OVERLAP request_id=c1-5 active=5
+00:11:53.733 OBS BEGIN node=n1 request_id=c1-5 active=5
+00:11:53.865 OBS END node=n2 request_id=c2-6 active=4
+00:11:53.875 OBS VIOLATION_OVERLAP request_id=c2-7 active=5
+00:11:53.878 OBS BEGIN node=n2 request_id=c2-7 active=5
+00:11:54.000 OBS END node=n4 request_id=c4-7 active=4
+00:11:54.002 OBS VIOLATION_OVERLAP request_id=c4-8 active=5
+00:11:54.002 OBS BEGIN node=n4 request_id=c4-8 active=5
+00:11:54.009 OBS END node=n1 request_id=c1-5 active=4
+00:11:54.017 OBS VIOLATION_OVERLAP request_id=c1-6 active=5
+00:11:54.019 OBS BEGIN node=n1 request_id=c1-6 active=5
+00:11:54.248 OBS END node=n5 request_id=c5-7 active=4
+00:11:54.256 OBS VIOLATION_OVERLAP request_id=c5-8 active=5
+00:11:54.257 OBS BEGIN node=n5 request_id=c5-8 active=5
+00:11:54.332 OBS END node=n1 request_id=c1-6 active=4
+00:11:54.346 OBS VIOLATION_OVERLAP request_id=c1-7 active=5
+00:11:54.346 OBS BEGIN node=n1 request_id=c1-7 active=5
+00:11:54.491 OBS END node=n4 request_id=c4-8 active=4
+00:11:54.499 OBS VIOLATION_OVERLAP request_id=c4-9 active=5
+00:11:54.501 OBS BEGIN node=n4 request_id=c4-9 active=5
+00:11:54.613 OBS END node=n5 request_id=c5-8 active=4
+00:11:54.618 OBS VIOLATION_OVERLAP request_id=c5-9 active=5
+00:11:54.620 OBS BEGIN node=n5 request_id=c5-9 active=5
+00:11:54.642 OBS END node=n3 request_id=c3-6 active=4
+00:11:54.648 OBS VIOLATION_OVERLAP request_id=c3-7 active=5
+00:11:54.649 OBS BEGIN node=n3 request_id=c3-7 active=5
+00:11:54.803 OBS END node=n1 request_id=c1-7 active=4
+00:11:54.807 OBS VIOLATION_OVERLAP request_id=c1-8 active=5
+00:11:54.808 OBS BEGIN node=n1 request_id=c1-8 active=5
+00:11:54.840 OBS END node=n2 request_id=c2-7 active=4
+00:11:54.844 OBS VIOLATION_OVERLAP request_id=c2-8 active=5
+00:11:54.844 OBS BEGIN node=n2 request_id=c2-8 active=5
+00:11:54.856 OBS END node=n3 request_id=c3-7 active=4
+00:11:54.861 OBS VIOLATION_OVERLAP request_id=c3-8 active=5
+00:11:54.861 OBS BEGIN node=n3 request_id=c3-8 active=5
+00:11:54.896 OBS END node=n4 request_id=c4-9 active=4
+00:11:54.901 OBS VIOLATION_OVERLAP request_id=c4-10 active=5
+00:11:54.901 OBS BEGIN node=n4 request_id=c4-10 active=5
+00:11:54.934 OBS END node=n5 request_id=c5-9 active=4
+00:11:54.942 OBS VIOLATION_OVERLAP request_id=c5-10 active=5
+00:11:54.942 OBS BEGIN node=n5 request_id=c5-10 active=5
+00:11:55.198 OBS END node=n3 request_id=c3-8 active=4
+00:11:55.202 OBS VIOLATION_OVERLAP request_id=c3-9 active=5
+00:11:55.203 OBS BEGIN node=n3 request_id=c3-9 active=5
+00:11:55.206 OBS END node=n4 request_id=c4-10 active=4
+00:11:55.312 OBS END node=n2 request_id=c2-8 active=3
+00:11:55.316 OBS VIOLATION_OVERLAP request_id=c2-9 active=4
+00:11:55.316 OBS BEGIN node=n2 request_id=c2-9 active=4
+00:11:55.432 OBS END node=n1 request_id=c1-8 active=3
+00:11:55.438 OBS VIOLATION_OVERLAP request_id=c1-9 active=4
+00:11:55.438 OBS BEGIN node=n1 request_id=c1-9 active=4
+00:11:55.550 OBS END node=n5 request_id=c5-10 active=3
+00:11:55.553 OBS END node=n2 request_id=c2-9 active=2
+00:11:55.557 OBS VIOLATION_OVERLAP request_id=c2-10 active=3
+00:11:55.558 OBS BEGIN node=n2 request_id=c2-10 active=3
+00:11:55.745 OBS END node=n1 request_id=c1-9 active=2
+00:11:55.752 OBS VIOLATION_OVERLAP request_id=c1-10 active=3
+00:11:55.752 OBS BEGIN node=n1 request_id=c1-10 active=3
+00:11:55.921 OBS END node=n3 request_id=c3-9 active=2
+00:11:55.931 OBS VIOLATION_OVERLAP request_id=c3-10 active=3
+00:11:55.933 OBS BEGIN node=n3 request_id=c3-10 active=3
+00:11:55.975 OBS END node=n1 request_id=c1-10 active=2
+00:11:56.327 OBS END node=n3 request_id=c3-10 active=1
+00:11:56.458 OBS END node=n2 request_id=c2-10 active=0
+00:11:56.474 OBS SUMMARY status=VIOLACAO completed=50 expected=50 total_s=6.749 median_wait_ms=0.000 p95_wait_ms=0.000 max_active=5 overlaps=49 barrier_violations=0 protocol_violations=0 per_client=c1=10;c2=10;c3=10;c4=10;c5=10

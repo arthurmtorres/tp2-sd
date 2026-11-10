@@ -1,0 +1,6 @@
+run_id,scenario,seed,nodes,expected,completed,total_s,median_wait_ms,p95_wait_ms,throughput_per_s,max_active,overlaps,barrier_violations,protocol_violations,status,per_client
+barrier-n5-s11-1794269552-692,barrier,11,5,50,50,61.652,1088.500,2942.000,0.811,1,0,0,0,OK,c1=10;c2=10;c3=10;c4=10;c5=10
+contention-n5-s11-1794269516-349,contention,11,5,50,50,30.195,2441.000,3089.000,1.656,1,0,0,0,OK,c1=10;c2=10;c3=10;c4=10;c5=10
+normal-n5-s11-1794269677-1363,normal,11,5,50,50,39.850,43.500,1686.000,1.255,1,0,0,0,OK,c1=10;c2=10;c3=10;c4=10;c5=10
+nosync-n5-s11-1794269501-18,nosync,11,5,50,50,6.749,0.000,0.000,7.408,5,49,0,0,VIOLACAO,c1=10;c2=10;c3=10;c4=10;c5=10
+unequal-n5-s11-1794269621-1028,unequal,11,5,80,80,50.410,723.500,1849.000,1.587,1,0,0,0,OK,c1=40;c2=10;c3=10;c4=10;c5=10

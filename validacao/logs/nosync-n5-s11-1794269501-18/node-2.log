@@ -1,0 +1,75 @@
+[main-SendThread(host.docker.internal:2181)] ERROR org.apache.zookeeper.ClientCnxnSocketNIO - Unable to open socket to host.docker.internal/[fdc4:f303:9324:0:0:0:0:254]:2181
+[main-SendThread(host.docker.internal:2181)] WARN org.apache.zookeeper.ClientCnxn - Session 0x0 for server host.docker.internal/[fdc4:f303:9324:0:0:0:0:254]:2181, Closing socket connection. Attempting reconnect except it is a SessionExpiredException.
+java.net.SocketException: Network is unreachable
+	at java.base/sun.nio.ch.Net.connect0(Native Method)
+	at java.base/sun.nio.ch.Net.connect(Net.java:591)
+	at java.base/sun.nio.ch.Net.connect(Net.java:598)
+	at java.base/sun.nio.ch.SocketChannelImpl.connect(SocketChannelImpl.java:853)
+	at org.apache.zookeeper.ClientCnxnSocketNIO.registerAndConnect(ClientCnxnSocketNIO.java:260)
+	at org.apache.zookeeper.ClientCnxnSocketNIO.connect(ClientCnxnSocketNIO.java:270)
+	at org.apache.zookeeper.ClientCnxn$SendThread.startConnect(ClientCnxn.java:1158)
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1192)
+[main-SendThread(host.docker.internal:2181)] ERROR org.apache.zookeeper.ClientCnxnSocketNIO - Unable to open socket to host.docker.internal/[fdc4:f303:9324:0:0:0:0:254]:2181
+[main-SendThread(host.docker.internal:2181)] WARN org.apache.zookeeper.ClientCnxn - Session 0x0 for server host.docker.internal/[fdc4:f303:9324:0:0:0:0:254]:2181, Closing socket connection. Attempting reconnect except it is a SessionExpiredException.
+java.net.SocketException: Network is unreachable
+	at java.base/sun.nio.ch.Net.connect0(Native Method)
+	at java.base/sun.nio.ch.Net.connect(Net.java:591)
+	at java.base/sun.nio.ch.Net.connect(Net.java:598)
+	at java.base/sun.nio.ch.SocketChannelImpl.connect(SocketChannelImpl.java:853)
+	at org.apache.zookeeper.ClientCnxnSocketNIO.registerAndConnect(ClientCnxnSocketNIO.java:260)
+	at org.apache.zookeeper.ClientCnxnSocketNIO.connect(ClientCnxnSocketNIO.java:270)
+	at org.apache.zookeeper.ClientCnxn$SendThread.startConnect(ClientCnxn.java:1158)
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1192)
+00:11:45.871 n2 ZK_STATE CONNECTED
+00:11:46.032 n2 READY port=7002 sync=false barrier=false participants=5
+00:11:49.705 n2 REQUEST request_id=c2-1 round=1
+00:11:49.711 n2 ACQUIRE request_id=c2-1 wait_ms=0
+00:11:49.725 n2 ENTER request_id=c2-1
+00:11:50.595 n2 EXIT request_id=c2-1
+00:11:50.604 n2 COMMITTED request_id=c2-1
+00:11:50.616 n2 REQUEST request_id=c2-2 round=2
+00:11:50.617 n2 ACQUIRE request_id=c2-2 wait_ms=0
+00:11:50.620 n2 ENTER request_id=c2-2
+00:11:51.003 n2 EXIT request_id=c2-2
+00:11:51.006 n2 COMMITTED request_id=c2-2
+00:11:51.007 n2 REQUEST request_id=c2-3 round=3
+00:11:51.007 n2 ACQUIRE request_id=c2-3 wait_ms=0
+00:11:51.014 n2 ENTER request_id=c2-3
+00:11:51.935 n2 EXIT request_id=c2-3
+00:11:51.938 n2 COMMITTED request_id=c2-3
+00:11:51.942 n2 REQUEST request_id=c2-4 round=4
+00:11:51.943 n2 ACQUIRE request_id=c2-4 wait_ms=0
+00:11:51.946 n2 ENTER request_id=c2-4
+00:11:52.685 n2 EXIT request_id=c2-4
+00:11:52.692 n2 COMMITTED request_id=c2-4
+00:11:52.699 n2 REQUEST request_id=c2-5 round=5
+00:11:52.702 n2 ACQUIRE request_id=c2-5 wait_ms=0
+00:11:52.714 n2 ENTER request_id=c2-5
+00:11:53.346 n2 EXIT request_id=c2-5
+00:11:53.348 n2 COMMITTED request_id=c2-5
+00:11:53.352 n2 REQUEST request_id=c2-6 round=6
+00:11:53.354 n2 ACQUIRE request_id=c2-6 wait_ms=0
+00:11:53.360 n2 ENTER request_id=c2-6
+00:11:53.864 n2 EXIT request_id=c2-6
+00:11:53.866 n2 COMMITTED request_id=c2-6
+00:11:53.874 n2 REQUEST request_id=c2-7 round=7
+00:11:53.875 n2 ACQUIRE request_id=c2-7 wait_ms=0
+00:11:53.882 n2 ENTER request_id=c2-7
+00:11:54.838 n2 EXIT request_id=c2-7
+00:11:54.840 n2 COMMITTED request_id=c2-7
+00:11:54.842 n2 REQUEST request_id=c2-8 round=8
+00:11:54.843 n2 ACQUIRE request_id=c2-8 wait_ms=0
+00:11:54.845 n2 ENTER request_id=c2-8
+00:11:55.310 n2 EXIT request_id=c2-8
+00:11:55.313 n2 COMMITTED request_id=c2-8
+00:11:55.314 n2 REQUEST request_id=c2-9 round=9
+00:11:55.315 n2 ACQUIRE request_id=c2-9 wait_ms=0
+00:11:55.317 n2 ENTER request_id=c2-9
+00:11:55.552 n2 EXIT request_id=c2-9
+00:11:55.554 n2 COMMITTED request_id=c2-9
+00:11:55.555 n2 REQUEST request_id=c2-10 round=10
+00:11:55.556 n2 ACQUIRE request_id=c2-10 wait_ms=0
+00:11:55.558 n2 ENTER request_id=c2-10
+00:11:56.457 n2 EXIT request_id=c2-10
+00:11:56.463 n2 COMMITTED request_id=c2-10
+00:11:56.465 n2 DONE rounds=10
