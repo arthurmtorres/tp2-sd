@@ -41,24 +41,79 @@ Se você já usou o Compose anterior, execute uma vez `docker compose down --rem
 
 O Compose fixa cinco pares cliente/nó. Para a comparação com dez nós e a bateria completa, use os scripts abaixo. No Linux, os contêineres usam UID/GID 1000 por padrão; se seu usuário tiver outros IDs, exporte `LOCAL_UID=$(id -u)` e `LOCAL_GID=$(id -g)` antes de iniciar.
 
-## Execução pelos scripts
+## Cenários nos contêineres do Compose
 
-Os scripts também executam **cada cliente, cada nó Sync e o observador em um contêiner separado por padrão**. Requisitos: Linux, Python **3.10+** e Docker. Eles usam `--network host`, preparado para Docker no Linux. Não é necessário instalar Java para executar os cenários dessa forma.
+Com os 12 contêineres ativos, escolha um comando abaixo. O segundo argumento é a semente aleatória; quando omitido, vale 1.
 
-Inicie **somente** a infraestrutura antes de usar os scripts:
+| Comando | O que verificar |
+| --- | --- |
+| `bash scripts/scenario.sh nosync 1` | Controle sem mutex: mais de um acesso ativo e sobreposição detectada; código esperado **2**. |
+| `bash scripts/scenario.sh normal 1` | 5 clientes × 10 pedidos, pausas de 1–5 s, sem sobreposição. |
+| `bash scripts/scenario.sh contention 1` | Clientes disparados conjuntamente; sem pausa entre pedidos; sleep de R preservado. |
+| `bash scripts/scenario.sh unequal 1` | c1 faz 40 pedidos sem pausa; os demais fazem 10 com pausas. |
+| `bash scripts/scenario.sh barrier 1` | 5 participantes, 10 rodadas, entrada/saída coletivas e mutex sobre R. |
 
-```bash
-docker compose up -d --wait zookeeper
-bash scripts/run.sh contention 1
+No `nosync`, a sobreposição é o resultado esperado: ela demonstra que o observador detecta acessos simultâneos. O resumo mostra **Sobreposição detectada (esperada)**, e o comando retorna 2 após conferir todos os pedidos. Nos cenários protegidos, espera-se código 0, máximo de um acesso ativo e zero sobreposições. Na barreira dupla, também devem ocorrer zero violações de rodada.
+
+Execute um cenário por vez e aguarde **VERIFICADO** antes do próximo. O script recusa uma segunda execução simultânea nos mesmos contêineres. Não é necessário dar `down` para repetir um cenário ou trocar a semente.
+
+## Resumo no terminal
+
+Ao final, as métricas aparecem em um quadro com uma informação por linha. Trecho do resumo de uma execução normal:
+
+```text
+RESUMO: Carga normal
+  Pedidos concluídos            : 50/50
+  Acessos ainda ativos          : 0
+  Tempo medido pelo observador  : 37,930 s
+  Tempo total do comando        : 41,315 s
+  Espera mediana pelo lock      : 247,827 ms
+  Vazão                         : 1,318 pedidos/s
+  Máximo de acessos simultâneos : 1
+  Sobreposições                 : 0
+  Violações da barreira         : 0
+
+>> VERIFICADO: 50/50 pedidos
 ```
 
-O terminal mostra o nome de cada contêiner iniciado e um comando `docker ps --filter name=...` para acompanhar somente os participantes daquela execução. Por padrão são 11 contêineres da aplicação e o ZooKeeper. Os contêineres dos scripts são removidos ao terminar. Para reutilizar os 12 contêineres do Compose entre cenários, use `scripts/scenario.sh`, descrito acima.
+Os valores acima são de uma execução; tempos e vazão variam. O quadro também inclui status, semente, nós finalizados, eventos inválidos, mensagens do observador, acessos por cliente e caminhos dos arquivos.
 
-Para executar explicitamente como processos Java locais, com Java **17** instalado: `USE_DOCKER=0 bash scripts/run.sh contention 1`. A mesma escolha vale para `scripts/run_all.sh`; a bateria usa contêineres por padrão.
+**A vírgula separa os decimais no terminal:** `1,801 pedidos/s` significa aproximadamente 1,8 pedido por segundo. A vazão é `pedidos concluídos ÷ tempo medido pelo observador`; por exemplo, 50 pedidos em 27,756 s correspondem a cerca de 1,801 pedidos/s. `50/50` é o total concluído em relação ao esperado.
 
-Os scripts exibem logs ao vivo, alinhados e com cores quando o terminal permite, e preservam `terminal.log` e os logs individuais sem cores. Cada cenário termina com a mesma conferência automática usada pelo Compose.
+A espera mediana mede o tempo para adquirir o lock, antes do sleep de R. O tempo do observador vai do primeiro BEGIN ao último END; o tempo total do comando inclui a inicialização dos participantes e a conferência. Os logs e arquivos CSV/JSON preservam os dados originais com precisão completa.
 
-Para recompilar e executar os testes automatizados, use Maven **3.9.9** e JDK 17 ou o contêiner de compilação:
+## Bateria completa e comparação de 5 e 10 nós
+
+`scenario.sh` reutiliza os cinco pares cliente/nó do Compose. A bateria usa `run_all.sh`, que cria contêineres temporários para cada execução e permite variar a quantidade de participantes. Se estiver usando os 12 contêineres, aguarde o cenário atual terminar e prepare somente o ZooKeeper para esse fluxo:
+
+```bash
+docker compose down --remove-orphans
+docker compose up -d --wait zookeeper
+bash scripts/run_all.sh
+```
+
+A bateria executa 11 experimentos: um controle sem mutex; três repetições de carga normal e três de alta contenção, com sementes 1, 2 e 3; uma barreira dupla; uma carga desigual; e duas execuções de contenção para comparar 5×20 com 10×10 pedidos. A comparação mantém o total de 100 pedidos e os mesmos limites da seção crítica.
+
+O código 2 do controle é aceito somente depois de conferir a conclusão, o recebimento dos COMMITTED e a sobreposição esperada. Qualquer falha de processo, log incompleto, timeout ou divergência interrompe a bateria. O término bem-sucedido retorna 0 e gera `results/battery.json` e `results/relatorio.md`.
+
+A bateria leva vários minutos. Para acompanhar todos os eventos ao vivo, use `LIVE=1 bash scripts/run_all.sh`.
+
+Também é possível executar a comparação manualmente, um comando por vez, com somente o ZooKeeper iniciado:
+
+```bash
+N=5 REQ=20 bash scripts/run.sh contention 1
+N=10 REQ=10 bash scripts/run.sh contention 1
+```
+
+Cada cliente, nó Sync e observador executa em seu próprio contêiner temporário. Esse fluxo usa `--network host` no Linux. O terminal informa os nomes e um comando `docker ps --filter name=...` para acompanhá-los; os contêineres são removidos ao terminar, e os logs permanecem no projeto.
+
+Para executar as JVMs localmente, com Java 17 instalado, use `USE_DOCKER=0 bash scripts/run.sh contention 1`. A mesma opção vale para `scripts/run_all.sh`.
+
+Depois da bateria, para voltar aos cenários nos 12 contêineres, execute `docker compose up -d` e use novamente `scripts/scenario.sh`.
+
+## Compilação e testes
+
+Para recompilar e executar os testes automatizados, use Maven 3.9.9 e JDK 17 locais ou o contêiner de compilação:
 
 ```bash
 bash scripts/build.sh
@@ -66,43 +121,32 @@ bash scripts/build.sh
 USE_DOCKER=1 bash scripts/build.sh
 ```
 
-A compilação executa os testes Java e as regressões dos scripts. Para repetir somente os testes dos scripts: `python3 scripts/test_scripts.py`. A compilação mantém sua escolha independente: `build.sh` usa JDK/Maven locais por padrão; `USE_DOCKER=1` usa o contêiner de compilação.
-
-## Cenários
-
-| Comando | O que verificar |
-| --- | --- |
-| `bash scripts/scenario.sh nosync 1` | Controle sem mutex: mais de um ativo e sobreposição detectada; código esperado **2**. |
-| `bash scripts/scenario.sh normal 1` | 5 clientes × 10 pedidos, pausas de 1–5 s, sem sobreposição. |
-| `bash scripts/scenario.sh contention 1` | Clientes disparados conjuntamente; sem pausa entre pedidos; sleep de R preservado. |
-| `bash scripts/scenario.sh unequal 1` | c1 faz 40 pedidos sem pausa; os demais fazem 10 com pausas. |
-| `bash scripts/scenario.sh barrier 1` | 5 participantes, 10 rodadas, entrada/saída coletivas e mutex sobre R. |
-| `bash scripts/run_all.sh` | Bateria completa, três repetições obrigatórias, extensão e comparação de escala. |
-
-Na bateria, o código 2 do controle é tratado como esperado **somente depois de verificar conclusão, recebimento dos COMMITTED e sobreposição**. Qualquer falha de processo, log incompleto, timeout ou divergência interrompe a bateria com erro. O término da bateria completa retorna 0.
-
-O cenário normal preserva os intervalos exigidos; a bateria leva vários minutos. Para acompanhar tudo em tempo real durante a bateria: `LIVE=1 bash scripts/run_all.sh`.
+A compilação executa os testes Java e as regressões dos scripts. Para repetir somente os testes dos scripts: `python3 scripts/test_scripts.py`. `build.sh` usa JDK/Maven locais por padrão; `USE_DOCKER=1` seleciona a compilação em contêiner.
 
 ## Parâmetros
 
 | Variável | Padrão | Significado |
 | --- | --- | --- |
-| `N` | 5 | Quantidade de nós e clientes; entre 5 e 20 nos experimentos acadêmicos. |
+| `N` | 5 | Quantidade de nós e clientes em `run.sh`; entre 5 e 20 nos experimentos acadêmicos. `scenario.sh` usa sempre os 5 pares do Compose. |
 | `REQ` | 10 | Pedidos por cliente, entre 10 e 50. No unequal, entre 10 e 12, pois c1 faz 4×REQ. |
-| `ZK` | localhost:2181 | Endereço do servidor ZooKeeper. |
+| `ZK` | localhost:2181 | Servidor ZooKeeper para `run.sh` e a bateria. `scenario.sh` usa `zookeeper:2181` na rede do Compose. |
+| `ZK_METRICS` | localhost:2181 | Endereço publicado do ZooKeeper para consultar contadores ao usar `scenario.sh`. |
 | `CS_MIN`, `CS_MAX` | 200, 1000 | Limites do sleep de R em ms; precisam permanecer entre 200 e 1000. |
 | `TIMEOUT` | 1800 | Prazo total em segundos, incluindo todos os processos; encerra os filhos ao falhar. |
 | `LIVE` | 1 | Use 0 para mostrar apenas resumo/erros e preservar os logs completos em disco. |
 | `NO_COLOR` | não definido | Se definido, desabilita cores. Redirecionamento para arquivo também não usa cores. |
-| `USE_DOCKER` | 1 (execução) | Cada JVM executa em um contêiner separado. Use 0 para processos Java locais. No `build.sh`, o padrão continua sendo 0. |
+| `USE_DOCKER` | 1 (execução) | Seleciona contêineres ou JVMs locais em `run.sh` e na bateria. No `build.sh`, o padrão é 0. `scenario.sh` executa sempre nos contêineres existentes do Compose. |
+| `LOCAL_UID`, `LOCAL_GID` | 1000, 1000 | Usuário e grupo dos contêineres do Compose; exporte antes de executar `docker compose up -d` se seus IDs forem diferentes. |
 | `OBS_PORT`, `BASE_PORT` | 9000, 7000 | Porta do observador e base das portas dos nós. |
 | `DEMO` | 0 | Use 1 para permitir demonstrações pequenas, explicitamente marcadas como reduzidas. |
 
-Exemplo reduzido, útil para explicar os eventos; **não substitui a carga do professor**:
+Exemplo reduzido nos mesmos cinco pares do Compose; **não substitui a carga do professor**:
 
 ```bash
-DEMO=1 N=2 REQ=2 bash scripts/run.sh barrier 1
+DEMO=1 REQ=2 bash scripts/scenario.sh barrier 1
 ```
+
+Para demonstrar com dois pares em contêineres temporários, use o fluxo com somente ZooKeeper ativo e execute `DEMO=1 N=2 REQ=2 bash scripts/run.sh barrier 1`.
 
 Os cenários devem ser executados **um por vez**. Não há um requisito de conectividade direta entre SyncNodes: as receitas se comunicam pelo ZooKeeper. É permitido usar processos no mesmo computador. A instalação mínima de um ZooKeeper é suficiente para o escopo sem falhas do TP2.
 
