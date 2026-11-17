@@ -8,11 +8,13 @@ from pathlib import Path
 import subprocess
 import shutil
 import tempfile
+import time
 import unittest
 from unittest.mock import patch
 
 import run
 import run_all
+import compose
 
 
 class ScriptTests(unittest.TestCase):
@@ -76,28 +78,77 @@ class ScriptTests(unittest.TestCase):
                 finally:
                     experiment.cleanup()
 
-    def test_container_logging_preserves_failures_and_expected_nosync_exit(self):
+    def test_compose_reuses_services_and_prevents_concurrent_scenarios(self):
+        with tempfile.TemporaryDirectory() as directory, patch.object(run, "ROOT", Path(directory)), \
+                patch.dict(os.environ, {"N": "5", "REQ": "10", "CS_MIN": "200", "CS_MAX": "1000", "DEMO": "0"}):
+            experiment = compose.ComposeExperiment("barrier", 1)
+            try:
+                commands = experiment.commands()
+                self.assertIn("node-1:7001", commands["client-1"][1])
+                self.assertIn("observer:9000", commands["node-1"][1])
+                self.assertIn("--barrier", commands["node-1"][1])
+                command, container = experiment.process_command("node-1", *commands["node-1"])
+                self.assertIsNone(container)
+                self.assertIn("exec", command)
+                self.assertNotIn("run", command)
+                self.assertIn(experiment.run_id, command)
+                self.assertEqual("zookeeper:2181", experiment.config["zk"])
+            finally:
+                experiment.cleanup()
+            with patch.object(compose, "ROOT", Path(directory)), compose.session():
+                with self.assertRaisesRegex(RuntimeError, "Já existe"):
+                    with compose.session():
+                        self.fail("Dois cenários não podem ocupar os mesmos contêineres")
+
+    def test_compose_wrapper_preserves_java_exit_codes(self):
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)
             (root / "scripts").mkdir()
-            (root / "logs/test").mkdir(parents=True)
-            (root / "state").mkdir()
             (root / "bin").mkdir()
             script = root / "scripts/compose-service.sh"
             shutil.copy(Path(__file__).with_name("compose-service.sh"), script)
-            (root / "state/run-id").write_text("test")
-            (root / "state/observer.args").write_text("Observer\n")
             java = root / "bin/java"
             java.write_text('#!/bin/sh\necho "12:00:00.000 observer READY port=9000"\nexit "$FAKE_EXIT"\n')
             java.chmod(0o755)
-            environment = dict(os.environ, TP2_STATE=str(root / "state"), PATH=f"{root / 'bin'}:{os.environ['PATH']}")
-            for actual, expected, success in ((7, 0, False), (2, 2, True), (0, 2, False)):
-                (root / "state/observer.expected").write_text(str(expected))
-                result = subprocess.run(["bash", str(script), "observer"], env=dict(environment, FAKE_EXIT=str(actual)),
+            environment = dict(os.environ, TP2_PID_DIR=str(root), PATH=f"{root / 'bin'}:{os.environ['PATH']}")
+            for actual in (7, 2, 0):
+                result = subprocess.run(["bash", str(script), "--run", "test", "Observer"], env=dict(environment, FAKE_EXIT=str(actual)),
                                         capture_output=True, text=True)
-                self.assertEqual(success, result.returncode == 0, result.stderr)
-                self.assertEqual(str(actual), (root / "state/observer.exit").read_text())
-                self.assertIn("READY", (root / "logs/test/observer.log").read_text())
+                self.assertEqual(actual, result.returncode, result.stderr)
+                self.assertIn("READY", result.stdout)
+                self.assertFalse((root / "tp2-test.pid").exists())
+
+    def test_compose_stop_terminates_the_remote_process(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            (root / "scripts").mkdir()
+            (root / "bin").mkdir()
+            script = root / "scripts/compose-service.sh"
+            shutil.copy(Path(__file__).with_name("compose-service.sh"), script)
+            java = root / "bin/java"
+            java.write_text('#!/bin/sh\necho $$ > "$FAKE_PID"\nexec sleep 60\n')
+            java.chmod(0o755)
+            pid_file = root / "java.pid"
+            environment = dict(os.environ, TP2_PID_DIR=str(root), FAKE_PID=str(pid_file),
+                               PATH=f"{root / 'bin'}:{os.environ['PATH']}")
+            process = subprocess.Popen(["bash", str(script), "--run", "test", "Observer"],
+                                       env=environment, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+            try:
+                deadline = time.monotonic() + 5
+                while not pid_file.exists() and time.monotonic() < deadline:
+                    time.sleep(.02)
+                self.assertTrue(pid_file.exists(), "A JVM simulada não iniciou")
+                pid = int(pid_file.read_text())
+                subprocess.run(["bash", str(script), "--stop", "test"], env=environment, check=True)
+                process.communicate(timeout=7)
+                self.assertEqual(124, process.returncode)  # timeout recebeu TERM e encerrou a JVM.
+                with self.assertRaises(ProcessLookupError):
+                    os.kill(pid, 0)
+                self.assertFalse((root / "tp2-test.pid").exists())
+            finally:
+                if process.poll() is None:
+                    subprocess.run(["bash", str(script), "--stop", "test"], env=environment, check=True)
+                    process.communicate(timeout=7)
 
 
 if __name__ == "__main__": unittest.main(verbosity=2)

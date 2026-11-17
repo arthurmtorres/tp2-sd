@@ -14,25 +14,29 @@ Depois, mostrar enter → mutex → R → release → leave. Identificar rodadas
 
 ## Demonstração — cerca de 8 minutos
 
-Para mostrar cada cliente e nó Sync em seu próprio contêiner, usar `SCENARIO=contention docker compose up`. Em outro terminal, `docker compose ps -a` mostra todos os serviços e `docker compose logs verify` mostra a conferência final. Para trocar para `nosync` ou `barrier`, executar `docker compose down` e iniciar novamente com o novo `SCENARIO`. `prepare` e `verify` são auxiliares que encerram ao concluir suas etapas.
-
-Os comandos abaixo continuam disponíveis para demonstrar pelos scripts:
-
-Deixar o ZooKeeper e as imagens Java preparados antes de apresentar. Abrir o terminal na pasta do projeto. Usar inicialmente cinco clientes e cinco nós, dez pedidos por cliente:
+Deixar as imagens e o JAR preparados antes de apresentar. Abrir o terminal na pasta do projeto e subir os 12 contêineres. O Compose apenas prepara o ambiente, sem começar os pedidos:
 
 ```bash
-docker compose up -d --wait zookeeper
-bash scripts/run.sh nosync 1
-bash scripts/run.sh contention 1
-bash scripts/run.sh barrier 1
+docker compose up -d
 ```
 
-Cada cliente, nó Sync e observador já executa em seu próprio contêiner por padrão. O terminal mostra os nomes e o comando para acompanhá-los com docker ps durante a execução. Para manter os contêineres encerrados visíveis, usar a execução completa pelo Docker Compose e consultar docker compose ps -a. Para optar por Java local, acrescentar USE_DOCKER=0. Cada experimento guarda os próprios logs. Explicar o código 2 esperado no controle sem mutex. Mostrar que o cenário protegido retorna 0, todos os pedidos terminam e max_active=1. Na barreira, destacar ARRIVE/PASS/LEAVE e as rodadas.
+Depois executar um cenário por vez nos mesmos contêineres, com cinco clientes, cinco nós e dez pedidos por cliente:
+
+```bash
+bash scripts/scenario.sh nosync 1
+bash scripts/scenario.sh normal 1
+bash scripts/scenario.sh contention 1
+bash scripts/scenario.sh barrier 1
+```
+
+Em outro terminal, `docker compose ps` mostra os 12 contêineres ativos. Os eventos aparecem no terminal do cenário e são preservados em `logs/<execução>/`. Aguardar **VERIFICADO** antes de iniciar o próximo cenário. Não é necessário executar `down` entre eles; não há auxiliares `prepare` ou `verify`.
+
+Explicar o código 2 esperado no controle sem mutex. Mostrar que o cenário protegido retorna 0, todos os pedidos terminam e max_active=1. Na barreira, destacar ARRIVE/PASS/LEAVE e as rodadas.
 
 Se o tempo estiver curto, usar uma demonstração reduzida explicitamente identificada e mostrar os logs completos já executados para o cenário mínimo:
 
 ```bash
-DEMO=1 N=2 REQ=2 bash scripts/run.sh barrier 1
+DEMO=1 REQ=2 bash scripts/scenario.sh barrier 1
 ```
 
 Selecionar algumas linhas de ACQUIRE com a fila e os respectivos RELEASE. Comparar COMMITTED do nó com RECEIVED_COMMITTED do cliente. O log do observador tem sua própria sequência seq; não ordenar logs de hosts diferentes por horário para provar exclusão.

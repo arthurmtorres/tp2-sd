@@ -29,6 +29,49 @@ def readable(line):
     return re.sub(r"_c_[0-9a-fA-F-]{36}-lock-", "lock-", line)
 
 
+def terminal_summary(summary, directory):
+    """Apresenta as métricas sem alterar o formato dos arquivos de evidência."""
+    names = {"normal": "Carga normal", "contention": "Alta contenção", "barrier": "Barreira dupla",
+             "nosync": "Sem sincronização", "unequal": "Carga desigual"}
+
+    def row(label, value):
+        return f"  {label:<29} : {value}"
+
+    def number(key, unit):
+        value = f"{float(summary[key]):.3f}".replace(".", ",")
+        return f"{value} {unit}"
+
+    status = summary["status"]
+    if summary["scenario"] == "nosync" and status == "VIOLACAO":
+        status = "Sobreposição detectada (esperada)"
+    lines = ["", "=" * 60,
+             f"RESUMO: {names.get(summary['scenario'], summary['scenario'])}", "=" * 60,
+             row("Status do observador", status),
+             row("Semente", summary["seed"]),
+             row("Nós do Cluster Sync", summary["nodes"]),
+             row("Pedidos concluídos", f"{summary['completed']}/{summary['expected']}"),
+             row("Acessos ainda ativos", summary["active"]), "",
+             row("Tempo medido pelo observador", number("total_s", "s")),
+             row("Tempo total do comando", number("wall_s", "s")),
+             row("Espera mediana pelo lock", number("median_wait_ms", "ms")),
+             row("Vazão", number("throughput_per_s", "pedidos/s")), "",
+             row("Máximo de acessos simultâneos", summary["max_active"]),
+             row("Sobreposições", summary["overlaps"]),
+             row("Violações da barreira", summary["barrier_violations"]),
+             row("Eventos inválidos", summary["invalid_events"]),
+             row("Nós finalizados", f"{summary['done_nodes']}/{summary['nodes']}"),
+             row("Mensagens do observador", summary["observer_messages"]), "",
+             "Pedidos concluídos por cliente:"]
+    for item in summary["per_client"].split(";"):
+        client, count = item.split("=", 1)
+        lines.append(row(client, count))
+    lines += ["", f">> VERIFICADO: {summary['completed']}/{summary['expected']} pedidos",
+              row("Código de saída", summary["return_code"]), "",
+              "Arquivos da execução:", "  Logs:", f"    {directory}",
+              "  Resumo acumulado:", "    results/summary.csv", "=" * 60]
+    return "\n".join(lines)
+
+
 def zk_stats(address):
     """Contadores do servidor: incluem sessões, pings e operações de evidência."""
     try:
@@ -111,7 +154,7 @@ class Experiment:
             commands[f"client-{i}"] = ("Client", client)
         return commands
 
-    def launch(self, name, main, arguments):
+    def process_command(self, name, main, arguments):
         container = "tp2-" + self.run_id + "-" + name if self.docker else None
         java = ["java", "-Dorg.slf4j.simpleLogger.defaultLogLevel=warn", "-cp", "target/tp2-sync.jar", "tp2." + main, *map(str, arguments)]
         command = java
@@ -119,7 +162,11 @@ class Experiment:
             command = ["docker", "run", "--rm", "--network", "host", "--name", container,
                        "--user", f"{os.getuid()}:{os.getgid()}", "-v", f"{ROOT}:/app", "-w", "/app",
                        "eclipse-temurin:17.0.17_10-jre-jammy", *java]
-        print(f">> Iniciando {name}: " + (f"contêiner {container}" if container else "processo Java local"), flush=True)
+        return command, container
+
+    def launch(self, name, main, arguments):
+        command, container = self.process_command(name, main, arguments)
+        print(f">> Iniciando {name}: " + (f"contêiner {container}" if container else "processo Java"), flush=True)
         ready = threading.Event()
         process = subprocess.Popen(command, cwd=ROOT, stdout=subprocess.PIPE, stderr=subprocess.STDOUT,
                                    text=True, encoding="utf-8", bufsize=1, start_new_session=True)
@@ -142,7 +189,10 @@ class Experiment:
         line = readable(line)
         plain = f"{name:<10} | {line}"
         if self.combined: self.combined.write(plain + "\n")
-        if self.live or " ERROR " in line or " SUMMARY " in line:
+        # O resumo legível é exibido após reunir os logs e verificar o cenário.
+        if name == "observer" and re.match(r"^\d{2}:\d{2}:\d{2}\.\d{3}\s+\S+\s+SUMMARY\s", line):
+            return
+        if self.live or " ERROR " in line:
             if self.colors:
                 color = 36 if name == "observer" else 32 if name.startswith("client") else (33, 35, 34)[int(name.split("-")[-1]) % 3]
                 print(f"\033[{color}m{name:<10}\033[0m | {line}", flush=True)
@@ -171,10 +221,13 @@ class Experiment:
         while not self.events.empty(): self.pump(0)
         if self.combined: self.combined.close()
 
+    def stats(self):
+        return zk_stats(self.zk)
+
     def run(self):
         started = time.monotonic()
         expected_code = 2 if self.scenario == "nosync" else 0
-        stats_before = zk_stats(self.zk)
+        stats_before = self.stats()
         print(f"\n>> {self.run_id} | clientes={self.nodes} nós={self.nodes} pedidos={sum(self.counts.values())}", flush=True)
         if self.docker:
             print(f">> Docker: {2 * self.nodes + 1} contêineres nesta execução (1 observador + {self.nodes} nós + {self.nodes} clientes), além do ZooKeeper.", flush=True)
@@ -198,7 +251,7 @@ class Experiment:
                     if code is not None and code != allowed: raise RuntimeError(f"{child.name} encerrou com código {code}; esperado {allowed}")
             for child in self.children: child.reader.join()
             while not self.events.empty(): self.pump(0)
-            stats_after = zk_stats(self.zk)
+            stats_after = self.stats()
             return self.summarize(started, stats_before, stats_after)
         finally:
             self.cleanup()
@@ -230,9 +283,9 @@ class Experiment:
             writer = csv.DictWriter(file, fieldnames=list(summary))
             if header: writer.writeheader()
             writer.writerow(summary)
-        print(f">> VERIFICADO: {summary['completed']}/{summary['expected']} | max_active={summary['max_active']} | overlaps={summary['overlaps']} | barreira={summary['barrier_violations']} | código={expected_code}", flush=True)
-        print(f">> Logs: {self.directory.relative_to(ROOT)} | resumo: results/summary.csv", flush=True)
-        if not stats_before or not stats_after: print(">> Tráfego ZooKeeper não medido: habilite mntr; as mensagens da aplicação e do observador foram contadas.", flush=True)
+        print(terminal_summary(summary, self.directory.relative_to(ROOT)), flush=True)
+        if not stats_before or not stats_after:
+            print("Tráfego ZooKeeper: não medido (mntr indisponível).", flush=True)
         return expected_code
 
 

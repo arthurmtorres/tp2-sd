@@ -20,9 +20,9 @@ Docker não estava instalado no ambiente da validação original. A validação 
 
 O ZIP contém resultados completos da versão corrigida. Os primeiros ensaios usados durante o desenvolvimento não estão misturados na bateria aprovada.
 
-## Validação adicional do Compose
+## Validação adicional do Compose anterior
 
-O Compose passou a declarar um contêiner para cada um dos cinco clientes, cinco nós Sync, observador e ZooKeeper, além dos auxiliares de preparação e verificação. O código Java não foi alterado. Os serviços usam a rede interna, com prontidão confirmada pelos logs antes de iniciar os dependentes.
+Na configuração anterior, o Compose passou a declarar um contêiner para cada um dos cinco clientes, cinco nós Sync, observador e ZooKeeper, além dos auxiliares de preparação e verificação. O código Java não foi alterado. Os serviços usam a rede interna, com prontidão confirmada pelos logs antes de iniciar os dependentes.
 
 Foram executados três cenários completos com Docker, cinco clientes e dez pedidos por cliente:
 
@@ -45,6 +45,22 @@ Em 17/11/2026, os cinco cenários foram executados por `scripts/run.sh` sem defi
 A conferência usou carga reduzida (`DEMO=1 N=5 REQ=2 CS_MIN=500 CS_MAX=500`): dez pedidos em cada cenário, exceto `unequal`, com dezesseis. Todos passaram pelo verificador independente. O controle `nosync` retornou 2 e registrou cinco acessos simultâneos; os demais retornaram 0, sem sobreposição. Os oito testes Python também passaram.
 
 `validacao/containers-default.json` registra os nomes observados e os diretórios de resultados. Essas demonstrações verificam o novo padrão de execução; não substituem a bateria acadêmica.
+
+## Compose separado da execução dos cenários — 17/11/2026
+
+A configuração atual tem apenas 12 serviços: ZooKeeper, observador, cinco nós e cinco clientes. `docker compose up -d` mantém os participantes aguardando; `bash scripts/scenario.sh <cenário>` executa as JVMs nos contêineres existentes e faz a verificação no próprio comando.
+
+A validação foi executada em um projeto Docker isolado, com as mesmas imagens e JAR, cinco clientes e dez pedidos por cliente. As três execuções usaram os mesmos 12 IDs de contêineres:
+
+| Cenário | Concluídos | Máximo de ativos | Sobreposições | Violações da barreira |
+| --- | --- | --- | --- | --- |
+| Normal | 50/50 | 1 | 0 | 0 |
+| Alta contenção | 50/50 | 1 | 0 | 0 |
+| Barreira dupla, dez rodadas | 50/50 | 1 | 0 | 0 |
+
+Todos passaram pelo verificador independente e mediram os contadores do ZooKeeper. Antes dos cenários, foi confirmado que o `up` não iniciou nenhuma JVM da aplicação. Também foram conferidos: rejeição de um segundo cenário simultâneo, interrupção por Ctrl+C sem JVMs restantes e disponibilidade dos mesmos contêineres para a execução seguinte. Os dez testes Python passaram; a configuração foi validada com `docker compose config`.
+
+Os comandos atuais estão no README. Os resultados das validações anteriores permanecem como evidência das respectivas configurações; não é necessário recriar contêineres entre cenários no fluxo atual.
 
 ## Reproduzir
 

@@ -6,32 +6,40 @@ A aplicação coordena o acesso ao recurso hipotético R com **InterProcessMutex
 
 ## Começar
 
-Requisito para executar tudo em contêineres: Docker Compose v2. O ZIP inclui `target/tp2-sync.jar` compilado para Java 17; não precisa instalar Java, Python ou Maven no computador para esta opção.
+Requisitos: Linux, Docker Compose v2 e Python 3.10+ no computador. As JVMs executam nos contêineres; Java e Maven locais são necessários apenas se você optar pela compilação local. O ZIP inclui `target/tp2-sync.jar`; ao clonar o Git, compile primeiro com `USE_DOCKER=1 bash scripts/build.sh`.
 
-Para iniciar o cenário completo de carga normal:
-
-```bash
-docker compose up
-```
-
-O Compose declara **5 clientes, 5 nós Sync, 1 observador e 1 ZooKeeper**, cada um em seu próprio contêiner. A comunicação usa a rede interna e os nomes dos serviços (`node-1`, `observer`, `zookeeper`), sem `--network host`. Cada cliente conhece somente seu nó Sync.
-
-Há também dois serviços auxiliares: `prepare` gera a configuração e os argumentos; `verify` confere os logs e exporta o resumo ao término. Eles executam uma vez e encerram. A preparação e a verificação reaproveitam o código dos scripts de experimento; o código Java permanece o mesmo.
-
-O ZooKeeper fica pronto antes da preparação; os nós aguardam o observador, e os clientes aguardam todos os nós. Os logs individuais ficam em `logs/<execução>/`; `verify` gera `verification.json`, `summary.json` e atualiza `results/summary.csv`. Quando aparecer **VERIFICADO**, o experimento terminou. O ZooKeeper continua ativo até encerrar o Compose.
-
-Em outro terminal, consulte todos os participantes, inclusive os que já encerraram, com `docker compose ps -a`. Para conferir o resultado: `docker compose logs verify`.
-
-Para repetir ou trocar de cenário, encerre o anterior primeiro; os logs são preservados:
+Primeiro, suba os contêineres:
 
 ```bash
-docker compose down
-SCENARIO=contention SEED=1 docker compose up
+docker compose up -d
 ```
 
-`SCENARIO` aceita `normal` (padrão), `contention`, `nosync`, `unequal` e `barrier`. `REQ`, `CS_MIN`, `CS_MAX` e `TIMEOUT` mantêm os limites dos scripts. No `nosync`, o observador retorna 2 internamente; o serviço termina com sucesso somente se esse for o código esperado, e `verify` ainda precisa confirmar conclusão e sobreposição. Falhas de processo ou de escrita dos logs continuam sendo erros.
+O Compose sobe **somente 12 contêineres: 5 clientes, 5 nós Sync, 1 observador e 1 ZooKeeper**. Os participantes ficam aguardando o comando do cenário; nenhuma carga começa com o `up`. A comunicação usa a rede interna e os nomes dos serviços (`node-1`, `observer`, `zookeeper`). Cada cliente conhece somente seu nó Sync.
 
-O Compose fixa cinco pares cliente/nó. Para a comparação com dez nós e a bateria completa, use os scripts abaixo. No Linux, os arquivos são gravados com UID/GID 1000 por padrão; se seu usuário tiver outros IDs, exporte `LOCAL_UID=$(id -u)` e `LOCAL_GID=$(id -g)` antes de iniciar.
+Depois, execute um cenário por vez, aguardando o término de cada comando:
+
+```bash
+bash scripts/scenario.sh normal       # Carga normal
+bash scripts/scenario.sh contention   # Alta contenção
+bash scripts/scenario.sh barrier      # Barreira dupla
+```
+
+Os comandos reutilizam os mesmos contêineres com `docker compose exec`. O script inicia o observador, espera os nós ficarem prontos e só então inicia os clientes. Ao terminar, confere os logs e exporta `verification.json`, `summary.json` e `results/summary.csv`. Quando aparecer **VERIFICADO**, o cenário terminou e você pode iniciar outro. Não há contêineres `prepare` ou `verify`.
+
+Para escolher outra semente, passe-a como segundo argumento. Os parâmetros de carga são lidos a cada execução, sem recriar os contêineres:
+
+```bash
+bash scripts/scenario.sh normal 2
+CS_MIN=500 CS_MAX=500 bash scripts/scenario.sh contention 1
+```
+
+Também são aceitos `nosync` (controle sem mutex) e `unequal` (carga desigual). `REQ`, `CS_MIN`, `CS_MAX`, `TIMEOUT` e `LIVE` mantêm os limites dos scripts. No `nosync`, o comando retorna 2 somente depois de verificar a conclusão e a sobreposição esperada. Erros de processo, logs incompletos ou timeout reprovam a execução.
+
+Os logs ao vivo aparecem no terminal do cenário e ficam em `logs/<execução>/`, incluindo `terminal.log`. `docker compose logs` mostra os logs do processo principal de cada contêiner, não os comandos iniciados por `exec`. Use `docker compose ps` para conferir os 12 contêineres ativos. Ctrl+C encerra as JVMs do cenário; os contêineres continuam disponíveis. Para encerrar o ambiente, use `docker compose down`.
+
+Se você já usou o Compose anterior, execute uma vez `docker compose down --remove-orphans` antes de subir a nova configuração, para remover os antigos auxiliares. Os logs no projeto são preservados.
+
+O Compose fixa cinco pares cliente/nó. Para a comparação com dez nós e a bateria completa, use os scripts abaixo. No Linux, os contêineres usam UID/GID 1000 por padrão; se seu usuário tiver outros IDs, exporte `LOCAL_UID=$(id -u)` e `LOCAL_GID=$(id -g)` antes de iniciar.
 
 ## Execução pelos scripts
 
@@ -44,7 +52,7 @@ docker compose up -d --wait zookeeper
 bash scripts/run.sh contention 1
 ```
 
-O terminal mostra o nome de cada contêiner iniciado e um comando `docker ps --filter name=...` para acompanhar somente os participantes daquela execução. Por padrão são 11 contêineres da aplicação e o ZooKeeper. Os contêineres dos scripts são removidos ao terminar; para manter os encerrados visíveis em `docker compose ps -a`, use a execução completa pelo Compose descrita acima.
+O terminal mostra o nome de cada contêiner iniciado e um comando `docker ps --filter name=...` para acompanhar somente os participantes daquela execução. Por padrão são 11 contêineres da aplicação e o ZooKeeper. Os contêineres dos scripts são removidos ao terminar. Para reutilizar os 12 contêineres do Compose entre cenários, use `scripts/scenario.sh`, descrito acima.
 
 Para executar explicitamente como processos Java locais, com Java **17** instalado: `USE_DOCKER=0 bash scripts/run.sh contention 1`. A mesma escolha vale para `scripts/run_all.sh`; a bateria usa contêineres por padrão.
 
@@ -58,17 +66,17 @@ bash scripts/build.sh
 USE_DOCKER=1 bash scripts/build.sh
 ```
 
-A compilação executa 12 testes Java e 8 testes dos scripts. Para repetir somente os testes dos scripts: `python3 scripts/test_scripts.py`. A compilação mantém sua escolha independente: `build.sh` usa JDK/Maven locais por padrão; `USE_DOCKER=1` usa o contêiner de compilação.
+A compilação executa os testes Java e as regressões dos scripts. Para repetir somente os testes dos scripts: `python3 scripts/test_scripts.py`. A compilação mantém sua escolha independente: `build.sh` usa JDK/Maven locais por padrão; `USE_DOCKER=1` usa o contêiner de compilação.
 
 ## Cenários
 
 | Comando | O que verificar |
 | --- | --- |
-| `bash scripts/run.sh nosync 1` | Controle sem mutex: mais de um ativo e sobreposição detectada; código esperado **2**. |
-| `bash scripts/run.sh normal 1` | 5 clientes × 10 pedidos, pausas de 1–5 s, sem sobreposição. |
-| `bash scripts/run.sh contention 1` | Clientes disparados conjuntamente; sem pausa entre pedidos; sleep de R preservado. |
-| `bash scripts/run.sh unequal 1` | c1 faz 40 pedidos sem pausa; os demais fazem 10 com pausas. |
-| `bash scripts/run.sh barrier 1` | 5 participantes, 10 rodadas, entrada/saída coletivas e mutex sobre R. |
+| `bash scripts/scenario.sh nosync 1` | Controle sem mutex: mais de um ativo e sobreposição detectada; código esperado **2**. |
+| `bash scripts/scenario.sh normal 1` | 5 clientes × 10 pedidos, pausas de 1–5 s, sem sobreposição. |
+| `bash scripts/scenario.sh contention 1` | Clientes disparados conjuntamente; sem pausa entre pedidos; sleep de R preservado. |
+| `bash scripts/scenario.sh unequal 1` | c1 faz 40 pedidos sem pausa; os demais fazem 10 com pausas. |
+| `bash scripts/scenario.sh barrier 1` | 5 participantes, 10 rodadas, entrada/saída coletivas e mutex sobre R. |
 | `bash scripts/run_all.sh` | Bateria completa, três repetições obrigatórias, extensão e comparação de escala. |
 
 Na bateria, o código 2 do controle é tratado como esperado **somente depois de verificar conclusão, recebimento dos COMMITTED e sobreposição**. Qualquer falha de processo, log incompleto, timeout ou divergência interrompe a bateria com erro. O término da bateria completa retorna 0.
@@ -111,7 +119,7 @@ Os cenários devem ser executados **um por vez**. Não há um requisito de conec
 | `Metrics.java` | Mediana, percentil e CSV com ponto decimal independentemente de locale. |
 | `Util.java` | Argumentos, conexão e formato de log. |
 | `scripts/run.py` | Inicia/acompanha processos, reúne logs, mede tráfego agregado e verifica o resultado. |
-| `scripts/compose.py`, `scripts/compose-service.sh` | Preparam os mesmos argumentos, executam uma JVM por serviço e verificam o cenário do Compose. |
+| `scripts/scenario.sh`, `scripts/compose.py`, `scripts/compose-service.sh` | Executam e encerram as JVMs nos contêineres existentes e verificam o cenário. |
 | `scripts/verify.py` | Conferência independente: eventos, IDs, COMMITTED, ordem dos znodes e barreiras. |
 | `scripts/run_all.py`, `scripts/analyze.py` | Bateria reproduzível e relatório gerado dos dados reais. |
 
@@ -134,7 +142,7 @@ Um worker serializa os pedidos de cada nó. O cliente envia HELLO, REQUESTs e BY
 - `RELEASE`: liberação de R; no controle sem mutex aparece `sync=false`.
 - `RECEIVED_COMMITTED`: confirmação recebida pelo cliente, com latência própria e espera reportada pelo nó.
 - `ARRIVE/PASS/LEAVE`: evidências da entrada/saída da barreira, com rodada e identidades.
-- `SUMMARY`: conclusão, mediana correta, P95, concorrência, erros e acessos por cliente.
+- `SUMMARY`: conclusão, espera mediana, concorrência, erros e acessos por cliente. A linha original fica nos logs; no terminal, essas métricas aparecem em um quadro ao fim da verificação, com uma informação por linha e unidades explícitas.
 
 Mensagens internas rotineiras do Curator/ZooKeeper ficam no nível WARN. As cores não fazem parte dos arquivos; são adicionadas apenas na exibição interativa.
 
@@ -163,7 +171,7 @@ Arquivos principais:
 - `apresentacao/apresentacao_tp2_b2.pptx`: slides para o seminário.
 - `docs/roteiro-seminario.md`: sugestões de demonstração e perguntas.
 
-Espera do acquire é medida com `System.nanoTime()` no nó e exclui fila local/barreira. Latência do cliente também usa relógio monotônico próprio. `total_s` do observador vai do primeiro BEGIN ao último END; `wall_s` inclui preparação/encerramento. A mediana de amostras pares usa a média dos dois valores centrais; P95 usa posto mais próximo (`ceil(0.95*N)`).
+Espera do acquire é medida com `System.nanoTime()` no nó e exclui fila local/barreira. Latência do cliente também usa relógio monotônico próprio. `total_s` do observador vai do primeiro BEGIN ao último END; `wall_s` inclui preparação/encerramento. A mediana de amostras pares usa a média dos dois valores centrais.
 
 REQUEST/COMMITTED, instrumentação/OK, chamadas da API e leituras adicionais de evidência têm contadores separados. Quando `mntr` está habilitado, são registrados também os pacotes do protocolo ZooKeeper recebidos/enviados no intervalo. São agregados com sessões, heartbeat e consultas extras; não são a quantidade exata de mensagens só do mutex. Consulte a discussão em `docs/mecanismo.md` e o relatório de resultados.
 
@@ -174,7 +182,7 @@ REQUEST/COMMITTED, instrumentação/OK, chamadas da API e leituras adicionais de
 - Apache Curator 5.7.1; cliente ZooKeeper transitivo 3.9.2.
 - Servidor ZooKeeper 3.9.3; slf4j-simple 2.0.13; JUnit 5.11.0.
 - Contêiner Java: `eclipse-temurin:17.0.17_10-jre-jammy`; compilação: `maven:3.9.9-eclipse-temurin-17`.
-- Preparação/verificação do Compose: `python:3.12.12-alpine3.22`.
+- Orquestração/verificação dos cenários do Compose: Python 3.10+ no computador.
 
 As evidências originais usam processos Java nativos e ZooKeeper Apache 3.9.3. A validação adicional do Compose está descrita em `docs/validacao.md`.
 
