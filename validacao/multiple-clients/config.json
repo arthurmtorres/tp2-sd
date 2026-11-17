@@ -1,0 +1,14 @@
+{
+  "run_id": "regression-two-clients",
+  "scenario": "regression",
+  "nodes": 1,
+  "client_requests": {
+    "c1": 10,
+    "c2": 10
+  },
+  "sync": true,
+  "barrier": false,
+  "cs_min_ms": 200,
+  "cs_max_ms": 200,
+  "demo": true
+}

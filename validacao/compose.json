@@ -1,0 +1,39 @@
+{
+  "runs": [
+    {
+      "run_id": "contention-n5-r10-s1-20261117T012436-4c8f20",
+      "scenario": "contention",
+      "expected": "50",
+      "completed": "50",
+      "max_active": "1",
+      "overlaps": "0",
+      "barrier_violations": "0",
+      "return_code": 0,
+      "verified": true
+    },
+    {
+      "run_id": "nosync-n5-r10-s1-20261117T012543-736897",
+      "scenario": "nosync",
+      "expected": "50",
+      "completed": "50",
+      "max_active": "5",
+      "overlaps": "49",
+      "barrier_violations": "0",
+      "return_code": 2,
+      "verified": true
+    },
+    {
+      "run_id": "barrier-n5-r10-s1-20261117T012623-da2efb",
+      "scenario": "barrier",
+      "expected": "50",
+      "completed": "50",
+      "max_active": "1",
+      "overlaps": "0",
+      "barrier_violations": "0",
+      "return_code": 0,
+      "verified": true
+    }
+  ],
+  "java_source_changed": false,
+  "python_tests_passed": 8
+}

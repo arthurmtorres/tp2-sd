@@ -1,0 +1,74 @@
+15:32:35.825 n8        ZK_STATE             state=CONNECTED
+15:32:35.945 n8        READY                port=7008 resource=R sync=true barrier=false participants=10 clients=1 namespace=contention-n10-r10-s1-20261110T183233-022656 cs_min_ms=200 cs_max_ms=1000
+15:32:37.016 n8        REQUEST              resource=R node=n8 client=c8 request_id=c8-1 round=1 local_queue_s=0.001393
+15:32:37.017 n8        LOCK_WAIT            resource=R node=n8 client=c8 request_id=c8-1 round=1 path=/contention-n10-r10-s1-20261110T183233-022656/locks/R
+15:32:37.115 n8        ACQUIRE              resource=R node=n8 client=c8 request_id=c8-1 round=1 sync=true wait_s=0.054992 znode=_c_9ae5e6ef-e403-4df6-8f96-50eccfe4869e-lock-0000000000 queue_size=4 queue=_c_9ae5e6ef-e403-4df6-8f96-50eccfe4869e-lock-0000000000,_c_f55184fb-2f8c-46d0-84a5-32592607456a-lock-0000000001,_c_e0c434eb-fcb5-44be-891a-d6260cf464c7-lock-0000000002,_c_df75d945-6854-4127-ad71-85811442cc9a-lock-0000000003
+15:32:37.175 n8        ENTER                resource=R node=n8 client=c8 request_id=c8-1 round=1 sleep_ms=310
+15:32:37.487 n8        EXIT                 resource=R node=n8 client=c8 request_id=c8-1 round=1 cs_s=0.313919
+15:32:37.515 n8        RELEASE              resource=R node=n8 client=c8 request_id=c8-1 round=1 sync=true
+15:32:37.520 n8        COMMITTED            resource=R node=n8 client=c8 request_id=c8-1 round=1 total_s=0.519816
+15:32:37.553 n8        REQUEST              resource=R node=n8 client=c8 request_id=c8-2 round=2 local_queue_s=0.000118
+15:32:37.554 n8        LOCK_WAIT            resource=R node=n8 client=c8 request_id=c8-2 round=2 path=/contention-n10-r10-s1-20261110T183233-022656/locks/R
+15:32:44.741 n8        ACQUIRE              resource=R node=n8 client=c8 request_id=c8-2 round=2 sync=true wait_s=7.183634 znode=_c_acc11d9d-333d-4612-80a1-31242a4133cb-lock-0000000010 queue_size=9 queue=_c_acc11d9d-333d-4612-80a1-31242a4133cb-lock-0000000010,_c_ffbff235-c448-40e7-aed5-fc70a83374a0-lock-0000000011,_c_54929029-282d-4b3a-bad3-f6b26c8f9e58-lock-0000000012,_c_766a1cdc-4a0e-4186-b9a5-003641456002-lock-0000000013,_c_476f6605-541e-4251-9870-61581aca87ee-lock-0000000014,_c_47180ace-74fa-4ce7-8f6f-a6b35a544b2d-lock-0000000015,_c_7970d009-5df7-4882-a3fb-034b493e5b90-lock-0000000016,_c_af34a918-7289-4555-8f97-607ee6f7834d-lock-0000000017,_c_afe5b0fe-44ec-4273-bffd-edb152456008-lock-0000000018
+15:32:44.743 n8        ENTER                resource=R node=n8 client=c8 request_id=c8-2 round=2 sleep_ms=781
+15:32:45.525 n8        EXIT                 resource=R node=n8 client=c8 request_id=c8-2 round=2 cs_s=0.781812
+15:32:45.531 n8        RELEASE              resource=R node=n8 client=c8 request_id=c8-2 round=2 sync=true
+15:32:45.533 n8        COMMITTED            resource=R node=n8 client=c8 request_id=c8-2 round=2 total_s=7.979530
+15:32:45.536 n8        REQUEST              resource=R node=n8 client=c8 request_id=c8-3 round=3 local_queue_s=0.000089
+15:32:45.537 n8        LOCK_WAIT            resource=R node=n8 client=c8 request_id=c8-3 round=3 path=/contention-n10-r10-s1-20261110T183233-022656/locks/R
+15:32:51.889 n8        ACQUIRE              resource=R node=n8 client=c8 request_id=c8-3 round=3 sync=true wait_s=6.349562 znode=_c_ef045d6f-398c-4a9c-bda0-7788b8a090aa-lock-0000000020 queue_size=9 queue=_c_ef045d6f-398c-4a9c-bda0-7788b8a090aa-lock-0000000020,_c_879753fa-b810-49eb-84fa-3db7697c78de-lock-0000000021,_c_20dbf0d0-0ace-490e-87fa-d01560dda3bb-lock-0000000022,_c_c44f6001-672e-4f81-abdd-8ea26f7a450a-lock-0000000023,_c_37bc9b24-197a-4311-9ce4-928455e584f7-lock-0000000024,_c_65077802-3d58-4a05-a5e8-8daf9792b7d5-lock-0000000025,_c_c005ceb4-c837-4578-adaa-8b605231643b-lock-0000000026,_c_94afcc0d-b239-4b42-8004-7ee45d469788-lock-0000000027,_c_abe7fcc3-d474-40e1-9e1b-426585b20679-lock-0000000028
+15:32:51.891 n8        ENTER                resource=R node=n8 client=c8 request_id=c8-3 round=3 sleep_ms=387
+15:32:52.279 n8        EXIT                 resource=R node=n8 client=c8 request_id=c8-3 round=3 cs_s=0.387654
+15:32:52.286 n8        RELEASE              resource=R node=n8 client=c8 request_id=c8-3 round=3 sync=true
+15:32:52.287 n8        COMMITTED            resource=R node=n8 client=c8 request_id=c8-3 round=3 total_s=6.750554
+15:32:52.290 n8        REQUEST              resource=R node=n8 client=c8 request_id=c8-4 round=4 local_queue_s=0.000153
+15:32:52.290 n8        LOCK_WAIT            resource=R node=n8 client=c8 request_id=c8-4 round=4 path=/contention-n10-r10-s1-20261110T183233-022656/locks/R
+15:32:56.752 n8        ACQUIRE              resource=R node=n8 client=c8 request_id=c8-4 round=4 sync=true wait_s=4.458708 znode=_c_638aed96-8d35-4e90-9d8c-77292a39457b-lock-0000000030 queue_size=9 queue=_c_638aed96-8d35-4e90-9d8c-77292a39457b-lock-0000000030,_c_3644eb8b-9f55-47ce-a3f1-36a32d74b016-lock-0000000031,_c_8b740e73-b9e5-4d23-aec4-42472164398a-lock-0000000032,_c_b1ae278d-c41d-405d-9761-364d5262e9ae-lock-0000000033,_c_21b7f096-79ef-46df-abc0-313e38a8049a-lock-0000000034,_c_00c3fa5f-a86d-4491-9f96-df17e0e19905-lock-0000000035,_c_fa4323ef-2978-4e3c-95d2-e2e5dcc47094-lock-0000000036,_c_fed7daa9-040f-4b71-95da-149a62e212e7-lock-0000000037,_c_0e39ea7a-ef69-49df-8fff-d4db398cf582-lock-0000000038
+15:32:56.754 n8        ENTER                resource=R node=n8 client=c8 request_id=c8-4 round=4 sleep_ms=505
+15:32:57.260 n8        EXIT                 resource=R node=n8 client=c8 request_id=c8-4 round=4 cs_s=0.505494
+15:32:57.266 n8        RELEASE              resource=R node=n8 client=c8 request_id=c8-4 round=4 sync=true
+15:32:57.267 n8        COMMITTED            resource=R node=n8 client=c8 request_id=c8-4 round=4 total_s=4.977136
+15:32:57.270 n8        REQUEST              resource=R node=n8 client=c8 request_id=c8-5 round=5 local_queue_s=0.000145
+15:32:57.270 n8        LOCK_WAIT            resource=R node=n8 client=c8 request_id=c8-5 round=5 path=/contention-n10-r10-s1-20261110T183233-022656/locks/R
+15:33:02.565 n8        ACQUIRE              resource=R node=n8 client=c8 request_id=c8-5 round=5 sync=true wait_s=5.292579 znode=_c_990aaa8a-01c2-44e8-95f2-e6f1387bd719-lock-0000000040 queue_size=9 queue=_c_990aaa8a-01c2-44e8-95f2-e6f1387bd719-lock-0000000040,_c_acc7a9b1-a073-4ca8-b203-cabe5248a367-lock-0000000041,_c_aa099300-b6da-44c6-821b-b892e25c5194-lock-0000000042,_c_97ec9003-07a7-4899-b2c0-0a8b507736ed-lock-0000000043,_c_bac1df26-b53d-4684-86b7-3bf4f0f5752b-lock-0000000044,_c_df3d05c5-e52d-4e6e-a4c8-3cea687fde1e-lock-0000000045,_c_ffb0d040-c7a9-47c0-ab4e-cbd9b6800483-lock-0000000046,_c_1143b0a3-2b20-4bfe-9361-f929b5552668-lock-0000000047,_c_7ab9ece0-4b91-45c2-92a5-cbc7106edcd4-lock-0000000048
+15:33:02.568 n8        ENTER                resource=R node=n8 client=c8 request_id=c8-5 round=5 sleep_ms=817
+15:33:03.385 n8        EXIT                 resource=R node=n8 client=c8 request_id=c8-5 round=5 cs_s=0.817454
+15:33:03.391 n8        RELEASE              resource=R node=n8 client=c8 request_id=c8-5 round=5 sync=true
+15:33:03.391 n8        COMMITTED            resource=R node=n8 client=c8 request_id=c8-5 round=5 total_s=6.121485
+15:33:03.396 n8        REQUEST              resource=R node=n8 client=c8 request_id=c8-6 round=6 local_queue_s=0.000098
+15:33:03.396 n8        LOCK_WAIT            resource=R node=n8 client=c8 request_id=c8-6 round=6 path=/contention-n10-r10-s1-20261110T183233-022656/locks/R
+15:33:08.127 n8        ACQUIRE              resource=R node=n8 client=c8 request_id=c8-6 round=6 sync=true wait_s=4.727873 znode=_c_df249808-84cc-4eee-8d8e-7f43d0e1afe4-lock-0000000050 queue_size=9 queue=_c_df249808-84cc-4eee-8d8e-7f43d0e1afe4-lock-0000000050,_c_ebe6efe0-9fb0-4d0c-8c8e-5fc8bce13333-lock-0000000051,_c_950d898d-bb64-4cc0-a1f3-b2bd7f7644c1-lock-0000000052,_c_0380f17d-ffd2-4af6-a82c-9a279e43223d-lock-0000000053,_c_646d42c0-3d55-4f46-ab62-3c86f14c824f-lock-0000000054,_c_68346c88-a638-46ee-ac4a-daceda9c47cb-lock-0000000055,_c_0323da1d-2aa4-455d-945f-52f9da259ba3-lock-0000000056,_c_a363099a-07bf-4be5-bea2-479ed0065f5f-lock-0000000057,_c_10f18503-dfcb-4216-980a-31cc81357961-lock-0000000058
+15:33:08.129 n8        ENTER                resource=R node=n8 client=c8 request_id=c8-6 round=6 sleep_ms=368
+15:33:08.498 n8        EXIT                 resource=R node=n8 client=c8 request_id=c8-6 round=6 cs_s=0.368590
+15:33:08.505 n8        RELEASE              resource=R node=n8 client=c8 request_id=c8-6 round=6 sync=true
+15:33:08.506 n8        COMMITTED            resource=R node=n8 client=c8 request_id=c8-6 round=6 total_s=5.109393
+15:33:08.508 n8        REQUEST              resource=R node=n8 client=c8 request_id=c8-7 round=7 local_queue_s=0.000129
+15:33:08.508 n8        LOCK_WAIT            resource=R node=n8 client=c8 request_id=c8-7 round=7 path=/contention-n10-r10-s1-20261110T183233-022656/locks/R
+15:33:13.044 n8        ACQUIRE              resource=R node=n8 client=c8 request_id=c8-7 round=7 sync=true wait_s=4.532781 znode=_c_b231798b-0968-43cf-8428-bc0a475ca1aa-lock-0000000060 queue_size=9 queue=_c_b231798b-0968-43cf-8428-bc0a475ca1aa-lock-0000000060,_c_9b2d3d03-4de4-4a8d-8e65-695b1d6d963c-lock-0000000061,_c_a4f37760-2e1b-4ba7-a359-816dfc2f3c68-lock-0000000062,_c_6cfb56ad-a24d-495d-8fff-a2412fa05ca6-lock-0000000063,_c_80ceba43-33aa-4a8d-b357-8b64ca430355-lock-0000000064,_c_78b3e7de-a471-49c0-9b40-3016c78ea50c-lock-0000000065,_c_081ff8eb-fb48-4999-ae4e-041d55fc565b-lock-0000000066,_c_91e8414d-6d78-4f4f-ab09-0faa5cfc35df-lock-0000000067,_c_25c6de5f-10db-4bef-885b-d41bc432b426-lock-0000000068
+15:33:13.046 n8        ENTER                resource=R node=n8 client=c8 request_id=c8-7 round=7 sleep_ms=348
+15:33:13.395 n8        EXIT                 resource=R node=n8 client=c8 request_id=c8-7 round=7 cs_s=0.348494
+15:33:13.401 n8        RELEASE              resource=R node=n8 client=c8 request_id=c8-7 round=7 sync=true
+15:33:13.402 n8        COMMITTED            resource=R node=n8 client=c8 request_id=c8-7 round=7 total_s=4.893798
+15:33:13.404 n8        REQUEST              resource=R node=n8 client=c8 request_id=c8-8 round=8 local_queue_s=0.000117
+15:33:13.405 n8        LOCK_WAIT            resource=R node=n8 client=c8 request_id=c8-8 round=8 path=/contention-n10-r10-s1-20261110T183233-022656/locks/R
+15:33:18.576 n8        ACQUIRE              resource=R node=n8 client=c8 request_id=c8-8 round=8 sync=true wait_s=5.168781 znode=_c_07bde6c9-c59d-4b6c-98f4-9721a12e67e5-lock-0000000070 queue_size=9 queue=_c_07bde6c9-c59d-4b6c-98f4-9721a12e67e5-lock-0000000070,_c_f427d2ab-cdbc-4e01-bb72-ac28407e308d-lock-0000000071,_c_d04d4f35-073c-4f7f-9785-a84a99d2cc0a-lock-0000000072,_c_eca4b032-9011-47ea-bb07-127e009c1262-lock-0000000073,_c_a9c852e9-cd01-49ff-919f-00ece2a2e8cf-lock-0000000074,_c_502f4ee8-f332-4017-9868-1102e30c7f1b-lock-0000000075,_c_56436873-bdd0-4717-9c19-9edabe7011ff-lock-0000000076,_c_3e35eca0-dfe0-46b1-9d7b-45685f8f1ebd-lock-0000000077,_c_0764145d-5377-40ec-8898-dab7b82c542a-lock-0000000078
+15:33:18.579 n8        ENTER                resource=R node=n8 client=c8 request_id=c8-8 round=8 sleep_ms=875
+15:33:19.455 n8        EXIT                 resource=R node=n8 client=c8 request_id=c8-8 round=8 cs_s=0.875572
+15:33:19.462 n8        RELEASE              resource=R node=n8 client=c8 request_id=c8-8 round=8 sync=true
+15:33:19.462 n8        COMMITTED            resource=R node=n8 client=c8 request_id=c8-8 round=8 total_s=6.058340
+15:33:19.465 n8        REQUEST              resource=R node=n8 client=c8 request_id=c8-9 round=9 local_queue_s=0.000147
+15:33:19.465 n8        LOCK_WAIT            resource=R node=n8 client=c8 request_id=c8-9 round=9 path=/contention-n10-r10-s1-20261110T183233-022656/locks/R
+15:33:25.150 n8        ACQUIRE              resource=R node=n8 client=c8 request_id=c8-9 round=9 sync=true wait_s=5.681433 znode=_c_86bad400-d1e1-45cb-9f6f-67f209bb1859-lock-0000000080 queue_size=9 queue=_c_86bad400-d1e1-45cb-9f6f-67f209bb1859-lock-0000000080,_c_561d3b0e-f504-4620-8c92-d498c57f1dd4-lock-0000000081,_c_f72a42a5-f657-415e-bf6a-c868eee947f3-lock-0000000082,_c_e2c2ed69-9cc3-49d5-b662-73fd013164dc-lock-0000000083,_c_e5aa4f62-fd3e-477f-a506-ad4095950809-lock-0000000084,_c_47cbd370-2a55-47a0-a5da-3346543338ee-lock-0000000085,_c_2d996808-3d16-4b49-a951-6950fecbaf71-lock-0000000086,_c_c1754adc-9c3f-413e-9de1-6bc081087263-lock-0000000087,_c_3776aa4e-0bda-4a96-8cc0-7721287ec1e4-lock-0000000088
+15:33:25.153 n8        ENTER                resource=R node=n8 client=c8 request_id=c8-9 round=9 sleep_ms=482
+15:33:25.636 n8        EXIT                 resource=R node=n8 client=c8 request_id=c8-9 round=9 cs_s=0.482691
+15:33:25.641 n8        RELEASE              resource=R node=n8 client=c8 request_id=c8-9 round=9 sync=true
+15:33:25.642 n8        COMMITTED            resource=R node=n8 client=c8 request_id=c8-9 round=9 total_s=6.176013
+15:33:25.644 n8        REQUEST              resource=R node=n8 client=c8 request_id=c8-10 round=10 local_queue_s=0.000078
+15:33:25.644 n8        LOCK_WAIT            resource=R node=n8 client=c8 request_id=c8-10 round=10 path=/contention-n10-r10-s1-20261110T183233-022656/locks/R
+15:33:30.443 n8        ACQUIRE              resource=R node=n8 client=c8 request_id=c8-10 round=10 sync=true wait_s=4.795279 znode=_c_bac7b9de-3b58-4873-bca3-46fc10a38326-lock-0000000090 queue_size=9 queue=_c_bac7b9de-3b58-4873-bca3-46fc10a38326-lock-0000000090,_c_d3860f89-ebe2-4664-a69a-86fef775706a-lock-0000000091,_c_567a5424-998b-4e70-b49a-fe7b2db4155e-lock-0000000092,_c_85dc8dec-d945-4b21-a65a-1bd2e70f9cba-lock-0000000093,_c_03f887ce-ece2-4016-958b-169a7eb6ea03-lock-0000000094,_c_9e9313dc-eb07-4a70-8972-7c259c3b284e-lock-0000000095,_c_ba578c9e-f7b7-40c3-a9fd-47536363decc-lock-0000000096,_c_fd4ab688-e1ed-4a93-ba8e-9bc1f3d77888-lock-0000000097,_c_97322514-1788-4220-8b87-71944fb74c52-lock-0000000098
+15:33:30.445 n8        ENTER                resource=R node=n8 client=c8 request_id=c8-10 round=10 sleep_ms=213
+15:33:30.659 n8        EXIT                 resource=R node=n8 client=c8 request_id=c8-10 round=10 cs_s=0.213618
+15:33:30.667 n8        RELEASE              resource=R node=n8 client=c8 request_id=c8-10 round=10 sync=true
+15:33:30.668 n8        COMMITTED            resource=R node=n8 client=c8 request_id=c8-10 round=10 total_s=5.023430
+15:33:30.670 n8        CLIENT_FINISHED      client=c8 finished_clients=1
+15:33:30.681 n8        NODE_DONE            completed=10 clients=1 recipe_acquire_calls=10 recipe_release_calls=10 evidence_zk_reads=10 observer_messages=42

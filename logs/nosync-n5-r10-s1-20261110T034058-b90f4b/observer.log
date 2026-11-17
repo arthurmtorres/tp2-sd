@@ -1,0 +1,156 @@
+00:40:58.850 observer  READY                port=9000 nodes=5 expected=50
+00:41:01.050 observer  BEGIN                seq=1 resource=R node=n4 client=c4 request_id=c4-1 round=1 active=1 overlap=false wait_ms=0.000000
+00:41:01.053 observer  BEGIN                seq=2 resource=R node=n1 client=c1 request_id=c1-1 round=1 active=2 overlap=true wait_ms=0.000000
+00:41:01.059 observer  VIOLATION_OVERLAP    seq=2 resource=R node=n1 client=c1 request_id=c1-1 round=1 active=2
+00:41:01.060 observer  BEGIN                seq=3 resource=R node=n3 client=c3 request_id=c3-1 round=1 active=3 overlap=true wait_ms=0.000000
+00:41:01.061 observer  VIOLATION_OVERLAP    seq=3 resource=R node=n3 client=c3 request_id=c3-1 round=1 active=3
+00:41:01.063 observer  BEGIN                seq=4 resource=R node=n5 client=c5 request_id=c5-1 round=1 active=4 overlap=true wait_ms=0.000000
+00:41:01.064 observer  VIOLATION_OVERLAP    seq=4 resource=R node=n5 client=c5 request_id=c5-1 round=1 active=4
+00:41:01.066 observer  BEGIN                seq=5 resource=R node=n2 client=c2 request_id=c2-1 round=1 active=5 overlap=true wait_ms=0.000000
+00:41:01.066 observer  VIOLATION_OVERLAP    seq=5 resource=R node=n2 client=c2 request_id=c2-1 round=1 active=5
+00:41:01.368 observer  END                  seq=6 resource=R node=n2 client=c2 request_id=c2-1 round=1 active=4 completed=1
+00:41:01.396 observer  BEGIN                seq=7 resource=R node=n2 client=c2 request_id=c2-2 round=2 active=5 overlap=true wait_ms=0.000000
+00:41:01.396 observer  VIOLATION_OVERLAP    seq=7 resource=R node=n2 client=c2 request_id=c2-2 round=2 active=5
+00:41:01.491 observer  END                  seq=8 resource=R node=n5 client=c5 request_id=c5-1 round=1 active=4 completed=2
+00:41:01.518 observer  BEGIN                seq=9 resource=R node=n5 client=c5 request_id=c5-2 round=2 active=5 overlap=true wait_ms=0.000000
+00:41:01.519 observer  VIOLATION_OVERLAP    seq=9 resource=R node=n5 client=c5 request_id=c5-2 round=2 active=5
+00:41:01.609 observer  END                  seq=10 resource=R node=n4 client=c4 request_id=c4-1 round=1 active=4 completed=3
+00:41:01.635 observer  BEGIN                seq=11 resource=R node=n4 client=c4 request_id=c4-2 round=2 active=5 overlap=true wait_ms=0.000000
+00:41:01.635 observer  VIOLATION_OVERLAP    seq=11 resource=R node=n4 client=c4 request_id=c4-2 round=2 active=5
+00:41:02.021 observer  END                  seq=12 resource=R node=n3 client=c3 request_id=c3-1 round=1 active=4 completed=4
+00:41:02.023 observer  END                  seq=13 resource=R node=n1 client=c1 request_id=c1-1 round=1 active=3 completed=5
+00:41:02.054 observer  BEGIN                seq=14 resource=R node=n1 client=c1 request_id=c1-2 round=2 active=4 overlap=true wait_ms=0.000000
+00:41:02.055 observer  VIOLATION_OVERLAP    seq=14 resource=R node=n1 client=c1 request_id=c1-2 round=2 active=4
+00:41:02.060 observer  BEGIN                seq=15 resource=R node=n3 client=c3 request_id=c3-2 round=2 active=5 overlap=true wait_ms=0.000000
+00:41:02.060 observer  VIOLATION_OVERLAP    seq=15 resource=R node=n3 client=c3 request_id=c3-2 round=2 active=5
+00:41:02.330 observer  END                  seq=16 resource=R node=n2 client=c2 request_id=c2-2 round=2 active=4 completed=6
+00:41:02.336 observer  BEGIN                seq=17 resource=R node=n2 client=c2 request_id=c2-3 round=3 active=5 overlap=true wait_ms=0.000000
+00:41:02.336 observer  VIOLATION_OVERLAP    seq=17 resource=R node=n2 client=c2 request_id=c2-3 round=3 active=5
+00:41:02.389 observer  END                  seq=18 resource=R node=n4 client=c4 request_id=c4-2 round=2 active=4 completed=7
+00:41:02.396 observer  BEGIN                seq=19 resource=R node=n4 client=c4 request_id=c4-3 round=3 active=5 overlap=true wait_ms=0.000000
+00:41:02.397 observer  VIOLATION_OVERLAP    seq=19 resource=R node=n4 client=c4 request_id=c4-3 round=3 active=5
+00:41:02.406 observer  END                  seq=20 resource=R node=n3 client=c3 request_id=c3-2 round=2 active=4 completed=8
+00:41:02.414 observer  BEGIN                seq=21 resource=R node=n3 client=c3 request_id=c3-3 round=3 active=5 overlap=true wait_ms=0.000000
+00:41:02.415 observer  VIOLATION_OVERLAP    seq=21 resource=R node=n3 client=c3 request_id=c3-3 round=3 active=5
+00:41:02.418 observer  END                  seq=22 resource=R node=n1 client=c1 request_id=c1-2 round=2 active=4 completed=9
+00:41:02.424 observer  BEGIN                seq=23 resource=R node=n1 client=c1 request_id=c1-3 round=3 active=5 overlap=true wait_ms=0.000000
+00:41:02.424 observer  VIOLATION_OVERLAP    seq=23 resource=R node=n1 client=c1 request_id=c1-3 round=3 active=5
+00:41:02.486 observer  END                  seq=24 resource=R node=n5 client=c5 request_id=c5-2 round=2 active=4 completed=10
+00:41:02.494 observer  BEGIN                seq=25 resource=R node=n5 client=c5 request_id=c5-3 round=3 active=5 overlap=true wait_ms=0.000000
+00:41:02.495 observer  VIOLATION_OVERLAP    seq=25 resource=R node=n5 client=c5 request_id=c5-3 round=3 active=5
+00:41:02.709 observer  END                  seq=26 resource=R node=n4 client=c4 request_id=c4-3 round=3 active=4 completed=11
+00:41:02.715 observer  BEGIN                seq=27 resource=R node=n4 client=c4 request_id=c4-4 round=4 active=5 overlap=true wait_ms=0.000000
+00:41:02.715 observer  VIOLATION_OVERLAP    seq=27 resource=R node=n4 client=c4 request_id=c4-4 round=4 active=5
+00:41:02.773 observer  END                  seq=28 resource=R node=n1 client=c1 request_id=c1-3 round=3 active=4 completed=12
+00:41:02.779 observer  BEGIN                seq=29 resource=R node=n1 client=c1 request_id=c1-4 round=4 active=5 overlap=true wait_ms=0.000000
+00:41:02.779 observer  VIOLATION_OVERLAP    seq=29 resource=R node=n1 client=c1 request_id=c1-4 round=4 active=5
+00:41:02.788 observer  END                  seq=30 resource=R node=n2 client=c2 request_id=c2-3 round=3 active=4 completed=13
+00:41:02.793 observer  BEGIN                seq=31 resource=R node=n2 client=c2 request_id=c2-4 round=4 active=5 overlap=true wait_ms=0.000000
+00:41:02.794 observer  VIOLATION_OVERLAP    seq=31 resource=R node=n2 client=c2 request_id=c2-4 round=4 active=5
+00:41:02.877 observer  END                  seq=32 resource=R node=n5 client=c5 request_id=c5-3 round=3 active=4 completed=14
+00:41:02.883 observer  BEGIN                seq=33 resource=R node=n5 client=c5 request_id=c5-4 round=4 active=5 overlap=true wait_ms=0.000000
+00:41:02.883 observer  VIOLATION_OVERLAP    seq=33 resource=R node=n5 client=c5 request_id=c5-4 round=4 active=5
+00:41:02.936 observer  END                  seq=34 resource=R node=n3 client=c3 request_id=c3-3 round=3 active=4 completed=15
+00:41:02.942 observer  BEGIN                seq=35 resource=R node=n3 client=c3 request_id=c3-4 round=4 active=5 overlap=true wait_ms=0.000000
+00:41:02.943 observer  VIOLATION_OVERLAP    seq=35 resource=R node=n3 client=c3 request_id=c3-4 round=4 active=5
+00:41:03.339 observer  END                  seq=36 resource=R node=n4 client=c4 request_id=c4-4 round=4 active=4 completed=16
+00:41:03.345 observer  BEGIN                seq=37 resource=R node=n4 client=c4 request_id=c4-5 round=5 active=5 overlap=true wait_ms=0.000000
+00:41:03.345 observer  VIOLATION_OVERLAP    seq=37 resource=R node=n4 client=c4 request_id=c4-5 round=5 active=5
+00:41:03.527 observer  END                  seq=38 resource=R node=n2 client=c2 request_id=c2-4 round=4 active=4 completed=17
+00:41:03.533 observer  BEGIN                seq=39 resource=R node=n2 client=c2 request_id=c2-5 round=5 active=5 overlap=true wait_ms=0.000000
+00:41:03.533 observer  VIOLATION_OVERLAP    seq=39 resource=R node=n2 client=c2 request_id=c2-5 round=5 active=5
+00:41:03.608 observer  END                  seq=40 resource=R node=n3 client=c3 request_id=c3-4 round=4 active=4 completed=18
+00:41:03.609 observer  END                  seq=41 resource=R node=n1 client=c1 request_id=c1-4 round=4 active=3 completed=19
+00:41:03.615 observer  BEGIN                seq=42 resource=R node=n3 client=c3 request_id=c3-5 round=5 active=4 overlap=true wait_ms=0.000000
+00:41:03.616 observer  VIOLATION_OVERLAP    seq=42 resource=R node=n3 client=c3 request_id=c3-5 round=5 active=4
+00:41:03.616 observer  BEGIN                seq=43 resource=R node=n1 client=c1 request_id=c1-5 round=5 active=5 overlap=true wait_ms=0.000000
+00:41:03.617 observer  VIOLATION_OVERLAP    seq=43 resource=R node=n1 client=c1 request_id=c1-5 round=5 active=5
+00:41:03.685 observer  END                  seq=44 resource=R node=n5 client=c5 request_id=c5-4 round=4 active=4 completed=20
+00:41:03.691 observer  BEGIN                seq=45 resource=R node=n5 client=c5 request_id=c5-5 round=5 active=5 overlap=true wait_ms=0.000000
+00:41:03.691 observer  VIOLATION_OVERLAP    seq=45 resource=R node=n5 client=c5 request_id=c5-5 round=5 active=5
+00:41:03.827 observer  END                  seq=46 resource=R node=n3 client=c3 request_id=c3-5 round=5 active=4 completed=21
+00:41:03.832 observer  BEGIN                seq=47 resource=R node=n3 client=c3 request_id=c3-6 round=6 active=5 overlap=true wait_ms=0.000000
+00:41:03.833 observer  VIOLATION_OVERLAP    seq=47 resource=R node=n3 client=c3 request_id=c3-6 round=6 active=5
+00:41:03.948 observer  END                  seq=48 resource=R node=n4 client=c4 request_id=c4-5 round=5 active=4 completed=22
+00:41:03.954 observer  BEGIN                seq=49 resource=R node=n4 client=c4 request_id=c4-6 round=6 active=5 overlap=true wait_ms=0.000000
+00:41:03.954 observer  VIOLATION_OVERLAP    seq=49 resource=R node=n4 client=c4 request_id=c4-6 round=6 active=5
+00:41:04.056 observer  END                  seq=50 resource=R node=n1 client=c1 request_id=c1-5 round=5 active=4 completed=23
+00:41:04.063 observer  BEGIN                seq=51 resource=R node=n1 client=c1 request_id=c1-6 round=6 active=5 overlap=true wait_ms=0.000000
+00:41:04.063 observer  VIOLATION_OVERLAP    seq=51 resource=R node=n1 client=c1 request_id=c1-6 round=6 active=5
+00:41:04.162 observer  END                  seq=52 resource=R node=n3 client=c3 request_id=c3-6 round=6 active=4 completed=24
+00:41:04.167 observer  BEGIN                seq=53 resource=R node=n3 client=c3 request_id=c3-7 round=7 active=5 overlap=true wait_ms=0.000000
+00:41:04.167 observer  VIOLATION_OVERLAP    seq=53 resource=R node=n3 client=c3 request_id=c3-7 round=7 active=5
+00:41:04.230 observer  END                  seq=54 resource=R node=n4 client=c4 request_id=c4-6 round=6 active=4 completed=25
+00:41:04.236 observer  BEGIN                seq=55 resource=R node=n4 client=c4 request_id=c4-7 round=7 active=5 overlap=true wait_ms=0.000000
+00:41:04.236 observer  VIOLATION_OVERLAP    seq=55 resource=R node=n4 client=c4 request_id=c4-7 round=7 active=5
+00:41:04.286 observer  END                  seq=56 resource=R node=n1 client=c1 request_id=c1-6 round=6 active=4 completed=26
+00:41:04.291 observer  BEGIN                seq=57 resource=R node=n1 client=c1 request_id=c1-7 round=7 active=5 overlap=true wait_ms=0.000000
+00:41:04.291 observer  VIOLATION_OVERLAP    seq=57 resource=R node=n1 client=c1 request_id=c1-7 round=7 active=5
+00:41:04.327 observer  END                  seq=58 resource=R node=n2 client=c2 request_id=c2-5 round=5 active=4 completed=27
+00:41:04.333 observer  BEGIN                seq=59 resource=R node=n2 client=c2 request_id=c2-6 round=6 active=5 overlap=true wait_ms=0.000000
+00:41:04.333 observer  VIOLATION_OVERLAP    seq=59 resource=R node=n2 client=c2 request_id=c2-6 round=6 active=5
+00:41:04.513 observer  END                  seq=60 resource=R node=n5 client=c5 request_id=c5-5 round=5 active=4 completed=28
+00:41:04.518 observer  BEGIN                seq=61 resource=R node=n5 client=c5 request_id=c5-6 round=6 active=5 overlap=true wait_ms=0.000000
+00:41:04.519 observer  VIOLATION_OVERLAP    seq=61 resource=R node=n5 client=c5 request_id=c5-6 round=6 active=5
+00:41:04.522 observer  END                  seq=62 resource=R node=n4 client=c4 request_id=c4-7 round=7 active=4 completed=29
+00:41:04.529 observer  BEGIN                seq=63 resource=R node=n4 client=c4 request_id=c4-8 round=8 active=5 overlap=true wait_ms=0.000000
+00:41:04.529 observer  VIOLATION_OVERLAP    seq=63 resource=R node=n4 client=c4 request_id=c4-8 round=8 active=5
+00:41:04.607 observer  END                  seq=64 resource=R node=n3 client=c3 request_id=c3-7 round=7 active=4 completed=30
+00:41:04.611 observer  BEGIN                seq=65 resource=R node=n3 client=c3 request_id=c3-8 round=8 active=5 overlap=true wait_ms=0.000000
+00:41:04.611 observer  VIOLATION_OVERLAP    seq=65 resource=R node=n3 client=c3 request_id=c3-8 round=8 active=5
+00:41:04.748 observer  END                  seq=66 resource=R node=n2 client=c2 request_id=c2-6 round=6 active=4 completed=31
+00:41:04.754 observer  BEGIN                seq=67 resource=R node=n2 client=c2 request_id=c2-7 round=7 active=5 overlap=true wait_ms=0.000000
+00:41:04.754 observer  VIOLATION_OVERLAP    seq=67 resource=R node=n2 client=c2 request_id=c2-7 round=7 active=5
+00:41:04.893 observer  END                  seq=68 resource=R node=n3 client=c3 request_id=c3-8 round=8 active=4 completed=32
+00:41:04.899 observer  BEGIN                seq=69 resource=R node=n3 client=c3 request_id=c3-9 round=9 active=5 overlap=true wait_ms=0.000000
+00:41:04.899 observer  VIOLATION_OVERLAP    seq=69 resource=R node=n3 client=c3 request_id=c3-9 round=9 active=5
+00:41:04.957 observer  END                  seq=70 resource=R node=n4 client=c4 request_id=c4-8 round=8 active=4 completed=33
+00:41:04.962 observer  BEGIN                seq=71 resource=R node=n4 client=c4 request_id=c4-9 round=9 active=5 overlap=true wait_ms=0.000000
+00:41:04.962 observer  VIOLATION_OVERLAP    seq=71 resource=R node=n4 client=c4 request_id=c4-9 round=9 active=5
+00:41:04.980 observer  END                  seq=72 resource=R node=n1 client=c1 request_id=c1-7 round=7 active=4 completed=34
+00:41:04.987 observer  BEGIN                seq=73 resource=R node=n1 client=c1 request_id=c1-8 round=8 active=5 overlap=true wait_ms=0.000000
+00:41:04.987 observer  VIOLATION_OVERLAP    seq=73 resource=R node=n1 client=c1 request_id=c1-8 round=8 active=5
+00:41:05.132 observer  END                  seq=74 resource=R node=n3 client=c3 request_id=c3-9 round=9 active=4 completed=35
+00:41:05.136 observer  BEGIN                seq=75 resource=R node=n3 client=c3 request_id=c3-10 round=10 active=5 overlap=true wait_ms=0.000000
+00:41:05.136 observer  VIOLATION_OVERLAP    seq=75 resource=R node=n3 client=c3 request_id=c3-10 round=10 active=5
+00:41:05.142 observer  END                  seq=76 resource=R node=n2 client=c2 request_id=c2-7 round=7 active=4 completed=36
+00:41:05.146 observer  BEGIN                seq=77 resource=R node=n2 client=c2 request_id=c2-8 round=8 active=5 overlap=true wait_ms=0.000000
+00:41:05.146 observer  VIOLATION_OVERLAP    seq=77 resource=R node=n2 client=c2 request_id=c2-8 round=8 active=5
+00:41:05.266 observer  END                  seq=78 resource=R node=n5 client=c5 request_id=c5-6 round=6 active=4 completed=37
+00:41:05.272 observer  BEGIN                seq=79 resource=R node=n5 client=c5 request_id=c5-7 round=7 active=5 overlap=true wait_ms=0.000000
+00:41:05.272 observer  VIOLATION_OVERLAP    seq=79 resource=R node=n5 client=c5 request_id=c5-7 round=7 active=5
+00:41:05.382 observer  END                  seq=80 resource=R node=n3 client=c3 request_id=c3-10 round=10 active=4 completed=38
+00:41:05.387 observer  DONE                 seq=81 resource=R node=n3 done_nodes=1 active=4
+00:41:05.559 observer  END                  seq=82 resource=R node=n2 client=c2 request_id=c2-8 round=8 active=3 completed=39
+00:41:05.560 observer  END                  seq=83 resource=R node=n1 client=c1 request_id=c1-8 round=8 active=2 completed=40
+00:41:05.566 observer  BEGIN                seq=84 resource=R node=n1 client=c1 request_id=c1-9 round=9 active=3 overlap=true wait_ms=0.000000
+00:41:05.567 observer  VIOLATION_OVERLAP    seq=84 resource=R node=n1 client=c1 request_id=c1-9 round=9 active=3
+00:41:05.568 observer  BEGIN                seq=85 resource=R node=n2 client=c2 request_id=c2-9 round=9 active=4 overlap=true wait_ms=0.000000
+00:41:05.568 observer  VIOLATION_OVERLAP    seq=85 resource=R node=n2 client=c2 request_id=c2-9 round=9 active=4
+00:41:05.610 observer  END                  seq=86 resource=R node=n5 client=c5 request_id=c5-7 round=7 active=3 completed=41
+00:41:05.618 observer  BEGIN                seq=87 resource=R node=n5 client=c5 request_id=c5-8 round=8 active=4 overlap=true wait_ms=0.000000
+00:41:05.618 observer  VIOLATION_OVERLAP    seq=87 resource=R node=n5 client=c5 request_id=c5-8 round=8 active=4
+00:41:05.669 observer  END                  seq=88 resource=R node=n4 client=c4 request_id=c4-9 round=9 active=3 completed=42
+00:41:05.675 observer  BEGIN                seq=89 resource=R node=n4 client=c4 request_id=c4-10 round=10 active=4 overlap=true wait_ms=0.000000
+00:41:05.675 observer  VIOLATION_OVERLAP    seq=89 resource=R node=n4 client=c4 request_id=c4-10 round=10 active=4
+00:41:05.877 observer  END                  seq=90 resource=R node=n2 client=c2 request_id=c2-9 round=9 active=3 completed=43
+00:41:05.883 observer  BEGIN                seq=91 resource=R node=n2 client=c2 request_id=c2-10 round=10 active=4 overlap=true wait_ms=0.000000
+00:41:05.883 observer  VIOLATION_OVERLAP    seq=91 resource=R node=n2 client=c2 request_id=c2-10 round=10 active=4
+00:41:05.947 observer  END                  seq=92 resource=R node=n1 client=c1 request_id=c1-9 round=9 active=3 completed=44
+00:41:05.952 observer  BEGIN                seq=93 resource=R node=n1 client=c1 request_id=c1-10 round=10 active=4 overlap=true wait_ms=0.000000
+00:41:05.952 observer  VIOLATION_OVERLAP    seq=93 resource=R node=n1 client=c1 request_id=c1-10 round=10 active=4
+00:41:06.160 observer  END                  seq=94 resource=R node=n5 client=c5 request_id=c5-8 round=8 active=3 completed=45
+00:41:06.165 observer  BEGIN                seq=95 resource=R node=n5 client=c5 request_id=c5-9 round=9 active=4 overlap=true wait_ms=0.000000
+00:41:06.165 observer  VIOLATION_OVERLAP    seq=95 resource=R node=n5 client=c5 request_id=c5-9 round=9 active=4
+00:41:06.551 observer  END                  seq=96 resource=R node=n5 client=c5 request_id=c5-9 round=9 active=3 completed=46
+00:41:06.556 observer  BEGIN                seq=97 resource=R node=n5 client=c5 request_id=c5-10 round=10 active=4 overlap=true wait_ms=0.000000
+00:41:06.557 observer  VIOLATION_OVERLAP    seq=97 resource=R node=n5 client=c5 request_id=c5-10 round=10 active=4
+00:41:06.635 observer  END                  seq=98 resource=R node=n2 client=c2 request_id=c2-10 round=10 active=3 completed=47
+00:41:06.638 observer  END                  seq=99 resource=R node=n4 client=c4 request_id=c4-10 round=10 active=2 completed=48
+00:41:06.640 observer  DONE                 seq=100 resource=R node=n2 done_nodes=2 active=2
+00:41:06.642 observer  DONE                 seq=101 resource=R node=n4 done_nodes=3 active=2
+00:41:06.829 observer  END                  seq=102 resource=R node=n1 client=c1 request_id=c1-10 round=10 active=1 completed=49
+00:41:06.833 observer  DONE                 seq=103 resource=R node=n1 done_nodes=4 active=1
+00:41:07.013 observer  END                  seq=104 resource=R node=n5 client=c5 request_id=c5-10 round=10 active=0 completed=50
+00:41:07.017 observer  DONE                 seq=105 resource=R node=n5 done_nodes=5 active=0
+00:41:07.033 observer  SUMMARY              scenario=nosync seed=1 nodes=5 expected=50 completed=50 active=0 total_s=6.000466 median_wait_ms=0.000000 p95_wait_ms=0.000000 throughput_per_s=8.332687 max_active=5 overlaps=49 barrier_violations=0 invalid_events=0 done_nodes=5 observer_messages=210 status=VIOLACAO per_client=c1=10;c2=10;c3=10;c4=10;c5=10

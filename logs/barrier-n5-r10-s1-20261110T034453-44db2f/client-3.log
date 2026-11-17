@@ -1,0 +1,22 @@
+00:44:55.479 c3        CONNECTED            node=n3 address=localhost:7003 requests=10
+00:44:56.253 c3        REQUEST              resource=R node=n3 client=c3 request_id=c3-1
+00:44:57.451 c3        RECEIVED_COMMITTED   resource=R node=n3 client=c3 request_id=c3-1 latency_s=1.183168 node_wait_s=0.013082 node_total_s=1.169679
+00:45:00.348 c3        REQUEST              resource=R node=n3 client=c3 request_id=c3-2
+00:45:05.175 c3        RECEIVED_COMMITTED   resource=R node=n3 client=c3 request_id=c3-2 latency_s=4.827269 node_wait_s=2.128895 node_total_s=4.825011
+00:45:08.566 c3        REQUEST              resource=R node=n3 client=c3 request_id=c3-3
+00:45:09.809 c3        RECEIVED_COMMITTED   resource=R node=n3 client=c3 request_id=c3-3 latency_s=1.242800 node_wait_s=0.688611 node_total_s=1.239783
+00:45:14.460 c3        REQUEST              resource=R node=n3 client=c3 request_id=c3-4
+00:45:17.388 c3        RECEIVED_COMMITTED   resource=R node=n3 client=c3 request_id=c3-4 latency_s=2.928792 node_wait_s=2.232269 node_total_s=2.926145
+00:45:21.609 c3        REQUEST              resource=R node=n3 client=c3 request_id=c3-5
+00:45:25.526 c3        RECEIVED_COMMITTED   resource=R node=n3 client=c3 request_id=c3-5 latency_s=3.916437 node_wait_s=2.706522 node_total_s=3.914136
+00:45:27.406 c3        REQUEST              resource=R node=n3 client=c3 request_id=c3-6
+00:45:30.426 c3        RECEIVED_COMMITTED   resource=R node=n3 client=c3 request_id=c3-6 latency_s=3.019926 node_wait_s=0.005305 node_total_s=3.017082
+00:45:32.416 c3        REQUEST              resource=R node=n3 client=c3 request_id=c3-7
+00:45:35.144 c3        RECEIVED_COMMITTED   resource=R node=n3 client=c3 request_id=c3-7 latency_s=2.727169 node_wait_s=0.704896 node_total_s=2.725234
+00:45:37.261 c3        REQUEST              resource=R node=n3 client=c3 request_id=c3-8
+00:45:39.602 c3        RECEIVED_COMMITTED   resource=R node=n3 client=c3 request_id=c3-8 latency_s=2.340135 node_wait_s=0.429135 node_total_s=2.337059
+00:45:41.558 c3        REQUEST              resource=R node=n3 client=c3 request_id=c3-9
+00:45:46.212 c3        RECEIVED_COMMITTED   resource=R node=n3 client=c3 request_id=c3-9 latency_s=4.654315 node_wait_s=0.719979 node_total_s=4.652351
+00:45:49.170 c3        REQUEST              resource=R node=n3 client=c3 request_id=c3-10
+00:45:50.943 c3        RECEIVED_COMMITTED   resource=R node=n3 client=c3 request_id=c3-10 latency_s=1.773333 node_wait_s=0.004554 node_total_s=1.771426
+00:45:50.949 c3        CLIENT_DONE          client=c3 completed=10 total_s=55.578131

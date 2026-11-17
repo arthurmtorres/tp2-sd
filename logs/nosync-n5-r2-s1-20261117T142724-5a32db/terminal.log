@@ -1,0 +1,1001 @@
+observer   | 14:27:24.811 observer  READY                port=9000 nodes=5 expected=10
+node-2     | [main-SendThread(localhost:2181)] WARN org.apache.zookeeper.ClientCnxn - Session 0x0 for server localhost/127.0.0.1:2181, Closing socket connection. Attempting reconnect except it is a SessionExpiredException.
+node-2     | java.net.ConnectException: Connection refused
+node-2     | 	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+node-2     | 	at java.base/sun.nio.ch.Net.pollConnectNow(Unknown Source)
+node-2     | 	at java.base/sun.nio.ch.SocketChannelImpl.finishConnect(Unknown Source)
+node-2     | 	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:344)
+node-2     | 	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1274)
+node-1     | [main-SendThread(localhost:2181)] WARN org.apache.zookeeper.ClientCnxn - Session 0x0 for server localhost/127.0.0.1:2181, Closing socket connection. Attempting reconnect except it is a SessionExpiredException.
+node-1     | java.net.ConnectException: Connection refused
+node-1     | 	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+node-1     | 	at java.base/sun.nio.ch.Net.pollConnectNow(Unknown Source)
+node-1     | 	at java.base/sun.nio.ch.SocketChannelImpl.finishConnect(Unknown Source)
+node-1     | 	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:344)
+node-1     | 	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1274)
+node-4     | [main-SendThread(localhost:2181)] WARN org.apache.zookeeper.ClientCnxn - Session 0x0 for server localhost/127.0.0.1:2181, Closing socket connection. Attempting reconnect except it is a SessionExpiredException.
+node-4     | java.net.ConnectException: Connection refused
+node-4     | 	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+node-4     | 	at java.base/sun.nio.ch.Net.pollConnectNow(Unknown Source)
+node-4     | 	at java.base/sun.nio.ch.SocketChannelImpl.finishConnect(Unknown Source)
+node-4     | 	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:344)
+node-4     | 	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1274)
+node-5     | [main-SendThread(localhost:2181)] WARN org.apache.zookeeper.ClientCnxn - Session 0x0 for server localhost/127.0.0.1:2181, Closing socket connection. Attempting reconnect except it is a SessionExpiredException.
+node-5     | java.net.ConnectException: Connection refused
+node-3     | [main-SendThread(localhost:2181)] WARN org.apache.zookeeper.ClientCnxn - Session 0x0 for server localhost/127.0.0.1:2181, Closing socket connection. Attempting reconnect except it is a SessionExpiredException.
+node-3     | java.net.ConnectException: Connection refused
+node-3     | 	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+node-5     | 	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+node-3     | 	at java.base/sun.nio.ch.Net.pollConnectNow(Unknown Source)
+node-5     | 	at java.base/sun.nio.ch.Net.pollConnectNow(Unknown Source)
+node-3     | 	at java.base/sun.nio.ch.SocketChannelImpl.finishConnect(Unknown Source)
+node-5     | 	at java.base/sun.nio.ch.SocketChannelImpl.finishConnect(Unknown Source)
+node-5     | 	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:344)
+node-3     | 	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:344)
+node-5     | 	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1274)
+node-3     | 	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1274)
+node-2     | [main-SendThread(localhost:2181)] WARN org.apache.zookeeper.ClientCnxn - Session 0x0 for server localhost/127.0.0.1:2181, Closing socket connection. Attempting reconnect except it is a SessionExpiredException.
+node-2     | java.net.ConnectException: Connection refused
+node-2     | 	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+node-2     | 	at java.base/sun.nio.ch.Net.pollConnectNow(Unknown Source)
+node-2     | 	at java.base/sun.nio.ch.SocketChannelImpl.finishConnect(Unknown Source)
+node-2     | 	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:344)
+node-2     | 	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1274)
+node-1     | [main-SendThread(localhost:2181)] WARN org.apache.zookeeper.ClientCnxn - Session 0x0 for server localhost/127.0.0.1:2181, Closing socket connection. Attempting reconnect except it is a SessionExpiredException.
+node-1     | java.net.ConnectException: Connection refused
+node-1     | 	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+node-1     | 	at java.base/sun.nio.ch.Net.pollConnectNow(Unknown Source)
+node-1     | 	at java.base/sun.nio.ch.SocketChannelImpl.finishConnect(Unknown Source)
+node-1     | 	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:344)
+node-1     | 	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1274)
+node-4     | [main-SendThread(localhost:2181)] WARN org.apache.zookeeper.ClientCnxn - Session 0x0 for server localhost/127.0.0.1:2181, Closing socket connection. Attempting reconnect except it is a SessionExpiredException.
+node-4     | java.net.ConnectException: Connection refused
+node-4     | 	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+node-4     | 	at java.base/sun.nio.ch.Net.pollConnectNow(Unknown Source)
+node-4     | 	at java.base/sun.nio.ch.SocketChannelImpl.finishConnect(Unknown Source)
+node-4     | 	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:344)
+node-4     | 	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1274)
+node-3     | [main-SendThread(localhost:2181)] WARN org.apache.zookeeper.ClientCnxn - Session 0x0 for server localhost/127.0.0.1:2181, Closing socket connection. Attempting reconnect except it is a SessionExpiredException.
+node-3     | java.net.ConnectException: Connection refused
+node-3     | 	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+node-3     | 	at java.base/sun.nio.ch.Net.pollConnectNow(Unknown Source)
+node-3     | 	at java.base/sun.nio.ch.SocketChannelImpl.finishConnect(Unknown Source)
+node-3     | 	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:344)
+node-3     | 	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1274)
+node-5     | [main-SendThread(localhost:2181)] WARN org.apache.zookeeper.ClientCnxn - Session 0x0 for server localhost/127.0.0.1:2181, Closing socket connection. Attempting reconnect except it is a SessionExpiredException.
+node-5     | java.net.ConnectException: Connection refused
+node-5     | 	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+node-5     | 	at java.base/sun.nio.ch.Net.pollConnectNow(Unknown Source)
+node-5     | 	at java.base/sun.nio.ch.SocketChannelImpl.finishConnect(Unknown Source)
+node-5     | 	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:344)
+node-5     | 	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1274)
+node-1     | [main-SendThread(localhost:2181)] WARN org.apache.zookeeper.ClientCnxn - Session 0x0 for server localhost/127.0.0.1:2181, Closing socket connection. Attempting reconnect except it is a SessionExpiredException.
+node-2     | [main-SendThread(localhost:2181)] WARN org.apache.zookeeper.ClientCnxn - Session 0x0 for server localhost/127.0.0.1:2181, Closing socket connection. Attempting reconnect except it is a SessionExpiredException.
+node-2     | java.net.ConnectException: Connection refused
+node-2     | 	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+node-1     | java.net.ConnectException: Connection refused
+node-1     | 	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+node-2     | 	at java.base/sun.nio.ch.Net.pollConnectNow(Unknown Source)
+node-2     | 	at java.base/sun.nio.ch.SocketChannelImpl.finishConnect(Unknown Source)
+node-2     | 	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:344)
+node-1     | 	at java.base/sun.nio.ch.Net.pollConnectNow(Unknown Source)
+node-2     | 	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1274)
+node-1     | 	at java.base/sun.nio.ch.SocketChannelImpl.finishConnect(Unknown Source)
+node-1     | 	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:344)
+node-1     | 	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1274)
+node-4     | [main-SendThread(localhost:2181)] WARN org.apache.zookeeper.ClientCnxn - Session 0x0 for server localhost/127.0.0.1:2181, Closing socket connection. Attempting reconnect except it is a SessionExpiredException.
+node-4     | java.net.ConnectException: Connection refused
+node-4     | 	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+node-4     | 	at java.base/sun.nio.ch.Net.pollConnectNow(Unknown Source)
+node-4     | 	at java.base/sun.nio.ch.SocketChannelImpl.finishConnect(Unknown Source)
+node-4     | 	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:344)
+node-4     | 	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1274)
+node-3     | [main-SendThread(localhost:2181)] WARN org.apache.zookeeper.ClientCnxn - Session 0x0 for server localhost/127.0.0.1:2181, Closing socket connection. Attempting reconnect except it is a SessionExpiredException.
+node-3     | java.net.ConnectException: Connection refused
+node-3     | 	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+node-3     | 	at java.base/sun.nio.ch.Net.pollConnectNow(Unknown Source)
+node-3     | 	at java.base/sun.nio.ch.SocketChannelImpl.finishConnect(Unknown Source)
+node-3     | 	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:344)
+node-3     | 	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1274)
+node-5     | [main-SendThread(localhost:2181)] WARN org.apache.zookeeper.ClientCnxn - Session 0x0 for server localhost/127.0.0.1:2181, Closing socket connection. Attempting reconnect except it is a SessionExpiredException.
+node-5     | java.net.ConnectException: Connection refused
+node-5     | 	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+node-5     | 	at java.base/sun.nio.ch.Net.pollConnectNow(Unknown Source)
+node-5     | 	at java.base/sun.nio.ch.SocketChannelImpl.finishConnect(Unknown Source)
+node-5     | 	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:344)
+node-5     | 	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1274)
+node-2     | [main-SendThread(localhost:2181)] WARN org.apache.zookeeper.ClientCnxn - Session 0x0 for server localhost/127.0.0.1:2181, Closing socket connection. Attempting reconnect except it is a SessionExpiredException.
+node-1     | [main-SendThread(localhost:2181)] WARN org.apache.zookeeper.ClientCnxn - Session 0x0 for server localhost/127.0.0.1:2181, Closing socket connection. Attempting reconnect except it is a SessionExpiredException.
+node-2     | java.net.ConnectException: Connection refused
+node-1     | java.net.ConnectException: Connection refused
+node-2     | 	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+node-1     | 	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+node-1     | 	at java.base/sun.nio.ch.Net.pollConnectNow(Unknown Source)
+node-1     | 	at java.base/sun.nio.ch.SocketChannelImpl.finishConnect(Unknown Source)
+node-2     | 	at java.base/sun.nio.ch.Net.pollConnectNow(Unknown Source)
+node-1     | 	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:344)
+node-2     | 	at java.base/sun.nio.ch.SocketChannelImpl.finishConnect(Unknown Source)
+node-2     | 	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:344)
+node-1     | 	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1274)
+node-2     | 	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1274)
+node-4     | [main-SendThread(localhost:2181)] WARN org.apache.zookeeper.ClientCnxn - Session 0x0 for server localhost/127.0.0.1:2181, Closing socket connection. Attempting reconnect except it is a SessionExpiredException.
+node-4     | java.net.ConnectException: Connection refused
+node-4     | 	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+node-4     | 	at java.base/sun.nio.ch.Net.pollConnectNow(Unknown Source)
+node-4     | 	at java.base/sun.nio.ch.SocketChannelImpl.finishConnect(Unknown Source)
+node-4     | 	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:344)
+node-4     | 	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1274)
+node-3     | [main-SendThread(localhost:2181)] WARN org.apache.zookeeper.ClientCnxn - Session 0x0 for server localhost/127.0.0.1:2181, Closing socket connection. Attempting reconnect except it is a SessionExpiredException.
+node-3     | java.net.ConnectException: Connection refused
+node-3     | 	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+node-3     | 	at java.base/sun.nio.ch.Net.pollConnectNow(Unknown Source)
+node-3     | 	at java.base/sun.nio.ch.SocketChannelImpl.finishConnect(Unknown Source)
+node-3     | 	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:344)
+node-3     | 	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1274)
+node-5     | [main-SendThread(localhost:2181)] WARN org.apache.zookeeper.ClientCnxn - Session 0x0 for server localhost/127.0.0.1:2181, Closing socket connection. Attempting reconnect except it is a SessionExpiredException.
+node-5     | java.net.ConnectException: Connection refused
+node-5     | 	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+node-5     | 	at java.base/sun.nio.ch.Net.pollConnectNow(Unknown Source)
+node-5     | 	at java.base/sun.nio.ch.SocketChannelImpl.finishConnect(Unknown Source)
+node-5     | 	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:344)
+node-5     | 	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1274)
+node-2     | [main-SendThread(localhost:2181)] WARN org.apache.zookeeper.ClientCnxn - Session 0x0 for server localhost/127.0.0.1:2181, Closing socket connection. Attempting reconnect except it is a SessionExpiredException.
+node-2     | java.net.ConnectException: Connection refused
+node-2     | 	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+node-2     | 	at java.base/sun.nio.ch.Net.pollConnectNow(Unknown Source)
+node-2     | 	at java.base/sun.nio.ch.SocketChannelImpl.finishConnect(Unknown Source)
+node-2     | 	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:344)
+node-2     | 	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1274)
+node-1     | [main-SendThread(localhost:2181)] WARN org.apache.zookeeper.ClientCnxn - Session 0x0 for server localhost/127.0.0.1:2181, Closing socket connection. Attempting reconnect except it is a SessionExpiredException.
+node-1     | java.net.ConnectException: Connection refused
+node-1     | 	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+node-1     | 	at java.base/sun.nio.ch.Net.pollConnectNow(Unknown Source)
+node-1     | 	at java.base/sun.nio.ch.SocketChannelImpl.finishConnect(Unknown Source)
+node-1     | 	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:344)
+node-1     | 	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1274)
+node-4     | [main-SendThread(localhost:2181)] WARN org.apache.zookeeper.ClientCnxn - Session 0x0 for server localhost/127.0.0.1:2181, Closing socket connection. Attempting reconnect except it is a SessionExpiredException.
+node-4     | java.net.ConnectException: Connection refused
+node-4     | 	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+node-4     | 	at java.base/sun.nio.ch.Net.pollConnectNow(Unknown Source)
+node-4     | 	at java.base/sun.nio.ch.SocketChannelImpl.finishConnect(Unknown Source)
+node-4     | 	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:344)
+node-4     | 	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1274)
+node-3     | [main-SendThread(localhost:2181)] WARN org.apache.zookeeper.ClientCnxn - Session 0x0 for server localhost/127.0.0.1:2181, Closing socket connection. Attempting reconnect except it is a SessionExpiredException.
+node-3     | java.net.ConnectException: Connection refused
+node-3     | 	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+node-3     | 	at java.base/sun.nio.ch.Net.pollConnectNow(Unknown Source)
+node-3     | 	at java.base/sun.nio.ch.SocketChannelImpl.finishConnect(Unknown Source)
+node-3     | 	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:344)
+node-3     | 	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1274)
+node-5     | [main-SendThread(localhost:2181)] WARN org.apache.zookeeper.ClientCnxn - Session 0x0 for server localhost/127.0.0.1:2181, Closing socket connection. Attempting reconnect except it is a SessionExpiredException.
+node-5     | java.net.ConnectException: Connection refused
+node-5     | 	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+node-5     | 	at java.base/sun.nio.ch.Net.pollConnectNow(Unknown Source)
+node-5     | 	at java.base/sun.nio.ch.SocketChannelImpl.finishConnect(Unknown Source)
+node-5     | 	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:344)
+node-5     | 	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1274)
+node-1     | [main-SendThread(localhost:2181)] WARN org.apache.zookeeper.ClientCnxn - Session 0x0 for server localhost/127.0.0.1:2181, Closing socket connection. Attempting reconnect except it is a SessionExpiredException.
+node-2     | [main-SendThread(localhost:2181)] WARN org.apache.zookeeper.ClientCnxn - Session 0x0 for server localhost/127.0.0.1:2181, Closing socket connection. Attempting reconnect except it is a SessionExpiredException.
+node-2     | java.net.ConnectException: Connection refused
+node-2     | 	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+node-1     | java.net.ConnectException: Connection refused
+node-2     | 	at java.base/sun.nio.ch.Net.pollConnectNow(Unknown Source)
+node-1     | 	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+node-1     | 	at java.base/sun.nio.ch.Net.pollConnectNow(Unknown Source)
+node-1     | 	at java.base/sun.nio.ch.SocketChannelImpl.finishConnect(Unknown Source)
+node-2     | 	at java.base/sun.nio.ch.SocketChannelImpl.finishConnect(Unknown Source)
+node-2     | 	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:344)
+node-1     | 	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:344)
+node-1     | 	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1274)
+node-2     | 	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1274)
+node-4     | [main-SendThread(localhost:2181)] WARN org.apache.zookeeper.ClientCnxn - Session 0x0 for server localhost/127.0.0.1:2181, Closing socket connection. Attempting reconnect except it is a SessionExpiredException.
+node-4     | java.net.ConnectException: Connection refused
+node-4     | 	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+node-4     | 	at java.base/sun.nio.ch.Net.pollConnectNow(Unknown Source)
+node-4     | 	at java.base/sun.nio.ch.SocketChannelImpl.finishConnect(Unknown Source)
+node-4     | 	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:344)
+node-4     | 	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1274)
+node-3     | [main-SendThread(localhost:2181)] WARN org.apache.zookeeper.ClientCnxn - Session 0x0 for server localhost/127.0.0.1:2181, Closing socket connection. Attempting reconnect except it is a SessionExpiredException.
+node-3     | java.net.ConnectException: Connection refused
+node-3     | 	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+node-3     | 	at java.base/sun.nio.ch.Net.pollConnectNow(Unknown Source)
+node-3     | 	at java.base/sun.nio.ch.SocketChannelImpl.finishConnect(Unknown Source)
+node-3     | 	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:344)
+node-3     | 	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1274)
+node-5     | [main-SendThread(localhost:2181)] WARN org.apache.zookeeper.ClientCnxn - Session 0x0 for server localhost/127.0.0.1:2181, Closing socket connection. Attempting reconnect except it is a SessionExpiredException.
+node-5     | java.net.ConnectException: Connection refused
+node-5     | 	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+node-5     | 	at java.base/sun.nio.ch.Net.pollConnectNow(Unknown Source)
+node-5     | 	at java.base/sun.nio.ch.SocketChannelImpl.finishConnect(Unknown Source)
+node-5     | 	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:344)
+node-5     | 	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1274)
+node-2     | [main-SendThread(localhost:2181)] WARN org.apache.zookeeper.ClientCnxn - Session 0x0 for server localhost/127.0.0.1:2181, Closing socket connection. Attempting reconnect except it is a SessionExpiredException.
+node-1     | [main-SendThread(localhost:2181)] WARN org.apache.zookeeper.ClientCnxn - Session 0x0 for server localhost/127.0.0.1:2181, Closing socket connection. Attempting reconnect except it is a SessionExpiredException.
+node-1     | java.net.ConnectException: Connection refused
+node-2     | java.net.ConnectException: Connection refused
+node-1     | 	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+node-1     | 	at java.base/sun.nio.ch.Net.pollConnectNow(Unknown Source)
+node-2     | 	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+node-2     | 	at java.base/sun.nio.ch.Net.pollConnectNow(Unknown Source)
+node-2     | 	at java.base/sun.nio.ch.SocketChannelImpl.finishConnect(Unknown Source)
+node-2     | 	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:344)
+node-2     | 	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1274)
+node-1     | 	at java.base/sun.nio.ch.SocketChannelImpl.finishConnect(Unknown Source)
+node-1     | 	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:344)
+node-1     | 	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1274)
+node-4     | [main-SendThread(localhost:2181)] WARN org.apache.zookeeper.ClientCnxn - Session 0x0 for server localhost/127.0.0.1:2181, Closing socket connection. Attempting reconnect except it is a SessionExpiredException.
+node-4     | java.net.ConnectException: Connection refused
+node-4     | 	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+node-4     | 	at java.base/sun.nio.ch.Net.pollConnectNow(Unknown Source)
+node-4     | 	at java.base/sun.nio.ch.SocketChannelImpl.finishConnect(Unknown Source)
+node-4     | 	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:344)
+node-4     | 	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1274)
+node-3     | [main-SendThread(localhost:2181)] WARN org.apache.zookeeper.ClientCnxn - Session 0x0 for server localhost/127.0.0.1:2181, Closing socket connection. Attempting reconnect except it is a SessionExpiredException.
+node-3     | java.net.ConnectException: Connection refused
+node-3     | 	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+node-3     | 	at java.base/sun.nio.ch.Net.pollConnectNow(Unknown Source)
+node-3     | 	at java.base/sun.nio.ch.SocketChannelImpl.finishConnect(Unknown Source)
+node-3     | 	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:344)
+node-3     | 	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1274)
+node-5     | [main-SendThread(localhost:2181)] WARN org.apache.zookeeper.ClientCnxn - Session 0x0 for server localhost/127.0.0.1:2181, Closing socket connection. Attempting reconnect except it is a SessionExpiredException.
+node-5     | java.net.ConnectException: Connection refused
+node-5     | 	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+node-5     | 	at java.base/sun.nio.ch.Net.pollConnectNow(Unknown Source)
+node-5     | 	at java.base/sun.nio.ch.SocketChannelImpl.finishConnect(Unknown Source)
+node-5     | 	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:344)
+node-5     | 	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1274)
+node-1     | [main-SendThread(localhost:2181)] WARN org.apache.zookeeper.ClientCnxn - Session 0x0 for server localhost/127.0.0.1:2181, Closing socket connection. Attempting reconnect except it is a SessionExpiredException.
+node-1     | java.net.ConnectException: Connection refused
+node-1     | 	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+node-1     | 	at java.base/sun.nio.ch.Net.pollConnectNow(Unknown Source)
+node-1     | 	at java.base/sun.nio.ch.SocketChannelImpl.finishConnect(Unknown Source)
+node-2     | [main-SendThread(localhost:2181)] WARN org.apache.zookeeper.ClientCnxn - Session 0x0 for server localhost/127.0.0.1:2181, Closing socket connection. Attempting reconnect except it is a SessionExpiredException.
+node-2     | java.net.ConnectException: Connection refused
+node-2     | 	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+node-2     | 	at java.base/sun.nio.ch.Net.pollConnectNow(Unknown Source)
+node-2     | 	at java.base/sun.nio.ch.SocketChannelImpl.finishConnect(Unknown Source)
+node-2     | 	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:344)
+node-2     | 	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1274)
+node-1     | 	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:344)
+node-1     | 	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1274)
+node-4     | [main-SendThread(localhost:2181)] WARN org.apache.zookeeper.ClientCnxn - Session 0x0 for server localhost/127.0.0.1:2181, Closing socket connection. Attempting reconnect except it is a SessionExpiredException.
+node-4     | java.net.ConnectException: Connection refused
+node-4     | 	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+node-4     | 	at java.base/sun.nio.ch.Net.pollConnectNow(Unknown Source)
+node-4     | 	at java.base/sun.nio.ch.SocketChannelImpl.finishConnect(Unknown Source)
+node-4     | 	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:344)
+node-4     | 	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1274)
+node-3     | [main-SendThread(localhost:2181)] WARN org.apache.zookeeper.ClientCnxn - Session 0x0 for server localhost/127.0.0.1:2181, Closing socket connection. Attempting reconnect except it is a SessionExpiredException.
+node-3     | java.net.ConnectException: Connection refused
+node-3     | 	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+node-3     | 	at java.base/sun.nio.ch.Net.pollConnectNow(Unknown Source)
+node-3     | 	at java.base/sun.nio.ch.SocketChannelImpl.finishConnect(Unknown Source)
+node-3     | 	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:344)
+node-3     | 	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1274)
+node-5     | [main-SendThread(localhost:2181)] WARN org.apache.zookeeper.ClientCnxn - Session 0x0 for server localhost/127.0.0.1:2181, Closing socket connection. Attempting reconnect except it is a SessionExpiredException.
+node-5     | java.net.ConnectException: Connection refused
+node-5     | 	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+node-5     | 	at java.base/sun.nio.ch.Net.pollConnectNow(Unknown Source)
+node-5     | 	at java.base/sun.nio.ch.SocketChannelImpl.finishConnect(Unknown Source)
+node-5     | 	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:344)
+node-5     | 	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1274)
+node-1     | [main-SendThread(localhost:2181)] WARN org.apache.zookeeper.ClientCnxn - Session 0x0 for server localhost/127.0.0.1:2181, Closing socket connection. Attempting reconnect except it is a SessionExpiredException.
+node-1     | java.net.ConnectException: Connection refused
+node-2     | [main-SendThread(localhost:2181)] WARN org.apache.zookeeper.ClientCnxn - Session 0x0 for server localhost/127.0.0.1:2181, Closing socket connection. Attempting reconnect except it is a SessionExpiredException.
+node-1     | 	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+node-2     | java.net.ConnectException: Connection refused
+node-1     | 	at java.base/sun.nio.ch.Net.pollConnectNow(Unknown Source)
+node-1     | 	at java.base/sun.nio.ch.SocketChannelImpl.finishConnect(Unknown Source)
+node-1     | 	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:344)
+node-1     | 	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1274)
+node-2     | 	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+node-2     | 	at java.base/sun.nio.ch.Net.pollConnectNow(Unknown Source)
+node-2     | 	at java.base/sun.nio.ch.SocketChannelImpl.finishConnect(Unknown Source)
+node-2     | 	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:344)
+node-2     | 	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1274)
+node-4     | [main-SendThread(localhost:2181)] WARN org.apache.zookeeper.ClientCnxn - Session 0x0 for server localhost/127.0.0.1:2181, Closing socket connection. Attempting reconnect except it is a SessionExpiredException.
+node-4     | java.net.ConnectException: Connection refused
+node-4     | 	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+node-4     | 	at java.base/sun.nio.ch.Net.pollConnectNow(Unknown Source)
+node-4     | 	at java.base/sun.nio.ch.SocketChannelImpl.finishConnect(Unknown Source)
+node-4     | 	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:344)
+node-4     | 	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1274)
+node-3     | [main-SendThread(localhost:2181)] WARN org.apache.zookeeper.ClientCnxn - Session 0x0 for server localhost/127.0.0.1:2181, Closing socket connection. Attempting reconnect except it is a SessionExpiredException.
+node-3     | java.net.ConnectException: Connection refused
+node-3     | 	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+node-5     | [main-SendThread(localhost:2181)] WARN org.apache.zookeeper.ClientCnxn - Session 0x0 for server localhost/127.0.0.1:2181, Closing socket connection. Attempting reconnect except it is a SessionExpiredException.
+node-3     | 	at java.base/sun.nio.ch.Net.pollConnectNow(Unknown Source)
+node-5     | java.net.ConnectException: Connection refused
+node-5     | 	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+node-3     | 	at java.base/sun.nio.ch.SocketChannelImpl.finishConnect(Unknown Source)
+node-3     | 	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:344)
+node-3     | 	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1274)
+node-5     | 	at java.base/sun.nio.ch.Net.pollConnectNow(Unknown Source)
+node-5     | 	at java.base/sun.nio.ch.SocketChannelImpl.finishConnect(Unknown Source)
+node-5     | 	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:344)
+node-5     | 	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1274)
+node-1     | [main-SendThread(localhost:2181)] WARN org.apache.zookeeper.ClientCnxn - Session 0x0 for server localhost/127.0.0.1:2181, Closing socket connection. Attempting reconnect except it is a SessionExpiredException.
+node-2     | [main-SendThread(localhost:2181)] WARN org.apache.zookeeper.ClientCnxn - Session 0x0 for server localhost/127.0.0.1:2181, Closing socket connection. Attempting reconnect except it is a SessionExpiredException.
+node-2     | java.net.ConnectException: Connection refused
+node-2     | 	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+node-2     | 	at java.base/sun.nio.ch.Net.pollConnectNow(Unknown Source)
+node-2     | 	at java.base/sun.nio.ch.SocketChannelImpl.finishConnect(Unknown Source)
+node-2     | 	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:344)
+node-2     | 	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1274)
+node-1     | java.net.ConnectException: Connection refused
+node-1     | 	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+node-1     | 	at java.base/sun.nio.ch.Net.pollConnectNow(Unknown Source)
+node-1     | 	at java.base/sun.nio.ch.SocketChannelImpl.finishConnect(Unknown Source)
+node-1     | 	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:344)
+node-1     | 	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1274)
+node-4     | [main-SendThread(localhost:2181)] WARN org.apache.zookeeper.ClientCnxn - Session 0x0 for server localhost/127.0.0.1:2181, Closing socket connection. Attempting reconnect except it is a SessionExpiredException.
+node-4     | java.net.ConnectException: Connection refused
+node-4     | 	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+node-4     | 	at java.base/sun.nio.ch.Net.pollConnectNow(Unknown Source)
+node-4     | 	at java.base/sun.nio.ch.SocketChannelImpl.finishConnect(Unknown Source)
+node-4     | 	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:344)
+node-4     | 	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1274)
+node-3     | [main-SendThread(localhost:2181)] WARN org.apache.zookeeper.ClientCnxn - Session 0x0 for server localhost/127.0.0.1:2181, Closing socket connection. Attempting reconnect except it is a SessionExpiredException.
+node-3     | java.net.ConnectException: Connection refused
+node-3     | 	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+node-3     | 	at java.base/sun.nio.ch.Net.pollConnectNow(Unknown Source)
+node-3     | 	at java.base/sun.nio.ch.SocketChannelImpl.finishConnect(Unknown Source)
+node-3     | 	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:344)
+node-3     | 	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1274)
+node-5     | [main-SendThread(localhost:2181)] WARN org.apache.zookeeper.ClientCnxn - Session 0x0 for server localhost/127.0.0.1:2181, Closing socket connection. Attempting reconnect except it is a SessionExpiredException.
+node-5     | java.net.ConnectException: Connection refused
+node-5     | 	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+node-5     | 	at java.base/sun.nio.ch.Net.pollConnectNow(Unknown Source)
+node-5     | 	at java.base/sun.nio.ch.SocketChannelImpl.finishConnect(Unknown Source)
+node-5     | 	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:344)
+node-5     | 	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1274)
+node-2     | [main-SendThread(localhost:2181)] WARN org.apache.zookeeper.ClientCnxn - Session 0x0 for server localhost/127.0.0.1:2181, Closing socket connection. Attempting reconnect except it is a SessionExpiredException.
+node-1     | [main-SendThread(localhost:2181)] WARN org.apache.zookeeper.ClientCnxn - Session 0x0 for server localhost/127.0.0.1:2181, Closing socket connection. Attempting reconnect except it is a SessionExpiredException.
+node-2     | java.net.ConnectException: Connection refused
+node-1     | java.net.ConnectException: Connection refused
+node-2     | 	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+node-1     | 	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+node-1     | 	at java.base/sun.nio.ch.Net.pollConnectNow(Unknown Source)
+node-1     | 	at java.base/sun.nio.ch.SocketChannelImpl.finishConnect(Unknown Source)
+node-2     | 	at java.base/sun.nio.ch.Net.pollConnectNow(Unknown Source)
+node-1     | 	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:344)
+node-2     | 	at java.base/sun.nio.ch.SocketChannelImpl.finishConnect(Unknown Source)
+node-1     | 	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1274)
+node-2     | 	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:344)
+node-4     | [main-SendThread(localhost:2181)] WARN org.apache.zookeeper.ClientCnxn - Session 0x0 for server localhost/127.0.0.1:2181, Closing socket connection. Attempting reconnect except it is a SessionExpiredException.
+node-2     | 	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1274)
+node-4     | java.net.ConnectException: Connection refused
+node-4     | 	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+node-4     | 	at java.base/sun.nio.ch.Net.pollConnectNow(Unknown Source)
+node-4     | 	at java.base/sun.nio.ch.SocketChannelImpl.finishConnect(Unknown Source)
+node-4     | 	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:344)
+node-4     | 	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1274)
+node-3     | [main-SendThread(localhost:2181)] WARN org.apache.zookeeper.ClientCnxn - Session 0x0 for server localhost/127.0.0.1:2181, Closing socket connection. Attempting reconnect except it is a SessionExpiredException.
+node-3     | java.net.ConnectException: Connection refused
+node-3     | 	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+node-3     | 	at java.base/sun.nio.ch.Net.pollConnectNow(Unknown Source)
+node-3     | 	at java.base/sun.nio.ch.SocketChannelImpl.finishConnect(Unknown Source)
+node-3     | 	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:344)
+node-3     | 	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1274)
+node-5     | [main-SendThread(localhost:2181)] WARN org.apache.zookeeper.ClientCnxn - Session 0x0 for server localhost/127.0.0.1:2181, Closing socket connection. Attempting reconnect except it is a SessionExpiredException.
+node-5     | java.net.ConnectException: Connection refused
+node-5     | 	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+node-5     | 	at java.base/sun.nio.ch.Net.pollConnectNow(Unknown Source)
+node-5     | 	at java.base/sun.nio.ch.SocketChannelImpl.finishConnect(Unknown Source)
+node-5     | 	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:344)
+node-5     | 	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1274)
+node-1     | [main-SendThread(localhost:2181)] WARN org.apache.zookeeper.ClientCnxn - Session 0x0 for server localhost/127.0.0.1:2181, Closing socket connection. Attempting reconnect except it is a SessionExpiredException.
+node-1     | java.net.ConnectException: Connection refused
+node-1     | 	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+node-1     | 	at java.base/sun.nio.ch.Net.pollConnectNow(Unknown Source)
+node-2     | [main-SendThread(localhost:2181)] WARN org.apache.zookeeper.ClientCnxn - Session 0x0 for server localhost/127.0.0.1:2181, Closing socket connection. Attempting reconnect except it is a SessionExpiredException.
+node-1     | 	at java.base/sun.nio.ch.SocketChannelImpl.finishConnect(Unknown Source)
+node-1     | 	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:344)
+node-1     | 	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1274)
+node-2     | java.net.ConnectException: Connection refused
+node-2     | 	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+node-2     | 	at java.base/sun.nio.ch.Net.pollConnectNow(Unknown Source)
+node-2     | 	at java.base/sun.nio.ch.SocketChannelImpl.finishConnect(Unknown Source)
+node-2     | 	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:344)
+node-2     | 	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1274)
+node-4     | [main-SendThread(localhost:2181)] WARN org.apache.zookeeper.ClientCnxn - Session 0x0 for server localhost/127.0.0.1:2181, Closing socket connection. Attempting reconnect except it is a SessionExpiredException.
+node-4     | java.net.ConnectException: Connection refused
+node-4     | 	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+node-4     | 	at java.base/sun.nio.ch.Net.pollConnectNow(Unknown Source)
+node-4     | 	at java.base/sun.nio.ch.SocketChannelImpl.finishConnect(Unknown Source)
+node-4     | 	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:344)
+node-4     | 	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1274)
+node-5     | [main-SendThread(localhost:2181)] WARN org.apache.zookeeper.ClientCnxn - Session 0x0 for server localhost/127.0.0.1:2181, Closing socket connection. Attempting reconnect except it is a SessionExpiredException.
+node-5     | java.net.ConnectException: Connection refused
+node-5     | 	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+node-5     | 	at java.base/sun.nio.ch.Net.pollConnectNow(Unknown Source)
+node-5     | 	at java.base/sun.nio.ch.SocketChannelImpl.finishConnect(Unknown Source)
+node-5     | 	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:344)
+node-5     | 	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1274)
+node-3     | [main-SendThread(localhost:2181)] WARN org.apache.zookeeper.ClientCnxn - Session 0x0 for server localhost/127.0.0.1:2181, Closing socket connection. Attempting reconnect except it is a SessionExpiredException.
+node-3     | java.net.ConnectException: Connection refused
+node-3     | 	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+node-3     | 	at java.base/sun.nio.ch.Net.pollConnectNow(Unknown Source)
+node-3     | 	at java.base/sun.nio.ch.SocketChannelImpl.finishConnect(Unknown Source)
+node-3     | 	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:344)
+node-3     | 	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1274)
+node-2     | [main-SendThread(localhost:2181)] WARN org.apache.zookeeper.ClientCnxn - Session 0x0 for server localhost/127.0.0.1:2181, Closing socket connection. Attempting reconnect except it is a SessionExpiredException.
+node-1     | [main-SendThread(localhost:2181)] WARN org.apache.zookeeper.ClientCnxn - Session 0x0 for server localhost/127.0.0.1:2181, Closing socket connection. Attempting reconnect except it is a SessionExpiredException.
+node-1     | java.net.ConnectException: Connection refused
+node-2     | java.net.ConnectException: Connection refused
+node-1     | 	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+node-2     | 	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+node-1     | 	at java.base/sun.nio.ch.Net.pollConnectNow(Unknown Source)
+node-2     | 	at java.base/sun.nio.ch.Net.pollConnectNow(Unknown Source)
+node-4     | [main-SendThread(localhost:2181)] WARN org.apache.zookeeper.ClientCnxn - Session 0x0 for server localhost/127.0.0.1:2181, Closing socket connection. Attempting reconnect except it is a SessionExpiredException.
+node-1     | 	at java.base/sun.nio.ch.SocketChannelImpl.finishConnect(Unknown Source)
+node-1     | 	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:344)
+node-1     | 	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1274)
+node-2     | 	at java.base/sun.nio.ch.SocketChannelImpl.finishConnect(Unknown Source)
+node-4     | java.net.ConnectException: Connection refused
+node-2     | 	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:344)
+node-2     | 	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1274)
+node-4     | 	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+node-4     | 	at java.base/sun.nio.ch.Net.pollConnectNow(Unknown Source)
+node-4     | 	at java.base/sun.nio.ch.SocketChannelImpl.finishConnect(Unknown Source)
+node-4     | 	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:344)
+node-4     | 	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1274)
+node-5     | [main-SendThread(localhost:2181)] WARN org.apache.zookeeper.ClientCnxn - Session 0x0 for server localhost/127.0.0.1:2181, Closing socket connection. Attempting reconnect except it is a SessionExpiredException.
+node-3     | [main-SendThread(localhost:2181)] WARN org.apache.zookeeper.ClientCnxn - Session 0x0 for server localhost/127.0.0.1:2181, Closing socket connection. Attempting reconnect except it is a SessionExpiredException.
+node-5     | java.net.ConnectException: Connection refused
+node-3     | java.net.ConnectException: Connection refused
+node-5     | 	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+node-3     | 	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+node-3     | 	at java.base/sun.nio.ch.Net.pollConnectNow(Unknown Source)
+node-3     | 	at java.base/sun.nio.ch.SocketChannelImpl.finishConnect(Unknown Source)
+node-3     | 	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:344)
+node-5     | 	at java.base/sun.nio.ch.Net.pollConnectNow(Unknown Source)
+node-5     | 	at java.base/sun.nio.ch.SocketChannelImpl.finishConnect(Unknown Source)
+node-3     | 	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1274)
+node-5     | 	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:344)
+node-5     | 	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1274)
+node-2     | [main-SendThread(localhost:2181)] WARN org.apache.zookeeper.ClientCnxn - Session 0x0 for server localhost/127.0.0.1:2181, Closing socket connection. Attempting reconnect except it is a SessionExpiredException.
+node-2     | java.net.ConnectException: Connection refused
+node-1     | [main-SendThread(localhost:2181)] WARN org.apache.zookeeper.ClientCnxn - Session 0x0 for server localhost/127.0.0.1:2181, Closing socket connection. Attempting reconnect except it is a SessionExpiredException.
+node-2     | 	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+node-1     | java.net.ConnectException: Connection refused
+node-2     | 	at java.base/sun.nio.ch.Net.pollConnectNow(Unknown Source)
+node-1     | 	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+node-4     | [main-SendThread(localhost:2181)] WARN org.apache.zookeeper.ClientCnxn - Session 0x0 for server localhost/127.0.0.1:2181, Closing socket connection. Attempting reconnect except it is a SessionExpiredException.
+node-2     | 	at java.base/sun.nio.ch.SocketChannelImpl.finishConnect(Unknown Source)
+node-1     | 	at java.base/sun.nio.ch.Net.pollConnectNow(Unknown Source)
+node-1     | 	at java.base/sun.nio.ch.SocketChannelImpl.finishConnect(Unknown Source)
+node-2     | 	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:344)
+node-1     | 	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:344)
+node-2     | 	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1274)
+node-4     | java.net.ConnectException: Connection refused
+node-4     | 	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+node-4     | 	at java.base/sun.nio.ch.Net.pollConnectNow(Unknown Source)
+node-1     | 	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1274)
+node-4     | 	at java.base/sun.nio.ch.SocketChannelImpl.finishConnect(Unknown Source)
+node-4     | 	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:344)
+node-4     | 	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1274)
+node-3     | [main-SendThread(localhost:2181)] WARN org.apache.zookeeper.ClientCnxn - Session 0x0 for server localhost/127.0.0.1:2181, Closing socket connection. Attempting reconnect except it is a SessionExpiredException.
+node-3     | java.net.ConnectException: Connection refused
+node-3     | 	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+node-3     | 	at java.base/sun.nio.ch.Net.pollConnectNow(Unknown Source)
+node-3     | 	at java.base/sun.nio.ch.SocketChannelImpl.finishConnect(Unknown Source)
+node-3     | 	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:344)
+node-3     | 	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1274)
+node-5     | [main-SendThread(localhost:2181)] WARN org.apache.zookeeper.ClientCnxn - Session 0x0 for server localhost/127.0.0.1:2181, Closing socket connection. Attempting reconnect except it is a SessionExpiredException.
+node-5     | java.net.ConnectException: Connection refused
+node-5     | 	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+node-5     | 	at java.base/sun.nio.ch.Net.pollConnectNow(Unknown Source)
+node-5     | 	at java.base/sun.nio.ch.SocketChannelImpl.finishConnect(Unknown Source)
+node-5     | 	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:344)
+node-5     | 	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1274)
+node-2     | [main-SendThread(localhost:2181)] WARN org.apache.zookeeper.ClientCnxn - Session 0x0 for server localhost/127.0.0.1:2181, Closing socket connection. Attempting reconnect except it is a SessionExpiredException.
+node-2     | java.net.ConnectException: Connection refused
+node-2     | 	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+node-2     | 	at java.base/sun.nio.ch.Net.pollConnectNow(Unknown Source)
+node-2     | 	at java.base/sun.nio.ch.SocketChannelImpl.finishConnect(Unknown Source)
+node-1     | [main-SendThread(localhost:2181)] WARN org.apache.zookeeper.ClientCnxn - Session 0x0 for server localhost/127.0.0.1:2181, Closing socket connection. Attempting reconnect except it is a SessionExpiredException.
+node-2     | 	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:344)
+node-2     | 	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1274)
+node-1     | java.net.ConnectException: Connection refused
+node-1     | 	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+node-4     | [main-SendThread(localhost:2181)] WARN org.apache.zookeeper.ClientCnxn - Session 0x0 for server localhost/127.0.0.1:2181, Closing socket connection. Attempting reconnect except it is a SessionExpiredException.
+node-1     | 	at java.base/sun.nio.ch.Net.pollConnectNow(Unknown Source)
+node-4     | java.net.ConnectException: Connection refused
+node-4     | 	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+node-4     | 	at java.base/sun.nio.ch.Net.pollConnectNow(Unknown Source)
+node-1     | 	at java.base/sun.nio.ch.SocketChannelImpl.finishConnect(Unknown Source)
+node-1     | 	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:344)
+node-4     | 	at java.base/sun.nio.ch.SocketChannelImpl.finishConnect(Unknown Source)
+node-1     | 	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1274)
+node-4     | 	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:344)
+node-4     | 	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1274)
+node-3     | [main-SendThread(localhost:2181)] WARN org.apache.zookeeper.ClientCnxn - Session 0x0 for server localhost/127.0.0.1:2181, Closing socket connection. Attempting reconnect except it is a SessionExpiredException.
+node-3     | java.net.ConnectException: Connection refused
+node-3     | 	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+node-3     | 	at java.base/sun.nio.ch.Net.pollConnectNow(Unknown Source)
+node-3     | 	at java.base/sun.nio.ch.SocketChannelImpl.finishConnect(Unknown Source)
+node-3     | 	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:344)
+node-3     | 	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1274)
+node-5     | [main-SendThread(localhost:2181)] WARN org.apache.zookeeper.ClientCnxn - Session 0x0 for server localhost/127.0.0.1:2181, Closing socket connection. Attempting reconnect except it is a SessionExpiredException.
+node-5     | java.net.ConnectException: Connection refused
+node-5     | 	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+node-5     | 	at java.base/sun.nio.ch.Net.pollConnectNow(Unknown Source)
+node-5     | 	at java.base/sun.nio.ch.SocketChannelImpl.finishConnect(Unknown Source)
+node-5     | 	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:344)
+node-5     | 	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1274)
+node-1     | [main-SendThread(localhost:2181)] WARN org.apache.zookeeper.ClientCnxn - Session 0x0 for server localhost/127.0.0.1:2181, Closing socket connection. Attempting reconnect except it is a SessionExpiredException.
+node-1     | java.net.ConnectException: Connection refused
+node-1     | 	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+node-1     | 	at java.base/sun.nio.ch.Net.pollConnectNow(Unknown Source)
+node-1     | 	at java.base/sun.nio.ch.SocketChannelImpl.finishConnect(Unknown Source)
+node-1     | 	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:344)
+node-4     | [main-SendThread(localhost:2181)] WARN org.apache.zookeeper.ClientCnxn - Session 0x0 for server localhost/127.0.0.1:2181, Closing socket connection. Attempting reconnect except it is a SessionExpiredException.
+node-1     | 	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1274)
+node-2     | [main-SendThread(localhost:2181)] WARN org.apache.zookeeper.ClientCnxn - Session 0x0 for server localhost/127.0.0.1:2181, Closing socket connection. Attempting reconnect except it is a SessionExpiredException.
+node-4     | java.net.ConnectException: Connection refused
+node-2     | java.net.ConnectException: Connection refused
+node-4     | 	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+node-4     | 	at java.base/sun.nio.ch.Net.pollConnectNow(Unknown Source)
+node-2     | 	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+node-4     | 	at java.base/sun.nio.ch.SocketChannelImpl.finishConnect(Unknown Source)
+node-2     | 	at java.base/sun.nio.ch.Net.pollConnectNow(Unknown Source)
+node-2     | 	at java.base/sun.nio.ch.SocketChannelImpl.finishConnect(Unknown Source)
+node-2     | 	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:344)
+node-2     | 	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1274)
+node-4     | 	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:344)
+node-4     | 	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1274)
+node-3     | [main-SendThread(localhost:2181)] WARN org.apache.zookeeper.ClientCnxn - Session 0x0 for server localhost/127.0.0.1:2181, Closing socket connection. Attempting reconnect except it is a SessionExpiredException.
+node-3     | java.net.ConnectException: Connection refused
+node-3     | 	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+node-3     | 	at java.base/sun.nio.ch.Net.pollConnectNow(Unknown Source)
+node-3     | 	at java.base/sun.nio.ch.SocketChannelImpl.finishConnect(Unknown Source)
+node-3     | 	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:344)
+node-3     | 	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1274)
+node-5     | [main-SendThread(localhost:2181)] WARN org.apache.zookeeper.ClientCnxn - Session 0x0 for server localhost/127.0.0.1:2181, Closing socket connection. Attempting reconnect except it is a SessionExpiredException.
+node-5     | java.net.ConnectException: Connection refused
+node-5     | 	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+node-5     | 	at java.base/sun.nio.ch.Net.pollConnectNow(Unknown Source)
+node-5     | 	at java.base/sun.nio.ch.SocketChannelImpl.finishConnect(Unknown Source)
+node-5     | 	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:344)
+node-5     | 	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1274)
+node-1     | [main-SendThread(localhost:2181)] WARN org.apache.zookeeper.ClientCnxn - Session 0x0 for server localhost/127.0.0.1:2181, Closing socket connection. Attempting reconnect except it is a SessionExpiredException.
+node-1     | java.net.ConnectException: Connection refused
+node-2     | [main-SendThread(localhost:2181)] WARN org.apache.zookeeper.ClientCnxn - Session 0x0 for server localhost/127.0.0.1:2181, Closing socket connection. Attempting reconnect except it is a SessionExpiredException.
+node-2     | java.net.ConnectException: Connection refused
+node-2     | 	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+node-2     | 	at java.base/sun.nio.ch.Net.pollConnectNow(Unknown Source)
+node-2     | 	at java.base/sun.nio.ch.SocketChannelImpl.finishConnect(Unknown Source)
+node-2     | 	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:344)
+node-2     | 	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1274)
+node-4     | [main-SendThread(localhost:2181)] WARN org.apache.zookeeper.ClientCnxn - Session 0x0 for server localhost/127.0.0.1:2181, Closing socket connection. Attempting reconnect except it is a SessionExpiredException.
+node-1     | 	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+node-4     | java.net.ConnectException: Connection refused
+node-1     | 	at java.base/sun.nio.ch.Net.pollConnectNow(Unknown Source)
+node-4     | 	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+node-1     | 	at java.base/sun.nio.ch.SocketChannelImpl.finishConnect(Unknown Source)
+node-4     | 	at java.base/sun.nio.ch.Net.pollConnectNow(Unknown Source)
+node-4     | 	at java.base/sun.nio.ch.SocketChannelImpl.finishConnect(Unknown Source)
+node-1     | 	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:344)
+node-4     | 	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:344)
+node-1     | 	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1274)
+node-4     | 	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1274)
+node-3     | [main-SendThread(localhost:2181)] WARN org.apache.zookeeper.ClientCnxn - Session 0x0 for server localhost/127.0.0.1:2181, Closing socket connection. Attempting reconnect except it is a SessionExpiredException.
+node-3     | java.net.ConnectException: Connection refused
+node-3     | 	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+node-3     | 	at java.base/sun.nio.ch.Net.pollConnectNow(Unknown Source)
+node-3     | 	at java.base/sun.nio.ch.SocketChannelImpl.finishConnect(Unknown Source)
+node-3     | 	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:344)
+node-3     | 	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1274)
+node-5     | [main-SendThread(localhost:2181)] WARN org.apache.zookeeper.ClientCnxn - Session 0x0 for server localhost/127.0.0.1:2181, Closing socket connection. Attempting reconnect except it is a SessionExpiredException.
+node-5     | java.net.ConnectException: Connection refused
+node-5     | 	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+node-5     | 	at java.base/sun.nio.ch.Net.pollConnectNow(Unknown Source)
+node-5     | 	at java.base/sun.nio.ch.SocketChannelImpl.finishConnect(Unknown Source)
+node-5     | 	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:344)
+node-5     | 	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1274)
+node-4     | [main-SendThread(localhost:2181)] WARN org.apache.zookeeper.ClientCnxn - Session 0x0 for server localhost/127.0.0.1:2181, Closing socket connection. Attempting reconnect except it is a SessionExpiredException.
+node-4     | java.net.ConnectException: Connection refused
+node-4     | 	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+node-4     | 	at java.base/sun.nio.ch.Net.pollConnectNow(Unknown Source)
+node-4     | 	at java.base/sun.nio.ch.SocketChannelImpl.finishConnect(Unknown Source)
+node-1     | [main-SendThread(localhost:2181)] WARN org.apache.zookeeper.ClientCnxn - Session 0x0 for server localhost/127.0.0.1:2181, Closing socket connection. Attempting reconnect except it is a SessionExpiredException.
+node-1     | java.net.ConnectException: Connection refused
+node-1     | 	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+node-1     | 	at java.base/sun.nio.ch.Net.pollConnectNow(Unknown Source)
+node-4     | 	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:344)
+node-4     | 	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1274)
+node-1     | 	at java.base/sun.nio.ch.SocketChannelImpl.finishConnect(Unknown Source)
+node-1     | 	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:344)
+node-1     | 	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1274)
+node-2     | [main-SendThread(localhost:2181)] WARN org.apache.zookeeper.ClientCnxn - Session 0x0 for server localhost/127.0.0.1:2181, Closing socket connection. Attempting reconnect except it is a SessionExpiredException.
+node-2     | java.net.ConnectException: Connection refused
+node-2     | 	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+node-2     | 	at java.base/sun.nio.ch.Net.pollConnectNow(Unknown Source)
+node-2     | 	at java.base/sun.nio.ch.SocketChannelImpl.finishConnect(Unknown Source)
+node-2     | 	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:344)
+node-2     | 	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1274)
+node-3     | [main-SendThread(localhost:2181)] WARN org.apache.zookeeper.ClientCnxn - Session 0x0 for server localhost/127.0.0.1:2181, Closing socket connection. Attempting reconnect except it is a SessionExpiredException.
+node-3     | java.net.ConnectException: Connection refused
+node-3     | 	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+node-3     | 	at java.base/sun.nio.ch.Net.pollConnectNow(Unknown Source)
+node-3     | 	at java.base/sun.nio.ch.SocketChannelImpl.finishConnect(Unknown Source)
+node-3     | 	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:344)
+node-3     | 	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1274)
+node-5     | [main-SendThread(localhost:2181)] WARN org.apache.zookeeper.ClientCnxn - Session 0x0 for server localhost/127.0.0.1:2181, Closing socket connection. Attempting reconnect except it is a SessionExpiredException.
+node-5     | java.net.ConnectException: Connection refused
+node-5     | 	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+node-5     | 	at java.base/sun.nio.ch.Net.pollConnectNow(Unknown Source)
+node-5     | 	at java.base/sun.nio.ch.SocketChannelImpl.finishConnect(Unknown Source)
+node-5     | 	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:344)
+node-5     | 	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1274)
+node-4     | [main-SendThread(localhost:2181)] WARN org.apache.zookeeper.ClientCnxn - Session 0x0 for server localhost/127.0.0.1:2181, Closing socket connection. Attempting reconnect except it is a SessionExpiredException.
+node-4     | java.net.ConnectException: Connection refused
+node-4     | 	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+node-2     | [main-SendThread(localhost:2181)] WARN org.apache.zookeeper.ClientCnxn - Session 0x0 for server localhost/127.0.0.1:2181, Closing socket connection. Attempting reconnect except it is a SessionExpiredException.
+node-2     | java.net.ConnectException: Connection refused
+node-2     | 	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+node-4     | 	at java.base/sun.nio.ch.Net.pollConnectNow(Unknown Source)
+node-1     | [main-SendThread(localhost:2181)] WARN org.apache.zookeeper.ClientCnxn - Session 0x0 for server localhost/127.0.0.1:2181, Closing socket connection. Attempting reconnect except it is a SessionExpiredException.
+node-2     | 	at java.base/sun.nio.ch.Net.pollConnectNow(Unknown Source)
+node-4     | 	at java.base/sun.nio.ch.SocketChannelImpl.finishConnect(Unknown Source)
+node-4     | 	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:344)
+node-2     | 	at java.base/sun.nio.ch.SocketChannelImpl.finishConnect(Unknown Source)
+node-2     | 	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:344)
+node-4     | 	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1274)
+node-1     | java.net.ConnectException: Connection refused
+node-1     | 	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+node-2     | 	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1274)
+node-1     | 	at java.base/sun.nio.ch.Net.pollConnectNow(Unknown Source)
+node-1     | 	at java.base/sun.nio.ch.SocketChannelImpl.finishConnect(Unknown Source)
+node-1     | 	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:344)
+node-1     | 	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1274)
+node-3     | [main-SendThread(localhost:2181)] WARN org.apache.zookeeper.ClientCnxn - Session 0x0 for server localhost/127.0.0.1:2181, Closing socket connection. Attempting reconnect except it is a SessionExpiredException.
+node-3     | java.net.ConnectException: Connection refused
+node-3     | 	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+node-3     | 	at java.base/sun.nio.ch.Net.pollConnectNow(Unknown Source)
+node-3     | 	at java.base/sun.nio.ch.SocketChannelImpl.finishConnect(Unknown Source)
+node-3     | 	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:344)
+node-3     | 	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1274)
+node-5     | [main-SendThread(localhost:2181)] WARN org.apache.zookeeper.ClientCnxn - Session 0x0 for server localhost/127.0.0.1:2181, Closing socket connection. Attempting reconnect except it is a SessionExpiredException.
+node-5     | java.net.ConnectException: Connection refused
+node-5     | 	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+node-5     | 	at java.base/sun.nio.ch.Net.pollConnectNow(Unknown Source)
+node-5     | 	at java.base/sun.nio.ch.SocketChannelImpl.finishConnect(Unknown Source)
+node-5     | 	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:344)
+node-5     | 	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1274)
+node-4     | [main-SendThread(localhost:2181)] WARN org.apache.zookeeper.ClientCnxn - Session 0x0 for server localhost/127.0.0.1:2181, Closing socket connection. Attempting reconnect except it is a SessionExpiredException.
+node-4     | java.net.ConnectException: Connection refused
+node-4     | 	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+node-2     | [main-SendThread(localhost:2181)] WARN org.apache.zookeeper.ClientCnxn - Session 0x0 for server localhost/127.0.0.1:2181, Closing socket connection. Attempting reconnect except it is a SessionExpiredException.
+node-2     | java.net.ConnectException: Connection refused
+node-2     | 	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+node-2     | 	at java.base/sun.nio.ch.Net.pollConnectNow(Unknown Source)
+node-2     | 	at java.base/sun.nio.ch.SocketChannelImpl.finishConnect(Unknown Source)
+node-4     | 	at java.base/sun.nio.ch.Net.pollConnectNow(Unknown Source)
+node-4     | 	at java.base/sun.nio.ch.SocketChannelImpl.finishConnect(Unknown Source)
+node-2     | 	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:344)
+node-4     | 	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:344)
+node-4     | 	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1274)
+node-2     | 	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1274)
+node-1     | [main-SendThread(localhost:2181)] WARN org.apache.zookeeper.ClientCnxn - Session 0x0 for server localhost/127.0.0.1:2181, Closing socket connection. Attempting reconnect except it is a SessionExpiredException.
+node-1     | java.net.ConnectException: Connection refused
+node-1     | 	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+node-1     | 	at java.base/sun.nio.ch.Net.pollConnectNow(Unknown Source)
+node-1     | 	at java.base/sun.nio.ch.SocketChannelImpl.finishConnect(Unknown Source)
+node-1     | 	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:344)
+node-1     | 	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1274)
+node-3     | [main-SendThread(localhost:2181)] WARN org.apache.zookeeper.ClientCnxn - Session 0x0 for server localhost/127.0.0.1:2181, Closing socket connection. Attempting reconnect except it is a SessionExpiredException.
+node-3     | java.net.ConnectException: Connection refused
+node-3     | 	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+node-3     | 	at java.base/sun.nio.ch.Net.pollConnectNow(Unknown Source)
+node-3     | 	at java.base/sun.nio.ch.SocketChannelImpl.finishConnect(Unknown Source)
+node-3     | 	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:344)
+node-3     | 	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1274)
+node-5     | [main-SendThread(localhost:2181)] WARN org.apache.zookeeper.ClientCnxn - Session 0x0 for server localhost/127.0.0.1:2181, Closing socket connection. Attempting reconnect except it is a SessionExpiredException.
+node-5     | java.net.ConnectException: Connection refused
+node-5     | 	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+node-5     | 	at java.base/sun.nio.ch.Net.pollConnectNow(Unknown Source)
+node-5     | 	at java.base/sun.nio.ch.SocketChannelImpl.finishConnect(Unknown Source)
+node-5     | 	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:344)
+node-5     | 	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1274)
+node-4     | [main-SendThread(localhost:2181)] WARN org.apache.zookeeper.ClientCnxn - Session 0x0 for server localhost/127.0.0.1:2181, Closing socket connection. Attempting reconnect except it is a SessionExpiredException.
+node-4     | java.net.ConnectException: Connection refused
+node-4     | 	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+node-4     | 	at java.base/sun.nio.ch.Net.pollConnectNow(Unknown Source)
+node-4     | 	at java.base/sun.nio.ch.SocketChannelImpl.finishConnect(Unknown Source)
+node-4     | 	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:344)
+node-2     | [main-SendThread(localhost:2181)] WARN org.apache.zookeeper.ClientCnxn - Session 0x0 for server localhost/127.0.0.1:2181, Closing socket connection. Attempting reconnect except it is a SessionExpiredException.
+node-2     | java.net.ConnectException: Connection refused
+node-4     | 	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1274)
+node-2     | 	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+node-2     | 	at java.base/sun.nio.ch.Net.pollConnectNow(Unknown Source)
+node-2     | 	at java.base/sun.nio.ch.SocketChannelImpl.finishConnect(Unknown Source)
+node-2     | 	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:344)
+node-2     | 	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1274)
+node-1     | [main-SendThread(localhost:2181)] WARN org.apache.zookeeper.ClientCnxn - Session 0x0 for server localhost/127.0.0.1:2181, Closing socket connection. Attempting reconnect except it is a SessionExpiredException.
+node-1     | java.net.ConnectException: Connection refused
+node-1     | 	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+node-1     | 	at java.base/sun.nio.ch.Net.pollConnectNow(Unknown Source)
+node-1     | 	at java.base/sun.nio.ch.SocketChannelImpl.finishConnect(Unknown Source)
+node-1     | 	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:344)
+node-1     | 	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1274)
+node-3     | [main-SendThread(localhost:2181)] WARN org.apache.zookeeper.ClientCnxn - Session 0x0 for server localhost/127.0.0.1:2181, Closing socket connection. Attempting reconnect except it is a SessionExpiredException.
+node-3     | java.net.ConnectException: Connection refused
+node-3     | 	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+node-3     | 	at java.base/sun.nio.ch.Net.pollConnectNow(Unknown Source)
+node-3     | 	at java.base/sun.nio.ch.SocketChannelImpl.finishConnect(Unknown Source)
+node-3     | 	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:344)
+node-3     | 	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1274)
+node-5     | [main-SendThread(localhost:2181)] WARN org.apache.zookeeper.ClientCnxn - Session 0x0 for server localhost/127.0.0.1:2181, Closing socket connection. Attempting reconnect except it is a SessionExpiredException.
+node-5     | java.net.ConnectException: Connection refused
+node-5     | 	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+node-5     | 	at java.base/sun.nio.ch.Net.pollConnectNow(Unknown Source)
+node-5     | 	at java.base/sun.nio.ch.SocketChannelImpl.finishConnect(Unknown Source)
+node-5     | 	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:344)
+node-5     | 	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1274)
+node-4     | [main-SendThread(localhost:2181)] WARN org.apache.zookeeper.ClientCnxn - Session 0x0 for server localhost/127.0.0.1:2181, Closing socket connection. Attempting reconnect except it is a SessionExpiredException.
+node-4     | java.net.ConnectException: Connection refused
+node-4     | 	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+node-2     | [main-SendThread(localhost:2181)] WARN org.apache.zookeeper.ClientCnxn - Session 0x0 for server localhost/127.0.0.1:2181, Closing socket connection. Attempting reconnect except it is a SessionExpiredException.
+node-4     | 	at java.base/sun.nio.ch.Net.pollConnectNow(Unknown Source)
+node-2     | java.net.ConnectException: Connection refused
+node-4     | 	at java.base/sun.nio.ch.SocketChannelImpl.finishConnect(Unknown Source)
+node-2     | 	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+node-4     | 	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:344)
+node-2     | 	at java.base/sun.nio.ch.Net.pollConnectNow(Unknown Source)
+node-1     | [main-SendThread(localhost:2181)] WARN org.apache.zookeeper.ClientCnxn - Session 0x0 for server localhost/127.0.0.1:2181, Closing socket connection. Attempting reconnect except it is a SessionExpiredException.
+node-4     | 	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1274)
+node-2     | 	at java.base/sun.nio.ch.SocketChannelImpl.finishConnect(Unknown Source)
+node-2     | 	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:344)
+node-2     | 	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1274)
+node-1     | java.net.ConnectException: Connection refused
+node-1     | 	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+node-1     | 	at java.base/sun.nio.ch.Net.pollConnectNow(Unknown Source)
+node-1     | 	at java.base/sun.nio.ch.SocketChannelImpl.finishConnect(Unknown Source)
+node-1     | 	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:344)
+node-1     | 	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1274)
+node-3     | [main-SendThread(localhost:2181)] WARN org.apache.zookeeper.ClientCnxn - Session 0x0 for server localhost/127.0.0.1:2181, Closing socket connection. Attempting reconnect except it is a SessionExpiredException.
+node-3     | java.net.ConnectException: Connection refused
+node-3     | 	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+node-3     | 	at java.base/sun.nio.ch.Net.pollConnectNow(Unknown Source)
+node-3     | 	at java.base/sun.nio.ch.SocketChannelImpl.finishConnect(Unknown Source)
+node-3     | 	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:344)
+node-3     | 	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1274)
+node-5     | [main-SendThread(localhost:2181)] WARN org.apache.zookeeper.ClientCnxn - Session 0x0 for server localhost/127.0.0.1:2181, Closing socket connection. Attempting reconnect except it is a SessionExpiredException.
+node-5     | java.net.ConnectException: Connection refused
+node-5     | 	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+node-5     | 	at java.base/sun.nio.ch.Net.pollConnectNow(Unknown Source)
+node-5     | 	at java.base/sun.nio.ch.SocketChannelImpl.finishConnect(Unknown Source)
+node-5     | 	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:344)
+node-5     | 	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1274)
+node-4     | [main-SendThread(localhost:2181)] WARN org.apache.zookeeper.ClientCnxn - Session 0x0 for server localhost/127.0.0.1:2181, Closing socket connection. Attempting reconnect except it is a SessionExpiredException.
+node-4     | java.net.ConnectException: Connection refused
+node-4     | 	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+node-4     | 	at java.base/sun.nio.ch.Net.pollConnectNow(Unknown Source)
+node-4     | 	at java.base/sun.nio.ch.SocketChannelImpl.finishConnect(Unknown Source)
+node-4     | 	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:344)
+node-4     | 	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1274)
+node-2     | [main-SendThread(localhost:2181)] WARN org.apache.zookeeper.ClientCnxn - Session 0x0 for server localhost/127.0.0.1:2181, Closing socket connection. Attempting reconnect except it is a SessionExpiredException.
+node-2     | java.net.ConnectException: Connection refused
+node-2     | 	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+node-2     | 	at java.base/sun.nio.ch.Net.pollConnectNow(Unknown Source)
+node-2     | 	at java.base/sun.nio.ch.SocketChannelImpl.finishConnect(Unknown Source)
+node-2     | 	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:344)
+node-2     | 	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1274)
+node-1     | [main-SendThread(localhost:2181)] WARN org.apache.zookeeper.ClientCnxn - Session 0x0 for server localhost/127.0.0.1:2181, Closing socket connection. Attempting reconnect except it is a SessionExpiredException.
+node-1     | java.net.ConnectException: Connection refused
+node-1     | 	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+node-1     | 	at java.base/sun.nio.ch.Net.pollConnectNow(Unknown Source)
+node-1     | 	at java.base/sun.nio.ch.SocketChannelImpl.finishConnect(Unknown Source)
+node-1     | 	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:344)
+node-1     | 	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1274)
+node-3     | [main-SendThread(localhost:2181)] WARN org.apache.zookeeper.ClientCnxn - Session 0x0 for server localhost/127.0.0.1:2181, Closing socket connection. Attempting reconnect except it is a SessionExpiredException.
+node-3     | java.net.ConnectException: Connection refused
+node-3     | 	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+node-3     | 	at java.base/sun.nio.ch.Net.pollConnectNow(Unknown Source)
+node-3     | 	at java.base/sun.nio.ch.SocketChannelImpl.finishConnect(Unknown Source)
+node-3     | 	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:344)
+node-3     | 	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1274)
+node-5     | [main-SendThread(localhost:2181)] WARN org.apache.zookeeper.ClientCnxn - Session 0x0 for server localhost/127.0.0.1:2181, Closing socket connection. Attempting reconnect except it is a SessionExpiredException.
+node-5     | java.net.ConnectException: Connection refused
+node-5     | 	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+node-5     | 	at java.base/sun.nio.ch.Net.pollConnectNow(Unknown Source)
+node-5     | 	at java.base/sun.nio.ch.SocketChannelImpl.finishConnect(Unknown Source)
+node-5     | 	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:344)
+node-5     | 	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1274)
+node-4     | [main-SendThread(localhost:2181)] WARN org.apache.zookeeper.ClientCnxn - Session 0x0 for server localhost/127.0.0.1:2181, Closing socket connection. Attempting reconnect except it is a SessionExpiredException.
+node-4     | java.net.ConnectException: Connection refused
+node-2     | [main-SendThread(localhost:2181)] WARN org.apache.zookeeper.ClientCnxn - Session 0x0 for server localhost/127.0.0.1:2181, Closing socket connection. Attempting reconnect except it is a SessionExpiredException.
+node-2     | java.net.ConnectException: Connection refused
+node-2     | 	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+node-2     | 	at java.base/sun.nio.ch.Net.pollConnectNow(Unknown Source)
+node-4     | 	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+node-4     | 	at java.base/sun.nio.ch.Net.pollConnectNow(Unknown Source)
+node-2     | 	at java.base/sun.nio.ch.SocketChannelImpl.finishConnect(Unknown Source)
+node-2     | 	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:344)
+node-4     | 	at java.base/sun.nio.ch.SocketChannelImpl.finishConnect(Unknown Source)
+node-4     | 	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:344)
+node-4     | 	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1274)
+node-2     | 	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1274)
+node-1     | [main-SendThread(localhost:2181)] WARN org.apache.zookeeper.ClientCnxn - Session 0x0 for server localhost/127.0.0.1:2181, Closing socket connection. Attempting reconnect except it is a SessionExpiredException.
+node-1     | java.net.ConnectException: Connection refused
+node-1     | 	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+node-1     | 	at java.base/sun.nio.ch.Net.pollConnectNow(Unknown Source)
+node-1     | 	at java.base/sun.nio.ch.SocketChannelImpl.finishConnect(Unknown Source)
+node-1     | 	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:344)
+node-1     | 	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1274)
+node-3     | [main-SendThread(localhost:2181)] WARN org.apache.zookeeper.ClientCnxn - Session 0x0 for server localhost/127.0.0.1:2181, Closing socket connection. Attempting reconnect except it is a SessionExpiredException.
+node-3     | java.net.ConnectException: Connection refused
+node-3     | 	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+node-3     | 	at java.base/sun.nio.ch.Net.pollConnectNow(Unknown Source)
+node-3     | 	at java.base/sun.nio.ch.SocketChannelImpl.finishConnect(Unknown Source)
+node-3     | 	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:344)
+node-3     | 	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1274)
+node-5     | [main-SendThread(localhost:2181)] WARN org.apache.zookeeper.ClientCnxn - Session 0x0 for server localhost/127.0.0.1:2181, Closing socket connection. Attempting reconnect except it is a SessionExpiredException.
+node-5     | java.net.ConnectException: Connection refused
+node-5     | 	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+node-5     | 	at java.base/sun.nio.ch.Net.pollConnectNow(Unknown Source)
+node-5     | 	at java.base/sun.nio.ch.SocketChannelImpl.finishConnect(Unknown Source)
+node-5     | 	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:344)
+node-5     | 	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1274)
+node-4     | [main-SendThread(localhost:2181)] WARN org.apache.zookeeper.ClientCnxn - Session 0x0 for server localhost/127.0.0.1:2181, Closing socket connection. Attempting reconnect except it is a SessionExpiredException.
+node-4     | java.net.ConnectException: Connection refused
+node-4     | 	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+node-2     | [main-SendThread(localhost:2181)] WARN org.apache.zookeeper.ClientCnxn - Session 0x0 for server localhost/127.0.0.1:2181, Closing socket connection. Attempting reconnect except it is a SessionExpiredException.
+node-2     | java.net.ConnectException: Connection refused
+node-4     | 	at java.base/sun.nio.ch.Net.pollConnectNow(Unknown Source)
+node-2     | 	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+node-2     | 	at java.base/sun.nio.ch.Net.pollConnectNow(Unknown Source)
+node-4     | 	at java.base/sun.nio.ch.SocketChannelImpl.finishConnect(Unknown Source)
+node-2     | 	at java.base/sun.nio.ch.SocketChannelImpl.finishConnect(Unknown Source)
+node-4     | 	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:344)
+node-2     | 	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:344)
+node-4     | 	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1274)
+node-2     | 	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1274)
+node-1     | [main-SendThread(localhost:2181)] WARN org.apache.zookeeper.ClientCnxn - Session 0x0 for server localhost/127.0.0.1:2181, Closing socket connection. Attempting reconnect except it is a SessionExpiredException.
+node-1     | java.net.ConnectException: Connection refused
+node-1     | 	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+node-1     | 	at java.base/sun.nio.ch.Net.pollConnectNow(Unknown Source)
+node-1     | 	at java.base/sun.nio.ch.SocketChannelImpl.finishConnect(Unknown Source)
+node-1     | 	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:344)
+node-1     | 	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1274)
+node-3     | [main-SendThread(localhost:2181)] WARN org.apache.zookeeper.ClientCnxn - Session 0x0 for server localhost/127.0.0.1:2181, Closing socket connection. Attempting reconnect except it is a SessionExpiredException.
+node-3     | java.net.ConnectException: Connection refused
+node-3     | 	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+node-3     | 	at java.base/sun.nio.ch.Net.pollConnectNow(Unknown Source)
+node-3     | 	at java.base/sun.nio.ch.SocketChannelImpl.finishConnect(Unknown Source)
+node-3     | 	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:344)
+node-3     | 	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1274)
+node-5     | [main-SendThread(localhost:2181)] WARN org.apache.zookeeper.ClientCnxn - Session 0x0 for server localhost/127.0.0.1:2181, Closing socket connection. Attempting reconnect except it is a SessionExpiredException.
+node-5     | java.net.ConnectException: Connection refused
+node-5     | 	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+node-5     | 	at java.base/sun.nio.ch.Net.pollConnectNow(Unknown Source)
+node-5     | 	at java.base/sun.nio.ch.SocketChannelImpl.finishConnect(Unknown Source)
+node-5     | 	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:344)
+node-5     | 	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1274)
+node-4     | [main-SendThread(localhost:2181)] WARN org.apache.zookeeper.ClientCnxn - Session 0x0 for server localhost/127.0.0.1:2181, Closing socket connection. Attempting reconnect except it is a SessionExpiredException.
+node-2     | [main-SendThread(localhost:2181)] WARN org.apache.zookeeper.ClientCnxn - Session 0x0 for server localhost/127.0.0.1:2181, Closing socket connection. Attempting reconnect except it is a SessionExpiredException.
+node-2     | java.net.ConnectException: Connection refused
+node-2     | 	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+node-2     | 	at java.base/sun.nio.ch.Net.pollConnectNow(Unknown Source)
+node-2     | 	at java.base/sun.nio.ch.SocketChannelImpl.finishConnect(Unknown Source)
+node-2     | 	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:344)
+node-4     | java.net.ConnectException: Connection refused
+node-2     | 	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1274)
+node-4     | 	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+node-4     | 	at java.base/sun.nio.ch.Net.pollConnectNow(Unknown Source)
+node-4     | 	at java.base/sun.nio.ch.SocketChannelImpl.finishConnect(Unknown Source)
+node-4     | 	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:344)
+node-4     | 	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1274)
+node-1     | [main-SendThread(localhost:2181)] WARN org.apache.zookeeper.ClientCnxn - Session 0x0 for server localhost/127.0.0.1:2181, Closing socket connection. Attempting reconnect except it is a SessionExpiredException.
+node-1     | java.net.ConnectException: Connection refused
+node-1     | 	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+node-1     | 	at java.base/sun.nio.ch.Net.pollConnectNow(Unknown Source)
+node-1     | 	at java.base/sun.nio.ch.SocketChannelImpl.finishConnect(Unknown Source)
+node-1     | 	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:344)
+node-1     | 	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1274)
+node-3     | [main-SendThread(localhost:2181)] WARN org.apache.zookeeper.ClientCnxn - Session 0x0 for server localhost/127.0.0.1:2181, Closing socket connection. Attempting reconnect except it is a SessionExpiredException.
+node-3     | java.net.ConnectException: Connection refused
+node-3     | 	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+node-3     | 	at java.base/sun.nio.ch.Net.pollConnectNow(Unknown Source)
+node-3     | 	at java.base/sun.nio.ch.SocketChannelImpl.finishConnect(Unknown Source)
+node-3     | 	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:344)
+node-3     | 	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1274)
+node-5     | [main-SendThread(localhost:2181)] WARN org.apache.zookeeper.ClientCnxn - Session 0x0 for server localhost/127.0.0.1:2181, Closing socket connection. Attempting reconnect except it is a SessionExpiredException.
+node-5     | java.net.ConnectException: Connection refused
+node-5     | 	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+node-5     | 	at java.base/sun.nio.ch.Net.pollConnectNow(Unknown Source)
+node-5     | 	at java.base/sun.nio.ch.SocketChannelImpl.finishConnect(Unknown Source)
+node-5     | 	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:344)
+node-5     | 	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1274)
+node-2     | [main-SendThread(localhost:2181)] WARN org.apache.zookeeper.ClientCnxn - Session 0x0 for server localhost/127.0.0.1:2181, Closing socket connection. Attempting reconnect except it is a SessionExpiredException.
+node-2     | java.net.ConnectException: Connection refused
+node-2     | 	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+node-2     | 	at java.base/sun.nio.ch.Net.pollConnectNow(Unknown Source)
+node-2     | 	at java.base/sun.nio.ch.SocketChannelImpl.finishConnect(Unknown Source)
+node-2     | 	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:344)
+node-4     | [main-SendThread(localhost:2181)] WARN org.apache.zookeeper.ClientCnxn - Session 0x0 for server localhost/127.0.0.1:2181, Closing socket connection. Attempting reconnect except it is a SessionExpiredException.
+node-2     | 	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1274)
+node-1     | [main-SendThread(localhost:2181)] WARN org.apache.zookeeper.ClientCnxn - Session 0x0 for server localhost/127.0.0.1:2181, Closing socket connection. Attempting reconnect except it is a SessionExpiredException.
+node-1     | java.net.ConnectException: Connection refused
+node-1     | 	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+node-1     | 	at java.base/sun.nio.ch.Net.pollConnectNow(Unknown Source)
+node-1     | 	at java.base/sun.nio.ch.SocketChannelImpl.finishConnect(Unknown Source)
+node-1     | 	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:344)
+node-1     | 	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1274)
+node-4     | java.net.ConnectException: Connection refused
+node-4     | 	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+node-4     | 	at java.base/sun.nio.ch.Net.pollConnectNow(Unknown Source)
+node-4     | 	at java.base/sun.nio.ch.SocketChannelImpl.finishConnect(Unknown Source)
+node-4     | 	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:344)
+node-4     | 	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1274)
+node-3     | [main-SendThread(localhost:2181)] WARN org.apache.zookeeper.ClientCnxn - Session 0x0 for server localhost/127.0.0.1:2181, Closing socket connection. Attempting reconnect except it is a SessionExpiredException.
+node-3     | java.net.ConnectException: Connection refused
+node-3     | 	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+node-3     | 	at java.base/sun.nio.ch.Net.pollConnectNow(Unknown Source)
+node-3     | 	at java.base/sun.nio.ch.SocketChannelImpl.finishConnect(Unknown Source)
+node-3     | 	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:344)
+node-3     | 	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1274)
+node-5     | [main-SendThread(localhost:2181)] WARN org.apache.zookeeper.ClientCnxn - Session 0x0 for server localhost/127.0.0.1:2181, Closing socket connection. Attempting reconnect except it is a SessionExpiredException.
+node-5     | java.net.ConnectException: Connection refused
+node-5     | 	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+node-5     | 	at java.base/sun.nio.ch.Net.pollConnectNow(Unknown Source)
+node-5     | 	at java.base/sun.nio.ch.SocketChannelImpl.finishConnect(Unknown Source)
+node-5     | 	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:344)
+node-5     | 	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1274)
+node-2     | [main-SendThread(localhost:2181)] WARN org.apache.zookeeper.ClientCnxn - Session 0x0 for server localhost/127.0.0.1:2181, Closing socket connection. Attempting reconnect except it is a SessionExpiredException.
+node-2     | java.net.ConnectException: Connection refused
+node-4     | [main-SendThread(localhost:2181)] WARN org.apache.zookeeper.ClientCnxn - Session 0x0 for server localhost/127.0.0.1:2181, Closing socket connection. Attempting reconnect except it is a SessionExpiredException.
+node-2     | 	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+node-4     | java.net.ConnectException: Connection refused
+node-2     | 	at java.base/sun.nio.ch.Net.pollConnectNow(Unknown Source)
+node-2     | 	at java.base/sun.nio.ch.SocketChannelImpl.finishConnect(Unknown Source)
+node-1     | [main-SendThread(localhost:2181)] WARN org.apache.zookeeper.ClientCnxn - Session 0x0 for server localhost/127.0.0.1:2181, Closing socket connection. Attempting reconnect except it is a SessionExpiredException.
+node-2     | 	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:344)
+node-1     | java.net.ConnectException: Connection refused
+node-1     | 	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+node-1     | 	at java.base/sun.nio.ch.Net.pollConnectNow(Unknown Source)
+node-2     | 	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1274)
+node-4     | 	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+node-1     | 	at java.base/sun.nio.ch.SocketChannelImpl.finishConnect(Unknown Source)
+node-4     | 	at java.base/sun.nio.ch.Net.pollConnectNow(Unknown Source)
+node-1     | 	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:344)
+node-4     | 	at java.base/sun.nio.ch.SocketChannelImpl.finishConnect(Unknown Source)
+node-1     | 	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1274)
+node-4     | 	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:344)
+node-4     | 	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1274)
+node-3     | [main-SendThread(localhost:2181)] WARN org.apache.zookeeper.ClientCnxn - Session 0x0 for server localhost/127.0.0.1:2181, Closing socket connection. Attempting reconnect except it is a SessionExpiredException.
+node-3     | java.net.ConnectException: Connection refused
+node-3     | 	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+node-3     | 	at java.base/sun.nio.ch.Net.pollConnectNow(Unknown Source)
+node-3     | 	at java.base/sun.nio.ch.SocketChannelImpl.finishConnect(Unknown Source)
+node-3     | 	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:344)
+node-3     | 	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1274)
+node-5     | [main-SendThread(localhost:2181)] WARN org.apache.zookeeper.ClientCnxn - Session 0x0 for server localhost/127.0.0.1:2181, Closing socket connection. Attempting reconnect except it is a SessionExpiredException.
+node-5     | java.net.ConnectException: Connection refused
+node-5     | 	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+node-5     | 	at java.base/sun.nio.ch.Net.pollConnectNow(Unknown Source)
+node-5     | 	at java.base/sun.nio.ch.SocketChannelImpl.finishConnect(Unknown Source)
+node-5     | 	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:344)
+node-5     | 	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1274)
+node-4     | 14:27:57.053 n4        ERROR           Exception in thread "main" java.io.IOException: ZooKeeper indisponível
+node-4     | 	at tp2.SyncNode.run(SyncNode.java:69)
+node-4     | 	at tp2.SyncNode.main(SyncNode.java:54)
+node-4     |      type=IOException message=ZooKeeper indisponível
+node-3     | 14:27:57.053 n3        ERROR                type=IOException message=ZooKeeper indisponível
+node-3     | Exception in thread "main" java.io.IOException: ZooKeeper indisponível
+node-3     | 	at tp2.SyncNode.run(SyncNode.java:69)
+node-2     | 14:27:57.053 n2        ERROR                type=IOException message=ZooKeeper indisponível
+node-3     | 	at tp2.SyncNode.main(SyncNode.java:54)
+node-2     | Exception in thread "main" java.io.IOException: ZooKeeper indisponível
+node-2     | 	at tp2.SyncNode.run(SyncNode.java:69)
+node-2     | 	at tp2.SyncNode.main(SyncNode.java:54)
+node-1     | 14:27:57.053 n1        ERROR                type=IOException message=ZooKeeper indisponível
+node-1     | Exception in thread "main" java.io.IOException: ZooKeeper indisponível
+node-1     | 	at tp2.SyncNode.run(SyncNode.java:69)
+node-1     | 	at tp2.SyncNode.main(SyncNode.java:54)
+node-5     | 14:27:57.058 n5        ERROR                type=IOException message=ZooKeeper indisponível
+node-5     | Exception in thread "main" java.io.IOException: ZooKeeper indisponível
+node-5     | 	at tp2.SyncNode.run(SyncNode.java:69)
+node-5     | 	at tp2.SyncNode.main(SyncNode.java:54)

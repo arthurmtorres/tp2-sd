@@ -1,0 +1,22 @@
+00:26:19.407 c4        CONNECTED            node=n4 address=localhost:7004 requests=10
+00:26:20.289 c4        REQUEST              resource=R node=n4 client=c4 request_id=c4-1
+00:26:27.293 c4        RECEIVED_COMMITTED   resource=R node=n4 client=c4 request_id=c4-1 latency_s=7.020664 node_wait_s=6.393039 node_total_s=6.986277
+00:26:27.293 c4        REQUEST              resource=R node=n4 client=c4 request_id=c4-2
+00:26:33.895 c4        RECEIVED_COMMITTED   resource=R node=n4 client=c4 request_id=c4-2 latency_s=6.601271 node_wait_s=5.841760 node_total_s=6.599952
+00:26:33.896 c4        REQUEST              resource=R node=n4 client=c4 request_id=c4-3
+00:26:39.041 c4        RECEIVED_COMMITTED   resource=R node=n4 client=c4 request_id=c4-3 latency_s=5.145456 node_wait_s=4.827630 node_total_s=5.144045
+00:26:39.042 c4        REQUEST              resource=R node=n4 client=c4 request_id=c4-4
+00:26:44.651 c4        RECEIVED_COMMITTED   resource=R node=n4 client=c4 request_id=c4-4 latency_s=5.609324 node_wait_s=4.980935 node_total_s=5.607977
+00:26:44.652 c4        REQUEST              resource=R node=n4 client=c4 request_id=c4-5
+00:26:49.810 c4        RECEIVED_COMMITTED   resource=R node=n4 client=c4 request_id=c4-5 latency_s=5.157840 node_wait_s=4.549978 node_total_s=5.156852
+00:26:49.810 c4        REQUEST              resource=R node=n4 client=c4 request_id=c4-6
+00:26:55.092 c4        RECEIVED_COMMITTED   resource=R node=n4 client=c4 request_id=c4-6 latency_s=5.281185 node_wait_s=4.999842 node_total_s=5.280294
+00:26:55.092 c4        REQUEST              resource=R node=n4 client=c4 request_id=c4-7
+00:27:00.566 c4        RECEIVED_COMMITTED   resource=R node=n4 client=c4 request_id=c4-7 latency_s=5.473442 node_wait_s=5.182715 node_total_s=5.472619
+00:27:00.566 c4        REQUEST              resource=R node=n4 client=c4 request_id=c4-8
+00:27:06.530 c4        RECEIVED_COMMITTED   resource=R node=n4 client=c4 request_id=c4-8 latency_s=5.963541 node_wait_s=5.530959 node_total_s=5.962704
+00:27:06.530 c4        REQUEST              resource=R node=n4 client=c4 request_id=c4-9
+00:27:12.138 c4        RECEIVED_COMMITTED   resource=R node=n4 client=c4 request_id=c4-9 latency_s=5.607593 node_wait_s=4.897474 node_total_s=5.606665
+00:27:12.138 c4        REQUEST              resource=R node=n4 client=c4 request_id=c4-10
+00:27:18.208 c4        RECEIVED_COMMITTED   resource=R node=n4 client=c4 request_id=c4-10 latency_s=6.069292 node_wait_s=5.103906 node_total_s=6.068602
+00:27:18.211 c4        CLIENT_DONE          client=c4 completed=10 total_s=58.872173

@@ -1,0 +1,18 @@
+{
+  "passed": true,
+  "errors": [],
+  "completed": 20,
+  "max_active": 1,
+  "overlaps": 0,
+  "per_client": {
+    "c1": 10,
+    "c2": 10
+  },
+  "node_counters": {
+    "recipe_acquire_calls": 20,
+    "recipe_release_calls": 20,
+    "evidence_zk_reads": 20,
+    "observer_messages": 82
+  },
+  "confirmed_c2_served_after_c1_bye": true
+}

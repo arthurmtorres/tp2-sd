@@ -1,0 +1,184 @@
+# Cada cliente e cada nó Sync executa em seu próprio contêiner.
+x-environment: &environment
+  SCENARIO: ${SCENARIO:-normal}
+  SEED: ${SEED:-1}
+  N: 5
+  REQ: ${REQ:-10}
+  CS_MIN: ${CS_MIN:-200}
+  CS_MAX: ${CS_MAX:-1000}
+  TIMEOUT: ${TIMEOUT:-1800}
+  LOCAL_UID: ${LOCAL_UID:-1000}
+  LOCAL_GID: ${LOCAL_GID:-1000}
+  ZK: zookeeper:2181
+
+x-files: &files
+  - .:/app
+  - experiment:/state
+
+x-java: &java
+  image: eclipse-temurin:17.0.17_10-jre-jammy
+  user: "${LOCAL_UID:-1000}:${LOCAL_GID:-1000}"
+  working_dir: /app
+  volumes: *files
+  environment: *environment
+  entrypoint: ["bash", "scripts/compose-service.sh"]
+  restart: "no"
+
+x-node: &node
+  <<: *java
+  depends_on:
+    prepare:
+      condition: service_completed_successfully
+    observer:
+      condition: service_healthy
+
+x-client: &client
+  <<: *java
+  depends_on:
+    node-1:
+      condition: service_healthy
+    node-2:
+      condition: service_healthy
+    node-3:
+      condition: service_healthy
+    node-4:
+      condition: service_healthy
+    node-5:
+      condition: service_healthy
+
+x-python: &python
+  image: python:3.12.12-alpine3.22
+  working_dir: /app
+  volumes: *files
+  environment: *environment
+  entrypoint: ["python3", "scripts/compose.py"]
+  restart: "no"
+
+services:
+  zookeeper:
+    image: zookeeper:3.9.3
+    ports:
+      - "2181:2181"
+    environment:
+      ZOO_4LW_COMMANDS_WHITELIST: "mntr,ruok,stat,srvr"
+    healthcheck:
+      test: ["CMD-SHELL", "zkServer.sh status >/dev/null 2>&1"]
+      interval: 3s
+      timeout: 5s
+      retries: 20
+      start_period: 5s
+
+  prepare:
+    <<: *python
+    command: ["prepare"]
+    depends_on:
+      zookeeper:
+        condition: service_healthy
+
+  observer:
+    <<: *java
+    command: ["observer"]
+    depends_on:
+      prepare:
+        condition: service_completed_successfully
+    healthcheck:
+      test: ["CMD", "bash", "scripts/compose-service.sh", "--health", "observer"]
+      interval: 1s
+      timeout: 3s
+      retries: 30
+
+  node-1:
+    <<: *node
+    command: ["node-1"]
+    healthcheck:
+      test: ["CMD", "bash", "scripts/compose-service.sh", "--health", "node-1"]
+      interval: 1s
+      timeout: 3s
+      retries: 45
+
+  node-2:
+    <<: *node
+    command: ["node-2"]
+    healthcheck:
+      test: ["CMD", "bash", "scripts/compose-service.sh", "--health", "node-2"]
+      interval: 1s
+      timeout: 3s
+      retries: 45
+
+  node-3:
+    <<: *node
+    command: ["node-3"]
+    healthcheck:
+      test: ["CMD", "bash", "scripts/compose-service.sh", "--health", "node-3"]
+      interval: 1s
+      timeout: 3s
+      retries: 45
+
+  node-4:
+    <<: *node
+    command: ["node-4"]
+    healthcheck:
+      test: ["CMD", "bash", "scripts/compose-service.sh", "--health", "node-4"]
+      interval: 1s
+      timeout: 3s
+      retries: 45
+
+  node-5:
+    <<: *node
+    command: ["node-5"]
+    healthcheck:
+      test: ["CMD", "bash", "scripts/compose-service.sh", "--health", "node-5"]
+      interval: 1s
+      timeout: 3s
+      retries: 45
+
+  client-1:
+    <<: *client
+    command: ["client-1"]
+
+  client-2:
+    <<: *client
+    command: ["client-2"]
+
+  client-3:
+    <<: *client
+    command: ["client-3"]
+
+  client-4:
+    <<: *client
+    command: ["client-4"]
+
+  client-5:
+    <<: *client
+    command: ["client-5"]
+
+  verify:
+    <<: *python
+    user: "${LOCAL_UID:-1000}:${LOCAL_GID:-1000}"
+    command: ["finish"]
+    depends_on:
+      observer:
+        condition: service_completed_successfully
+      node-1:
+        condition: service_completed_successfully
+      node-2:
+        condition: service_completed_successfully
+      node-3:
+        condition: service_completed_successfully
+      node-4:
+        condition: service_completed_successfully
+      node-5:
+        condition: service_completed_successfully
+      client-1:
+        condition: service_completed_successfully
+      client-2:
+        condition: service_completed_successfully
+      client-3:
+        condition: service_completed_successfully
+      client-4:
+        condition: service_completed_successfully
+      client-5:
+        condition: service_completed_successfully
+
+volumes:
+  experiment:

@@ -1,0 +1,22 @@
+15:32:36.423 c9        CONNECTED            node=n9 address=localhost:7009 requests=10
+15:32:36.998 c9        REQUEST              resource=R node=n9 client=c9 request_id=c9-1
+15:32:42.792 c9        RECEIVED_COMMITTED   resource=R node=n9 client=c9 request_id=c9-1 latency_s=5.783841 node_wait_s=4.652832 node_total_s=5.756417
+15:32:42.793 c9        REQUEST              resource=R node=n9 client=c9 request_id=c9-2
+15:32:49.813 c9        RECEIVED_COMMITTED   resource=R node=n9 client=c9 request_id=c9-2 latency_s=7.019384 node_wait_s=6.252922 node_total_s=7.017166
+15:32:49.814 c9        REQUEST              resource=R node=n9 client=c9 request_id=c9-3
+15:32:55.426 c9        RECEIVED_COMMITTED   resource=R node=n9 client=c9 request_id=c9-3 latency_s=5.611660 node_wait_s=5.138848 node_total_s=5.609647
+15:32:55.427 c9        REQUEST              resource=R node=n9 client=c9 request_id=c9-4
+15:33:00.499 c9        RECEIVED_COMMITTED   resource=R node=n9 client=c9 request_id=c9-4 latency_s=5.071712 node_wait_s=4.616225 node_total_s=5.069394
+15:33:00.500 c9        REQUEST              resource=R node=n9 client=c9 request_id=c9-5
+15:33:06.474 c9        RECEIVED_COMMITTED   resource=R node=n9 client=c9 request_id=c9-5 latency_s=5.974078 node_wait_s=5.722110 node_total_s=5.971075
+15:33:06.475 c9        REQUEST              resource=R node=n9 client=c9 request_id=c9-6
+15:33:11.981 c9        RECEIVED_COMMITTED   resource=R node=n9 client=c9 request_id=c9-6 latency_s=5.506298 node_wait_s=4.654619 node_total_s=5.503949
+15:33:11.982 c9        REQUEST              resource=R node=n9 client=c9 request_id=c9-7
+15:33:17.426 c9        RECEIVED_COMMITTED   resource=R node=n9 client=c9 request_id=c9-7 latency_s=5.443746 node_wait_s=4.785775 node_total_s=5.441822
+15:33:17.427 c9        REQUEST              resource=R node=n9 client=c9 request_id=c9-8
+15:33:23.989 c9        RECEIVED_COMMITTED   resource=R node=n9 client=c9 request_id=c9-8 latency_s=6.561908 node_wait_s=5.556075 node_total_s=6.559620
+15:33:23.990 c9        REQUEST              resource=R node=n9 client=c9 request_id=c9-9
+15:33:29.153 c9        RECEIVED_COMMITTED   resource=R node=n9 client=c9 request_id=c9-9 latency_s=5.163252 node_wait_s=4.743546 node_total_s=5.161430
+15:33:29.154 c9        REQUEST              resource=R node=n9 client=c9 request_id=c9-10
+15:33:34.330 c9        RECEIVED_COMMITTED   resource=R node=n9 client=c9 request_id=c9-10 latency_s=5.175904 node_wait_s=4.647398 node_total_s=5.174305
+15:33:34.340 c9        CLIENT_DONE          client=c9 completed=10 total_s=58.129099

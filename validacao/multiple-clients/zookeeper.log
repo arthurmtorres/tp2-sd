@@ -1,0 +1,1026 @@
+00:27:59.105 [main] INFO org.apache.zookeeper.server.quorum.QuorumPeerConfig - Reading configuration from: /workspace/scratch/618abed1fdef/audit/multi-zoo.cfg
+00:27:59.110 [main] INFO org.apache.zookeeper.server.quorum.QuorumPeerConfig - clientPortAddress is 0.0.0.0:2181
+00:27:59.111 [main] INFO org.apache.zookeeper.server.quorum.QuorumPeerConfig - secureClientPort is not set
+00:27:59.111 [main] INFO org.apache.zookeeper.server.quorum.QuorumPeerConfig - observerMasterPort is not set
+00:27:59.111 [main] INFO org.apache.zookeeper.server.quorum.QuorumPeerConfig - metricsProvider.className is org.apache.zookeeper.metrics.impl.DefaultMetricsProvider
+00:27:59.112 [main] INFO org.apache.zookeeper.server.DatadirCleanupManager - autopurge.snapRetainCount set to 3
+00:27:59.112 [main] INFO org.apache.zookeeper.server.DatadirCleanupManager - autopurge.purgeInterval set to 0
+00:27:59.112 [main] INFO org.apache.zookeeper.server.DatadirCleanupManager - Purge task is not scheduled.
+00:27:59.112 [main] WARN org.apache.zookeeper.server.quorum.QuorumPeerMain - Either no config or no quorum defined in config, running in standalone mode
+00:27:59.113 [main] INFO org.apache.zookeeper.jmx.ManagedUtil - Log4j 1.2 jmx support not found; jmx disabled.
+00:27:59.113 [main] INFO org.apache.zookeeper.server.quorum.QuorumPeerConfig - Reading configuration from: /workspace/scratch/618abed1fdef/audit/multi-zoo.cfg
+00:27:59.114 [main] INFO org.apache.zookeeper.server.quorum.QuorumPeerConfig - clientPortAddress is 0.0.0.0:2181
+00:27:59.114 [main] INFO org.apache.zookeeper.server.quorum.QuorumPeerConfig - secureClientPort is not set
+00:27:59.114 [main] INFO org.apache.zookeeper.server.quorum.QuorumPeerConfig - observerMasterPort is not set
+00:27:59.114 [main] INFO org.apache.zookeeper.server.quorum.QuorumPeerConfig - metricsProvider.className is org.apache.zookeeper.metrics.impl.DefaultMetricsProvider
+00:27:59.114 [main] INFO org.apache.zookeeper.server.ZooKeeperServerMain - Starting server
+00:27:59.123 [main] INFO org.apache.zookeeper.server.ServerMetrics - ServerMetrics initialized with provider org.apache.zookeeper.metrics.impl.DefaultMetricsProvider@1bc6a36e
+00:27:59.134 [main] INFO org.apache.zookeeper.server.auth.DigestAuthenticationProvider - ACL digest algorithm is: SHA1
+00:27:59.135 [main] INFO org.apache.zookeeper.server.auth.DigestAuthenticationProvider - zookeeper.DigestAuthenticationProvider.enabled = true
+00:27:59.136 [main] DEBUG org.apache.zookeeper.server.persistence.FileTxnSnapLog - Opening datadir:/workspace/scratch/618abed1fdef/audit/multi-zk-data snapDir:/workspace/scratch/618abed1fdef/audit/multi-zk-data
+00:27:59.136 [main] INFO org.apache.zookeeper.server.persistence.FileTxnSnapLog - zookeeper.snapshot.trust.empty : false
+00:27:59.142 [main] INFO org.apache.zookeeper.server.ZooKeeperServer - 
+00:27:59.142 [main] INFO org.apache.zookeeper.server.ZooKeeperServer -   ______                  _                                          
+00:27:59.142 [main] INFO org.apache.zookeeper.server.ZooKeeperServer -  |___  /                 | |                                         
+00:27:59.142 [main] INFO org.apache.zookeeper.server.ZooKeeperServer -     / /    ___     ___   | | __   ___    ___   _ __     ___   _ __   
+00:27:59.142 [main] INFO org.apache.zookeeper.server.ZooKeeperServer -    / /    / _ \   / _ \  | |/ /  / _ \  / _ \ | '_ \   / _ \ | '__|
+00:27:59.142 [main] INFO org.apache.zookeeper.server.ZooKeeperServer -   / /__  | (_) | | (_) | |   <  |  __/ |  __/ | |_) | |  __/ | |    
+00:27:59.142 [main] INFO org.apache.zookeeper.server.ZooKeeperServer -  /_____|  \___/   \___/  |_|\_\  \___|  \___| | .__/   \___| |_|
+00:27:59.142 [main] INFO org.apache.zookeeper.server.ZooKeeperServer -                                               | |                     
+00:27:59.142 [main] INFO org.apache.zookeeper.server.ZooKeeperServer -                                               |_|                     
+00:27:59.142 [main] INFO org.apache.zookeeper.server.ZooKeeperServer - 
+00:27:59.145 [main] INFO org.apache.zookeeper.server.ZooKeeperServer - Server environment:zookeeper.version=3.9.3-c26634f34490bb0ea7a09cc51e05ede3b4e320ee, built on 2024-10-17 23:21 UTC
+00:27:59.145 [main] INFO org.apache.zookeeper.server.ZooKeeperServer - Server environment:host.name=8a1dff8b7dd6
+00:27:59.145 [main] INFO org.apache.zookeeper.server.ZooKeeperServer - Server environment:java.version=17.0.19
+00:27:59.145 [main] INFO org.apache.zookeeper.server.ZooKeeperServer - Server environment:java.vendor=Debian
+00:27:59.145 [main] INFO org.apache.zookeeper.server.ZooKeeperServer - Server environment:java.home=/workspace/scratch/618abed1fdef/audit/tools/java17/usr/lib/jvm/java-17-openjdk-amd64
+00:27:59.145 [main] INFO org.apache.zookeeper.server.ZooKeeperServer - Server environment:java.class.path=/workspace/scratch/618abed1fdef/audit/tools/apache-zookeeper-3.9.3-bin/lib/netty-tcnative-boringssl-static-2.0.66.Final-linux-aarch_64.jar:/workspace/scratch/618abed1fdef/audit/tools/apache-zookeeper-3.9.3-bin/lib/jetty-io-9.4.56.v20240826.jar:/workspace/scratch/618abed1fdef/audit/tools/apache-zookeeper-3.9.3-bin/lib/netty-transport-native-epoll-4.1.113.Final-linux-x86_64.jar:/workspace/scratch/618abed1fdef/audit/tools/apache-zookeeper-3.9.3-bin/lib/netty-transport-native-unix-common-4.1.113.Final.jar:/workspace/scratch/618abed1fdef/audit/tools/apache-zookeeper-3.9.3-bin/lib/snappy-java-1.1.10.5.jar:/workspace/scratch/618abed1fdef/audit/tools/apache-zookeeper-3.9.3-bin/lib/simpleclient_common-0.9.0.jar:/workspace/scratch/618abed1fdef/audit/tools/apache-zookeeper-3.9.3-bin/lib/commons-io-2.17.0.jar:/workspace/scratch/618abed1fdef/audit/tools/apache-zookeeper-3.9.3-bin/lib/jetty-http-9.4.56.v20240826.jar:/workspace/scratch/618abed1fdef/audit/tools/apache-zookeeper-3.9.3-bin/lib/commons-cli-1.5.0.jar:/workspace/scratch/618abed1fdef/audit/tools/apache-zookeeper-3.9.3-bin/lib/jackson-databind-2.15.2.jar:/workspace/scratch/618abed1fdef/audit/tools/apache-zookeeper-3.9.3-bin/lib/netty-common-4.1.113.Final.jar:/workspace/scratch/618abed1fdef/audit/tools/apache-zookeeper-3.9.3-bin/lib/zookeeper-jute-3.9.3.jar:/workspace/scratch/618abed1fdef/audit/tools/apache-zookeeper-3.9.3-bin/lib/jline-2.14.6.jar:/workspace/scratch/618abed1fdef/audit/tools/apache-zookeeper-3.9.3-bin/lib/slf4j-api-1.7.30.jar:/workspace/scratch/618abed1fdef/audit/tools/apache-zookeeper-3.9.3-bin/lib/simpleclient_servlet-0.9.0.jar:/workspace/scratch/618abed1fdef/audit/tools/apache-zookeeper-3.9.3-bin/lib/netty-resolver-4.1.113.Final.jar:/workspace/scratch/618abed1fdef/audit/tools/apache-zookeeper-3.9.3-bin/lib/netty-tcnative-boringssl-static-2.0.66.Final-windows-x86_64.jar:/workspace/scratch/618abed1fdef/audit/tools/apache-zookeeper-3.9.3-bin/lib/netty-tcnative-boringssl-static-2.0.66.Final-osx-x86_64.jar:/workspace/scratch/618abed1fdef/audit/tools/apache-zookeeper-3.9.3-bin/lib/netty-codec-4.1.113.Final.jar:/workspace/scratch/618abed1fdef/audit/tools/apache-zookeeper-3.9.3-bin/lib/jetty-util-ajax-9.4.56.v20240826.jar:/workspace/scratch/618abed1fdef/audit/tools/apache-zookeeper-3.9.3-bin/lib/zookeeper-prometheus-metrics-3.9.3.jar:/workspace/scratch/618abed1fdef/audit/tools/apache-zookeeper-3.9.3-bin/lib/jackson-annotations-2.15.2.jar:/workspace/scratch/618abed1fdef/audit/tools/apache-zookeeper-3.9.3-bin/lib/jackson-core-2.15.2.jar:/workspace/scratch/618abed1fdef/audit/tools/apache-zookeeper-3.9.3-bin/lib/simpleclient_hotspot-0.9.0.jar:/workspace/scratch/618abed1fdef/audit/tools/apache-zookeeper-3.9.3-bin/lib/jetty-security-9.4.56.v20240826.jar:/workspace/scratch/618abed1fdef/audit/tools/apache-zookeeper-3.9.3-bin/lib/jetty-server-9.4.56.v20240826.jar:/workspace/scratch/618abed1fdef/audit/tools/apache-zookeeper-3.9.3-bin/lib/netty-tcnative-classes-2.0.66.Final.jar:/workspace/scratch/618abed1fdef/audit/tools/apache-zookeeper-3.9.3-bin/lib/jetty-util-9.4.56.v20240826.jar:/workspace/scratch/618abed1fdef/audit/tools/apache-zookeeper-3.9.3-bin/lib/netty-transport-4.1.113.Final.jar:/workspace/scratch/618abed1fdef/audit/tools/apache-zookeeper-3.9.3-bin/lib/javax.servlet-api-3.1.0.jar:/workspace/scratch/618abed1fdef/audit/tools/apache-zookeeper-3.9.3-bin/lib/audience-annotations-0.12.0.jar:/workspace/scratch/618abed1fdef/audit/tools/apache-zookeeper-3.9.3-bin/lib/netty-handler-4.1.113.Final.jar:/workspace/scratch/618abed1fdef/audit/tools/apache-zookeeper-3.9.3-bin/lib/netty-transport-classes-epoll-4.1.113.Final.jar:/workspace/scratch/618abed1fdef/audit/tools/apache-zookeeper-3.9.3-bin/lib/netty-buffer-4.1.113.Final.jar:/workspace/scratch/618abed1fdef/audit/tools/apache-zookeeper-3.9.3-bin/lib/simpleclient-0.9.0.jar:/workspace/scratch/618abed1fdef/audit/tools/apache-zookeeper-3.9.3-bin/lib/netty-tcnative-boringssl-static-2.0.66.Final-osx-aarch_64.jar:/workspace/scratch/618abed1fdef/audit/tools/apache-zookeeper-3.9.3-bin/lib/jetty-servlet-9.4.56.v20240826.jar:/workspace/scratch/618abed1fdef/audit/tools/apache-zookeeper-3.9.3-bin/lib/metrics-core-4.1.12.1.jar:/workspace/scratch/618abed1fdef/audit/tools/apache-zookeeper-3.9.3-bin/lib/zookeeper-3.9.3.jar:/workspace/scratch/618abed1fdef/audit/tools/apache-zookeeper-3.9.3-bin/lib/logback-core-1.2.13.jar:/workspace/scratch/618abed1fdef/audit/tools/apache-zookeeper-3.9.3-bin/lib/netty-tcnative-boringssl-static-2.0.66.Final-linux-x86_64.jar:/workspace/scratch/618abed1fdef/audit/tools/apache-zookeeper-3.9.3-bin/lib/logback-classic-1.2.13.jar:/workspace/scratch/618abed1fdef/audit/tools/apache-zookeeper-3.9.3-bin/lib/netty-tcnative-boringssl-static-2.0.66.Final.jar
+00:27:59.145 [main] INFO org.apache.zookeeper.server.ZooKeeperServer - Server environment:java.library.path=/usr/java/packages/lib:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib
+00:27:59.145 [main] INFO org.apache.zookeeper.server.ZooKeeperServer - Server environment:java.io.tmpdir=/tmp
+00:27:59.145 [main] INFO org.apache.zookeeper.server.ZooKeeperServer - Server environment:java.compiler=<NA>
+00:27:59.145 [main] INFO org.apache.zookeeper.server.ZooKeeperServer - Server environment:os.name=Linux
+00:27:59.145 [main] INFO org.apache.zookeeper.server.ZooKeeperServer - Server environment:os.arch=amd64
+00:27:59.145 [main] INFO org.apache.zookeeper.server.ZooKeeperServer - Server environment:os.version=6.18.57
+00:27:59.145 [main] INFO org.apache.zookeeper.server.ZooKeeperServer - Server environment:user.name=agent
+00:27:59.145 [main] INFO org.apache.zookeeper.server.ZooKeeperServer - Server environment:user.home=/home/agent
+00:27:59.145 [main] INFO org.apache.zookeeper.server.ZooKeeperServer - Server environment:user.dir=/workspace/scratch/618abed1fdef
+00:27:59.145 [main] INFO org.apache.zookeeper.server.ZooKeeperServer - Server environment:os.memory.free=148MB
+00:27:59.145 [main] INFO org.apache.zookeeper.server.ZooKeeperServer - Server environment:os.memory.max=2492MB
+00:27:59.145 [main] INFO org.apache.zookeeper.server.ZooKeeperServer - Server environment:os.memory.total=160MB
+00:27:59.145 [main] INFO org.apache.zookeeper.server.ZooKeeperServer - zookeeper.enableEagerACLCheck = false
+00:27:59.145 [main] INFO org.apache.zookeeper.server.ZooKeeperServer - zookeeper.digest.enabled = true
+00:27:59.145 [main] INFO org.apache.zookeeper.server.ZooKeeperServer - zookeeper.closeSessionTxn.enabled = true
+00:27:59.145 [main] INFO org.apache.zookeeper.server.ZooKeeperServer - zookeeper.serializeLastProcessedZxid.enabled = true
+00:27:59.145 [main] INFO org.apache.zookeeper.server.ZooKeeperServer - zookeeper.flushDelay = 0 ms
+00:27:59.145 [main] INFO org.apache.zookeeper.server.ZooKeeperServer - zookeeper.maxWriteQueuePollTime = 0 ms
+00:27:59.145 [main] INFO org.apache.zookeeper.server.ZooKeeperServer - zookeeper.maxBatchSize=1000
+00:27:59.145 [main] INFO org.apache.zookeeper.server.ZooKeeperServer - zookeeper.intBufferStartingSizeBytes = 1024
+00:27:59.146 [main] INFO org.apache.zookeeper.server.BlueThrottle - Weighed connection throttling is disabled
+00:27:59.146 [main] INFO org.apache.zookeeper.server.AuthenticationHelper - zookeeper.enforce.auth.enabled = false
+00:27:59.146 [main] INFO org.apache.zookeeper.server.AuthenticationHelper - zookeeper.enforce.auth.schemes = []
+00:27:59.147 [main] INFO org.apache.zookeeper.server.ZooKeeperServer - minSessionTimeout set to 4000 ms
+00:27:59.147 [main] INFO org.apache.zookeeper.server.ZooKeeperServer - maxSessionTimeout set to 40000 ms
+00:27:59.148 [main] INFO org.apache.zookeeper.server.ResponseCache - getData response cache size is initialized with value 400.
+00:27:59.148 [main] INFO org.apache.zookeeper.server.ResponseCache - getChildren response cache size is initialized with value 400.
+00:27:59.148 [main] INFO org.apache.zookeeper.server.util.RequestPathMetricsCollector - zookeeper.pathStats.slotCapacity = 60
+00:27:59.148 [main] INFO org.apache.zookeeper.server.util.RequestPathMetricsCollector - zookeeper.pathStats.slotDuration = 15
+00:27:59.149 [main] INFO org.apache.zookeeper.server.util.RequestPathMetricsCollector - zookeeper.pathStats.maxDepth = 6
+00:27:59.149 [main] INFO org.apache.zookeeper.server.util.RequestPathMetricsCollector - zookeeper.pathStats.initialDelay = 5
+00:27:59.149 [main] INFO org.apache.zookeeper.server.util.RequestPathMetricsCollector - zookeeper.pathStats.delay = 5
+00:27:59.149 [main] INFO org.apache.zookeeper.server.util.RequestPathMetricsCollector - zookeeper.pathStats.enabled = false
+00:27:59.151 [main] INFO org.apache.zookeeper.server.ZooKeeperServer - The max bytes for all large requests are set to 104857600
+00:27:59.151 [main] INFO org.apache.zookeeper.server.ZooKeeperServer - The large request threshold is set to -1
+00:27:59.151 [main] INFO org.apache.zookeeper.server.ZooKeeperServer - Created server with tickTime 2000 ms minSessionTimeout 4000 ms maxSessionTimeout 40000 ms clientPortListenBacklog -1 dataLogdir /workspace/scratch/618abed1fdef/audit/multi-zk-data/version-2 snapdir /workspace/scratch/618abed1fdef/audit/multi-zk-data/version-2
+00:27:59.155 [main] INFO org.apache.zookeeper.server.ServerCnxnFactory - Using org.apache.zookeeper.server.NIOServerCnxnFactory as server connection factory
+00:27:59.156 [main] WARN org.apache.zookeeper.server.ServerCnxnFactory - maxCnxns is not configured, using default value 0.
+00:27:59.157 [main] INFO org.apache.zookeeper.server.NIOServerCnxnFactory - Configuring NIO connection handler with 10s sessionless connection timeout, 2 selector thread(s), 18 worker threads, and 64 kB direct buffers.
+00:27:59.163 [main] INFO org.apache.zookeeper.server.NIOServerCnxnFactory - binding to port 0.0.0.0/0.0.0.0:2181
+00:27:59.171 [main] INFO org.apache.zookeeper.server.watch.WatchManagerFactory - Using org.apache.zookeeper.server.watch.WatchManager as watch manager
+00:27:59.171 [main] INFO org.apache.zookeeper.server.watch.WatchManagerFactory - Using org.apache.zookeeper.server.watch.WatchManager as watch manager
+00:27:59.172 [main] INFO org.apache.zookeeper.server.ZKDatabase - zookeeper.snapshotSizeFactor = 0.33
+00:27:59.172 [main] INFO org.apache.zookeeper.server.ZKDatabase - zookeeper.commitLogCount=500
+00:27:59.175 [main] INFO org.apache.zookeeper.server.persistence.SnapStream - zookeeper.snapshot.compression.method = CHECKED
+00:27:59.175 [main] INFO org.apache.zookeeper.server.persistence.FileTxnSnapLog - Snapshotting: 0x0 to /workspace/scratch/618abed1fdef/audit/multi-zk-data/version-2/snapshot.0
+00:27:59.178 [main] INFO org.apache.zookeeper.server.ZKDatabase - Snapshot loaded in 6 ms, highest zxid is 0x0, digest is 1371985504
+00:27:59.180 [main] INFO org.apache.zookeeper.server.persistence.FileTxnSnapLog - Snapshotting: 0x0 to /workspace/scratch/618abed1fdef/audit/multi-zk-data/version-2/snapshot.0
+00:27:59.180 [main] INFO org.apache.zookeeper.server.ZooKeeperServer - Snapshot taken in 0 ms
+00:27:59.182 [NIOServerCxnFactory.AcceptThread:0.0.0.0/0.0.0.0:2181] DEBUG org.apache.zookeeper.server.NIOServerCnxnFactory - Accepted socket connection from /127.0.0.1:50660
+00:27:59.185 [NIOWorkerThread-1] INFO org.apache.zookeeper.server.command.FourLetterCommands - The list of known four letter word commands is : [{1936881266=srvr, 1937006964=stat, 2003003491=wchc, 1685417328=dump, 1668445044=crst, 1936880500=srst, 1701738089=envi, 1668247142=conf, -720899=telnet close, 1751217000=hash, 2003003507=wchs, 2003003504=wchp, 1684632179=dirs, 1668247155=cons, 1835955314=mntr, 1769173615=isro, 1920298859=ruok, 1735683435=gtmk, 1937010027=stmk}]
+00:27:59.186 [NIOWorkerThread-1] INFO org.apache.zookeeper.server.command.FourLetterCommands - The list of enabled four letter word commands is : [[ruok, mntr, srvr]]
+00:27:59.186 [NIOWorkerThread-1] INFO org.apache.zookeeper.server.NIOServerCnxn - Processing ruok command from /127.0.0.1:50660
+00:27:59.186 [ProcessThread(sid:0 cport:2181):] INFO org.apache.zookeeper.server.PrepRequestProcessor - PrepRequestProcessor (sid:0) started, reconfigEnabled=false
+00:27:59.187 [main] INFO org.apache.zookeeper.server.RequestThrottler - zookeeper.request_throttler.shutdownTimeout = 10000 ms
+00:27:59.188 [NIOWorkerThread-1] DEBUG org.apache.zookeeper.server.NIOServerCnxn - Closed socket connection for client /127.0.0.1:50660 (no session established for client)
+00:27:59.264 [main] INFO org.apache.zookeeper.server.ContainerManager - Using checkIntervalMs=60000 maxPerMinute=10000 maxNeverUsedIntervalMs=0
+00:27:59.265 [main] INFO org.apache.zookeeper.audit.ZKAuditProvider - ZooKeeper audit is disabled.
+00:27:59.420 [NIOServerCxnFactory.AcceptThread:0.0.0.0/0.0.0.0:2181] DEBUG org.apache.zookeeper.server.NIOServerCnxnFactory - Accepted socket connection from /[0:0:0:0:0:0:0:1]:55998
+00:27:59.423 [NIOWorkerThread-2] DEBUG org.apache.zookeeper.server.ZooKeeperServer - Session establishment request from client /[0:0:0:0:0:0:0:1]:55998 client's lastZxid is 0x0
+00:27:59.423 [NIOWorkerThread-2] DEBUG org.apache.zookeeper.server.SessionTrackerImpl - Adding session 0x10000393fab0000
+00:27:59.424 [NIOWorkerThread-2] DEBUG org.apache.zookeeper.server.ZooKeeperServer - Client attempting to establish new session: session = 0x10000393fab0000, zxid = 0x0, timeout = 60000, address = /[0:0:0:0:0:0:0:1]:55998
+00:27:59.426 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.PrepRequestProcessor - Digest got from data tree is: 1371985504
+00:27:59.426 [SyncThread:0] INFO org.apache.zookeeper.server.persistence.FileTxnLog - Creating new log file: log.1
+00:27:59.426 [SyncThread:0] DEBUG org.apache.zookeeper.server.FinalRequestProcessor - Processing request:: sessionid:0x10000393fab0000 type:createSession cxid:0x0 zxid:0x1 txntype:-10 reqpath:n/a
+00:27:59.427 [SyncThread:0] DEBUG org.apache.zookeeper.server.DataTree - Digests are matching for Zxid: 1, Digest in log and actual tree: 1371985504
+00:27:59.427 [SyncThread:0] DEBUG org.apache.zookeeper.server.FinalRequestProcessor - sessionid:0x10000393fab0000 type:createSession cxid:0x0 zxid:0x1 txntype:-10 reqpath:n/a
+00:27:59.431 [SyncThread:0] DEBUG org.apache.zookeeper.server.ZooKeeperServer - Established session 0x10000393fab0000 with negotiated timeout 40000 for client /[0:0:0:0:0:0:0:1]:55998
+00:27:59.444 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.SessionTrackerImpl - Checking session 0x10000393fab0000
+00:27:59.444 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.SessionTrackerImpl - Checking session 0x10000393fab0000
+00:27:59.444 [SyncThread:0] DEBUG org.apache.zookeeper.server.FinalRequestProcessor - Processing request:: sessionid:0x10000393fab0000 type:getData cxid:0x1 zxid:0xfffffffffffffffe txntype:unknown reqpath:/zookeeper/config
+00:27:59.444 [SyncThread:0] DEBUG org.apache.zookeeper.server.FinalRequestProcessor - sessionid:0x10000393fab0000 type:getData cxid:0x1 zxid:0xfffffffffffffffe txntype:unknown reqpath:/zookeeper/config
+00:27:59.445 [SyncThread:0] DEBUG org.apache.zookeeper.server.ZooKeeperServer - Permission requested: 1 
+00:27:59.445 [SyncThread:0] DEBUG org.apache.zookeeper.server.ZooKeeperServer - ACLs for node: [1,s{'world,'anyone}
+]
+00:27:59.446 [SyncThread:0] DEBUG org.apache.zookeeper.server.ZooKeeperServer - Client credentials: ['ip,'0:0:0:0:0:0:0:1
+]
+00:27:59.447 [SyncThread:0] DEBUG org.apache.zookeeper.server.FinalRequestProcessor - Processing request:: sessionid:0x10000393fab0000 type:getData cxid:0x2 zxid:0xfffffffffffffffe txntype:unknown reqpath:/zookeeper/config
+00:27:59.447 [SyncThread:0] DEBUG org.apache.zookeeper.server.FinalRequestProcessor - sessionid:0x10000393fab0000 type:getData cxid:0x2 zxid:0xfffffffffffffffe txntype:unknown reqpath:/zookeeper/config
+00:27:59.447 [SyncThread:0] DEBUG org.apache.zookeeper.server.ZooKeeperServer - Permission requested: 1 
+00:27:59.447 [SyncThread:0] DEBUG org.apache.zookeeper.server.ZooKeeperServer - ACLs for node: [1,s{'world,'anyone}
+]
+00:27:59.447 [SyncThread:0] DEBUG org.apache.zookeeper.server.ZooKeeperServer - Client credentials: ['ip,'0:0:0:0:0:0:0:1
+]
+00:27:59.452 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.SessionTrackerImpl - Checking session 0x10000393fab0000
+00:27:59.452 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.PrepRequestProcessor - Processing ACL: 31,s{'world,'anyone}
+
+00:27:59.452 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.ZooKeeperServer - Permission requested: 4 
+00:27:59.452 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.ZooKeeperServer - ACLs for node: [31,s{'world,'anyone}
+]
+00:27:59.453 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.ZooKeeperServer - Client credentials: ['ip,'0:0:0:0:0:0:0:1
+]
+00:27:59.455 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.PrepRequestProcessor - Digest got from data tree is: 1371985504
+00:27:59.455 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.PrepRequestProcessor - Digest got from outstandingChanges is: 1355400778
+00:27:59.456 [SyncThread:0] DEBUG org.apache.zookeeper.server.FinalRequestProcessor - Processing request:: sessionid:0x10000393fab0000 type:createContainer cxid:0x3 zxid:0x2 txntype:19 reqpath:/multiple-clients-regression
+00:27:59.457 [SyncThread:0] DEBUG org.apache.zookeeper.common.PathTrie - multiple-clients-regression
+00:27:59.459 [SyncThread:0] DEBUG org.apache.zookeeper.server.DataTree - Digests are matching for Zxid: 2, Digest in log and actual tree: 2576815232
+00:27:59.460 [SyncThread:0] DEBUG org.apache.zookeeper.server.FinalRequestProcessor - sessionid:0x10000393fab0000 type:createContainer cxid:0x3 zxid:0x2 txntype:19 reqpath:/multiple-clients-regression
+00:27:59.467 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.SessionTrackerImpl - Checking session 0x10000393fab0000
+00:27:59.467 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.PrepRequestProcessor - Processing ACL: 31,s{'world,'anyone}
+
+00:27:59.467 [SyncThread:0] DEBUG org.apache.zookeeper.server.FinalRequestProcessor - Processing request:: sessionid:0x10000393fab0000 type:create2 cxid:0x4 zxid:0x3 txntype:-1 reqpath:/multiple-clients-regression/locks/R
+00:27:59.467 [SyncThread:0] DEBUG org.apache.zookeeper.server.DataTree - Ignoring processTxn failure hdr: -1 : error: -101
+00:27:59.472 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.SessionTrackerImpl - Checking session 0x10000393fab0000
+00:27:59.472 [SyncThread:0] DEBUG org.apache.zookeeper.server.FinalRequestProcessor - Processing request:: sessionid:0x10000393fab0000 type:exists cxid:0x5 zxid:0xfffffffffffffffe txntype:unknown reqpath:/multiple-clients-regression/locks
+00:27:59.472 [SyncThread:0] DEBUG org.apache.zookeeper.server.FinalRequestProcessor - sessionid:0x10000393fab0000 type:exists cxid:0x5 zxid:0xfffffffffffffffe txntype:unknown reqpath:/multiple-clients-regression/locks
+00:27:59.475 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.SessionTrackerImpl - Checking session 0x10000393fab0000
+00:27:59.475 [SyncThread:0] DEBUG org.apache.zookeeper.server.FinalRequestProcessor - Processing request:: sessionid:0x10000393fab0000 type:exists cxid:0x6 zxid:0xfffffffffffffffe txntype:unknown reqpath:/multiple-clients-regression
+00:27:59.475 [SyncThread:0] DEBUG org.apache.zookeeper.server.FinalRequestProcessor - sessionid:0x10000393fab0000 type:exists cxid:0x6 zxid:0xfffffffffffffffe txntype:unknown reqpath:/multiple-clients-regression
+00:27:59.475 [SyncThread:0] DEBUG org.apache.zookeeper.server.ZooKeeperServer - Permission requested: 1 
+00:27:59.475 [SyncThread:0] DEBUG org.apache.zookeeper.server.ZooKeeperServer - ACLs for node: [31,s{'world,'anyone}
+]
+00:27:59.476 [SyncThread:0] DEBUG org.apache.zookeeper.server.ZooKeeperServer - Client credentials: ['ip,'0:0:0:0:0:0:0:1
+]
+00:27:59.477 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.SessionTrackerImpl - Checking session 0x10000393fab0000
+00:27:59.477 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.PrepRequestProcessor - Processing ACL: 31,s{'world,'anyone}
+
+00:27:59.477 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.ZooKeeperServer - Permission requested: 4 
+00:27:59.477 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.ZooKeeperServer - ACLs for node: [31,s{'world,'anyone}
+]
+00:27:59.477 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.ZooKeeperServer - Client credentials: ['ip,'0:0:0:0:0:0:0:1
+]
+00:27:59.478 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.PrepRequestProcessor - Digest got from data tree is: 2576815232
+00:27:59.478 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.PrepRequestProcessor - Digest got from outstandingChanges is: 1919135677
+00:27:59.478 [SyncThread:0] DEBUG org.apache.zookeeper.server.FinalRequestProcessor - Processing request:: sessionid:0x10000393fab0000 type:create cxid:0x7 zxid:0x4 txntype:1 reqpath:/multiple-clients-regression/locks
+00:27:59.478 [SyncThread:0] DEBUG org.apache.zookeeper.common.PathTrie - multiple-clients-regression
+00:27:59.478 [SyncThread:0] DEBUG org.apache.zookeeper.server.DataTree - Digests are matching for Zxid: 4, Digest in log and actual tree: 3581317485
+00:27:59.478 [SyncThread:0] DEBUG org.apache.zookeeper.server.FinalRequestProcessor - sessionid:0x10000393fab0000 type:create cxid:0x7 zxid:0x4 txntype:1 reqpath:/multiple-clients-regression/locks
+00:27:59.479 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.SessionTrackerImpl - Checking session 0x10000393fab0000
+00:27:59.480 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.PrepRequestProcessor - Processing ACL: 31,s{'world,'anyone}
+
+00:27:59.480 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.ZooKeeperServer - Permission requested: 4 
+00:27:59.480 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.ZooKeeperServer - ACLs for node: [31,s{'world,'anyone}
+]
+00:27:59.480 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.ZooKeeperServer - Client credentials: ['ip,'0:0:0:0:0:0:0:1
+]
+00:27:59.480 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.PrepRequestProcessor - Digest got from data tree is: 3581317485
+00:27:59.480 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.PrepRequestProcessor - Digest got from outstandingChanges is: 2966937319
+00:27:59.480 [SyncThread:0] DEBUG org.apache.zookeeper.server.FinalRequestProcessor - Processing request:: sessionid:0x10000393fab0000 type:create2 cxid:0x8 zxid:0x5 txntype:15 reqpath:/multiple-clients-regression/locks/R
+00:27:59.480 [SyncThread:0] DEBUG org.apache.zookeeper.common.PathTrie - multiple-clients-regression
+00:27:59.480 [SyncThread:0] DEBUG org.apache.zookeeper.server.DataTree - Digests are matching for Zxid: 5, Digest in log and actual tree: 4698251443
+00:27:59.480 [SyncThread:0] DEBUG org.apache.zookeeper.server.FinalRequestProcessor - sessionid:0x10000393fab0000 type:create2 cxid:0x8 zxid:0x5 txntype:15 reqpath:/multiple-clients-regression/locks/R
+00:27:59.615 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.SessionTrackerImpl - Checking session 0x10000393fab0000
+00:27:59.615 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.PrepRequestProcessor - Processing ACL: 31,s{'world,'anyone}
+
+00:27:59.615 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.ZooKeeperServer - Permission requested: 4 
+00:27:59.615 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.ZooKeeperServer - ACLs for node: [31,s{'world,'anyone}
+]
+00:27:59.615 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.ZooKeeperServer - Client credentials: ['ip,'0:0:0:0:0:0:0:1
+]
+00:27:59.616 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.PrepRequestProcessor - Digest got from data tree is: 4698251443
+00:27:59.616 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.PrepRequestProcessor - Digest got from outstandingChanges is: 6738019856
+00:27:59.618 [SyncThread:0] DEBUG org.apache.zookeeper.server.FinalRequestProcessor - Processing request:: sessionid:0x10000393fab0000 type:create2 cxid:0x9 zxid:0x6 txntype:15 reqpath:/multiple-clients-regression/locks/R/_c_0eaf562d-a24e-4655-b442-e682056897d0-lock-
+00:27:59.618 [SyncThread:0] DEBUG org.apache.zookeeper.common.PathTrie - multiple-clients-regression
+00:27:59.618 [SyncThread:0] DEBUG org.apache.zookeeper.server.DataTree - Digests are matching for Zxid: 6, Digest in log and actual tree: 7367948866
+00:27:59.618 [SyncThread:0] DEBUG org.apache.zookeeper.server.FinalRequestProcessor - sessionid:0x10000393fab0000 type:create2 cxid:0x9 zxid:0x6 txntype:15 reqpath:/multiple-clients-regression/locks/R/_c_0eaf562d-a24e-4655-b442-e682056897d0-lock-
+00:27:59.620 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.SessionTrackerImpl - Checking session 0x10000393fab0000
+00:27:59.620 [SyncThread:0] DEBUG org.apache.zookeeper.server.FinalRequestProcessor - Processing request:: sessionid:0x10000393fab0000 type:getChildren2 cxid:0xa zxid:0xfffffffffffffffe txntype:unknown reqpath:/multiple-clients-regression/locks/R
+00:27:59.620 [SyncThread:0] DEBUG org.apache.zookeeper.server.FinalRequestProcessor - sessionid:0x10000393fab0000 type:getChildren2 cxid:0xa zxid:0xfffffffffffffffe txntype:unknown reqpath:/multiple-clients-regression/locks/R
+00:27:59.621 [SyncThread:0] DEBUG org.apache.zookeeper.server.ZooKeeperServer - Permission requested: 1 
+00:27:59.621 [SyncThread:0] DEBUG org.apache.zookeeper.server.ZooKeeperServer - ACLs for node: [31,s{'world,'anyone}
+]
+00:27:59.621 [SyncThread:0] DEBUG org.apache.zookeeper.server.ZooKeeperServer - Client credentials: ['ip,'0:0:0:0:0:0:0:1
+]
+00:27:59.624 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.SessionTrackerImpl - Checking session 0x10000393fab0000
+00:27:59.624 [SyncThread:0] DEBUG org.apache.zookeeper.server.FinalRequestProcessor - Processing request:: sessionid:0x10000393fab0000 type:getChildren2 cxid:0xb zxid:0xfffffffffffffffe txntype:unknown reqpath:/multiple-clients-regression/locks/R
+00:27:59.624 [SyncThread:0] DEBUG org.apache.zookeeper.server.FinalRequestProcessor - sessionid:0x10000393fab0000 type:getChildren2 cxid:0xb zxid:0xfffffffffffffffe txntype:unknown reqpath:/multiple-clients-regression/locks/R
+00:27:59.624 [SyncThread:0] DEBUG org.apache.zookeeper.server.ZooKeeperServer - Permission requested: 1 
+00:27:59.624 [SyncThread:0] DEBUG org.apache.zookeeper.server.ZooKeeperServer - ACLs for node: [31,s{'world,'anyone}
+]
+00:27:59.624 [SyncThread:0] DEBUG org.apache.zookeeper.server.ZooKeeperServer - Client credentials: ['ip,'0:0:0:0:0:0:0:1
+]
+00:27:59.873 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.SessionTrackerImpl - Checking session 0x10000393fab0000
+00:27:59.873 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.ZooKeeperServer - Permission requested: 8 
+00:27:59.873 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.ZooKeeperServer - ACLs for node: [31,s{'world,'anyone}
+]
+00:27:59.873 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.ZooKeeperServer - Client credentials: ['ip,'0:0:0:0:0:0:0:1
+]
+00:27:59.874 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.PrepRequestProcessor - Digest got from data tree is: 7367948866
+00:27:59.874 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.PrepRequestProcessor - Digest got from outstandingChanges is: 5211030351
+00:27:59.874 [SyncThread:0] DEBUG org.apache.zookeeper.server.FinalRequestProcessor - Processing request:: sessionid:0x10000393fab0000 type:delete cxid:0xc zxid:0x7 txntype:2 reqpath:/multiple-clients-regression/locks/R/_c_0eaf562d-a24e-4655-b442-e682056897d0-lock-0000000000
+00:27:59.874 [SyncThread:0] DEBUG org.apache.zookeeper.common.PathTrie - multiple-clients-regression
+00:27:59.874 [SyncThread:0] DEBUG org.apache.zookeeper.server.DataTree - Digests are matching for Zxid: 7, Digest in log and actual tree: 4581101341
+00:27:59.874 [SyncThread:0] DEBUG org.apache.zookeeper.server.FinalRequestProcessor - sessionid:0x10000393fab0000 type:delete cxid:0xc zxid:0x7 txntype:2 reqpath:/multiple-clients-regression/locks/R/_c_0eaf562d-a24e-4655-b442-e682056897d0-lock-0000000000
+00:27:59.880 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.SessionTrackerImpl - Checking session 0x10000393fab0000
+00:27:59.880 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.PrepRequestProcessor - Processing ACL: 31,s{'world,'anyone}
+
+00:27:59.881 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.ZooKeeperServer - Permission requested: 4 
+00:27:59.881 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.ZooKeeperServer - ACLs for node: [31,s{'world,'anyone}
+]
+00:27:59.881 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.ZooKeeperServer - Client credentials: ['ip,'0:0:0:0:0:0:0:1
+]
+00:27:59.881 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.PrepRequestProcessor - Digest got from data tree is: 4581101341
+00:27:59.881 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.PrepRequestProcessor - Digest got from outstandingChanges is: 3862984512
+00:27:59.882 [SyncThread:0] DEBUG org.apache.zookeeper.server.FinalRequestProcessor - Processing request:: sessionid:0x10000393fab0000 type:create2 cxid:0xd zxid:0x8 txntype:15 reqpath:/multiple-clients-regression/locks/R/_c_9e60b8f9-7b9f-47d4-915d-3d65091cb0a5-lock-
+00:27:59.882 [SyncThread:0] DEBUG org.apache.zookeeper.common.PathTrie - multiple-clients-regression
+00:27:59.882 [SyncThread:0] DEBUG org.apache.zookeeper.server.DataTree - Digests are matching for Zxid: 8, Digest in log and actual tree: 7278626741
+00:27:59.882 [SyncThread:0] DEBUG org.apache.zookeeper.server.FinalRequestProcessor - sessionid:0x10000393fab0000 type:create2 cxid:0xd zxid:0x8 txntype:15 reqpath:/multiple-clients-regression/locks/R/_c_9e60b8f9-7b9f-47d4-915d-3d65091cb0a5-lock-
+00:27:59.884 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.SessionTrackerImpl - Checking session 0x10000393fab0000
+00:27:59.884 [SyncThread:0] DEBUG org.apache.zookeeper.server.FinalRequestProcessor - Processing request:: sessionid:0x10000393fab0000 type:getChildren2 cxid:0xe zxid:0xfffffffffffffffe txntype:unknown reqpath:/multiple-clients-regression/locks/R
+00:27:59.884 [SyncThread:0] DEBUG org.apache.zookeeper.server.FinalRequestProcessor - sessionid:0x10000393fab0000 type:getChildren2 cxid:0xe zxid:0xfffffffffffffffe txntype:unknown reqpath:/multiple-clients-regression/locks/R
+00:27:59.885 [SyncThread:0] DEBUG org.apache.zookeeper.server.ZooKeeperServer - Permission requested: 1 
+00:27:59.885 [SyncThread:0] DEBUG org.apache.zookeeper.server.ZooKeeperServer - ACLs for node: [31,s{'world,'anyone}
+]
+00:27:59.885 [SyncThread:0] DEBUG org.apache.zookeeper.server.ZooKeeperServer - Client credentials: ['ip,'0:0:0:0:0:0:0:1
+]
+00:27:59.889 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.SessionTrackerImpl - Checking session 0x10000393fab0000
+00:27:59.889 [SyncThread:0] DEBUG org.apache.zookeeper.server.FinalRequestProcessor - Processing request:: sessionid:0x10000393fab0000 type:getChildren2 cxid:0xf zxid:0xfffffffffffffffe txntype:unknown reqpath:/multiple-clients-regression/locks/R
+00:27:59.889 [SyncThread:0] DEBUG org.apache.zookeeper.server.FinalRequestProcessor - sessionid:0x10000393fab0000 type:getChildren2 cxid:0xf zxid:0xfffffffffffffffe txntype:unknown reqpath:/multiple-clients-regression/locks/R
+00:27:59.889 [SyncThread:0] DEBUG org.apache.zookeeper.server.ZooKeeperServer - Permission requested: 1 
+00:27:59.889 [SyncThread:0] DEBUG org.apache.zookeeper.server.ZooKeeperServer - ACLs for node: [31,s{'world,'anyone}
+]
+00:27:59.889 [SyncThread:0] DEBUG org.apache.zookeeper.server.ZooKeeperServer - Client credentials: ['ip,'0:0:0:0:0:0:0:1
+]
+00:28:00.096 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.SessionTrackerImpl - Checking session 0x10000393fab0000
+00:28:00.096 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.ZooKeeperServer - Permission requested: 8 
+00:28:00.096 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.ZooKeeperServer - ACLs for node: [31,s{'world,'anyone}
+]
+00:28:00.096 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.ZooKeeperServer - Client credentials: ['ip,'0:0:0:0:0:0:0:1
+]
+00:28:00.096 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.PrepRequestProcessor - Digest got from data tree is: 7278626741
+00:28:00.096 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.PrepRequestProcessor - Digest got from outstandingChanges is: 9429253794
+00:28:00.096 [SyncThread:0] DEBUG org.apache.zookeeper.server.FinalRequestProcessor - Processing request:: sessionid:0x10000393fab0000 type:delete cxid:0x10 zxid:0x9 txntype:2 reqpath:/multiple-clients-regression/locks/R/_c_9e60b8f9-7b9f-47d4-915d-3d65091cb0a5-lock-0000000001
+00:28:00.096 [SyncThread:0] DEBUG org.apache.zookeeper.common.PathTrie - multiple-clients-regression
+00:28:00.096 [SyncThread:0] DEBUG org.apache.zookeeper.server.DataTree - Digests are matching for Zxid: 9, Digest in log and actual tree: 6013611565
+00:28:00.096 [SyncThread:0] DEBUG org.apache.zookeeper.server.FinalRequestProcessor - sessionid:0x10000393fab0000 type:delete cxid:0x10 zxid:0x9 txntype:2 reqpath:/multiple-clients-regression/locks/R/_c_9e60b8f9-7b9f-47d4-915d-3d65091cb0a5-lock-0000000001
+00:28:00.101 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.SessionTrackerImpl - Checking session 0x10000393fab0000
+00:28:00.101 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.PrepRequestProcessor - Processing ACL: 31,s{'world,'anyone}
+
+00:28:00.101 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.ZooKeeperServer - Permission requested: 4 
+00:28:00.101 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.ZooKeeperServer - ACLs for node: [31,s{'world,'anyone}
+]
+00:28:00.101 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.ZooKeeperServer - Client credentials: ['ip,'0:0:0:0:0:0:0:1
+]
+00:28:00.101 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.PrepRequestProcessor - Digest got from data tree is: 6013611565
+00:28:00.101 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.PrepRequestProcessor - Digest got from outstandingChanges is: 3813099658
+00:28:00.101 [SyncThread:0] DEBUG org.apache.zookeeper.server.FinalRequestProcessor - Processing request:: sessionid:0x10000393fab0000 type:create2 cxid:0x11 zxid:0xa txntype:15 reqpath:/multiple-clients-regression/locks/R/_c_9ec7004e-9116-4067-bbe0-87e407978e3d-lock-
+00:28:00.101 [SyncThread:0] DEBUG org.apache.zookeeper.common.PathTrie - multiple-clients-regression
+00:28:00.102 [SyncThread:0] DEBUG org.apache.zookeeper.server.DataTree - Digests are matching for Zxid: a, Digest in log and actual tree: 4579486426
+00:28:00.102 [SyncThread:0] DEBUG org.apache.zookeeper.server.FinalRequestProcessor - sessionid:0x10000393fab0000 type:create2 cxid:0x11 zxid:0xa txntype:15 reqpath:/multiple-clients-regression/locks/R/_c_9ec7004e-9116-4067-bbe0-87e407978e3d-lock-
+00:28:00.104 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.SessionTrackerImpl - Checking session 0x10000393fab0000
+00:28:00.105 [SyncThread:0] DEBUG org.apache.zookeeper.server.FinalRequestProcessor - Processing request:: sessionid:0x10000393fab0000 type:getChildren2 cxid:0x12 zxid:0xfffffffffffffffe txntype:unknown reqpath:/multiple-clients-regression/locks/R
+00:28:00.105 [SyncThread:0] DEBUG org.apache.zookeeper.server.FinalRequestProcessor - sessionid:0x10000393fab0000 type:getChildren2 cxid:0x12 zxid:0xfffffffffffffffe txntype:unknown reqpath:/multiple-clients-regression/locks/R
+00:28:00.105 [SyncThread:0] DEBUG org.apache.zookeeper.server.ZooKeeperServer - Permission requested: 1 
+00:28:00.105 [SyncThread:0] DEBUG org.apache.zookeeper.server.ZooKeeperServer - ACLs for node: [31,s{'world,'anyone}
+]
+00:28:00.105 [SyncThread:0] DEBUG org.apache.zookeeper.server.ZooKeeperServer - Client credentials: ['ip,'0:0:0:0:0:0:0:1
+]
+00:28:00.107 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.SessionTrackerImpl - Checking session 0x10000393fab0000
+00:28:00.107 [SyncThread:0] DEBUG org.apache.zookeeper.server.FinalRequestProcessor - Processing request:: sessionid:0x10000393fab0000 type:getChildren2 cxid:0x13 zxid:0xfffffffffffffffe txntype:unknown reqpath:/multiple-clients-regression/locks/R
+00:28:00.107 [SyncThread:0] DEBUG org.apache.zookeeper.server.FinalRequestProcessor - sessionid:0x10000393fab0000 type:getChildren2 cxid:0x13 zxid:0xfffffffffffffffe txntype:unknown reqpath:/multiple-clients-regression/locks/R
+00:28:00.107 [SyncThread:0] DEBUG org.apache.zookeeper.server.ZooKeeperServer - Permission requested: 1 
+00:28:00.107 [SyncThread:0] DEBUG org.apache.zookeeper.server.ZooKeeperServer - ACLs for node: [31,s{'world,'anyone}
+]
+00:28:00.108 [SyncThread:0] DEBUG org.apache.zookeeper.server.ZooKeeperServer - Client credentials: ['ip,'0:0:0:0:0:0:0:1
+]
+00:28:00.316 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.SessionTrackerImpl - Checking session 0x10000393fab0000
+00:28:00.316 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.ZooKeeperServer - Permission requested: 8 
+00:28:00.316 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.ZooKeeperServer - ACLs for node: [31,s{'world,'anyone}
+]
+00:28:00.316 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.ZooKeeperServer - Client credentials: ['ip,'0:0:0:0:0:0:0:1
+]
+00:28:00.316 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.PrepRequestProcessor - Digest got from data tree is: 4579486426
+00:28:00.316 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.PrepRequestProcessor - Digest got from outstandingChanges is: 6730121203
+00:28:00.317 [SyncThread:0] DEBUG org.apache.zookeeper.server.FinalRequestProcessor - Processing request:: sessionid:0x10000393fab0000 type:delete cxid:0x14 zxid:0xb txntype:2 reqpath:/multiple-clients-regression/locks/R/_c_9ec7004e-9116-4067-bbe0-87e407978e3d-lock-0000000002
+00:28:00.317 [SyncThread:0] DEBUG org.apache.zookeeper.common.PathTrie - multiple-clients-regression
+00:28:00.317 [SyncThread:0] DEBUG org.apache.zookeeper.server.DataTree - Digests are matching for Zxid: b, Digest in log and actual tree: 5963734435
+00:28:00.317 [SyncThread:0] DEBUG org.apache.zookeeper.server.FinalRequestProcessor - sessionid:0x10000393fab0000 type:delete cxid:0x14 zxid:0xb txntype:2 reqpath:/multiple-clients-regression/locks/R/_c_9ec7004e-9116-4067-bbe0-87e407978e3d-lock-0000000002
+00:28:00.323 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.SessionTrackerImpl - Checking session 0x10000393fab0000
+00:28:00.323 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.PrepRequestProcessor - Processing ACL: 31,s{'world,'anyone}
+
+00:28:00.323 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.ZooKeeperServer - Permission requested: 4 
+00:28:00.323 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.ZooKeeperServer - ACLs for node: [31,s{'world,'anyone}
+]
+00:28:00.323 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.ZooKeeperServer - Client credentials: ['ip,'0:0:0:0:0:0:0:1
+]
+00:28:00.323 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.PrepRequestProcessor - Digest got from data tree is: 5963734435
+00:28:00.323 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.PrepRequestProcessor - Digest got from outstandingChanges is: 7192571938
+00:28:00.323 [SyncThread:0] DEBUG org.apache.zookeeper.server.FinalRequestProcessor - Processing request:: sessionid:0x10000393fab0000 type:create2 cxid:0x15 zxid:0xc txntype:15 reqpath:/multiple-clients-regression/locks/R/_c_ffa7d321-f568-4217-83d9-63579ad1a25c-lock-
+00:28:00.324 [SyncThread:0] DEBUG org.apache.zookeeper.common.PathTrie - multiple-clients-regression
+00:28:00.324 [SyncThread:0] DEBUG org.apache.zookeeper.server.DataTree - Digests are matching for Zxid: c, Digest in log and actual tree: 8869233895
+00:28:00.324 [SyncThread:0] DEBUG org.apache.zookeeper.server.FinalRequestProcessor - sessionid:0x10000393fab0000 type:create2 cxid:0x15 zxid:0xc txntype:15 reqpath:/multiple-clients-regression/locks/R/_c_ffa7d321-f568-4217-83d9-63579ad1a25c-lock-
+00:28:00.324 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.SessionTrackerImpl - Checking session 0x10000393fab0000
+00:28:00.324 [SyncThread:0] DEBUG org.apache.zookeeper.server.FinalRequestProcessor - Processing request:: sessionid:0x10000393fab0000 type:getChildren2 cxid:0x16 zxid:0xfffffffffffffffe txntype:unknown reqpath:/multiple-clients-regression/locks/R
+00:28:00.324 [SyncThread:0] DEBUG org.apache.zookeeper.server.FinalRequestProcessor - sessionid:0x10000393fab0000 type:getChildren2 cxid:0x16 zxid:0xfffffffffffffffe txntype:unknown reqpath:/multiple-clients-regression/locks/R
+00:28:00.324 [SyncThread:0] DEBUG org.apache.zookeeper.server.ZooKeeperServer - Permission requested: 1 
+00:28:00.324 [SyncThread:0] DEBUG org.apache.zookeeper.server.ZooKeeperServer - ACLs for node: [31,s{'world,'anyone}
+]
+00:28:00.325 [SyncThread:0] DEBUG org.apache.zookeeper.server.ZooKeeperServer - Client credentials: ['ip,'0:0:0:0:0:0:0:1
+]
+00:28:00.325 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.SessionTrackerImpl - Checking session 0x10000393fab0000
+00:28:00.325 [SyncThread:0] DEBUG org.apache.zookeeper.server.FinalRequestProcessor - Processing request:: sessionid:0x10000393fab0000 type:getChildren2 cxid:0x17 zxid:0xfffffffffffffffe txntype:unknown reqpath:/multiple-clients-regression/locks/R
+00:28:00.325 [SyncThread:0] DEBUG org.apache.zookeeper.server.FinalRequestProcessor - sessionid:0x10000393fab0000 type:getChildren2 cxid:0x17 zxid:0xfffffffffffffffe txntype:unknown reqpath:/multiple-clients-regression/locks/R
+00:28:00.325 [SyncThread:0] DEBUG org.apache.zookeeper.server.ZooKeeperServer - Permission requested: 1 
+00:28:00.325 [SyncThread:0] DEBUG org.apache.zookeeper.server.ZooKeeperServer - ACLs for node: [31,s{'world,'anyone}
+]
+00:28:00.325 [SyncThread:0] DEBUG org.apache.zookeeper.server.ZooKeeperServer - Client credentials: ['ip,'0:0:0:0:0:0:0:1
+]
+00:28:00.530 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.SessionTrackerImpl - Checking session 0x10000393fab0000
+00:28:00.530 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.ZooKeeperServer - Permission requested: 8 
+00:28:00.530 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.ZooKeeperServer - ACLs for node: [31,s{'world,'anyone}
+]
+00:28:00.530 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.ZooKeeperServer - Client credentials: ['ip,'0:0:0:0:0:0:0:1
+]
+00:28:00.530 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.PrepRequestProcessor - Digest got from data tree is: 8869233895
+00:28:00.530 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.PrepRequestProcessor - Digest got from outstandingChanges is: 6710213072
+00:28:00.531 [SyncThread:0] DEBUG org.apache.zookeeper.server.FinalRequestProcessor - Processing request:: sessionid:0x10000393fab0000 type:delete cxid:0x18 zxid:0xd txntype:2 reqpath:/multiple-clients-regression/locks/R/_c_ffa7d321-f568-4217-83d9-63579ad1a25c-lock-0000000003
+00:28:00.531 [SyncThread:0] DEBUG org.apache.zookeeper.common.PathTrie - multiple-clients-regression
+00:28:00.531 [SyncThread:0] DEBUG org.apache.zookeeper.server.DataTree - Digests are matching for Zxid: d, Digest in log and actual tree: 5033551115
+00:28:00.531 [SyncThread:0] DEBUG org.apache.zookeeper.server.FinalRequestProcessor - sessionid:0x10000393fab0000 type:delete cxid:0x18 zxid:0xd txntype:2 reqpath:/multiple-clients-regression/locks/R/_c_ffa7d321-f568-4217-83d9-63579ad1a25c-lock-0000000003
+00:28:00.534 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.SessionTrackerImpl - Checking session 0x10000393fab0000
+00:28:00.534 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.PrepRequestProcessor - Processing ACL: 31,s{'world,'anyone}
+
+00:28:00.534 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.ZooKeeperServer - Permission requested: 4 
+00:28:00.534 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.ZooKeeperServer - ACLs for node: [31,s{'world,'anyone}
+]
+00:28:00.534 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.ZooKeeperServer - Client credentials: ['ip,'0:0:0:0:0:0:0:1
+]
+00:28:00.535 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.PrepRequestProcessor - Digest got from data tree is: 5033551115
+00:28:00.535 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.PrepRequestProcessor - Digest got from outstandingChanges is: 7209074600
+00:28:00.535 [SyncThread:0] DEBUG org.apache.zookeeper.server.FinalRequestProcessor - Processing request:: sessionid:0x10000393fab0000 type:create2 cxid:0x19 zxid:0xe txntype:15 reqpath:/multiple-clients-regression/locks/R/_c_8b2747d4-1c7b-4c80-8cb2-f19d933fce11-lock-
+00:28:00.535 [SyncThread:0] DEBUG org.apache.zookeeper.common.PathTrie - multiple-clients-regression
+00:28:00.535 [SyncThread:0] DEBUG org.apache.zookeeper.server.DataTree - Digests are matching for Zxid: e, Digest in log and actual tree: 7776940749
+00:28:00.535 [SyncThread:0] DEBUG org.apache.zookeeper.server.FinalRequestProcessor - sessionid:0x10000393fab0000 type:create2 cxid:0x19 zxid:0xe txntype:15 reqpath:/multiple-clients-regression/locks/R/_c_8b2747d4-1c7b-4c80-8cb2-f19d933fce11-lock-
+00:28:00.536 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.SessionTrackerImpl - Checking session 0x10000393fab0000
+00:28:00.536 [SyncThread:0] DEBUG org.apache.zookeeper.server.FinalRequestProcessor - Processing request:: sessionid:0x10000393fab0000 type:getChildren2 cxid:0x1a zxid:0xfffffffffffffffe txntype:unknown reqpath:/multiple-clients-regression/locks/R
+00:28:00.536 [SyncThread:0] DEBUG org.apache.zookeeper.server.FinalRequestProcessor - sessionid:0x10000393fab0000 type:getChildren2 cxid:0x1a zxid:0xfffffffffffffffe txntype:unknown reqpath:/multiple-clients-regression/locks/R
+00:28:00.536 [SyncThread:0] DEBUG org.apache.zookeeper.server.ZooKeeperServer - Permission requested: 1 
+00:28:00.536 [SyncThread:0] DEBUG org.apache.zookeeper.server.ZooKeeperServer - ACLs for node: [31,s{'world,'anyone}
+]
+00:28:00.536 [SyncThread:0] DEBUG org.apache.zookeeper.server.ZooKeeperServer - Client credentials: ['ip,'0:0:0:0:0:0:0:1
+]
+00:28:00.537 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.SessionTrackerImpl - Checking session 0x10000393fab0000
+00:28:00.537 [SyncThread:0] DEBUG org.apache.zookeeper.server.FinalRequestProcessor - Processing request:: sessionid:0x10000393fab0000 type:getChildren2 cxid:0x1b zxid:0xfffffffffffffffe txntype:unknown reqpath:/multiple-clients-regression/locks/R
+00:28:00.537 [SyncThread:0] DEBUG org.apache.zookeeper.server.FinalRequestProcessor - sessionid:0x10000393fab0000 type:getChildren2 cxid:0x1b zxid:0xfffffffffffffffe txntype:unknown reqpath:/multiple-clients-regression/locks/R
+00:28:00.537 [SyncThread:0] DEBUG org.apache.zookeeper.server.ZooKeeperServer - Permission requested: 1 
+00:28:00.537 [SyncThread:0] DEBUG org.apache.zookeeper.server.ZooKeeperServer - ACLs for node: [31,s{'world,'anyone}
+]
+00:28:00.537 [SyncThread:0] DEBUG org.apache.zookeeper.server.ZooKeeperServer - Client credentials: ['ip,'0:0:0:0:0:0:0:1
+]
+00:28:00.741 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.SessionTrackerImpl - Checking session 0x10000393fab0000
+00:28:00.741 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.ZooKeeperServer - Permission requested: 8 
+00:28:00.741 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.ZooKeeperServer - ACLs for node: [31,s{'world,'anyone}
+]
+00:28:00.741 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.ZooKeeperServer - Client credentials: ['ip,'0:0:0:0:0:0:0:1
+]
+00:28:00.741 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.PrepRequestProcessor - Digest got from data tree is: 7776940749
+00:28:00.741 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.PrepRequestProcessor - Digest got from outstandingChanges is: 5617928682
+00:28:00.741 [SyncThread:0] DEBUG org.apache.zookeeper.server.FinalRequestProcessor - Processing request:: sessionid:0x10000393fab0000 type:delete cxid:0x1c zxid:0xf txntype:2 reqpath:/multiple-clients-regression/locks/R/_c_8b2747d4-1c7b-4c80-8cb2-f19d933fce11-lock-0000000004
+00:28:00.742 [SyncThread:0] DEBUG org.apache.zookeeper.common.PathTrie - multiple-clients-regression
+00:28:00.742 [SyncThread:0] DEBUG org.apache.zookeeper.server.DataTree - Digests are matching for Zxid: f, Digest in log and actual tree: 5050062533
+00:28:00.742 [SyncThread:0] DEBUG org.apache.zookeeper.server.FinalRequestProcessor - sessionid:0x10000393fab0000 type:delete cxid:0x1c zxid:0xf txntype:2 reqpath:/multiple-clients-regression/locks/R/_c_8b2747d4-1c7b-4c80-8cb2-f19d933fce11-lock-0000000004
+00:28:00.745 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.SessionTrackerImpl - Checking session 0x10000393fab0000
+00:28:00.745 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.PrepRequestProcessor - Processing ACL: 31,s{'world,'anyone}
+
+00:28:00.745 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.ZooKeeperServer - Permission requested: 4 
+00:28:00.745 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.ZooKeeperServer - ACLs for node: [31,s{'world,'anyone}
+]
+00:28:00.745 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.ZooKeeperServer - Client credentials: ['ip,'0:0:0:0:0:0:0:1
+]
+00:28:00.745 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.PrepRequestProcessor - Digest got from data tree is: 5050062533
+00:28:00.745 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.PrepRequestProcessor - Digest got from outstandingChanges is: 4230144499
+00:28:00.745 [SyncThread:0] DEBUG org.apache.zookeeper.server.FinalRequestProcessor - Processing request:: sessionid:0x10000393fab0000 type:create2 cxid:0x1d zxid:0x10 txntype:15 reqpath:/multiple-clients-regression/locks/R/_c_97928250-8f86-487d-9da2-91db23cbb16f-lock-
+00:28:00.745 [SyncThread:0] DEBUG org.apache.zookeeper.common.PathTrie - multiple-clients-regression
+00:28:00.745 [SyncThread:0] DEBUG org.apache.zookeeper.server.DataTree - Digests are matching for Zxid: 10, Digest in log and actual tree: 8190026178
+00:28:00.745 [SyncThread:0] DEBUG org.apache.zookeeper.server.FinalRequestProcessor - sessionid:0x10000393fab0000 type:create2 cxid:0x1d zxid:0x10 txntype:15 reqpath:/multiple-clients-regression/locks/R/_c_97928250-8f86-487d-9da2-91db23cbb16f-lock-
+00:28:00.749 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.SessionTrackerImpl - Checking session 0x10000393fab0000
+00:28:00.749 [SyncThread:0] DEBUG org.apache.zookeeper.server.FinalRequestProcessor - Processing request:: sessionid:0x10000393fab0000 type:getChildren2 cxid:0x1e zxid:0xfffffffffffffffe txntype:unknown reqpath:/multiple-clients-regression/locks/R
+00:28:00.749 [SyncThread:0] DEBUG org.apache.zookeeper.server.FinalRequestProcessor - sessionid:0x10000393fab0000 type:getChildren2 cxid:0x1e zxid:0xfffffffffffffffe txntype:unknown reqpath:/multiple-clients-regression/locks/R
+00:28:00.749 [SyncThread:0] DEBUG org.apache.zookeeper.server.ZooKeeperServer - Permission requested: 1 
+00:28:00.749 [SyncThread:0] DEBUG org.apache.zookeeper.server.ZooKeeperServer - ACLs for node: [31,s{'world,'anyone}
+]
+00:28:00.749 [SyncThread:0] DEBUG org.apache.zookeeper.server.ZooKeeperServer - Client credentials: ['ip,'0:0:0:0:0:0:0:1
+]
+00:28:00.750 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.SessionTrackerImpl - Checking session 0x10000393fab0000
+00:28:00.750 [SyncThread:0] DEBUG org.apache.zookeeper.server.FinalRequestProcessor - Processing request:: sessionid:0x10000393fab0000 type:getChildren2 cxid:0x1f zxid:0xfffffffffffffffe txntype:unknown reqpath:/multiple-clients-regression/locks/R
+00:28:00.750 [SyncThread:0] DEBUG org.apache.zookeeper.server.FinalRequestProcessor - sessionid:0x10000393fab0000 type:getChildren2 cxid:0x1f zxid:0xfffffffffffffffe txntype:unknown reqpath:/multiple-clients-regression/locks/R
+00:28:00.750 [SyncThread:0] DEBUG org.apache.zookeeper.server.ZooKeeperServer - Permission requested: 1 
+00:28:00.750 [SyncThread:0] DEBUG org.apache.zookeeper.server.ZooKeeperServer - ACLs for node: [31,s{'world,'anyone}
+]
+00:28:00.750 [SyncThread:0] DEBUG org.apache.zookeeper.server.ZooKeeperServer - Client credentials: ['ip,'0:0:0:0:0:0:0:1
+]
+00:28:00.955 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.SessionTrackerImpl - Checking session 0x10000393fab0000
+00:28:00.955 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.ZooKeeperServer - Permission requested: 8 
+00:28:00.955 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.ZooKeeperServer - ACLs for node: [31,s{'world,'anyone}
+]
+00:28:00.955 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.ZooKeeperServer - Client credentials: ['ip,'0:0:0:0:0:0:0:1
+]
+00:28:00.955 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.PrepRequestProcessor - Digest got from data tree is: 8190026178
+00:28:00.955 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.PrepRequestProcessor - Digest got from outstandingChanges is: 10344854217
+00:28:00.955 [SyncThread:0] DEBUG org.apache.zookeeper.server.FinalRequestProcessor - Processing request:: sessionid:0x10000393fab0000 type:delete cxid:0x20 zxid:0x11 txntype:2 reqpath:/multiple-clients-regression/locks/R/_c_97928250-8f86-487d-9da2-91db23cbb16f-lock-0000000005
+00:28:00.955 [SyncThread:0] DEBUG org.apache.zookeeper.common.PathTrie - multiple-clients-regression
+00:28:00.955 [SyncThread:0] DEBUG org.apache.zookeeper.server.DataTree - Digests are matching for Zxid: 11, Digest in log and actual tree: 6384972538
+00:28:00.955 [SyncThread:0] DEBUG org.apache.zookeeper.server.FinalRequestProcessor - sessionid:0x10000393fab0000 type:delete cxid:0x20 zxid:0x11 txntype:2 reqpath:/multiple-clients-regression/locks/R/_c_97928250-8f86-487d-9da2-91db23cbb16f-lock-0000000005
+00:28:00.959 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.SessionTrackerImpl - Checking session 0x10000393fab0000
+00:28:00.959 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.PrepRequestProcessor - Processing ACL: 31,s{'world,'anyone}
+
+00:28:00.959 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.ZooKeeperServer - Permission requested: 4 
+00:28:00.959 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.ZooKeeperServer - ACLs for node: [31,s{'world,'anyone}
+]
+00:28:00.959 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.ZooKeeperServer - Client credentials: ['ip,'0:0:0:0:0:0:0:1
+]
+00:28:00.959 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.PrepRequestProcessor - Digest got from data tree is: 6384972538
+00:28:00.959 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.PrepRequestProcessor - Digest got from outstandingChanges is: 4247048669
+00:28:00.959 [SyncThread:0] DEBUG org.apache.zookeeper.server.FinalRequestProcessor - Processing request:: sessionid:0x10000393fab0000 type:create2 cxid:0x21 zxid:0x12 txntype:15 reqpath:/multiple-clients-regression/locks/R/_c_22b7ae27-a798-4dbe-a023-06fd1e168269-lock-
+00:28:00.960 [SyncThread:0] DEBUG org.apache.zookeeper.common.PathTrie - multiple-clients-regression
+00:28:00.960 [SyncThread:0] DEBUG org.apache.zookeeper.server.DataTree - Digests are matching for Zxid: 12, Digest in log and actual tree: 5817573839
+00:28:00.960 [SyncThread:0] DEBUG org.apache.zookeeper.server.FinalRequestProcessor - sessionid:0x10000393fab0000 type:create2 cxid:0x21 zxid:0x12 txntype:15 reqpath:/multiple-clients-regression/locks/R/_c_22b7ae27-a798-4dbe-a023-06fd1e168269-lock-
+00:28:00.961 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.SessionTrackerImpl - Checking session 0x10000393fab0000
+00:28:00.961 [SyncThread:0] DEBUG org.apache.zookeeper.server.FinalRequestProcessor - Processing request:: sessionid:0x10000393fab0000 type:getChildren2 cxid:0x22 zxid:0xfffffffffffffffe txntype:unknown reqpath:/multiple-clients-regression/locks/R
+00:28:00.961 [SyncThread:0] DEBUG org.apache.zookeeper.server.FinalRequestProcessor - sessionid:0x10000393fab0000 type:getChildren2 cxid:0x22 zxid:0xfffffffffffffffe txntype:unknown reqpath:/multiple-clients-regression/locks/R
+00:28:00.961 [SyncThread:0] DEBUG org.apache.zookeeper.server.ZooKeeperServer - Permission requested: 1 
+00:28:00.961 [SyncThread:0] DEBUG org.apache.zookeeper.server.ZooKeeperServer - ACLs for node: [31,s{'world,'anyone}
+]
+00:28:00.961 [SyncThread:0] DEBUG org.apache.zookeeper.server.ZooKeeperServer - Client credentials: ['ip,'0:0:0:0:0:0:0:1
+]
+00:28:00.961 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.SessionTrackerImpl - Checking session 0x10000393fab0000
+00:28:00.961 [SyncThread:0] DEBUG org.apache.zookeeper.server.FinalRequestProcessor - Processing request:: sessionid:0x10000393fab0000 type:getChildren2 cxid:0x23 zxid:0xfffffffffffffffe txntype:unknown reqpath:/multiple-clients-regression/locks/R
+00:28:00.961 [SyncThread:0] DEBUG org.apache.zookeeper.server.FinalRequestProcessor - sessionid:0x10000393fab0000 type:getChildren2 cxid:0x23 zxid:0xfffffffffffffffe txntype:unknown reqpath:/multiple-clients-regression/locks/R
+00:28:00.961 [SyncThread:0] DEBUG org.apache.zookeeper.server.ZooKeeperServer - Permission requested: 1 
+00:28:00.961 [SyncThread:0] DEBUG org.apache.zookeeper.server.ZooKeeperServer - ACLs for node: [31,s{'world,'anyone}
+]
+00:28:00.962 [SyncThread:0] DEBUG org.apache.zookeeper.server.ZooKeeperServer - Client credentials: ['ip,'0:0:0:0:0:0:0:1
+]
+00:28:01.165 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.SessionTrackerImpl - Checking session 0x10000393fab0000
+00:28:01.165 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.ZooKeeperServer - Permission requested: 8 
+00:28:01.165 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.ZooKeeperServer - ACLs for node: [31,s{'world,'anyone}
+]
+00:28:01.165 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.ZooKeeperServer - Client credentials: ['ip,'0:0:0:0:0:0:0:1
+]
+00:28:01.165 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.PrepRequestProcessor - Digest got from data tree is: 5817573839
+00:28:01.165 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.PrepRequestProcessor - Digest got from outstandingChanges is: 7972394178
+00:28:01.166 [SyncThread:0] DEBUG org.apache.zookeeper.server.FinalRequestProcessor - Processing request:: sessionid:0x10000393fab0000 type:delete cxid:0x24 zxid:0x13 txntype:2 reqpath:/multiple-clients-regression/locks/R/_c_22b7ae27-a798-4dbe-a023-06fd1e168269-lock-0000000006
+00:28:01.166 [SyncThread:0] DEBUG org.apache.zookeeper.common.PathTrie - multiple-clients-regression
+00:28:01.166 [SyncThread:0] DEBUG org.apache.zookeeper.server.DataTree - Digests are matching for Zxid: 13, Digest in log and actual tree: 6401869008
+00:28:01.166 [SyncThread:0] DEBUG org.apache.zookeeper.server.FinalRequestProcessor - sessionid:0x10000393fab0000 type:delete cxid:0x24 zxid:0x13 txntype:2 reqpath:/multiple-clients-regression/locks/R/_c_22b7ae27-a798-4dbe-a023-06fd1e168269-lock-0000000006
+00:28:01.168 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.SessionTrackerImpl - Checking session 0x10000393fab0000
+00:28:01.168 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.PrepRequestProcessor - Processing ACL: 31,s{'world,'anyone}
+
+00:28:01.168 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.ZooKeeperServer - Permission requested: 4 
+00:28:01.168 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.ZooKeeperServer - ACLs for node: [31,s{'world,'anyone}
+]
+00:28:01.168 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.ZooKeeperServer - Client credentials: ['ip,'0:0:0:0:0:0:0:1
+]
+00:28:01.168 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.PrepRequestProcessor - Digest got from data tree is: 6401869008
+00:28:01.168 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.PrepRequestProcessor - Digest got from outstandingChanges is: 6724925418
+00:28:01.168 [SyncThread:0] DEBUG org.apache.zookeeper.server.FinalRequestProcessor - Processing request:: sessionid:0x10000393fab0000 type:create2 cxid:0x25 zxid:0x14 txntype:15 reqpath:/multiple-clients-regression/locks/R/_c_ec23ef24-76be-4781-bde5-0f790f16731c-lock-
+00:28:01.169 [SyncThread:0] DEBUG org.apache.zookeeper.common.PathTrie - multiple-clients-regression
+00:28:01.169 [SyncThread:0] DEBUG org.apache.zookeeper.server.DataTree - Digests are matching for Zxid: 14, Digest in log and actual tree: 8889759152
+00:28:01.169 [SyncThread:0] DEBUG org.apache.zookeeper.server.FinalRequestProcessor - sessionid:0x10000393fab0000 type:create2 cxid:0x25 zxid:0x14 txntype:15 reqpath:/multiple-clients-regression/locks/R/_c_ec23ef24-76be-4781-bde5-0f790f16731c-lock-
+00:28:01.170 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.SessionTrackerImpl - Checking session 0x10000393fab0000
+00:28:01.170 [SyncThread:0] DEBUG org.apache.zookeeper.server.FinalRequestProcessor - Processing request:: sessionid:0x10000393fab0000 type:getChildren2 cxid:0x26 zxid:0xfffffffffffffffe txntype:unknown reqpath:/multiple-clients-regression/locks/R
+00:28:01.170 [SyncThread:0] DEBUG org.apache.zookeeper.server.FinalRequestProcessor - sessionid:0x10000393fab0000 type:getChildren2 cxid:0x26 zxid:0xfffffffffffffffe txntype:unknown reqpath:/multiple-clients-regression/locks/R
+00:28:01.170 [SyncThread:0] DEBUG org.apache.zookeeper.server.ZooKeeperServer - Permission requested: 1 
+00:28:01.170 [SyncThread:0] DEBUG org.apache.zookeeper.server.ZooKeeperServer - ACLs for node: [31,s{'world,'anyone}
+]
+00:28:01.170 [SyncThread:0] DEBUG org.apache.zookeeper.server.ZooKeeperServer - Client credentials: ['ip,'0:0:0:0:0:0:0:1
+]
+00:28:01.171 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.SessionTrackerImpl - Checking session 0x10000393fab0000
+00:28:01.171 [SyncThread:0] DEBUG org.apache.zookeeper.server.FinalRequestProcessor - Processing request:: sessionid:0x10000393fab0000 type:getChildren2 cxid:0x27 zxid:0xfffffffffffffffe txntype:unknown reqpath:/multiple-clients-regression/locks/R
+00:28:01.171 [SyncThread:0] DEBUG org.apache.zookeeper.server.FinalRequestProcessor - sessionid:0x10000393fab0000 type:getChildren2 cxid:0x27 zxid:0xfffffffffffffffe txntype:unknown reqpath:/multiple-clients-regression/locks/R
+00:28:01.171 [SyncThread:0] DEBUG org.apache.zookeeper.server.ZooKeeperServer - Permission requested: 1 
+00:28:01.171 [SyncThread:0] DEBUG org.apache.zookeeper.server.ZooKeeperServer - ACLs for node: [31,s{'world,'anyone}
+]
+00:28:01.171 [SyncThread:0] DEBUG org.apache.zookeeper.server.ZooKeeperServer - Client credentials: ['ip,'0:0:0:0:0:0:0:1
+]
+00:28:01.374 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.SessionTrackerImpl - Checking session 0x10000393fab0000
+00:28:01.375 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.ZooKeeperServer - Permission requested: 8 
+00:28:01.375 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.ZooKeeperServer - ACLs for node: [31,s{'world,'anyone}
+]
+00:28:01.375 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.ZooKeeperServer - Client credentials: ['ip,'0:0:0:0:0:0:0:1
+]
+00:28:01.375 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.PrepRequestProcessor - Digest got from data tree is: 8889759152
+00:28:01.375 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.PrepRequestProcessor - Digest got from outstandingChanges is: 6726544073
+00:28:01.375 [SyncThread:0] DEBUG org.apache.zookeeper.server.FinalRequestProcessor - Processing request:: sessionid:0x10000393fab0000 type:delete cxid:0x28 zxid:0x15 txntype:2 reqpath:/multiple-clients-regression/locks/R/_c_ec23ef24-76be-4781-bde5-0f790f16731c-lock-0000000007
+00:28:01.375 [SyncThread:0] DEBUG org.apache.zookeeper.common.PathTrie - multiple-clients-regression
+00:28:01.375 [SyncThread:0] DEBUG org.apache.zookeeper.server.DataTree - Digests are matching for Zxid: 15, Digest in log and actual tree: 4561710339
+00:28:01.375 [SyncThread:0] DEBUG org.apache.zookeeper.server.FinalRequestProcessor - sessionid:0x10000393fab0000 type:delete cxid:0x28 zxid:0x15 txntype:2 reqpath:/multiple-clients-regression/locks/R/_c_ec23ef24-76be-4781-bde5-0f790f16731c-lock-0000000007
+00:28:01.377 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.SessionTrackerImpl - Checking session 0x10000393fab0000
+00:28:01.377 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.PrepRequestProcessor - Processing ACL: 31,s{'world,'anyone}
+
+00:28:01.377 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.ZooKeeperServer - Permission requested: 4 
+00:28:01.377 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.ZooKeeperServer - ACLs for node: [31,s{'world,'anyone}
+]
+00:28:01.377 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.ZooKeeperServer - Client credentials: ['ip,'0:0:0:0:0:0:0:1
+]
+00:28:01.377 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.PrepRequestProcessor - Digest got from data tree is: 4561710339
+00:28:01.377 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.PrepRequestProcessor - Digest got from outstandingChanges is: 6607177696
+00:28:01.377 [SyncThread:0] DEBUG org.apache.zookeeper.server.FinalRequestProcessor - Processing request:: sessionid:0x10000393fab0000 type:create2 cxid:0x29 zxid:0x16 txntype:15 reqpath:/multiple-clients-regression/locks/R/_c_2640c18c-0c05-40eb-b0be-9bc8d8a6a7fa-lock-
+00:28:01.377 [SyncThread:0] DEBUG org.apache.zookeeper.common.PathTrie - multiple-clients-regression
+00:28:01.377 [SyncThread:0] DEBUG org.apache.zookeeper.server.DataTree - Digests are matching for Zxid: 16, Digest in log and actual tree: 9411131764
+00:28:01.377 [SyncThread:0] DEBUG org.apache.zookeeper.server.FinalRequestProcessor - sessionid:0x10000393fab0000 type:create2 cxid:0x29 zxid:0x16 txntype:15 reqpath:/multiple-clients-regression/locks/R/_c_2640c18c-0c05-40eb-b0be-9bc8d8a6a7fa-lock-
+00:28:01.378 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.SessionTrackerImpl - Checking session 0x10000393fab0000
+00:28:01.378 [SyncThread:0] DEBUG org.apache.zookeeper.server.FinalRequestProcessor - Processing request:: sessionid:0x10000393fab0000 type:getChildren2 cxid:0x2a zxid:0xfffffffffffffffe txntype:unknown reqpath:/multiple-clients-regression/locks/R
+00:28:01.378 [SyncThread:0] DEBUG org.apache.zookeeper.server.FinalRequestProcessor - sessionid:0x10000393fab0000 type:getChildren2 cxid:0x2a zxid:0xfffffffffffffffe txntype:unknown reqpath:/multiple-clients-regression/locks/R
+00:28:01.378 [SyncThread:0] DEBUG org.apache.zookeeper.server.ZooKeeperServer - Permission requested: 1 
+00:28:01.378 [SyncThread:0] DEBUG org.apache.zookeeper.server.ZooKeeperServer - ACLs for node: [31,s{'world,'anyone}
+]
+00:28:01.378 [SyncThread:0] DEBUG org.apache.zookeeper.server.ZooKeeperServer - Client credentials: ['ip,'0:0:0:0:0:0:0:1
+]
+00:28:01.379 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.SessionTrackerImpl - Checking session 0x10000393fab0000
+00:28:01.379 [SyncThread:0] DEBUG org.apache.zookeeper.server.FinalRequestProcessor - Processing request:: sessionid:0x10000393fab0000 type:getChildren2 cxid:0x2b zxid:0xfffffffffffffffe txntype:unknown reqpath:/multiple-clients-regression/locks/R
+00:28:01.379 [SyncThread:0] DEBUG org.apache.zookeeper.server.FinalRequestProcessor - sessionid:0x10000393fab0000 type:getChildren2 cxid:0x2b zxid:0xfffffffffffffffe txntype:unknown reqpath:/multiple-clients-regression/locks/R
+00:28:01.379 [SyncThread:0] DEBUG org.apache.zookeeper.server.ZooKeeperServer - Permission requested: 1 
+00:28:01.379 [SyncThread:0] DEBUG org.apache.zookeeper.server.ZooKeeperServer - ACLs for node: [31,s{'world,'anyone}
+]
+00:28:01.379 [SyncThread:0] DEBUG org.apache.zookeeper.server.ZooKeeperServer - Client credentials: ['ip,'0:0:0:0:0:0:0:1
+]
+00:28:01.583 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.SessionTrackerImpl - Checking session 0x10000393fab0000
+00:28:01.583 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.ZooKeeperServer - Permission requested: 8 
+00:28:01.583 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.ZooKeeperServer - ACLs for node: [31,s{'world,'anyone}
+]
+00:28:01.583 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.ZooKeeperServer - Client credentials: ['ip,'0:0:0:0:0:0:0:1
+]
+00:28:01.584 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.PrepRequestProcessor - Digest got from data tree is: 9411131764
+00:28:01.584 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.PrepRequestProcessor - Digest got from outstandingChanges is: 7247925345
+00:28:01.584 [SyncThread:0] DEBUG org.apache.zookeeper.server.FinalRequestProcessor - Processing request:: sessionid:0x10000393fab0000 type:delete cxid:0x2c zxid:0x17 txntype:2 reqpath:/multiple-clients-regression/locks/R/_c_2640c18c-0c05-40eb-b0be-9bc8d8a6a7fa-lock-0000000008
+00:28:01.584 [SyncThread:0] DEBUG org.apache.zookeeper.common.PathTrie - multiple-clients-regression
+00:28:01.584 [SyncThread:0] DEBUG org.apache.zookeeper.server.DataTree - Digests are matching for Zxid: 17, Digest in log and actual tree: 4443971277
+00:28:01.584 [SyncThread:0] DEBUG org.apache.zookeeper.server.FinalRequestProcessor - sessionid:0x10000393fab0000 type:delete cxid:0x2c zxid:0x17 txntype:2 reqpath:/multiple-clients-regression/locks/R/_c_2640c18c-0c05-40eb-b0be-9bc8d8a6a7fa-lock-0000000008
+00:28:01.587 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.SessionTrackerImpl - Checking session 0x10000393fab0000
+00:28:01.587 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.PrepRequestProcessor - Processing ACL: 31,s{'world,'anyone}
+
+00:28:01.587 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.ZooKeeperServer - Permission requested: 4 
+00:28:01.587 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.ZooKeeperServer - ACLs for node: [31,s{'world,'anyone}
+]
+00:28:01.587 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.ZooKeeperServer - Client credentials: ['ip,'0:0:0:0:0:0:0:1
+]
+00:28:01.587 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.PrepRequestProcessor - Digest got from data tree is: 4443971277
+00:28:01.587 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.PrepRequestProcessor - Digest got from outstandingChanges is: 3190748784
+00:28:01.587 [SyncThread:0] DEBUG org.apache.zookeeper.server.FinalRequestProcessor - Processing request:: sessionid:0x10000393fab0000 type:create2 cxid:0x2d zxid:0x18 txntype:15 reqpath:/multiple-clients-regression/locks/R/_c_8bf02c1e-35dc-47e0-a5e4-c9775b16de92-lock-
+00:28:01.587 [SyncThread:0] DEBUG org.apache.zookeeper.common.PathTrie - multiple-clients-regression
+00:28:01.587 [SyncThread:0] DEBUG org.apache.zookeeper.server.DataTree - Digests are matching for Zxid: 18, Digest in log and actual tree: 5635718523
+00:28:01.587 [SyncThread:0] DEBUG org.apache.zookeeper.server.FinalRequestProcessor - sessionid:0x10000393fab0000 type:create2 cxid:0x2d zxid:0x18 txntype:15 reqpath:/multiple-clients-regression/locks/R/_c_8bf02c1e-35dc-47e0-a5e4-c9775b16de92-lock-
+00:28:01.588 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.SessionTrackerImpl - Checking session 0x10000393fab0000
+00:28:01.588 [SyncThread:0] DEBUG org.apache.zookeeper.server.FinalRequestProcessor - Processing request:: sessionid:0x10000393fab0000 type:getChildren2 cxid:0x2e zxid:0xfffffffffffffffe txntype:unknown reqpath:/multiple-clients-regression/locks/R
+00:28:01.588 [SyncThread:0] DEBUG org.apache.zookeeper.server.FinalRequestProcessor - sessionid:0x10000393fab0000 type:getChildren2 cxid:0x2e zxid:0xfffffffffffffffe txntype:unknown reqpath:/multiple-clients-regression/locks/R
+00:28:01.588 [SyncThread:0] DEBUG org.apache.zookeeper.server.ZooKeeperServer - Permission requested: 1 
+00:28:01.588 [SyncThread:0] DEBUG org.apache.zookeeper.server.ZooKeeperServer - ACLs for node: [31,s{'world,'anyone}
+]
+00:28:01.588 [SyncThread:0] DEBUG org.apache.zookeeper.server.ZooKeeperServer - Client credentials: ['ip,'0:0:0:0:0:0:0:1
+]
+00:28:01.589 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.SessionTrackerImpl - Checking session 0x10000393fab0000
+00:28:01.589 [SyncThread:0] DEBUG org.apache.zookeeper.server.FinalRequestProcessor - Processing request:: sessionid:0x10000393fab0000 type:getChildren2 cxid:0x2f zxid:0xfffffffffffffffe txntype:unknown reqpath:/multiple-clients-regression/locks/R
+00:28:01.589 [SyncThread:0] DEBUG org.apache.zookeeper.server.FinalRequestProcessor - sessionid:0x10000393fab0000 type:getChildren2 cxid:0x2f zxid:0xfffffffffffffffe txntype:unknown reqpath:/multiple-clients-regression/locks/R
+00:28:01.589 [SyncThread:0] DEBUG org.apache.zookeeper.server.ZooKeeperServer - Permission requested: 1 
+00:28:01.589 [SyncThread:0] DEBUG org.apache.zookeeper.server.ZooKeeperServer - ACLs for node: [31,s{'world,'anyone}
+]
+00:28:01.589 [SyncThread:0] DEBUG org.apache.zookeeper.server.ZooKeeperServer - Client credentials: ['ip,'0:0:0:0:0:0:0:1
+]
+00:28:01.794 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.SessionTrackerImpl - Checking session 0x10000393fab0000
+00:28:01.794 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.ZooKeeperServer - Permission requested: 8 
+00:28:01.794 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.ZooKeeperServer - ACLs for node: [31,s{'world,'anyone}
+]
+00:28:01.794 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.ZooKeeperServer - Client credentials: ['ip,'0:0:0:0:0:0:0:1
+]
+00:28:01.794 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.PrepRequestProcessor - Digest got from data tree is: 5635718523
+00:28:01.794 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.PrepRequestProcessor - Digest got from outstandingChanges is: 7788439176
+00:28:01.795 [SyncThread:0] DEBUG org.apache.zookeeper.server.FinalRequestProcessor - Processing request:: sessionid:0x10000393fab0000 type:delete cxid:0x30 zxid:0x19 txntype:2 reqpath:/multiple-clients-regression/locks/R/_c_8bf02c1e-35dc-47e0-a5e4-c9775b16de92-lock-0000000009
+00:28:01.795 [SyncThread:0] DEBUG org.apache.zookeeper.common.PathTrie - multiple-clients-regression
+00:28:01.795 [SyncThread:0] DEBUG org.apache.zookeeper.server.DataTree - Digests are matching for Zxid: 19, Digest in log and actual tree: 5343469437
+00:28:01.795 [SyncThread:0] DEBUG org.apache.zookeeper.server.FinalRequestProcessor - sessionid:0x10000393fab0000 type:delete cxid:0x30 zxid:0x19 txntype:2 reqpath:/multiple-clients-regression/locks/R/_c_8bf02c1e-35dc-47e0-a5e4-c9775b16de92-lock-0000000009
+00:28:01.798 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.SessionTrackerImpl - Checking session 0x10000393fab0000
+00:28:01.798 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.PrepRequestProcessor - Processing ACL: 31,s{'world,'anyone}
+
+00:28:01.798 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.ZooKeeperServer - Permission requested: 4 
+00:28:01.798 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.ZooKeeperServer - ACLs for node: [31,s{'world,'anyone}
+]
+00:28:01.798 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.ZooKeeperServer - Client credentials: ['ip,'0:0:0:0:0:0:0:1
+]
+00:28:01.798 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.PrepRequestProcessor - Digest got from data tree is: 5343469437
+00:28:01.798 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.PrepRequestProcessor - Digest got from outstandingChanges is: 3140011354
+00:28:01.798 [SyncThread:0] DEBUG org.apache.zookeeper.server.FinalRequestProcessor - Processing request:: sessionid:0x10000393fab0000 type:create2 cxid:0x31 zxid:0x1a txntype:15 reqpath:/multiple-clients-regression/locks/R/_c_3d4cd078-5c39-439b-8be6-1b681d4e2704-lock-
+00:28:01.799 [SyncThread:0] DEBUG org.apache.zookeeper.common.PathTrie - multiple-clients-regression
+00:28:01.799 [SyncThread:0] DEBUG org.apache.zookeeper.server.DataTree - Digests are matching for Zxid: 1a, Digest in log and actual tree: 4566785085
+00:28:01.799 [SyncThread:0] DEBUG org.apache.zookeeper.server.FinalRequestProcessor - sessionid:0x10000393fab0000 type:create2 cxid:0x31 zxid:0x1a txntype:15 reqpath:/multiple-clients-regression/locks/R/_c_3d4cd078-5c39-439b-8be6-1b681d4e2704-lock-
+00:28:01.799 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.SessionTrackerImpl - Checking session 0x10000393fab0000
+00:28:01.799 [SyncThread:0] DEBUG org.apache.zookeeper.server.FinalRequestProcessor - Processing request:: sessionid:0x10000393fab0000 type:getChildren2 cxid:0x32 zxid:0xfffffffffffffffe txntype:unknown reqpath:/multiple-clients-regression/locks/R
+00:28:01.799 [SyncThread:0] DEBUG org.apache.zookeeper.server.FinalRequestProcessor - sessionid:0x10000393fab0000 type:getChildren2 cxid:0x32 zxid:0xfffffffffffffffe txntype:unknown reqpath:/multiple-clients-regression/locks/R
+00:28:01.800 [SyncThread:0] DEBUG org.apache.zookeeper.server.ZooKeeperServer - Permission requested: 1 
+00:28:01.800 [SyncThread:0] DEBUG org.apache.zookeeper.server.ZooKeeperServer - ACLs for node: [31,s{'world,'anyone}
+]
+00:28:01.800 [SyncThread:0] DEBUG org.apache.zookeeper.server.ZooKeeperServer - Client credentials: ['ip,'0:0:0:0:0:0:0:1
+]
+00:28:01.800 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.SessionTrackerImpl - Checking session 0x10000393fab0000
+00:28:01.801 [SyncThread:0] DEBUG org.apache.zookeeper.server.FinalRequestProcessor - Processing request:: sessionid:0x10000393fab0000 type:getChildren2 cxid:0x33 zxid:0xfffffffffffffffe txntype:unknown reqpath:/multiple-clients-regression/locks/R
+00:28:01.801 [SyncThread:0] DEBUG org.apache.zookeeper.server.FinalRequestProcessor - sessionid:0x10000393fab0000 type:getChildren2 cxid:0x33 zxid:0xfffffffffffffffe txntype:unknown reqpath:/multiple-clients-regression/locks/R
+00:28:01.801 [SyncThread:0] DEBUG org.apache.zookeeper.server.ZooKeeperServer - Permission requested: 1 
+00:28:01.801 [SyncThread:0] DEBUG org.apache.zookeeper.server.ZooKeeperServer - ACLs for node: [31,s{'world,'anyone}
+]
+00:28:01.801 [SyncThread:0] DEBUG org.apache.zookeeper.server.ZooKeeperServer - Client credentials: ['ip,'0:0:0:0:0:0:0:1
+]
+00:28:02.004 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.SessionTrackerImpl - Checking session 0x10000393fab0000
+00:28:02.005 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.ZooKeeperServer - Permission requested: 8 
+00:28:02.005 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.ZooKeeperServer - ACLs for node: [31,s{'world,'anyone}
+]
+00:28:02.005 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.ZooKeeperServer - Client credentials: ['ip,'0:0:0:0:0:0:0:1
+]
+00:28:02.005 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.PrepRequestProcessor - Digest got from data tree is: 4566785085
+00:28:02.005 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.PrepRequestProcessor - Digest got from outstandingChanges is: 6719514422
+00:28:02.005 [SyncThread:0] DEBUG org.apache.zookeeper.server.FinalRequestProcessor - Processing request:: sessionid:0x10000393fab0000 type:delete cxid:0x34 zxid:0x1b txntype:2 reqpath:/multiple-clients-regression/locks/R/_c_3d4cd078-5c39-439b-8be6-1b681d4e2704-lock-0000000010
+00:28:02.005 [SyncThread:0] DEBUG org.apache.zookeeper.common.PathTrie - multiple-clients-regression
+00:28:02.005 [SyncThread:0] DEBUG org.apache.zookeeper.server.DataTree - Digests are matching for Zxid: 1b, Digest in log and actual tree: 5292740691
+00:28:02.005 [SyncThread:0] DEBUG org.apache.zookeeper.server.FinalRequestProcessor - sessionid:0x10000393fab0000 type:delete cxid:0x34 zxid:0x1b txntype:2 reqpath:/multiple-clients-regression/locks/R/_c_3d4cd078-5c39-439b-8be6-1b681d4e2704-lock-0000000010
+00:28:02.007 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.SessionTrackerImpl - Checking session 0x10000393fab0000
+00:28:02.008 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.PrepRequestProcessor - Processing ACL: 31,s{'world,'anyone}
+
+00:28:02.008 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.ZooKeeperServer - Permission requested: 4 
+00:28:02.008 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.ZooKeeperServer - ACLs for node: [31,s{'world,'anyone}
+]
+00:28:02.008 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.ZooKeeperServer - Client credentials: ['ip,'0:0:0:0:0:0:0:1
+]
+00:28:02.008 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.PrepRequestProcessor - Digest got from data tree is: 5292740691
+00:28:02.008 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.PrepRequestProcessor - Digest got from outstandingChanges is: 6253280722
+00:28:02.008 [SyncThread:0] DEBUG org.apache.zookeeper.server.FinalRequestProcessor - Processing request:: sessionid:0x10000393fab0000 type:create2 cxid:0x35 zxid:0x1c txntype:15 reqpath:/multiple-clients-regression/locks/R/_c_b46c5e17-e9d2-44e5-8ee4-30e37b5966ed-lock-
+00:28:02.008 [SyncThread:0] DEBUG org.apache.zookeeper.common.PathTrie - multiple-clients-regression
+00:28:02.008 [SyncThread:0] DEBUG org.apache.zookeeper.server.DataTree - Digests are matching for Zxid: 1c, Digest in log and actual tree: 8077653511
+00:28:02.008 [SyncThread:0] DEBUG org.apache.zookeeper.server.FinalRequestProcessor - sessionid:0x10000393fab0000 type:create2 cxid:0x35 zxid:0x1c txntype:15 reqpath:/multiple-clients-regression/locks/R/_c_b46c5e17-e9d2-44e5-8ee4-30e37b5966ed-lock-
+00:28:02.009 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.SessionTrackerImpl - Checking session 0x10000393fab0000
+00:28:02.009 [SyncThread:0] DEBUG org.apache.zookeeper.server.FinalRequestProcessor - Processing request:: sessionid:0x10000393fab0000 type:getChildren2 cxid:0x36 zxid:0xfffffffffffffffe txntype:unknown reqpath:/multiple-clients-regression/locks/R
+00:28:02.009 [SyncThread:0] DEBUG org.apache.zookeeper.server.FinalRequestProcessor - sessionid:0x10000393fab0000 type:getChildren2 cxid:0x36 zxid:0xfffffffffffffffe txntype:unknown reqpath:/multiple-clients-regression/locks/R
+00:28:02.009 [SyncThread:0] DEBUG org.apache.zookeeper.server.ZooKeeperServer - Permission requested: 1 
+00:28:02.009 [SyncThread:0] DEBUG org.apache.zookeeper.server.ZooKeeperServer - ACLs for node: [31,s{'world,'anyone}
+]
+00:28:02.009 [SyncThread:0] DEBUG org.apache.zookeeper.server.ZooKeeperServer - Client credentials: ['ip,'0:0:0:0:0:0:0:1
+]
+00:28:02.009 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.SessionTrackerImpl - Checking session 0x10000393fab0000
+00:28:02.009 [SyncThread:0] DEBUG org.apache.zookeeper.server.FinalRequestProcessor - Processing request:: sessionid:0x10000393fab0000 type:getChildren2 cxid:0x37 zxid:0xfffffffffffffffe txntype:unknown reqpath:/multiple-clients-regression/locks/R
+00:28:02.009 [SyncThread:0] DEBUG org.apache.zookeeper.server.FinalRequestProcessor - sessionid:0x10000393fab0000 type:getChildren2 cxid:0x37 zxid:0xfffffffffffffffe txntype:unknown reqpath:/multiple-clients-regression/locks/R
+00:28:02.009 [SyncThread:0] DEBUG org.apache.zookeeper.server.ZooKeeperServer - Permission requested: 1 
+00:28:02.009 [SyncThread:0] DEBUG org.apache.zookeeper.server.ZooKeeperServer - ACLs for node: [31,s{'world,'anyone}
+]
+00:28:02.009 [SyncThread:0] DEBUG org.apache.zookeeper.server.ZooKeeperServer - Client credentials: ['ip,'0:0:0:0:0:0:0:1
+]
+00:28:02.214 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.SessionTrackerImpl - Checking session 0x10000393fab0000
+00:28:02.214 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.ZooKeeperServer - Permission requested: 8 
+00:28:02.214 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.ZooKeeperServer - ACLs for node: [31,s{'world,'anyone}
+]
+00:28:02.214 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.ZooKeeperServer - Client credentials: ['ip,'0:0:0:0:0:0:0:1
+]
+00:28:02.214 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.PrepRequestProcessor - Digest got from data tree is: 8077653511
+00:28:02.214 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.PrepRequestProcessor - Digest got from outstandingChanges is: 5916533008
+00:28:02.215 [SyncThread:0] DEBUG org.apache.zookeeper.server.FinalRequestProcessor - Processing request:: sessionid:0x10000393fab0000 type:delete cxid:0x38 zxid:0x1d txntype:2 reqpath:/multiple-clients-regression/locks/R/_c_b46c5e17-e9d2-44e5-8ee4-30e37b5966ed-lock-0000000011
+00:28:02.215 [SyncThread:0] DEBUG org.apache.zookeeper.common.PathTrie - multiple-clients-regression
+00:28:02.215 [SyncThread:0] DEBUG org.apache.zookeeper.server.DataTree - Digests are matching for Zxid: 1d, Digest in log and actual tree: 4092160219
+00:28:02.215 [SyncThread:0] DEBUG org.apache.zookeeper.server.FinalRequestProcessor - sessionid:0x10000393fab0000 type:delete cxid:0x38 zxid:0x1d txntype:2 reqpath:/multiple-clients-regression/locks/R/_c_b46c5e17-e9d2-44e5-8ee4-30e37b5966ed-lock-0000000011
+00:28:02.379 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.SessionTrackerImpl - Checking session 0x10000393fab0000
+00:28:02.379 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.PrepRequestProcessor - Processing ACL: 31,s{'world,'anyone}
+
+00:28:02.379 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.ZooKeeperServer - Permission requested: 4 
+00:28:02.379 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.ZooKeeperServer - ACLs for node: [31,s{'world,'anyone}
+]
+00:28:02.379 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.ZooKeeperServer - Client credentials: ['ip,'0:0:0:0:0:0:0:1
+]
+00:28:02.380 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.PrepRequestProcessor - Digest got from data tree is: 4092160219
+00:28:02.380 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.PrepRequestProcessor - Digest got from outstandingChanges is: 6270373368
+00:28:02.380 [SyncThread:0] DEBUG org.apache.zookeeper.server.FinalRequestProcessor - Processing request:: sessionid:0x10000393fab0000 type:create2 cxid:0x39 zxid:0x1e txntype:15 reqpath:/multiple-clients-regression/locks/R/_c_98420320-53ce-4cdc-a886-04fc1faf241a-lock-
+00:28:02.380 [SyncThread:0] DEBUG org.apache.zookeeper.common.PathTrie - multiple-clients-regression
+00:28:02.380 [SyncThread:0] DEBUG org.apache.zookeeper.server.DataTree - Digests are matching for Zxid: 1e, Digest in log and actual tree: 10282207041
+00:28:02.380 [SyncThread:0] DEBUG org.apache.zookeeper.server.FinalRequestProcessor - sessionid:0x10000393fab0000 type:create2 cxid:0x39 zxid:0x1e txntype:15 reqpath:/multiple-clients-regression/locks/R/_c_98420320-53ce-4cdc-a886-04fc1faf241a-lock-
+00:28:02.381 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.SessionTrackerImpl - Checking session 0x10000393fab0000
+00:28:02.381 [SyncThread:0] DEBUG org.apache.zookeeper.server.FinalRequestProcessor - Processing request:: sessionid:0x10000393fab0000 type:getChildren2 cxid:0x3a zxid:0xfffffffffffffffe txntype:unknown reqpath:/multiple-clients-regression/locks/R
+00:28:02.381 [SyncThread:0] DEBUG org.apache.zookeeper.server.FinalRequestProcessor - sessionid:0x10000393fab0000 type:getChildren2 cxid:0x3a zxid:0xfffffffffffffffe txntype:unknown reqpath:/multiple-clients-regression/locks/R
+00:28:02.381 [SyncThread:0] DEBUG org.apache.zookeeper.server.ZooKeeperServer - Permission requested: 1 
+00:28:02.381 [SyncThread:0] DEBUG org.apache.zookeeper.server.ZooKeeperServer - ACLs for node: [31,s{'world,'anyone}
+]
+00:28:02.381 [SyncThread:0] DEBUG org.apache.zookeeper.server.ZooKeeperServer - Client credentials: ['ip,'0:0:0:0:0:0:0:1
+]
+00:28:02.382 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.SessionTrackerImpl - Checking session 0x10000393fab0000
+00:28:02.382 [SyncThread:0] DEBUG org.apache.zookeeper.server.FinalRequestProcessor - Processing request:: sessionid:0x10000393fab0000 type:getChildren2 cxid:0x3b zxid:0xfffffffffffffffe txntype:unknown reqpath:/multiple-clients-regression/locks/R
+00:28:02.382 [SyncThread:0] DEBUG org.apache.zookeeper.server.FinalRequestProcessor - sessionid:0x10000393fab0000 type:getChildren2 cxid:0x3b zxid:0xfffffffffffffffe txntype:unknown reqpath:/multiple-clients-regression/locks/R
+00:28:02.382 [SyncThread:0] DEBUG org.apache.zookeeper.server.ZooKeeperServer - Permission requested: 1 
+00:28:02.382 [SyncThread:0] DEBUG org.apache.zookeeper.server.ZooKeeperServer - ACLs for node: [31,s{'world,'anyone}
+]
+00:28:02.382 [SyncThread:0] DEBUG org.apache.zookeeper.server.ZooKeeperServer - Client credentials: ['ip,'0:0:0:0:0:0:0:1
+]
+00:28:02.586 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.SessionTrackerImpl - Checking session 0x10000393fab0000
+00:28:02.586 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.ZooKeeperServer - Permission requested: 8 
+00:28:02.586 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.ZooKeeperServer - ACLs for node: [31,s{'world,'anyone}
+]
+00:28:02.586 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.ZooKeeperServer - Client credentials: ['ip,'0:0:0:0:0:0:0:1
+]
+00:28:02.586 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.PrepRequestProcessor - Digest got from data tree is: 10282207041
+00:28:02.586 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.PrepRequestProcessor - Digest got from outstandingChanges is: 8121094206
+00:28:02.586 [SyncThread:0] DEBUG org.apache.zookeeper.server.FinalRequestProcessor - Processing request:: sessionid:0x10000393fab0000 type:delete cxid:0x3c zxid:0x1f txntype:2 reqpath:/multiple-clients-regression/locks/R/_c_98420320-53ce-4cdc-a886-04fc1faf241a-lock-0000000012
+00:28:02.586 [SyncThread:0] DEBUG org.apache.zookeeper.common.PathTrie - multiple-clients-regression
+00:28:02.586 [SyncThread:0] DEBUG org.apache.zookeeper.server.DataTree - Digests are matching for Zxid: 1f, Digest in log and actual tree: 4109260533
+00:28:02.586 [SyncThread:0] DEBUG org.apache.zookeeper.server.FinalRequestProcessor - sessionid:0x10000393fab0000 type:delete cxid:0x3c zxid:0x1f txntype:2 reqpath:/multiple-clients-regression/locks/R/_c_98420320-53ce-4cdc-a886-04fc1faf241a-lock-0000000012
+00:28:03.590 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.SessionTrackerImpl - Checking session 0x10000393fab0000
+00:28:03.590 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.PrepRequestProcessor - Processing ACL: 31,s{'world,'anyone}
+
+00:28:03.590 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.ZooKeeperServer - Permission requested: 4 
+00:28:03.590 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.ZooKeeperServer - ACLs for node: [31,s{'world,'anyone}
+]
+00:28:03.590 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.ZooKeeperServer - Client credentials: ['ip,'0:0:0:0:0:0:0:1
+]
+00:28:03.591 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.PrepRequestProcessor - Digest got from data tree is: 4109260533
+00:28:03.591 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.PrepRequestProcessor - Digest got from outstandingChanges is: 6037968013
+00:28:03.591 [SyncThread:0] DEBUG org.apache.zookeeper.server.FinalRequestProcessor - Processing request:: sessionid:0x10000393fab0000 type:create2 cxid:0x3d zxid:0x20 txntype:15 reqpath:/multiple-clients-regression/locks/R/_c_fe1337c9-f4f7-4aac-aadc-d90710d0ae6d-lock-
+00:28:03.591 [SyncThread:0] DEBUG org.apache.zookeeper.common.PathTrie - multiple-clients-regression
+00:28:03.591 [SyncThread:0] DEBUG org.apache.zookeeper.server.DataTree - Digests are matching for Zxid: 20, Digest in log and actual tree: 8097920187
+00:28:03.591 [SyncThread:0] DEBUG org.apache.zookeeper.server.FinalRequestProcessor - sessionid:0x10000393fab0000 type:create2 cxid:0x3d zxid:0x20 txntype:15 reqpath:/multiple-clients-regression/locks/R/_c_fe1337c9-f4f7-4aac-aadc-d90710d0ae6d-lock-
+00:28:03.592 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.SessionTrackerImpl - Checking session 0x10000393fab0000
+00:28:03.592 [SyncThread:0] DEBUG org.apache.zookeeper.server.FinalRequestProcessor - Processing request:: sessionid:0x10000393fab0000 type:getChildren2 cxid:0x3e zxid:0xfffffffffffffffe txntype:unknown reqpath:/multiple-clients-regression/locks/R
+00:28:03.592 [SyncThread:0] DEBUG org.apache.zookeeper.server.FinalRequestProcessor - sessionid:0x10000393fab0000 type:getChildren2 cxid:0x3e zxid:0xfffffffffffffffe txntype:unknown reqpath:/multiple-clients-regression/locks/R
+00:28:03.592 [SyncThread:0] DEBUG org.apache.zookeeper.server.ZooKeeperServer - Permission requested: 1 
+00:28:03.592 [SyncThread:0] DEBUG org.apache.zookeeper.server.ZooKeeperServer - ACLs for node: [31,s{'world,'anyone}
+]
+00:28:03.592 [SyncThread:0] DEBUG org.apache.zookeeper.server.ZooKeeperServer - Client credentials: ['ip,'0:0:0:0:0:0:0:1
+]
+00:28:03.593 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.SessionTrackerImpl - Checking session 0x10000393fab0000
+00:28:03.593 [SyncThread:0] DEBUG org.apache.zookeeper.server.FinalRequestProcessor - Processing request:: sessionid:0x10000393fab0000 type:getChildren2 cxid:0x3f zxid:0xfffffffffffffffe txntype:unknown reqpath:/multiple-clients-regression/locks/R
+00:28:03.593 [SyncThread:0] DEBUG org.apache.zookeeper.server.FinalRequestProcessor - sessionid:0x10000393fab0000 type:getChildren2 cxid:0x3f zxid:0xfffffffffffffffe txntype:unknown reqpath:/multiple-clients-regression/locks/R
+00:28:03.593 [SyncThread:0] DEBUG org.apache.zookeeper.server.ZooKeeperServer - Permission requested: 1 
+00:28:03.593 [SyncThread:0] DEBUG org.apache.zookeeper.server.ZooKeeperServer - ACLs for node: [31,s{'world,'anyone}
+]
+00:28:03.593 [SyncThread:0] DEBUG org.apache.zookeeper.server.ZooKeeperServer - Client credentials: ['ip,'0:0:0:0:0:0:0:1
+]
+00:28:03.798 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.SessionTrackerImpl - Checking session 0x10000393fab0000
+00:28:03.799 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.ZooKeeperServer - Permission requested: 8 
+00:28:03.799 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.ZooKeeperServer - ACLs for node: [31,s{'world,'anyone}
+]
+00:28:03.799 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.ZooKeeperServer - Client credentials: ['ip,'0:0:0:0:0:0:0:1
+]
+00:28:03.799 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.PrepRequestProcessor - Digest got from data tree is: 8097920187
+00:28:03.799 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.PrepRequestProcessor - Digest got from outstandingChanges is: 5966160334
+00:28:03.799 [SyncThread:0] DEBUG org.apache.zookeeper.server.FinalRequestProcessor - Processing request:: sessionid:0x10000393fab0000 type:delete cxid:0x40 zxid:0x21 txntype:2 reqpath:/multiple-clients-regression/locks/R/_c_fe1337c9-f4f7-4aac-aadc-d90710d0ae6d-lock-0000000013
+00:28:03.799 [SyncThread:0] DEBUG org.apache.zookeeper.common.PathTrie - multiple-clients-regression
+00:28:03.799 [SyncThread:0] DEBUG org.apache.zookeeper.server.DataTree - Digests are matching for Zxid: 21, Digest in log and actual tree: 3906208160
+00:28:03.799 [SyncThread:0] DEBUG org.apache.zookeeper.server.FinalRequestProcessor - sessionid:0x10000393fab0000 type:delete cxid:0x40 zxid:0x21 txntype:2 reqpath:/multiple-clients-regression/locks/R/_c_fe1337c9-f4f7-4aac-aadc-d90710d0ae6d-lock-0000000013
+00:28:04.803 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.SessionTrackerImpl - Checking session 0x10000393fab0000
+00:28:04.803 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.PrepRequestProcessor - Processing ACL: 31,s{'world,'anyone}
+
+00:28:04.803 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.ZooKeeperServer - Permission requested: 4 
+00:28:04.803 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.ZooKeeperServer - ACLs for node: [31,s{'world,'anyone}
+]
+00:28:04.803 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.ZooKeeperServer - Client credentials: ['ip,'0:0:0:0:0:0:0:1
+]
+00:28:04.803 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.PrepRequestProcessor - Digest got from data tree is: 3906208160
+00:28:04.804 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.PrepRequestProcessor - Digest got from outstandingChanges is: 5920498499
+00:28:04.804 [SyncThread:0] DEBUG org.apache.zookeeper.server.FinalRequestProcessor - Processing request:: sessionid:0x10000393fab0000 type:create2 cxid:0x41 zxid:0x22 txntype:15 reqpath:/multiple-clients-regression/locks/R/_c_3b558a96-cdff-4220-bd5e-b52f6719a722-lock-
+00:28:04.804 [SyncThread:0] DEBUG org.apache.zookeeper.common.PathTrie - multiple-clients-regression
+00:28:04.804 [SyncThread:0] DEBUG org.apache.zookeeper.server.DataTree - Digests are matching for Zxid: 22, Digest in log and actual tree: 7211850971
+00:28:04.804 [SyncThread:0] DEBUG org.apache.zookeeper.server.FinalRequestProcessor - sessionid:0x10000393fab0000 type:create2 cxid:0x41 zxid:0x22 txntype:15 reqpath:/multiple-clients-regression/locks/R/_c_3b558a96-cdff-4220-bd5e-b52f6719a722-lock-
+00:28:04.805 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.SessionTrackerImpl - Checking session 0x10000393fab0000
+00:28:04.805 [SyncThread:0] DEBUG org.apache.zookeeper.server.FinalRequestProcessor - Processing request:: sessionid:0x10000393fab0000 type:getChildren2 cxid:0x42 zxid:0xfffffffffffffffe txntype:unknown reqpath:/multiple-clients-regression/locks/R
+00:28:04.805 [SyncThread:0] DEBUG org.apache.zookeeper.server.FinalRequestProcessor - sessionid:0x10000393fab0000 type:getChildren2 cxid:0x42 zxid:0xfffffffffffffffe txntype:unknown reqpath:/multiple-clients-regression/locks/R
+00:28:04.805 [SyncThread:0] DEBUG org.apache.zookeeper.server.ZooKeeperServer - Permission requested: 1 
+00:28:04.805 [SyncThread:0] DEBUG org.apache.zookeeper.server.ZooKeeperServer - ACLs for node: [31,s{'world,'anyone}
+]
+00:28:04.805 [SyncThread:0] DEBUG org.apache.zookeeper.server.ZooKeeperServer - Client credentials: ['ip,'0:0:0:0:0:0:0:1
+]
+00:28:04.805 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.SessionTrackerImpl - Checking session 0x10000393fab0000
+00:28:04.805 [SyncThread:0] DEBUG org.apache.zookeeper.server.FinalRequestProcessor - Processing request:: sessionid:0x10000393fab0000 type:getChildren2 cxid:0x43 zxid:0xfffffffffffffffe txntype:unknown reqpath:/multiple-clients-regression/locks/R
+00:28:04.805 [SyncThread:0] DEBUG org.apache.zookeeper.server.FinalRequestProcessor - sessionid:0x10000393fab0000 type:getChildren2 cxid:0x43 zxid:0xfffffffffffffffe txntype:unknown reqpath:/multiple-clients-regression/locks/R
+00:28:04.805 [SyncThread:0] DEBUG org.apache.zookeeper.server.ZooKeeperServer - Permission requested: 1 
+00:28:04.805 [SyncThread:0] DEBUG org.apache.zookeeper.server.ZooKeeperServer - ACLs for node: [31,s{'world,'anyone}
+]
+00:28:04.805 [SyncThread:0] DEBUG org.apache.zookeeper.server.ZooKeeperServer - Client credentials: ['ip,'0:0:0:0:0:0:0:1
+]
+00:28:05.009 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.SessionTrackerImpl - Checking session 0x10000393fab0000
+00:28:05.009 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.ZooKeeperServer - Permission requested: 8 
+00:28:05.009 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.ZooKeeperServer - ACLs for node: [31,s{'world,'anyone}
+]
+00:28:05.009 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.ZooKeeperServer - Client credentials: ['ip,'0:0:0:0:0:0:0:1
+]
+00:28:05.009 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.PrepRequestProcessor - Digest got from data tree is: 7211850971
+00:28:05.009 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.PrepRequestProcessor - Digest got from outstandingChanges is: 5080099778
+00:28:05.009 [SyncThread:0] DEBUG org.apache.zookeeper.server.FinalRequestProcessor - Processing request:: sessionid:0x10000393fab0000 type:delete cxid:0x44 zxid:0x23 txntype:2 reqpath:/multiple-clients-regression/locks/R/_c_3b558a96-cdff-4220-bd5e-b52f6719a722-lock-0000000014
+00:28:05.010 [SyncThread:0] DEBUG org.apache.zookeeper.common.PathTrie - multiple-clients-regression
+00:28:05.010 [SyncThread:0] DEBUG org.apache.zookeeper.server.DataTree - Digests are matching for Zxid: 23, Digest in log and actual tree: 3788747306
+00:28:05.010 [SyncThread:0] DEBUG org.apache.zookeeper.server.FinalRequestProcessor - sessionid:0x10000393fab0000 type:delete cxid:0x44 zxid:0x23 txntype:2 reqpath:/multiple-clients-regression/locks/R/_c_3b558a96-cdff-4220-bd5e-b52f6719a722-lock-0000000014
+00:28:06.014 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.SessionTrackerImpl - Checking session 0x10000393fab0000
+00:28:06.014 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.PrepRequestProcessor - Processing ACL: 31,s{'world,'anyone}
+
+00:28:06.014 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.ZooKeeperServer - Permission requested: 4 
+00:28:06.014 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.ZooKeeperServer - ACLs for node: [31,s{'world,'anyone}
+]
+00:28:06.014 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.ZooKeeperServer - Client credentials: ['ip,'0:0:0:0:0:0:0:1
+]
+00:28:06.015 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.PrepRequestProcessor - Digest got from data tree is: 3788747306
+00:28:06.015 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.PrepRequestProcessor - Digest got from outstandingChanges is: 5512800346
+00:28:06.015 [SyncThread:0] DEBUG org.apache.zookeeper.server.FinalRequestProcessor - Processing request:: sessionid:0x10000393fab0000 type:create2 cxid:0x45 zxid:0x24 txntype:15 reqpath:/multiple-clients-regression/locks/R/_c_37d827b0-30ea-4d69-8d4f-269d305ce53e-lock-
+00:28:06.015 [SyncThread:0] DEBUG org.apache.zookeeper.common.PathTrie - multiple-clients-regression
+00:28:06.015 [SyncThread:0] DEBUG org.apache.zookeeper.server.DataTree - Digests are matching for Zxid: 24, Digest in log and actual tree: 8332537831
+00:28:06.015 [SyncThread:0] DEBUG org.apache.zookeeper.server.FinalRequestProcessor - sessionid:0x10000393fab0000 type:create2 cxid:0x45 zxid:0x24 txntype:15 reqpath:/multiple-clients-regression/locks/R/_c_37d827b0-30ea-4d69-8d4f-269d305ce53e-lock-
+00:28:06.016 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.SessionTrackerImpl - Checking session 0x10000393fab0000
+00:28:06.016 [SyncThread:0] DEBUG org.apache.zookeeper.server.FinalRequestProcessor - Processing request:: sessionid:0x10000393fab0000 type:getChildren2 cxid:0x46 zxid:0xfffffffffffffffe txntype:unknown reqpath:/multiple-clients-regression/locks/R
+00:28:06.016 [SyncThread:0] DEBUG org.apache.zookeeper.server.FinalRequestProcessor - sessionid:0x10000393fab0000 type:getChildren2 cxid:0x46 zxid:0xfffffffffffffffe txntype:unknown reqpath:/multiple-clients-regression/locks/R
+00:28:06.016 [SyncThread:0] DEBUG org.apache.zookeeper.server.ZooKeeperServer - Permission requested: 1 
+00:28:06.016 [SyncThread:0] DEBUG org.apache.zookeeper.server.ZooKeeperServer - ACLs for node: [31,s{'world,'anyone}
+]
+00:28:06.016 [SyncThread:0] DEBUG org.apache.zookeeper.server.ZooKeeperServer - Client credentials: ['ip,'0:0:0:0:0:0:0:1
+]
+00:28:06.017 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.SessionTrackerImpl - Checking session 0x10000393fab0000
+00:28:06.017 [SyncThread:0] DEBUG org.apache.zookeeper.server.FinalRequestProcessor - Processing request:: sessionid:0x10000393fab0000 type:getChildren2 cxid:0x47 zxid:0xfffffffffffffffe txntype:unknown reqpath:/multiple-clients-regression/locks/R
+00:28:06.017 [SyncThread:0] DEBUG org.apache.zookeeper.server.FinalRequestProcessor - sessionid:0x10000393fab0000 type:getChildren2 cxid:0x47 zxid:0xfffffffffffffffe txntype:unknown reqpath:/multiple-clients-regression/locks/R
+00:28:06.017 [SyncThread:0] DEBUG org.apache.zookeeper.server.ZooKeeperServer - Permission requested: 1 
+00:28:06.017 [SyncThread:0] DEBUG org.apache.zookeeper.server.ZooKeeperServer - ACLs for node: [31,s{'world,'anyone}
+]
+00:28:06.017 [SyncThread:0] DEBUG org.apache.zookeeper.server.ZooKeeperServer - Client credentials: ['ip,'0:0:0:0:0:0:0:1
+]
+00:28:06.221 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.SessionTrackerImpl - Checking session 0x10000393fab0000
+00:28:06.221 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.ZooKeeperServer - Permission requested: 8 
+00:28:06.221 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.ZooKeeperServer - ACLs for node: [31,s{'world,'anyone}
+]
+00:28:06.221 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.ZooKeeperServer - Client credentials: ['ip,'0:0:0:0:0:0:0:1
+]
+00:28:06.221 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.PrepRequestProcessor - Digest got from data tree is: 8332537831
+00:28:06.221 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.PrepRequestProcessor - Digest got from outstandingChanges is: 6177719520
+00:28:06.221 [SyncThread:0] DEBUG org.apache.zookeeper.server.FinalRequestProcessor - Processing request:: sessionid:0x10000393fab0000 type:delete cxid:0x48 zxid:0x25 txntype:2 reqpath:/multiple-clients-regression/locks/R/_c_37d827b0-30ea-4d69-8d4f-269d305ce53e-lock-0000000015
+00:28:06.222 [SyncThread:0] DEBUG org.apache.zookeeper.common.PathTrie - multiple-clients-regression
+00:28:06.222 [SyncThread:0] DEBUG org.apache.zookeeper.server.DataTree - Digests are matching for Zxid: 25, Digest in log and actual tree: 3357982035
+00:28:06.222 [SyncThread:0] DEBUG org.apache.zookeeper.server.FinalRequestProcessor - sessionid:0x10000393fab0000 type:delete cxid:0x48 zxid:0x25 txntype:2 reqpath:/multiple-clients-regression/locks/R/_c_37d827b0-30ea-4d69-8d4f-269d305ce53e-lock-0000000015
+00:28:07.225 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.SessionTrackerImpl - Checking session 0x10000393fab0000
+00:28:07.226 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.PrepRequestProcessor - Processing ACL: 31,s{'world,'anyone}
+
+00:28:07.226 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.ZooKeeperServer - Permission requested: 4 
+00:28:07.226 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.ZooKeeperServer - ACLs for node: [31,s{'world,'anyone}
+]
+00:28:07.226 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.ZooKeeperServer - Client credentials: ['ip,'0:0:0:0:0:0:0:1
+]
+00:28:07.226 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.PrepRequestProcessor - Digest got from data tree is: 3357982035
+00:28:07.226 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.PrepRequestProcessor - Digest got from outstandingChanges is: 5394995056
+00:28:07.226 [SyncThread:0] DEBUG org.apache.zookeeper.server.FinalRequestProcessor - Processing request:: sessionid:0x10000393fab0000 type:create2 cxid:0x49 zxid:0x26 txntype:15 reqpath:/multiple-clients-regression/locks/R/_c_7c3d6aee-5fdf-47a5-9e01-17ad8dd77032-lock-
+00:28:07.226 [SyncThread:0] DEBUG org.apache.zookeeper.common.PathTrie - multiple-clients-regression
+00:28:07.226 [SyncThread:0] DEBUG org.apache.zookeeper.server.DataTree - Digests are matching for Zxid: 26, Digest in log and actual tree: 6527910864
+00:28:07.226 [SyncThread:0] DEBUG org.apache.zookeeper.server.FinalRequestProcessor - sessionid:0x10000393fab0000 type:create2 cxid:0x49 zxid:0x26 txntype:15 reqpath:/multiple-clients-regression/locks/R/_c_7c3d6aee-5fdf-47a5-9e01-17ad8dd77032-lock-
+00:28:07.227 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.SessionTrackerImpl - Checking session 0x10000393fab0000
+00:28:07.227 [SyncThread:0] DEBUG org.apache.zookeeper.server.FinalRequestProcessor - Processing request:: sessionid:0x10000393fab0000 type:getChildren2 cxid:0x4a zxid:0xfffffffffffffffe txntype:unknown reqpath:/multiple-clients-regression/locks/R
+00:28:07.227 [SyncThread:0] DEBUG org.apache.zookeeper.server.FinalRequestProcessor - sessionid:0x10000393fab0000 type:getChildren2 cxid:0x4a zxid:0xfffffffffffffffe txntype:unknown reqpath:/multiple-clients-regression/locks/R
+00:28:07.227 [SyncThread:0] DEBUG org.apache.zookeeper.server.ZooKeeperServer - Permission requested: 1 
+00:28:07.227 [SyncThread:0] DEBUG org.apache.zookeeper.server.ZooKeeperServer - ACLs for node: [31,s{'world,'anyone}
+]
+00:28:07.227 [SyncThread:0] DEBUG org.apache.zookeeper.server.ZooKeeperServer - Client credentials: ['ip,'0:0:0:0:0:0:0:1
+]
+00:28:07.228 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.SessionTrackerImpl - Checking session 0x10000393fab0000
+00:28:07.228 [SyncThread:0] DEBUG org.apache.zookeeper.server.FinalRequestProcessor - Processing request:: sessionid:0x10000393fab0000 type:getChildren2 cxid:0x4b zxid:0xfffffffffffffffe txntype:unknown reqpath:/multiple-clients-regression/locks/R
+00:28:07.228 [SyncThread:0] DEBUG org.apache.zookeeper.server.FinalRequestProcessor - sessionid:0x10000393fab0000 type:getChildren2 cxid:0x4b zxid:0xfffffffffffffffe txntype:unknown reqpath:/multiple-clients-regression/locks/R
+00:28:07.228 [SyncThread:0] DEBUG org.apache.zookeeper.server.ZooKeeperServer - Permission requested: 1 
+00:28:07.228 [SyncThread:0] DEBUG org.apache.zookeeper.server.ZooKeeperServer - ACLs for node: [31,s{'world,'anyone}
+]
+00:28:07.228 [SyncThread:0] DEBUG org.apache.zookeeper.server.ZooKeeperServer - Client credentials: ['ip,'0:0:0:0:0:0:0:1
+]
+00:28:07.431 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.SessionTrackerImpl - Checking session 0x10000393fab0000
+00:28:07.431 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.ZooKeeperServer - Permission requested: 8 
+00:28:07.431 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.ZooKeeperServer - ACLs for node: [31,s{'world,'anyone}
+]
+00:28:07.431 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.ZooKeeperServer - Client credentials: ['ip,'0:0:0:0:0:0:0:1
+]
+00:28:07.431 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.PrepRequestProcessor - Digest got from data tree is: 6527910864
+00:28:07.431 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.PrepRequestProcessor - Digest got from outstandingChanges is: 4373084893
+00:28:07.432 [SyncThread:0] DEBUG org.apache.zookeeper.server.FinalRequestProcessor - Processing request:: sessionid:0x10000393fab0000 type:delete cxid:0x4c zxid:0x27 txntype:2 reqpath:/multiple-clients-regression/locks/R/_c_7c3d6aee-5fdf-47a5-9e01-17ad8dd77032-lock-0000000016
+00:28:07.432 [SyncThread:0] DEBUG org.apache.zookeeper.common.PathTrie - multiple-clients-regression
+00:28:07.432 [SyncThread:0] DEBUG org.apache.zookeeper.server.DataTree - Digests are matching for Zxid: 27, Digest in log and actual tree: 3240169085
+00:28:07.432 [SyncThread:0] DEBUG org.apache.zookeeper.server.FinalRequestProcessor - sessionid:0x10000393fab0000 type:delete cxid:0x4c zxid:0x27 txntype:2 reqpath:/multiple-clients-regression/locks/R/_c_7c3d6aee-5fdf-47a5-9e01-17ad8dd77032-lock-0000000016
+00:28:08.435 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.SessionTrackerImpl - Checking session 0x10000393fab0000
+00:28:08.436 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.PrepRequestProcessor - Processing ACL: 31,s{'world,'anyone}
+
+00:28:08.436 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.ZooKeeperServer - Permission requested: 4 
+00:28:08.436 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.ZooKeeperServer - ACLs for node: [31,s{'world,'anyone}
+]
+00:28:08.436 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.ZooKeeperServer - Client credentials: ['ip,'0:0:0:0:0:0:0:1
+]
+00:28:08.436 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.PrepRequestProcessor - Digest got from data tree is: 3240169085
+00:28:08.436 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.PrepRequestProcessor - Digest got from outstandingChanges is: 4126107360
+00:28:08.436 [SyncThread:0] DEBUG org.apache.zookeeper.server.FinalRequestProcessor - Processing request:: sessionid:0x10000393fab0000 type:create2 cxid:0x4d zxid:0x28 txntype:15 reqpath:/multiple-clients-regression/locks/R/_c_44fb7110-00a6-44ae-b62b-8ca3f1d330d0-lock-
+00:28:08.436 [SyncThread:0] DEBUG org.apache.zookeeper.common.PathTrie - multiple-clients-regression
+00:28:08.436 [SyncThread:0] DEBUG org.apache.zookeeper.server.DataTree - Digests are matching for Zxid: 28, Digest in log and actual tree: 7543474563
+00:28:08.436 [SyncThread:0] DEBUG org.apache.zookeeper.server.FinalRequestProcessor - sessionid:0x10000393fab0000 type:create2 cxid:0x4d zxid:0x28 txntype:15 reqpath:/multiple-clients-regression/locks/R/_c_44fb7110-00a6-44ae-b62b-8ca3f1d330d0-lock-
+00:28:08.437 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.SessionTrackerImpl - Checking session 0x10000393fab0000
+00:28:08.437 [SyncThread:0] DEBUG org.apache.zookeeper.server.FinalRequestProcessor - Processing request:: sessionid:0x10000393fab0000 type:getChildren2 cxid:0x4e zxid:0xfffffffffffffffe txntype:unknown reqpath:/multiple-clients-regression/locks/R
+00:28:08.437 [SyncThread:0] DEBUG org.apache.zookeeper.server.FinalRequestProcessor - sessionid:0x10000393fab0000 type:getChildren2 cxid:0x4e zxid:0xfffffffffffffffe txntype:unknown reqpath:/multiple-clients-regression/locks/R
+00:28:08.437 [SyncThread:0] DEBUG org.apache.zookeeper.server.ZooKeeperServer - Permission requested: 1 
+00:28:08.437 [SyncThread:0] DEBUG org.apache.zookeeper.server.ZooKeeperServer - ACLs for node: [31,s{'world,'anyone}
+]
+00:28:08.437 [SyncThread:0] DEBUG org.apache.zookeeper.server.ZooKeeperServer - Client credentials: ['ip,'0:0:0:0:0:0:0:1
+]
+00:28:08.438 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.SessionTrackerImpl - Checking session 0x10000393fab0000
+00:28:08.438 [SyncThread:0] DEBUG org.apache.zookeeper.server.FinalRequestProcessor - Processing request:: sessionid:0x10000393fab0000 type:getChildren2 cxid:0x4f zxid:0xfffffffffffffffe txntype:unknown reqpath:/multiple-clients-regression/locks/R
+00:28:08.438 [SyncThread:0] DEBUG org.apache.zookeeper.server.FinalRequestProcessor - sessionid:0x10000393fab0000 type:getChildren2 cxid:0x4f zxid:0xfffffffffffffffe txntype:unknown reqpath:/multiple-clients-regression/locks/R
+00:28:08.438 [SyncThread:0] DEBUG org.apache.zookeeper.server.ZooKeeperServer - Permission requested: 1 
+00:28:08.438 [SyncThread:0] DEBUG org.apache.zookeeper.server.ZooKeeperServer - ACLs for node: [31,s{'world,'anyone}
+]
+00:28:08.438 [SyncThread:0] DEBUG org.apache.zookeeper.server.ZooKeeperServer - Client credentials: ['ip,'0:0:0:0:0:0:0:1
+]
+00:28:08.642 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.SessionTrackerImpl - Checking session 0x10000393fab0000
+00:28:08.642 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.ZooKeeperServer - Permission requested: 8 
+00:28:08.642 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.ZooKeeperServer - ACLs for node: [31,s{'world,'anyone}
+]
+00:28:08.642 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.ZooKeeperServer - Client credentials: ['ip,'0:0:0:0:0:0:0:1
+]
+00:28:08.642 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.PrepRequestProcessor - Digest got from data tree is: 7543474563
+00:28:08.642 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.PrepRequestProcessor - Digest got from outstandingChanges is: 9704591984
+00:28:08.642 [SyncThread:0] DEBUG org.apache.zookeeper.server.FinalRequestProcessor - Processing request:: sessionid:0x10000393fab0000 type:delete cxid:0x50 zxid:0x29 txntype:2 reqpath:/multiple-clients-regression/locks/R/_c_44fb7110-00a6-44ae-b62b-8ca3f1d330d0-lock-0000000017
+00:28:08.642 [SyncThread:0] DEBUG org.apache.zookeeper.common.PathTrie - multiple-clients-regression
+00:28:08.642 [SyncThread:0] DEBUG org.apache.zookeeper.server.DataTree - Digests are matching for Zxid: 29, Digest in log and actual tree: 6287224781
+00:28:08.642 [SyncThread:0] DEBUG org.apache.zookeeper.server.FinalRequestProcessor - sessionid:0x10000393fab0000 type:delete cxid:0x50 zxid:0x29 txntype:2 reqpath:/multiple-clients-regression/locks/R/_c_44fb7110-00a6-44ae-b62b-8ca3f1d330d0-lock-0000000017
+00:28:09.646 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.SessionTrackerImpl - Checking session 0x10000393fab0000
+00:28:09.646 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.PrepRequestProcessor - Processing ACL: 31,s{'world,'anyone}
+
+00:28:09.647 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.ZooKeeperServer - Permission requested: 4 
+00:28:09.647 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.ZooKeeperServer - ACLs for node: [31,s{'world,'anyone}
+]
+00:28:09.647 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.ZooKeeperServer - Client credentials: ['ip,'0:0:0:0:0:0:0:1
+]
+00:28:09.647 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.PrepRequestProcessor - Digest got from data tree is: 6287224781
+00:28:09.647 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.PrepRequestProcessor - Digest got from outstandingChanges is: 4075312362
+00:28:09.647 [SyncThread:0] DEBUG org.apache.zookeeper.server.FinalRequestProcessor - Processing request:: sessionid:0x10000393fab0000 type:create2 cxid:0x51 zxid:0x2a txntype:15 reqpath:/multiple-clients-regression/locks/R/_c_0de8cf7b-0634-42b4-9861-f6e0ecd2aeb5-lock-
+00:28:09.647 [SyncThread:0] DEBUG org.apache.zookeeper.common.PathTrie - multiple-clients-regression
+00:28:09.647 [SyncThread:0] DEBUG org.apache.zookeeper.server.DataTree - Digests are matching for Zxid: 2a, Digest in log and actual tree: 8042041521
+00:28:09.647 [SyncThread:0] DEBUG org.apache.zookeeper.server.FinalRequestProcessor - sessionid:0x10000393fab0000 type:create2 cxid:0x51 zxid:0x2a txntype:15 reqpath:/multiple-clients-regression/locks/R/_c_0de8cf7b-0634-42b4-9861-f6e0ecd2aeb5-lock-
+00:28:09.648 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.SessionTrackerImpl - Checking session 0x10000393fab0000
+00:28:09.648 [SyncThread:0] DEBUG org.apache.zookeeper.server.FinalRequestProcessor - Processing request:: sessionid:0x10000393fab0000 type:getChildren2 cxid:0x52 zxid:0xfffffffffffffffe txntype:unknown reqpath:/multiple-clients-regression/locks/R
+00:28:09.648 [SyncThread:0] DEBUG org.apache.zookeeper.server.FinalRequestProcessor - sessionid:0x10000393fab0000 type:getChildren2 cxid:0x52 zxid:0xfffffffffffffffe txntype:unknown reqpath:/multiple-clients-regression/locks/R
+00:28:09.648 [SyncThread:0] DEBUG org.apache.zookeeper.server.ZooKeeperServer - Permission requested: 1 
+00:28:09.648 [SyncThread:0] DEBUG org.apache.zookeeper.server.ZooKeeperServer - ACLs for node: [31,s{'world,'anyone}
+]
+00:28:09.648 [SyncThread:0] DEBUG org.apache.zookeeper.server.ZooKeeperServer - Client credentials: ['ip,'0:0:0:0:0:0:0:1
+]
+00:28:09.648 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.SessionTrackerImpl - Checking session 0x10000393fab0000
+00:28:09.648 [SyncThread:0] DEBUG org.apache.zookeeper.server.FinalRequestProcessor - Processing request:: sessionid:0x10000393fab0000 type:getChildren2 cxid:0x53 zxid:0xfffffffffffffffe txntype:unknown reqpath:/multiple-clients-regression/locks/R
+00:28:09.648 [SyncThread:0] DEBUG org.apache.zookeeper.server.FinalRequestProcessor - sessionid:0x10000393fab0000 type:getChildren2 cxid:0x53 zxid:0xfffffffffffffffe txntype:unknown reqpath:/multiple-clients-regression/locks/R
+00:28:09.649 [SyncThread:0] DEBUG org.apache.zookeeper.server.ZooKeeperServer - Permission requested: 1 
+00:28:09.649 [SyncThread:0] DEBUG org.apache.zookeeper.server.ZooKeeperServer - ACLs for node: [31,s{'world,'anyone}
+]
+00:28:09.649 [SyncThread:0] DEBUG org.apache.zookeeper.server.ZooKeeperServer - Client credentials: ['ip,'0:0:0:0:0:0:0:1
+]
+00:28:09.853 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.SessionTrackerImpl - Checking session 0x10000393fab0000
+00:28:09.853 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.ZooKeeperServer - Permission requested: 8 
+00:28:09.853 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.ZooKeeperServer - ACLs for node: [31,s{'world,'anyone}
+]
+00:28:09.853 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.ZooKeeperServer - Client credentials: ['ip,'0:0:0:0:0:0:0:1
+]
+00:28:09.853 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.PrepRequestProcessor - Digest got from data tree is: 8042041521
+00:28:09.853 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.PrepRequestProcessor - Digest got from outstandingChanges is: 10203151306
+00:28:09.853 [SyncThread:0] DEBUG org.apache.zookeeper.server.FinalRequestProcessor - Processing request:: sessionid:0x10000393fab0000 type:delete cxid:0x54 zxid:0x2b txntype:2 reqpath:/multiple-clients-regression/locks/R/_c_0de8cf7b-0634-42b4-9861-f6e0ecd2aeb5-lock-0000000018
+00:28:09.853 [SyncThread:0] DEBUG org.apache.zookeeper.common.PathTrie - multiple-clients-regression
+00:28:09.853 [SyncThread:0] DEBUG org.apache.zookeeper.server.DataTree - Digests are matching for Zxid: 2b, Digest in log and actual tree: 6236422147
+00:28:09.853 [SyncThread:0] DEBUG org.apache.zookeeper.server.FinalRequestProcessor - sessionid:0x10000393fab0000 type:delete cxid:0x54 zxid:0x2b txntype:2 reqpath:/multiple-clients-regression/locks/R/_c_0de8cf7b-0634-42b4-9861-f6e0ecd2aeb5-lock-0000000018
+00:28:10.857 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.SessionTrackerImpl - Checking session 0x10000393fab0000
+00:28:10.857 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.PrepRequestProcessor - Processing ACL: 31,s{'world,'anyone}
+
+00:28:10.857 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.ZooKeeperServer - Permission requested: 4 
+00:28:10.857 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.ZooKeeperServer - ACLs for node: [31,s{'world,'anyone}
+]
+00:28:10.857 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.ZooKeeperServer - Client credentials: ['ip,'0:0:0:0:0:0:0:1
+]
+00:28:10.857 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.PrepRequestProcessor - Digest got from data tree is: 6236422147
+00:28:10.857 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.PrepRequestProcessor - Digest got from outstandingChanges is: 5309525378
+00:28:10.858 [SyncThread:0] DEBUG org.apache.zookeeper.server.FinalRequestProcessor - Processing request:: sessionid:0x10000393fab0000 type:create2 cxid:0x55 zxid:0x2c txntype:15 reqpath:/multiple-clients-regression/locks/R/_c_cfee36df-c89c-428d-9984-c1225d0e5a45-lock-
+00:28:10.858 [SyncThread:0] DEBUG org.apache.zookeeper.common.PathTrie - multiple-clients-regression
+00:28:10.858 [SyncThread:0] DEBUG org.apache.zookeeper.server.DataTree - Digests are matching for Zxid: 2c, Digest in log and actual tree: 6085733236
+00:28:10.858 [SyncThread:0] DEBUG org.apache.zookeeper.server.FinalRequestProcessor - sessionid:0x10000393fab0000 type:create2 cxid:0x55 zxid:0x2c txntype:15 reqpath:/multiple-clients-regression/locks/R/_c_cfee36df-c89c-428d-9984-c1225d0e5a45-lock-
+00:28:10.859 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.SessionTrackerImpl - Checking session 0x10000393fab0000
+00:28:10.859 [SyncThread:0] DEBUG org.apache.zookeeper.server.FinalRequestProcessor - Processing request:: sessionid:0x10000393fab0000 type:getChildren2 cxid:0x56 zxid:0xfffffffffffffffe txntype:unknown reqpath:/multiple-clients-regression/locks/R
+00:28:10.859 [SyncThread:0] DEBUG org.apache.zookeeper.server.FinalRequestProcessor - sessionid:0x10000393fab0000 type:getChildren2 cxid:0x56 zxid:0xfffffffffffffffe txntype:unknown reqpath:/multiple-clients-regression/locks/R
+00:28:10.859 [SyncThread:0] DEBUG org.apache.zookeeper.server.ZooKeeperServer - Permission requested: 1 
+00:28:10.859 [SyncThread:0] DEBUG org.apache.zookeeper.server.ZooKeeperServer - ACLs for node: [31,s{'world,'anyone}
+]
+00:28:10.859 [SyncThread:0] DEBUG org.apache.zookeeper.server.ZooKeeperServer - Client credentials: ['ip,'0:0:0:0:0:0:0:1
+]
+00:28:10.859 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.SessionTrackerImpl - Checking session 0x10000393fab0000
+00:28:10.860 [SyncThread:0] DEBUG org.apache.zookeeper.server.FinalRequestProcessor - Processing request:: sessionid:0x10000393fab0000 type:getChildren2 cxid:0x57 zxid:0xfffffffffffffffe txntype:unknown reqpath:/multiple-clients-regression/locks/R
+00:28:10.860 [SyncThread:0] DEBUG org.apache.zookeeper.server.FinalRequestProcessor - sessionid:0x10000393fab0000 type:getChildren2 cxid:0x57 zxid:0xfffffffffffffffe txntype:unknown reqpath:/multiple-clients-regression/locks/R
+00:28:10.860 [SyncThread:0] DEBUG org.apache.zookeeper.server.ZooKeeperServer - Permission requested: 1 
+00:28:10.860 [SyncThread:0] DEBUG org.apache.zookeeper.server.ZooKeeperServer - ACLs for node: [31,s{'world,'anyone}
+]
+00:28:10.860 [SyncThread:0] DEBUG org.apache.zookeeper.server.ZooKeeperServer - Client credentials: ['ip,'0:0:0:0:0:0:0:1
+]
+00:28:11.063 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.SessionTrackerImpl - Checking session 0x10000393fab0000
+00:28:11.063 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.ZooKeeperServer - Permission requested: 8 
+00:28:11.063 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.ZooKeeperServer - ACLs for node: [31,s{'world,'anyone}
+]
+00:28:11.063 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.ZooKeeperServer - Client credentials: ['ip,'0:0:0:0:0:0:0:1
+]
+00:28:11.063 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.PrepRequestProcessor - Digest got from data tree is: 6085733236
+00:28:11.063 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.PrepRequestProcessor - Digest got from outstandingChanges is: 3933009501
+00:28:11.063 [SyncThread:0] DEBUG org.apache.zookeeper.server.FinalRequestProcessor - Processing request:: sessionid:0x10000393fab0000 type:delete cxid:0x58 zxid:0x2d txntype:2 reqpath:/multiple-clients-regression/locks/R/_c_cfee36df-c89c-428d-9984-c1225d0e5a45-lock-0000000019
+00:28:11.063 [SyncThread:0] DEBUG org.apache.zookeeper.common.PathTrie - multiple-clients-regression
+00:28:11.063 [SyncThread:0] DEBUG org.apache.zookeeper.server.DataTree - Digests are matching for Zxid: 2d, Digest in log and actual tree: 3156801643
+00:28:11.063 [SyncThread:0] DEBUG org.apache.zookeeper.server.FinalRequestProcessor - sessionid:0x10000393fab0000 type:delete cxid:0x58 zxid:0x2d txntype:2 reqpath:/multiple-clients-regression/locks/R/_c_cfee36df-c89c-428d-9984-c1225d0e5a45-lock-0000000019
+00:28:11.072 [ProcessThread(sid:0 cport:2181):] DEBUG org.apache.zookeeper.server.PrepRequestProcessor - Digest got from data tree is: 3156801643
+00:28:11.073 [SyncThread:0] DEBUG org.apache.zookeeper.server.FinalRequestProcessor - Processing request:: sessionid:0x10000393fab0000 type:closeSession cxid:0x59 zxid:0x2e txntype:-11 reqpath:n/a
+00:28:11.073 [SyncThread:0] DEBUG org.apache.zookeeper.server.SessionTrackerImpl - Removing session 0x10000393fab0000
+00:28:11.073 [SyncThread:0] DEBUG org.apache.zookeeper.server.DataTree - Digests are matching for Zxid: 2e, Digest in log and actual tree: 3156801643
+00:28:11.073 [SyncThread:0] DEBUG org.apache.zookeeper.server.FinalRequestProcessor - sessionid:0x10000393fab0000 type:closeSession cxid:0x59 zxid:0x2e txntype:-11 reqpath:n/a
+00:28:11.073 [NIOWorkerThread-1] DEBUG org.apache.zookeeper.jmx.MBeanRegistry - Unregister MBean [org.apache.ZooKeeperService:name0=StandaloneServer_port2181,name1=Connections,name2="0:0:0:0:0:0:0:1",name3=0x10000393fab0000]
+00:28:11.073 [NIOWorkerThread-1] DEBUG org.apache.zookeeper.server.NIOServerCnxn - Closed socket connection for client /[0:0:0:0:0:0:0:1]:55998 which had sessionid 0x10000393fab0000

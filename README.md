@@ -1,187 +1,183 @@
-# TP2 — Cluster Sync com ZooKeeper e Apache Curator
+# TP2 — ZooKeeper + Apache Curator (B2)
 
-Implementação do tema **B2 — ZooKeeper com Apache Curator** para a disciplina BCC362 — Sistemas
-Distribuídos. Cinco clientes enviam pedidos pela rede para cinco processos independentes do Cluster
-Sync. Os processos disputam o recurso hipotético `R` por meio de um `InterProcessMutex` e usam uma
-`DistributedDoubleBarrier` para sincronizar o início e o fim de cada rodada.
+BCC362 · Sistemas Distribuídos · Professor Joubert Lima.
 
-## Arquitetura
+A aplicação coordena o acesso ao recurso hipotético R com **InterProcessMutex** e acrescenta uma **DistributedDoubleBarrier** por rodada. São processos Java independentes conectados pela rede. O acesso simulado continua sendo um sleep; COMMITTED não representa persistência em banco de dados.
 
-```text
-client-1 ──TCP──> cluster-1 ─┐
-client-2 ──TCP──> cluster-2 ─┤
-client-3 ──TCP──> cluster-3 ─┼──> R (ENTER → sleep → EXIT)
-client-4 ──TCP──> cluster-4 ─┤
-client-5 ──TCP──> cluster-5 ─┘
-                    │     │
-                    │     └── BEGIN/END por TCP ──> observer
-                    └──────── mutex + barreira ───> ZooKeeper
-```
+## Começar
 
-Cada cliente conhece somente seu processo do Cluster Sync. Cada pedido possui o identificador único
-`client_id-sequência`, por exemplo `client-3-7`. Dentro de cada processo, uma fila de execução com uma
-única thread preserva a ordem local dos pedidos recebidos. Essa fila local não substitui o mutex
-distribuído: processos diferentes continuam concorrendo pelo mesmo caminho no ZooKeeper.
+Requisito para executar tudo em contêineres: Docker Compose v2. O ZIP inclui `target/tp2-sync.jar` compilado para Java 17; não precisa instalar Java, Python ou Maven no computador para esta opção.
 
-O observador recebe `BEGIN` antes do `sleep` da seção crítica e confirma seu registro. Depois do
-`sleep`, recebe `END`. Ele apenas mede a quantidade de acessos ativos e acusa sobreposições; nunca
-concede ou bloqueia acesso a `R`.
-
-`R` não é o ZooKeeper nem o observador. Ele é o recurso hipotético pedido no enunciado e aparece no
-código como a classe interna `SimulatedResource` de `ClusterNode`. Cada processo possui acesso lógico
-ao mesmo recurso `R`, mas só pode
-chamar sua operação de escrita depois de obter o mutex distribuído. Em um TP posterior, essa classe
-pode ser substituída por uma chamada de rede ao recurso real sem alterar o mecanismo de coordenação.
-
-## Sequência de um pedido
-
-1. O cliente envia `REQUEST` ao processo que conhece.
-2. O processo entra na barreira `/tp2/barriers/round-N`.
-3. O processo solicita o mutex em `/tp2/resources/R/lock`.
-4. Ao obter o lock, registra `ACQUIRE` e envia `BEGIN` ao observador.
-5. A seção crítica registra `ENTER`, espera entre 200 ms e 1 s e registra `EXIT`.
-6. O processo envia `END`, libera o mutex e registra `RELEASE`.
-7. Todos saem da barreira dupla somente depois de terminar a atividade da rodada.
-8. O processo responde `COMMITTED` ao cliente.
-
-O `InterProcessMutex` implementa a receita de lock do ZooKeeper com nós efêmeros sequenciais. Cada
-concorrente cria um nó ordenado; o menor adquire o lock e os demais observam o predecessor. Quando o
-predecessor desaparece, o próximo concorrente reavalia a fila. Observar somente o predecessor evita
-acordar todos os participantes a cada liberação.
-
-A barreira inclui o número da rodada no caminho. Assim, participantes atrasados da rodada `N` não são
-misturados aos da rodada `N+1`. Todos os clientes devem executar a mesma quantidade de pedidos quando
-a barreira estiver habilitada.
-
-## Tecnologias e versões
-
-- Java 17;
-- Apache Curator 5.9.0;
-- cliente Apache ZooKeeper 3.9.7 e servidor Docker 3.9.6;
-- Maven 3.9 ou superior;
-- Docker Engine e Docker Compose v2.
-
-As versões estão fixadas no `pom.xml`, no `Dockerfile` e no `compose.yaml`. A biblioteca cliente usa
-3.9.7; o servidor usa `zookeeper:3.9.6-jre-17`, que é a versão mais recente atualmente publicada como
-imagem oficial. Clientes da linha 3.9 são compatíveis com esse servidor. Consulte a documentação do
-[Apache Curator](https://curator.apache.org/docs/recipes/) e os
-[releases do ZooKeeper](https://zookeeper.apache.org/releases/).
-
-## Estrutura do código
-
-O código Java foi mantido em um único pacote, com uma classe por responsabilidade principal:
-
-```text
-ClusterNode.java      processo intermediário e seção crítica de R
-LoadClient.java       geração dos pedidos dos clientes
-CuratorSync.java      mutex e barreira dupla do Curator
-ObserverServer.java   auditoria de BEGIN/END
-WireProtocol.java     mensagens e protocolo TCP
-Environment.java      leitura das configurações
-EventLog.java         formato comum dos logs
-```
-
-Os records `AccessRequest`, `AccessResponse` e `AuditEvent` ficam dentro de `WireProtocol`, pois são
-usados somente na comunicação entre esses processos.
-
-## Compilação e testes
-
-Para executar os testes unitários e os testes das receitas com um ZooKeeper embutido:
+Para iniciar o cenário completo de carga normal:
 
 ```bash
-mvn clean test
+docker compose up
 ```
 
-Para gerar o JAR com todas as dependências:
+O Compose declara **5 clientes, 5 nós Sync, 1 observador e 1 ZooKeeper**, cada um em seu próprio contêiner. A comunicação usa a rede interna e os nomes dos serviços (`node-1`, `observer`, `zookeeper`), sem `--network host`. Cada cliente conhece somente seu nó Sync.
+
+Há também dois serviços auxiliares: `prepare` gera a configuração e os argumentos; `verify` confere os logs e exporta o resumo ao término. Eles executam uma vez e encerram. A preparação e a verificação reaproveitam o código dos scripts de experimento; o código Java permanece o mesmo.
+
+O ZooKeeper fica pronto antes da preparação; os nós aguardam o observador, e os clientes aguardam todos os nós. Os logs individuais ficam em `logs/<execução>/`; `verify` gera `verification.json`, `summary.json` e atualiza `results/summary.csv`. Quando aparecer **VERIFICADO**, o experimento terminou. O ZooKeeper continua ativo até encerrar o Compose.
+
+Em outro terminal, consulte todos os participantes, inclusive os que já encerraram, com `docker compose ps -a`. Para conferir o resultado: `docker compose logs verify`.
+
+Para repetir ou trocar de cenário, encerre o anterior primeiro; os logs são preservados:
 
 ```bash
-mvn clean package
+docker compose down
+SCENARIO=contention SEED=1 docker compose up
 ```
 
-Os testes verificam:
+`SCENARIO` aceita `normal` (padrão), `contention`, `nosync`, `unequal` e `barrier`. `REQ`, `CS_MIN`, `CS_MAX` e `TIMEOUT` mantêm os limites dos scripts. No `nosync`, o observador retorna 2 internamente; o serviço termina com sucesso somente se esse for o código esperado, e `verify` ainda precisa confirmar conclusão e sobreposição. Falhas de processo ou de escrita dos logs continuam sendo erros.
 
-- serialização do protocolo de rede;
-- detecção automática de sobreposição pelo observador;
-- exclusão mútua com cinco clientes Curator concorrentes;
-- sincronização de início e fim com a barreira dupla.
+O Compose fixa cinco pares cliente/nó. Para a comparação com dez nós e a bateria completa, use os scripts abaixo. No Linux, os arquivos são gravados com UID/GID 1000 por padrão; se seu usuário tiver outros IDs, exporte `LOCAL_UID=$(id -u)` e `LOCAL_GID=$(id -g)` antes de iniciar.
 
-## Execução com Docker
+## Execução pelos scripts
 
-O script aceita quatro experimentos:
+Os scripts também executam **cada cliente, cada nó Sync e o observador em um contêiner separado por padrão**. Requisitos: Linux, Python **3.10+** e Docker. Eles usam `--network host`, preparado para Docker no Linux. Não é necessário instalar Java para executar os cenários dessa forma.
+
+Inicie **somente** a infraestrutura antes de usar os scripts:
 
 ```bash
-scripts/run-experiment.sh normal
-scripts/run-experiment.sh contention
-scripts/run-experiment.sh unequal
-scripts/run-experiment.sh unprotected
+docker compose up -d --wait zookeeper
+bash scripts/run.sh contention 1
 ```
 
-- `normal`: mutex ativo e espera de 1 a 5 segundos entre pedidos;
-- `contention`: mutex ativo e sem espera entre pedidos;
-- `unequal`: o primeiro cliente solicita com mais frequência;
-- `unprotected`: mutex desativado, usado para comprovar que a auditoria detecta sobreposições.
+O terminal mostra o nome de cada contêiner iniciado e um comando `docker ps --filter name=...` para acompanhar somente os participantes daquela execução. Por padrão são 11 contêineres da aplicação e o ZooKeeper. Os contêineres dos scripts são removidos ao terminar; para manter os encerrados visíveis em `docker compose ps -a`, use a execução completa pelo Compose descrita acima.
 
-Cada execução cria `results/<experimento>-<data>/all.log` e `summary.json`. O resumo contém pedidos
-concluídos, tempo total, vazão, espera mediana, percentil 95, acessos por cliente, máximo de acessos
-simultâneos e quantidade de sobreposições. A execução só é aprovada se o verificador confirmar
-progresso, ciclo completo de cada pedido, pares `BEGIN`/`END`, propriedade esperada do mutex e cinco
-entradas e saídas em cada rodada da barreira.
+Para executar explicitamente como processos Java locais, com Java **17** instalado: `USE_DOCKER=0 bash scripts/run.sh contention 1`. A mesma escolha vale para `scripts/run_all.sh`; a bateria usa contêineres por padrão.
 
-O conjunto mínimo de repetições exigido no enunciado pode ser executado com:
+Os scripts exibem logs ao vivo, alinhados e com cores quando o terminal permite, e preservam `terminal.log` e os logs individuais sem cores. Cada cenário termina com a mesma conferência automática usada pelo Compose.
+
+Para recompilar e executar os testes automatizados, use Maven **3.9.9** e JDK 17 ou o contêiner de compilação:
 
 ```bash
-scripts/run-required-suite.sh
+bash scripts/build.sh
+# Ou, sem JDK/Maven no sistema:
+USE_DOCKER=1 bash scripts/build.sh
 ```
 
-Esse comando realiza três repetições da carga normal, três de alta contenção e uma execução de
-controle sem mutex. Para alterar a quantidade de pedidos, mantendo o intervalo exigido de 10 a 50:
+A compilação executa 12 testes Java e 8 testes dos scripts. Para repetir somente os testes dos scripts: `python3 scripts/test_scripts.py`. A compilação mantém sua escolha independente: `build.sh` usa JDK/Maven locais por padrão; `USE_DOCKER=1` usa o contêiner de compilação.
+
+## Cenários
+
+| Comando | O que verificar |
+| --- | --- |
+| `bash scripts/run.sh nosync 1` | Controle sem mutex: mais de um ativo e sobreposição detectada; código esperado **2**. |
+| `bash scripts/run.sh normal 1` | 5 clientes × 10 pedidos, pausas de 1–5 s, sem sobreposição. |
+| `bash scripts/run.sh contention 1` | Clientes disparados conjuntamente; sem pausa entre pedidos; sleep de R preservado. |
+| `bash scripts/run.sh unequal 1` | c1 faz 40 pedidos sem pausa; os demais fazem 10 com pausas. |
+| `bash scripts/run.sh barrier 1` | 5 participantes, 10 rodadas, entrada/saída coletivas e mutex sobre R. |
+| `bash scripts/run_all.sh` | Bateria completa, três repetições obrigatórias, extensão e comparação de escala. |
+
+Na bateria, o código 2 do controle é tratado como esperado **somente depois de verificar conclusão, recebimento dos COMMITTED e sobreposição**. Qualquer falha de processo, log incompleto, timeout ou divergência interrompe a bateria com erro. O término da bateria completa retorna 0.
+
+O cenário normal preserva os intervalos exigidos; a bateria leva vários minutos. Para acompanhar tudo em tempo real durante a bateria: `LIVE=1 bash scripts/run_all.sh`.
+
+## Parâmetros
+
+| Variável | Padrão | Significado |
+| --- | --- | --- |
+| `N` | 5 | Quantidade de nós e clientes; entre 5 e 20 nos experimentos acadêmicos. |
+| `REQ` | 10 | Pedidos por cliente, entre 10 e 50. No unequal, entre 10 e 12, pois c1 faz 4×REQ. |
+| `ZK` | localhost:2181 | Endereço do servidor ZooKeeper. |
+| `CS_MIN`, `CS_MAX` | 200, 1000 | Limites do sleep de R em ms; precisam permanecer entre 200 e 1000. |
+| `TIMEOUT` | 1800 | Prazo total em segundos, incluindo todos os processos; encerra os filhos ao falhar. |
+| `LIVE` | 1 | Use 0 para mostrar apenas resumo/erros e preservar os logs completos em disco. |
+| `NO_COLOR` | não definido | Se definido, desabilita cores. Redirecionamento para arquivo também não usa cores. |
+| `USE_DOCKER` | 1 (execução) | Cada JVM executa em um contêiner separado. Use 0 para processos Java locais. No `build.sh`, o padrão continua sendo 0. |
+| `OBS_PORT`, `BASE_PORT` | 9000, 7000 | Porta do observador e base das portas dos nós. |
+| `DEMO` | 0 | Use 1 para permitir demonstrações pequenas, explicitamente marcadas como reduzidas. |
+
+Exemplo reduzido, útil para explicar os eventos; **não substitui a carga do professor**:
 
 ```bash
-REQUEST_COUNT=20 scripts/run-experiment.sh normal
+DEMO=1 N=2 REQ=2 bash scripts/run.sh barrier 1
 ```
 
-Outros parâmetros úteis são `CRITICAL_SECTION_MIN_MS`, `CRITICAL_SECTION_MAX_MS` e as cinco sementes
-`RANDOM_SEED_1` a `RANDOM_SEED_5`. Os tempos de aquisição são medidos dentro do processo com
-`System.nanoTime()`, portanto não dependem de relógios físicos sincronizados entre contêineres.
+Os cenários devem ser executados **um por vez**. Não há um requisito de conectividade direta entre SyncNodes: as receitas se comunicam pelo ZooKeeper. É permitido usar processos no mesmo computador. A instalação mínima de um ZooKeeper é suficiente para o escopo sem falhas do TP2.
 
-Para encerrar e remover manualmente os contêineres e o estado experimental do ZooKeeper:
+## Organização do código
+
+| Arquivo | Responsabilidade |
+| --- | --- |
+| `Client.java` | Conhece um único nó, gera IDs, solicita R e confirma recebimento de COMMITTED. |
+| `SyncNode.java` | Recebe conexões, enfileira pedidos, processa a seção crítica e controla rodadas. |
+| `ResourceLock.java` | Operações `acquire(R, request_id)` e `release(R, request_id)`; delega a receita ao Curator. |
+| `ObsClient.java` | Canal de registro síncrono; OK confirma registro, não autorização. |
+| `Observer.java` | Rede e exportação do resumo do verificador. |
+| `ObserverState.java` | IDs únicos, ocupação, participantes/rodadas e conclusão. |
+| `Metrics.java` | Mediana, percentil e CSV com ponto decimal independentemente de locale. |
+| `Util.java` | Argumentos, conexão e formato de log. |
+| `scripts/run.py` | Inicia/acompanha processos, reúne logs, mede tráfego agregado e verifica o resultado. |
+| `scripts/compose.py`, `scripts/compose-service.sh` | Preparam os mesmos argumentos, executam uma JVM por serviço e verificam o cenário do Compose. |
+| `scripts/verify.py` | Conferência independente: eventos, IDs, COMMITTED, ordem dos znodes e barreiras. |
+| `scripts/run_all.py`, `scripts/analyze.py` | Bateria reproduzível e relatório gerado dos dados reais. |
+
+O fluxo por pedido é:
+
+`REQUEST → acquire → BEGIN/OK → sleep → END/OK → release → COMMITTED`.
+
+Com barreira, `enter()` ocorre antes do acquire e `leave()` depois do COMMITTED individual. O mutex já está livre ao aguardar a saída coletiva; o nó só processa o próximo pedido depois de leave().
+
+Um worker serializa os pedidos de cada nó. O cliente envia HELLO, REQUESTs e BYE. O nó espera todos os clientes configurados terminarem; BYE de um deles não interrompe os demais. O cenário padrão associa um cliente a cada nó; o argumento Java `--clients` permite configurar múltiplos clientes por nó fora da barreira.
+
+## Como interpretar os logs
+
+- Prefixo colorido: processo de origem, como `node-1`, `client-1` e `observer`.
+- `request_id=c3-7`: sétimo pedido de c3; IDs são únicos dentro da execução.
+- `LOCK_WAIT`: início da chamada do mutex; o processo pode estar aguardando na fila.
+- `ACQUIRE wait_s=... znode=... queue=...`: aquisição e estado da fila naquele instante.
+- `BEGIN/END active=... seq=...`: ocupação medida pelo observador. `seq` ordena o registro central sem comparar relógios de máquinas.
+- `ENTER sleep_ms=...` e `EXIT cs_s=...`: duração programada e observada da seção crítica.
+- `RELEASE`: liberação de R; no controle sem mutex aparece `sync=false`.
+- `RECEIVED_COMMITTED`: confirmação recebida pelo cliente, com latência própria e espera reportada pelo nó.
+- `ARRIVE/PASS/LEAVE`: evidências da entrada/saída da barreira, com rodada e identidades.
+- `SUMMARY`: conclusão, mediana correta, P95, concorrência, erros e acessos por cliente.
+
+Mensagens internas rotineiras do Curator/ZooKeeper ficam no nível WARN. As cores não fazem parte dos arquivos; são adicionadas apenas na exibição interativa.
+
+Na saída reunida, o UUID de proteção do Curator é abreviado: `lock-0000000002` permite ver a sequência sem uma fila longa de UUIDs. Os logs individuais dos nós preservam os nomes completos dos znodes para conferência.
+
+## Verificações e métricas
+
+O observador mantém conjuntos por pedido e por participante; END sem BEGIN, evento duplicado, nó/rodada incorretos e DONE repetido não podem fabricar sucesso. Mesmo com `active>0`, um BEGIN válido é registrado e recebe OK: o observador **não** implementa exclusão mútua.
+
+Depois, `verify.py` cruza a carga esperada, os seis eventos dos nós, todos os BEGIN/END, os recebimentos dos clientes, a ordem dos znodes e todas as fases da barreira. É possível conferir novamente um experimento:
 
 ```bash
-docker compose down --volumes
+python3 scripts/verify.py logs/NOME_DA_EXECUCAO
 ```
 
-## Eventos dos logs
+Arquivos principais:
 
-Os processos registram `REQUEST`, `ACQUIRE`, `ENTER`, `EXIT`, `RELEASE` e `COMMITTED`, sempre com
-`request_id`. Também são registrados os eventos de entrada e saída da barreira. O formato
-`chave=valor` facilita a leitura durante a apresentação e o processamento automático pelo script
-`scripts/summarize.py`.
+- `logs/<execução>/config.json`: cenário, semente, processos, cargas e duração de R.
+- Logs individuais e `terminal.log`: todos os eventos, preservados sem cores.
+- `observer.csv`: resumo original deste observador, sem dependência de locale.
+- `verification.json`: conferência independente.
+- `summary.json`: resumo, configuração, códigos e contadores da execução.
+- `results/summary.csv`: resumos acumulados; não edite seu cabeçalho.
+- `results/battery.json`: execuções exatas da última bateria.
+- `results/relatorio.md`: análise gerada dessas execuções, incluindo tráfego e limitações.
+- `apresentacao/apresentacao_tp2_b2.pptx`: slides para o seminário.
+- `docs/roteiro-seminario.md`: sugestões de demonstração e perguntas.
 
-Com o mutex habilitado, o resultado esperado da auditoria é:
+Espera do acquire é medida com `System.nanoTime()` no nó e exclui fila local/barreira. Latência do cliente também usa relógio monotônico próprio. `total_s` do observador vai do primeiro BEGIN ao último END; `wall_s` inclui preparação/encerramento. A mediana de amostras pares usa a média dos dois valores centrais; P95 usa posto mais próximo (`ceil(0.95*N)`).
 
-```json
-{
-  "maximum_concurrent_accesses": 1,
-  "overlap_violations": 0
-}
-```
+REQUEST/COMMITTED, instrumentação/OK, chamadas da API e leituras adicionais de evidência têm contadores separados. Quando `mntr` está habilitado, são registrados também os pacotes do protocolo ZooKeeper recebidos/enviados no intervalo. São agregados com sessões, heartbeat e consultas extras; não são a quantidade exata de mensagens só do mutex. Consulte a discussão em `docs/mecanismo.md` e o relatório de resultados.
 
-Sem o mutex, espera-se `maximum_concurrent_accesses` maior que 1 e pelo menos uma sobreposição. Essa
-segunda execução valida a instrumentação; ela não é uma configuração correta da aplicação.
+## Versões e limites
 
-## Garantias e limites
+- JDK: Java 17; compilação/verificação local com OpenJDK 17.0.19.
+- Maven 3.9.9; compiler plugin 3.13.0, surefire 3.5.0, shade 3.5.3.
+- Apache Curator 5.7.1; cliente ZooKeeper transitivo 3.9.2.
+- Servidor ZooKeeper 3.9.3; slf4j-simple 2.0.13; JUnit 5.11.0.
+- Contêiner Java: `eclipse-temurin:17.0.17_10-jre-jammy`; compilação: `maven:3.9.9-eclipse-temurin-17`.
+- Preparação/verificação do Compose: `python:3.12.12-alpine3.22`.
 
-- Exclusão mútua depende de todos os processos acessarem `R` usando o mesmo caminho de lock.
-- O atendimento segue a ordem dos pedidos registrada pelo ZooKeeper, não a ordem de timestamps dos
-  clientes nem uma ordenação de Lamport.
-- O lock sempre é liberado em um bloco de limpeza, mesmo quando ocorre uma exceção.
-- Nenhum processo espera a barreira enquanto mantém o mutex.
-- A demonstração considera participantes e serviços disponíveis, sem quedas ou perdas de mensagens,
-  conforme o escopo do TP2.
-- O trabalho não mede replicação interna, failover ou recuperação de sessão do ZooKeeper.
+As evidências originais usam processos Java nativos e ZooKeeper Apache 3.9.3. A validação adicional do Compose está descrita em `docs/validacao.md`.
 
-## Fluxo Git adotado
+O escopo assume disponibilidade e ausência de perdas/quedas. Não há avaliação de replicação, recuperação de sessão ou fencing. Ausência de starvation em uma execução finita não é prova geral. O mutex é cooperativo: todos os concorrentes precisam usar o mesmo caminho e namespace. O namespace muda a cada execução.
 
-O desenvolvimento usa branches curtas a partir de `main`, com nomes como `feat/curator-cluster-sync`,
-e commits no padrão Conventional Commits: `feat:`, `test:`, `docs:`, `fix:` e `chore:`. Alterações só
-devem chegar à `main` depois da revisão e dos testes da branch.
+Para encerrar os serviços: `docker compose down`.

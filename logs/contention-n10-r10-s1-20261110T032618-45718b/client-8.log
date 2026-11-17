@@ -1,0 +1,22 @@
+00:26:19.343 c8        CONNECTED            node=n8 address=localhost:7008 requests=10
+00:26:20.298 c8        REQUEST              resource=R node=n8 client=c8 request_id=c8-1
+00:26:27.631 c8        RECEIVED_COMMITTED   resource=R node=n8 client=c8 request_id=c8-1 latency_s=7.350100 node_wait_s=6.965346 node_total_s=7.314639
+00:26:27.631 c8        REQUEST              resource=R node=n8 client=c8 request_id=c8-2
+00:26:34.683 c8        RECEIVED_COMMITTED   resource=R node=n8 client=c8 request_id=c8-2 latency_s=7.051662 node_wait_s=6.262669 node_total_s=7.050586
+00:26:34.683 c8        REQUEST              resource=R node=n8 client=c8 request_id=c8-3
+00:26:39.435 c8        RECEIVED_COMMITTED   resource=R node=n8 client=c8 request_id=c8-3 latency_s=4.751812 node_wait_s=4.357433 node_total_s=4.750679
+00:26:39.436 c8        REQUEST              resource=R node=n8 client=c8 request_id=c8-4
+00:26:45.163 c8        RECEIVED_COMMITTED   resource=R node=n8 client=c8 request_id=c8-4 latency_s=5.726877 node_wait_s=5.214602 node_total_s=5.725162
+00:26:45.163 c8        REQUEST              resource=R node=n8 client=c8 request_id=c8-5
+00:26:50.632 c8        RECEIVED_COMMITTED   resource=R node=n8 client=c8 request_id=c8-5 latency_s=5.468514 node_wait_s=4.645643 node_total_s=5.467583
+00:26:50.632 c8        REQUEST              resource=R node=n8 client=c8 request_id=c8-6
+00:26:55.467 c8        RECEIVED_COMMITTED   resource=R node=n8 client=c8 request_id=c8-6 latency_s=4.834366 node_wait_s=4.459097 node_total_s=4.832779
+00:26:55.468 c8        REQUEST              resource=R node=n8 client=c8 request_id=c8-7
+00:27:00.920 c8        RECEIVED_COMMITTED   resource=R node=n8 client=c8 request_id=c8-7 latency_s=5.451567 node_wait_s=5.096880 node_total_s=5.450453
+00:27:00.920 c8        REQUEST              resource=R node=n8 client=c8 request_id=c8-8
+00:27:07.413 c8        RECEIVED_COMMITTED   resource=R node=n8 client=c8 request_id=c8-8 latency_s=6.492832 node_wait_s=5.609169 node_total_s=6.491811
+00:27:07.413 c8        REQUEST              resource=R node=n8 client=c8 request_id=c8-9
+00:27:12.626 c8        RECEIVED_COMMITTED   resource=R node=n8 client=c8 request_id=c8-9 latency_s=5.212703 node_wait_s=4.724797 node_total_s=5.211609
+00:27:12.627 c8        REQUEST              resource=R node=n8 client=c8 request_id=c8-10
+00:27:18.426 c8        RECEIVED_COMMITTED   resource=R node=n8 client=c8 request_id=c8-10 latency_s=5.798719 node_wait_s=5.580312 node_total_s=5.797868
+00:27:18.429 c8        CLIENT_DONE          client=c8 completed=10 total_s=59.125684

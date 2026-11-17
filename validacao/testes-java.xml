@@ -1,0 +1,97 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" version="3.0.2" name="tp2.ObserverStateTest" time="0.143" tests="12" errors="0" skipped="0" failures="0">
+  <testcase name="duplicateEndAndDoneCannotFakeCompletion" classname="tp2.ObserverStateTest" time="0.044">
+    <system-out>00:19:49.872 observer  INVALID_EVENT        seq=1 resource=R reason=END_sem_BEGIN_ativo input=END|n1|c1-1|1
+00:19:49.873 observer  INVALID_EVENT        seq=2 resource=R reason=END_sem_BEGIN_ativo input=END|n1|c1-1|1
+00:19:49.879 observer  DONE                 seq=3 resource=R node=n1 done_nodes=1 active=0
+00:19:49.880 observer  INVALID_EVENT        seq=4 resource=R reason=evento_apos_DONE input=DONE|n1
+00:19:49.881 observer  DONE                 seq=5 resource=R node=n2 done_nodes=2 active=0
+</system-out>
+  </testcase>
+  <testcase name="perClientCountsRequireEveryExpectedClient" classname="tp2.ObserverStateTest" time="0.013">
+    <system-out>00:19:49.905 observer  BEGIN                seq=1 resource=R node=n1 client=c1 request_id=c1-1 round=1 active=1 overlap=false wait_ms=10.000000
+00:19:49.906 observer  END                  seq=2 resource=R node=n1 client=c1 request_id=c1-1 round=1 active=0 completed=1
+00:19:49.907 observer  INVALID_EVENT        seq=3 resource=R reason=pedido_nao_previsto input=BEGIN|n1|c1-2|2|10
+</system-out>
+  </testcase>
+  <testcase name="wrongOwnerCannotCloseAnotherNodesRequest" classname="tp2.ObserverStateTest" time="0.003">
+    <system-out>00:19:49.909 observer  BEGIN                seq=1 resource=R node=n1 client=c1 request_id=c1-1 round=1 active=1 overlap=false wait_ms=1.000000
+00:19:49.909 observer  INVALID_EVENT        seq=2 resource=R reason=END_no_ou_rodada_incorretos input=END|n2|c1-1|1
+</system-out>
+  </testcase>
+  <testcase name="barrierSeparatesTwoRounds" classname="tp2.ObserverStateTest" time="0.016">
+    <system-out>00:19:49.915 observer  ARRIVE               seq=1 resource=R node=n1 round=1 arrived=1 finished=0 left=0
+00:19:49.916 observer  ARRIVE               seq=2 resource=R node=n2 round=1 arrived=2 finished=0 left=0
+00:19:49.917 observer  PASS                 seq=3 resource=R node=n1 round=1 arrived=2 finished=0 left=0
+00:19:49.917 observer  PASS                 seq=4 resource=R node=n2 round=1 arrived=2 finished=0 left=0
+00:19:49.920 observer  BEGIN                seq=5 resource=R node=n1 client=c1 request_id=c1-1 round=1 active=1 overlap=false wait_ms=10.000000
+00:19:49.920 observer  END                  seq=6 resource=R node=n1 client=c1 request_id=c1-1 round=1 active=0 completed=1
+00:19:49.921 observer  BEGIN                seq=7 resource=R node=n2 client=c2 request_id=c2-1 round=1 active=1 overlap=false wait_ms=10.000000
+00:19:49.921 observer  END                  seq=8 resource=R node=n2 client=c2 request_id=c2-1 round=1 active=0 completed=2
+00:19:49.922 observer  LEAVE                seq=9 resource=R node=n1 round=1 arrived=2 finished=2 left=1
+00:19:49.922 observer  LEAVE                seq=10 resource=R node=n2 round=1 arrived=2 finished=2 left=2
+00:19:49.923 observer  ARRIVE               seq=11 resource=R node=n1 round=2 arrived=1 finished=0 left=0
+00:19:49.923 observer  ARRIVE               seq=12 resource=R node=n2 round=2 arrived=2 finished=0 left=0
+00:19:49.923 observer  PASS                 seq=13 resource=R node=n1 round=2 arrived=2 finished=0 left=0
+00:19:49.924 observer  PASS                 seq=14 resource=R node=n2 round=2 arrived=2 finished=0 left=0
+00:19:49.924 observer  BEGIN                seq=15 resource=R node=n1 client=c1 request_id=c1-2 round=2 active=1 overlap=false wait_ms=10.000000
+00:19:49.924 observer  END                  seq=16 resource=R node=n1 client=c1 request_id=c1-2 round=2 active=0 completed=3
+00:19:49.925 observer  BEGIN                seq=17 resource=R node=n2 client=c2 request_id=c2-2 round=2 active=1 overlap=false wait_ms=10.000000
+00:19:49.925 observer  END                  seq=18 resource=R node=n2 client=c2 request_id=c2-2 round=2 active=0 completed=4
+00:19:49.925 observer  LEAVE                seq=19 resource=R node=n1 round=2 arrived=2 finished=2 left=1
+00:19:49.926 observer  LEAVE                seq=20 resource=R node=n2 round=2 arrived=2 finished=2 left=2
+00:19:49.926 observer  DONE                 seq=21 resource=R node=n1 done_nodes=1 active=0
+00:19:49.926 observer  DONE                 seq=22 resource=R node=n2 done_nodes=2 active=0
+</system-out>
+  </testcase>
+  <testcase name="duplicateRequestCannotBeReusedOnAnotherNode" classname="tp2.ObserverStateTest" time="0.008">
+    <system-out>00:19:49.934 observer  BEGIN                seq=1 resource=R node=n1 client=c1 request_id=c1-1 round=1 active=1 overlap=false wait_ms=1.000000
+00:19:49.934 observer  END                  seq=2 resource=R node=n1 client=c1 request_id=c1-1 round=1 active=0 completed=1
+00:19:49.935 observer  INVALID_EVENT        seq=3 resource=R reason=BEGIN_duplicado input=BEGIN|n2|c1-1|1|1
+</system-out>
+  </testcase>
+  <testcase name="validSerialAccessesFinish" classname="tp2.ObserverStateTest" time="0.003">
+    <system-out>00:19:49.936 observer  BEGIN                seq=1 resource=R node=n1 client=c1 request_id=c1-1 round=1 active=1 overlap=false wait_ms=10.000000
+00:19:49.936 observer  END                  seq=2 resource=R node=n1 client=c1 request_id=c1-1 round=1 active=0 completed=1
+00:19:49.937 observer  BEGIN                seq=3 resource=R node=n2 client=c2 request_id=c2-1 round=1 active=1 overlap=false wait_ms=20.000000
+00:19:49.937 observer  END                  seq=4 resource=R node=n2 client=c2 request_id=c2-1 round=1 active=0 completed=2
+00:19:49.937 observer  DONE                 seq=5 resource=R node=n1 done_nodes=1 active=0
+00:19:49.937 observer  DONE                 seq=6 resource=R node=n2 done_nodes=2 active=0
+</system-out>
+  </testcase>
+  <testcase name="activeRequestPreventsSuccess" classname="tp2.ObserverStateTest" time="0.001">
+    <system-out>00:19:49.939 observer  BEGIN                seq=1 resource=R node=n1 client=c1 request_id=c1-1 round=1 active=1 overlap=false wait_ms=1.000000
+00:19:49.939 observer  DONE                 seq=2 resource=R node=n1 done_nodes=1 active=1
+</system-out>
+  </testcase>
+  <testcase name="csvUsesDecimalPointInBrazilianLocale(Path)" classname="tp2.ObserverStateTest" time="0.029" />
+  <testcase name="medianAndNearestRankPercentile" classname="tp2.ObserverStateTest" time="0.0" />
+  <testcase name="duplicateArrivalDoesNotReplaceAnotherParticipant" classname="tp2.ObserverStateTest" time="0.002">
+    <system-out>00:19:49.973 observer  ARRIVE               seq=1 resource=R node=n1 round=1 arrived=1 finished=0 left=0
+00:19:49.973 observer  INVALID_EVENT        seq=2 resource=R reason=ARRIVE_duplicado input=ARRIVE|n1|1
+00:19:49.975 observer  VIOLATION_BARRIER    seq=3 resource=R node=n1 round=1 reason=PASS_antes_de_todos
+00:19:49.975 observer  PASS                 seq=3 resource=R node=n1 round=1 arrived=1 finished=0 left=0
+</system-out>
+  </testcase>
+  <testcase name="earlyNextRoundIsDetected" classname="tp2.ObserverStateTest" time="0.002">
+    <system-out>00:19:49.976 observer  ARRIVE               seq=1 resource=R node=n1 round=1 arrived=1 finished=0 left=0
+00:19:49.976 observer  ARRIVE               seq=2 resource=R node=n2 round=1 arrived=2 finished=0 left=0
+00:19:49.976 observer  PASS                 seq=3 resource=R node=n1 round=1 arrived=2 finished=0 left=0
+00:19:49.976 observer  PASS                 seq=4 resource=R node=n2 round=1 arrived=2 finished=0 left=0
+00:19:49.976 observer  BEGIN                seq=5 resource=R node=n1 client=c1 request_id=c1-1 round=1 active=1 overlap=false wait_ms=0.000000
+00:19:49.977 observer  END                  seq=6 resource=R node=n1 client=c1 request_id=c1-1 round=1 active=0 completed=1
+00:19:49.977 observer  VIOLATION_BARRIER    seq=7 resource=R node=n1 round=2 reason=proxima_rodada_antecipada
+00:19:49.977 observer  ARRIVE               seq=7 resource=R node=n1 round=2 arrived=1 finished=0 left=0
+</system-out>
+  </testcase>
+  <testcase name="overlapIsRecordedInsteadOfPrevented" classname="tp2.ObserverStateTest" time="0.003">
+    <system-out>00:19:49.978 observer  BEGIN                seq=1 resource=R node=n1 client=c1 request_id=c1-1 round=1 active=1 overlap=false wait_ms=0.000000
+00:19:49.978 observer  BEGIN                seq=2 resource=R node=n2 client=c2 request_id=c2-1 round=1 active=2 overlap=true wait_ms=0.000000
+00:19:49.979 observer  VIOLATION_OVERLAP    seq=2 resource=R node=n2 client=c2 request_id=c2-1 round=1 active=2
+00:19:49.979 observer  END                  seq=3 resource=R node=n1 client=c1 request_id=c1-1 round=1 active=1 completed=1
+00:19:49.979 observer  END                  seq=4 resource=R node=n2 client=c2 request_id=c2-1 round=1 active=0 completed=2
+00:19:49.980 observer  DONE                 seq=5 resource=R node=n1 done_nodes=1 active=0
+00:19:49.980 observer  DONE                 seq=6 resource=R node=n2 done_nodes=2 active=0
+</system-out>
+  </testcase>
+</testsuite>

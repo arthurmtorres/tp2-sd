@@ -1,0 +1,587 @@
+observer   | 00:43:07.806 observer  READY                port=9000 nodes=5 expected=50
+node-5     | 00:43:08.888 n5        ZK_STATE             state=CONNECTED
+node-2     | 00:43:08.923 n2        ZK_STATE             state=CONNECTED
+node-4     | 00:43:08.934 n4        ZK_STATE             state=CONNECTED
+node-1     | 00:43:09.005 n1        ZK_STATE             state=CONNECTED
+node-3     | 00:43:09.020 n3        ZK_STATE             state=CONNECTED
+node-5     | 00:43:09.037 n5        READY                port=7005 resource=R sync=true barrier=false participants=5 clients=1 namespace=contention-n5-r10-s2-20261110T034307-a88211 cs_min_ms=200 cs_max_ms=1000
+node-2     | 00:43:09.051 n2        READY                port=7002 resource=R sync=true barrier=false participants=5 clients=1 namespace=contention-n5-r10-s2-20261110T034307-a88211 cs_min_ms=200 cs_max_ms=1000
+node-4     | 00:43:09.077 n4        READY                port=7004 resource=R sync=true barrier=false participants=5 clients=1 namespace=contention-n5-r10-s2-20261110T034307-a88211 cs_min_ms=200 cs_max_ms=1000
+node-3     | 00:43:09.088 n3        READY                port=7003 resource=R sync=true barrier=false participants=5 clients=1 namespace=contention-n5-r10-s2-20261110T034307-a88211 cs_min_ms=200 cs_max_ms=1000
+node-1     | 00:43:09.098 n1        READY                port=7001 resource=R sync=true barrier=false participants=5 clients=1 namespace=contention-n5-r10-s2-20261110T034307-a88211 cs_min_ms=200 cs_max_ms=1000
+client-4   | 00:43:09.367 c4        CONNECTED            node=n4 address=localhost:7004 requests=10
+client-5   | 00:43:09.372 c5        CONNECTED            node=n5 address=localhost:7005 requests=10
+client-3   | 00:43:09.385 c3        CONNECTED            node=n3 address=localhost:7003 requests=10
+client-1   | 00:43:09.388 c1        CONNECTED            node=n1 address=localhost:7001 requests=10
+client-2   | 00:43:09.433 c2        CONNECTED            node=n2 address=localhost:7002 requests=10
+client-1   | 00:43:10.109 c1        REQUEST              resource=R node=n1 client=c1 request_id=c1-1
+client-5   | 00:43:10.110 c5        REQUEST              resource=R node=n5 client=c5 request_id=c5-1
+client-2   | 00:43:10.111 c2        REQUEST              resource=R node=n2 client=c2 request_id=c2-1
+client-3   | 00:43:10.111 c3        REQUEST              resource=R node=n3 client=c3 request_id=c3-1
+client-4   | 00:43:10.113 c4        REQUEST              resource=R node=n4 client=c4 request_id=c4-1
+node-1     | 00:43:10.130 n1        REQUEST              resource=R node=n1 client=c1 request_id=c1-1 round=1 local_queue_s=0.000275
+node-5     | 00:43:10.130 n5        REQUEST              resource=R node=n5 client=c5 request_id=c5-1 round=1 local_queue_s=0.000204
+node-5     | 00:43:10.131 n5        LOCK_WAIT            resource=R node=n5 client=c5 request_id=c5-1 round=1 path=/contention-n5-r10-s2-20261110T034307-a88211/locks/R
+node-1     | 00:43:10.132 n1        LOCK_WAIT            resource=R node=n1 client=c1 request_id=c1-1 round=1 path=/contention-n5-r10-s2-20261110T034307-a88211/locks/R
+node-2     | 00:43:10.134 n2        REQUEST              resource=R node=n2 client=c2 request_id=c2-1 round=1 local_queue_s=0.000158
+node-4     | 00:43:10.136 n4        REQUEST              resource=R node=n4 client=c4 request_id=c4-1 round=1 local_queue_s=0.000309
+node-3     | 00:43:10.136 n3        REQUEST              resource=R node=n3 client=c3 request_id=c3-1 round=1 local_queue_s=0.000552
+node-4     | 00:43:10.138 n4        LOCK_WAIT            resource=R node=n4 client=c4 request_id=c4-1 round=1 path=/contention-n5-r10-s2-20261110T034307-a88211/locks/R
+node-2     | 00:43:10.136 n2        LOCK_WAIT            resource=R node=n2 client=c2 request_id=c2-1 round=1 path=/contention-n5-r10-s2-20261110T034307-a88211/locks/R
+node-3     | 00:43:10.139 n3        LOCK_WAIT            resource=R node=n3 client=c3 request_id=c3-1 round=1 path=/contention-n5-r10-s2-20261110T034307-a88211/locks/R
+node-5     | 00:43:10.176 n5        ACQUIRE              resource=R node=n5 client=c5 request_id=c5-1 round=1 sync=true wait_s=0.024872 znode=lock-0000000000 queue_size=5 queue=lock-0000000000,lock-0000000001,lock-0000000002,lock-0000000003,lock-0000000004
+observer   | 00:43:10.227 observer  BEGIN                seq=1 resource=R node=n5 client=c5 request_id=c5-1 round=1 active=1 overlap=false wait_ms=24.872455
+node-5     | 00:43:10.231 n5        ENTER                resource=R node=n5 client=c5 request_id=c5-1 round=1 sleep_ms=831
+node-5     | 00:43:11.063 n5        EXIT                 resource=R node=n5 client=c5 request_id=c5-1 round=1 cs_s=0.834686
+observer   | 00:43:11.075 observer  END                  seq=2 resource=R node=n5 client=c5 request_id=c5-1 round=1 active=0 completed=1
+node-5     | 00:43:11.083 n5        RELEASE              resource=R node=n5 client=c5 request_id=c5-1 round=1 sync=true
+node-5     | 00:43:11.088 n5        COMMITTED            resource=R node=n5 client=c5 request_id=c5-1 round=1 total_s=0.971532
+node-1     | 00:43:11.105 n1        ACQUIRE              resource=R node=n1 client=c1 request_id=c1-1 round=1 sync=true wait_s=0.956123 znode=lock-0000000001 queue_size=4 queue=lock-0000000001,lock-0000000002,lock-0000000003,lock-0000000004
+client-5   | 00:43:11.107 c5        RECEIVED_COMMITTED   resource=R node=n5 client=c5 request_id=c5-1 latency_s=0.983569 node_wait_s=0.024872 node_total_s=0.971532
+client-5   | 00:43:11.108 c5        REQUEST              resource=R node=n5 client=c5 request_id=c5-2
+node-5     | 00:43:11.110 n5        REQUEST              resource=R node=n5 client=c5 request_id=c5-2 round=2 local_queue_s=0.000230
+node-5     | 00:43:11.111 n5        LOCK_WAIT            resource=R node=n5 client=c5 request_id=c5-2 round=2 path=/contention-n5-r10-s2-20261110T034307-a88211/locks/R
+observer   | 00:43:11.114 observer  BEGIN                seq=3 resource=R node=n1 client=c1 request_id=c1-1 round=1 active=1 overlap=false wait_ms=956.122597
+node-1     | 00:43:11.118 n1        ENTER                resource=R node=n1 client=c1 request_id=c1-1 round=1 sleep_ms=568
+node-1     | 00:43:11.688 n1        EXIT                 resource=R node=n1 client=c1 request_id=c1-1 round=1 cs_s=0.572280
+observer   | 00:43:11.693 observer  END                  seq=4 resource=R node=n1 client=c1 request_id=c1-1 round=1 active=0 completed=2
+node-1     | 00:43:11.710 n1        RELEASE              resource=R node=n1 client=c1 request_id=c1-1 round=1 sync=true
+node-1     | 00:43:11.715 n1        COMMITTED            resource=R node=n1 client=c1 request_id=c1-1 round=1 total_s=1.599183
+client-1   | 00:43:11.735 c1        RECEIVED_COMMITTED   resource=R node=n1 client=c1 request_id=c1-1 latency_s=1.611658 node_wait_s=0.956123 node_total_s=1.599183
+client-1   | 00:43:11.736 c1        REQUEST              resource=R node=n1 client=c1 request_id=c1-2
+node-4     | 00:43:11.736 n4        ACQUIRE              resource=R node=n4 client=c4 request_id=c4-1 round=1 sync=true wait_s=1.579646 znode=lock-0000000002 queue_size=4 queue=lock-0000000002,lock-0000000003,lock-0000000004,lock-0000000005
+node-1     | 00:43:11.738 n1        REQUEST              resource=R node=n1 client=c1 request_id=c1-2 round=2 local_queue_s=0.000200
+node-1     | 00:43:11.739 n1        LOCK_WAIT            resource=R node=n1 client=c1 request_id=c1-2 round=2 path=/contention-n5-r10-s2-20261110T034307-a88211/locks/R
+observer   | 00:43:11.750 observer  BEGIN                seq=5 resource=R node=n4 client=c4 request_id=c4-1 round=1 active=1 overlap=false wait_ms=1579.646141
+node-4     | 00:43:11.756 n4        ENTER                resource=R node=n4 client=c4 request_id=c4-1 round=1 sleep_ms=966
+node-4     | 00:43:12.724 n4        EXIT                 resource=R node=n4 client=c4 request_id=c4-1 round=1 cs_s=0.971386
+observer   | 00:43:12.730 observer  END                  seq=6 resource=R node=n4 client=c4 request_id=c4-1 round=1 active=0 completed=3
+node-4     | 00:43:12.738 n4        RELEASE              resource=R node=n4 client=c4 request_id=c4-1 round=1 sync=true
+node-4     | 00:43:12.742 n4        COMMITTED            resource=R node=n4 client=c4 request_id=c4-1 round=1 total_s=2.622005
+client-4   | 00:43:12.762 c4        RECEIVED_COMMITTED   resource=R node=n4 client=c4 request_id=c4-1 latency_s=2.635417 node_wait_s=1.579646 node_total_s=2.622005
+client-4   | 00:43:12.763 c4        REQUEST              resource=R node=n4 client=c4 request_id=c4-2
+node-4     | 00:43:12.765 n4        REQUEST              resource=R node=n4 client=c4 request_id=c4-2 round=2 local_queue_s=0.000193
+node-4     | 00:43:12.766 n4        LOCK_WAIT            resource=R node=n4 client=c4 request_id=c4-2 round=2 path=/contention-n5-r10-s2-20261110T034307-a88211/locks/R
+node-2     | 00:43:12.770 n2        ACQUIRE              resource=R node=n2 client=c2 request_id=c2-1 round=1 sync=true wait_s=2.607524 znode=lock-0000000003 queue_size=4 queue=lock-0000000003,lock-0000000004,lock-0000000005,lock-0000000006
+observer   | 00:43:12.783 observer  BEGIN                seq=7 resource=R node=n2 client=c2 request_id=c2-1 round=1 active=1 overlap=false wait_ms=2607.524109
+node-2     | 00:43:12.789 n2        ENTER                resource=R node=n2 client=c2 request_id=c2-1 round=1 sleep_ms=697
+node-2     | 00:43:13.489 n2        EXIT                 resource=R node=n2 client=c2 request_id=c2-1 round=1 cs_s=0.704140
+observer   | 00:43:13.495 observer  END                  seq=8 resource=R node=n2 client=c2 request_id=c2-1 round=1 active=0 completed=4
+node-2     | 00:43:13.502 n2        RELEASE              resource=R node=n2 client=c2 request_id=c2-1 round=1 sync=true
+node-2     | 00:43:13.505 n2        COMMITTED            resource=R node=n2 client=c2 request_id=c2-1 round=1 total_s=3.389318
+node-3     | 00:43:13.524 n3        ACQUIRE              resource=R node=n3 client=c3 request_id=c3-1 round=1 sync=true wait_s=3.368921 znode=lock-0000000004 queue_size=4 queue=lock-0000000004,lock-0000000005,lock-0000000006,lock-0000000007
+client-2   | 00:43:13.526 c2        RECEIVED_COMMITTED   resource=R node=n2 client=c2 request_id=c2-1 latency_s=3.399433 node_wait_s=2.607524 node_total_s=3.389318
+client-2   | 00:43:13.527 c2        REQUEST              resource=R node=n2 client=c2 request_id=c2-2
+node-2     | 00:43:13.530 n2        REQUEST              resource=R node=n2 client=c2 request_id=c2-2 round=2 local_queue_s=0.000315
+node-2     | 00:43:13.531 n2        LOCK_WAIT            resource=R node=n2 client=c2 request_id=c2-2 round=2 path=/contention-n5-r10-s2-20261110T034307-a88211/locks/R
+observer   | 00:43:13.534 observer  BEGIN                seq=9 resource=R node=n3 client=c3 request_id=c3-1 round=1 active=1 overlap=false wait_ms=3368.920767
+node-3     | 00:43:13.538 n3        ENTER                resource=R node=n3 client=c3 request_id=c3-1 round=1 sleep_ms=562
+node-3     | 00:43:14.102 n3        EXIT                 resource=R node=n3 client=c3 request_id=c3-1 round=1 cs_s=0.565639
+observer   | 00:43:14.106 observer  END                  seq=10 resource=R node=n3 client=c3 request_id=c3-1 round=1 active=0 completed=5
+node-3     | 00:43:14.115 n3        RELEASE              resource=R node=n3 client=c3 request_id=c3-1 round=1 sync=true
+node-3     | 00:43:14.118 n3        COMMITTED            resource=R node=n3 client=c3 request_id=c3-1 round=1 total_s=3.999515
+node-5     | 00:43:14.127 n5        ACQUIRE              resource=R node=n5 client=c5 request_id=c5-2 round=2 sync=true wait_s=3.011710 znode=lock-0000000005 queue_size=4 queue=lock-0000000005,lock-0000000006,lock-0000000007,lock-0000000008
+observer   | 00:43:14.129 observer  BEGIN                seq=11 resource=R node=n5 client=c5 request_id=c5-2 round=2 active=1 overlap=false wait_ms=3011.710448
+node-5     | 00:43:14.131 n5        ENTER                resource=R node=n5 client=c5 request_id=c5-2 round=2 sleep_ms=437
+client-3   | 00:43:14.145 c3        RECEIVED_COMMITTED   resource=R node=n3 client=c3 request_id=c3-1 latency_s=4.013653 node_wait_s=3.368921 node_total_s=3.999515
+client-3   | 00:43:14.147 c3        REQUEST              resource=R node=n3 client=c3 request_id=c3-2
+node-3     | 00:43:14.149 n3        REQUEST              resource=R node=n3 client=c3 request_id=c3-2 round=2 local_queue_s=0.000312
+node-3     | 00:43:14.150 n3        LOCK_WAIT            resource=R node=n3 client=c3 request_id=c3-2 round=2 path=/contention-n5-r10-s2-20261110T034307-a88211/locks/R
+node-5     | 00:43:14.569 n5        EXIT                 resource=R node=n5 client=c5 request_id=c5-2 round=2 cs_s=0.438220
+observer   | 00:43:14.571 observer  END                  seq=12 resource=R node=n5 client=c5 request_id=c5-2 round=2 active=0 completed=6
+node-5     | 00:43:14.577 n5        RELEASE              resource=R node=n5 client=c5 request_id=c5-2 round=2 sync=true
+node-5     | 00:43:14.578 n5        COMMITTED            resource=R node=n5 client=c5 request_id=c5-2 round=2 total_s=3.467734
+client-5   | 00:43:14.579 c5        RECEIVED_COMMITTED   resource=R node=n5 client=c5 request_id=c5-2 latency_s=3.470817 node_wait_s=3.011710 node_total_s=3.467734
+client-5   | 00:43:14.580 c5        REQUEST              resource=R node=n5 client=c5 request_id=c5-3
+node-5     | 00:43:14.582 n5        REQUEST              resource=R node=n5 client=c5 request_id=c5-3 round=3 local_queue_s=0.000161
+node-1     | 00:43:14.582 n1        ACQUIRE              resource=R node=n1 client=c1 request_id=c1-2 round=2 sync=true wait_s=2.839182 znode=lock-0000000006 queue_size=4 queue=lock-0000000006,lock-0000000007,lock-0000000008,lock-0000000009
+node-5     | 00:43:14.583 n5        LOCK_WAIT            resource=R node=n5 client=c5 request_id=c5-3 round=3 path=/contention-n5-r10-s2-20261110T034307-a88211/locks/R
+observer   | 00:43:14.584 observer  BEGIN                seq=13 resource=R node=n1 client=c1 request_id=c1-2 round=2 active=1 overlap=false wait_ms=2839.181569
+node-1     | 00:43:14.585 n1        ENTER                resource=R node=n1 client=c1 request_id=c1-2 round=2 sleep_ms=636
+node-1     | 00:43:15.223 n1        EXIT                 resource=R node=n1 client=c1 request_id=c1-2 round=2 cs_s=0.637477
+observer   | 00:43:15.225 observer  END                  seq=14 resource=R node=n1 client=c1 request_id=c1-2 round=2 active=0 completed=7
+node-1     | 00:43:15.231 n1        RELEASE              resource=R node=n1 client=c1 request_id=c1-2 round=2 sync=true
+node-1     | 00:43:15.233 n1        COMMITTED            resource=R node=n1 client=c1 request_id=c1-2 round=2 total_s=3.494842
+client-1   | 00:43:15.234 c1        RECEIVED_COMMITTED   resource=R node=n1 client=c1 request_id=c1-2 latency_s=3.497713 node_wait_s=2.839182 node_total_s=3.494842
+client-1   | 00:43:15.235 c1        REQUEST              resource=R node=n1 client=c1 request_id=c1-3
+node-1     | 00:43:15.238 n1        REQUEST              resource=R node=n1 client=c1 request_id=c1-3 round=3 local_queue_s=0.000121
+node-1     | 00:43:15.238 n1        LOCK_WAIT            resource=R node=n1 client=c1 request_id=c1-3 round=3 path=/contention-n5-r10-s2-20261110T034307-a88211/locks/R
+node-4     | 00:43:15.238 n4        ACQUIRE              resource=R node=n4 client=c4 request_id=c4-2 round=2 sync=true wait_s=2.468886 znode=lock-0000000007 queue_size=4 queue=lock-0000000007,lock-0000000008,lock-0000000009,lock-0000000010
+observer   | 00:43:15.240 observer  BEGIN                seq=15 resource=R node=n4 client=c4 request_id=c4-2 round=2 active=1 overlap=false wait_ms=2468.885553
+node-4     | 00:43:15.242 n4        ENTER                resource=R node=n4 client=c4 request_id=c4-2 round=2 sleep_ms=470
+node-4     | 00:43:15.714 n4        EXIT                 resource=R node=n4 client=c4 request_id=c4-2 round=2 cs_s=0.471676
+observer   | 00:43:15.717 observer  END                  seq=16 resource=R node=n4 client=c4 request_id=c4-2 round=2 active=0 completed=8
+node-4     | 00:43:15.723 n4        RELEASE              resource=R node=n4 client=c4 request_id=c4-2 round=2 sync=true
+node-4     | 00:43:15.725 n4        COMMITTED            resource=R node=n4 client=c4 request_id=c4-2 round=2 total_s=2.959281
+client-4   | 00:43:15.725 c4        RECEIVED_COMMITTED   resource=R node=n4 client=c4 request_id=c4-2 latency_s=2.962075 node_wait_s=2.468886 node_total_s=2.959281
+client-4   | 00:43:15.726 c4        REQUEST              resource=R node=n4 client=c4 request_id=c4-3
+node-4     | 00:43:15.729 n4        REQUEST              resource=R node=n4 client=c4 request_id=c4-3 round=3 local_queue_s=0.000144
+node-2     | 00:43:15.729 n2        ACQUIRE              resource=R node=n2 client=c2 request_id=c2-2 round=2 sync=true wait_s=2.193192 znode=lock-0000000008 queue_size=4 queue=lock-0000000008,lock-0000000009,lock-0000000010,lock-0000000011
+node-4     | 00:43:15.730 n4        LOCK_WAIT            resource=R node=n4 client=c4 request_id=c4-3 round=3 path=/contention-n5-r10-s2-20261110T034307-a88211/locks/R
+observer   | 00:43:15.731 observer  BEGIN                seq=17 resource=R node=n2 client=c2 request_id=c2-2 round=2 active=1 overlap=false wait_ms=2193.191680
+node-2     | 00:43:15.732 n2        ENTER                resource=R node=n2 client=c2 request_id=c2-2 round=2 sleep_ms=649
+node-2     | 00:43:16.382 n2        EXIT                 resource=R node=n2 client=c2 request_id=c2-2 round=2 cs_s=0.650089
+observer   | 00:43:16.384 observer  END                  seq=18 resource=R node=n2 client=c2 request_id=c2-2 round=2 active=0 completed=9
+node-2     | 00:43:16.390 n2        RELEASE              resource=R node=n2 client=c2 request_id=c2-2 round=2 sync=true
+node-2     | 00:43:16.392 n2        COMMITTED            resource=R node=n2 client=c2 request_id=c2-2 round=2 total_s=2.861550
+client-2   | 00:43:16.392 c2        RECEIVED_COMMITTED   resource=R node=n2 client=c2 request_id=c2-2 latency_s=2.864573 node_wait_s=2.193192 node_total_s=2.861550
+client-2   | 00:43:16.393 c2        REQUEST              resource=R node=n2 client=c2 request_id=c2-3
+node-2     | 00:43:16.395 n2        REQUEST              resource=R node=n2 client=c2 request_id=c2-3 round=3 local_queue_s=0.000226
+node-2     | 00:43:16.396 n2        LOCK_WAIT            resource=R node=n2 client=c2 request_id=c2-3 round=3 path=/contention-n5-r10-s2-20261110T034307-a88211/locks/R
+node-3     | 00:43:16.396 n3        ACQUIRE              resource=R node=n3 client=c3 request_id=c3-2 round=2 sync=true wait_s=2.242131 znode=lock-0000000009 queue_size=4 queue=lock-0000000009,lock-0000000010,lock-0000000011,lock-0000000012
+observer   | 00:43:16.398 observer  BEGIN                seq=19 resource=R node=n3 client=c3 request_id=c3-2 round=2 active=1 overlap=false wait_ms=2242.130882
+node-3     | 00:43:16.399 n3        ENTER                resource=R node=n3 client=c3 request_id=c3-2 round=2 sleep_ms=861
+node-3     | 00:43:17.262 n3        EXIT                 resource=R node=n3 client=c3 request_id=c3-2 round=2 cs_s=0.862176
+observer   | 00:43:17.264 observer  END                  seq=20 resource=R node=n3 client=c3 request_id=c3-2 round=2 active=0 completed=10
+node-3     | 00:43:17.270 n3        RELEASE              resource=R node=n3 client=c3 request_id=c3-2 round=2 sync=true
+node-3     | 00:43:17.271 n3        COMMITTED            resource=R node=n3 client=c3 request_id=c3-2 round=2 total_s=3.121092
+client-3   | 00:43:17.271 c3        RECEIVED_COMMITTED   resource=R node=n3 client=c3 request_id=c3-2 latency_s=3.124134 node_wait_s=2.242131 node_total_s=3.121092
+client-3   | 00:43:17.272 c3        REQUEST              resource=R node=n3 client=c3 request_id=c3-3
+node-3     | 00:43:17.274 n3        REQUEST              resource=R node=n3 client=c3 request_id=c3-3 round=3 local_queue_s=0.000155
+node-3     | 00:43:17.274 n3        LOCK_WAIT            resource=R node=n3 client=c3 request_id=c3-3 round=3 path=/contention-n5-r10-s2-20261110T034307-a88211/locks/R
+node-5     | 00:43:17.275 n5        ACQUIRE              resource=R node=n5 client=c5 request_id=c5-3 round=3 sync=true wait_s=2.689786 znode=lock-0000000010 queue_size=4 queue=lock-0000000010,lock-0000000011,lock-0000000012,lock-0000000013
+observer   | 00:43:17.278 observer  BEGIN                seq=21 resource=R node=n5 client=c5 request_id=c5-3 round=3 active=1 overlap=false wait_ms=2689.786390
+node-5     | 00:43:17.279 n5        ENTER                resource=R node=n5 client=c5 request_id=c5-3 round=3 sleep_ms=354
+node-5     | 00:43:17.633 n5        EXIT                 resource=R node=n5 client=c5 request_id=c5-3 round=3 cs_s=0.354686
+observer   | 00:43:17.635 observer  END                  seq=22 resource=R node=n5 client=c5 request_id=c5-3 round=3 active=0 completed=11
+node-5     | 00:43:17.640 n5        RELEASE              resource=R node=n5 client=c5 request_id=c5-3 round=3 sync=true
+node-5     | 00:43:17.640 n5        COMMITTED            resource=R node=n5 client=c5 request_id=c5-3 round=3 total_s=3.057874
+client-5   | 00:43:17.641 c5        RECEIVED_COMMITTED   resource=R node=n5 client=c5 request_id=c5-3 latency_s=3.060932 node_wait_s=2.689786 node_total_s=3.057874
+client-5   | 00:43:17.642 c5        REQUEST              resource=R node=n5 client=c5 request_id=c5-4
+node-5     | 00:43:17.645 n5        REQUEST              resource=R node=n5 client=c5 request_id=c5-4 round=4 local_queue_s=0.000118
+node-1     | 00:43:17.645 n1        ACQUIRE              resource=R node=n1 client=c1 request_id=c1-3 round=3 sync=true wait_s=2.404383 znode=lock-0000000011 queue_size=4 queue=lock-0000000011,lock-0000000012,lock-0000000013,lock-0000000014
+node-5     | 00:43:17.646 n5        LOCK_WAIT            resource=R node=n5 client=c5 request_id=c5-4 round=4 path=/contention-n5-r10-s2-20261110T034307-a88211/locks/R
+observer   | 00:43:17.647 observer  BEGIN                seq=23 resource=R node=n1 client=c1 request_id=c1-3 round=3 active=1 overlap=false wait_ms=2404.382550
+node-1     | 00:43:17.648 n1        ENTER                resource=R node=n1 client=c1 request_id=c1-3 round=3 sleep_ms=320
+node-1     | 00:43:17.969 n1        EXIT                 resource=R node=n1 client=c1 request_id=c1-3 round=3 cs_s=0.320847
+observer   | 00:43:17.971 observer  END                  seq=24 resource=R node=n1 client=c1 request_id=c1-3 round=3 active=0 completed=12
+node-1     | 00:43:17.976 n1        RELEASE              resource=R node=n1 client=c1 request_id=c1-3 round=3 sync=true
+node-1     | 00:43:17.976 n1        COMMITTED            resource=R node=n1 client=c1 request_id=c1-3 round=3 total_s=2.738633
+client-1   | 00:43:17.977 c1        RECEIVED_COMMITTED   resource=R node=n1 client=c1 request_id=c1-3 latency_s=2.741691 node_wait_s=2.404383 node_total_s=2.738633
+client-1   | 00:43:17.978 c1        REQUEST              resource=R node=n1 client=c1 request_id=c1-4
+node-1     | 00:43:17.979 n1        REQUEST              resource=R node=n1 client=c1 request_id=c1-4 round=4 local_queue_s=0.000088
+node-1     | 00:43:17.979 n1        LOCK_WAIT            resource=R node=n1 client=c1 request_id=c1-4 round=4 path=/contention-n5-r10-s2-20261110T034307-a88211/locks/R
+node-4     | 00:43:17.981 n4        ACQUIRE              resource=R node=n4 client=c4 request_id=c4-3 round=3 sync=true wait_s=2.248246 znode=lock-0000000012 queue_size=4 queue=lock-0000000012,lock-0000000013,lock-0000000014,lock-0000000015
+observer   | 00:43:17.982 observer  BEGIN                seq=25 resource=R node=n4 client=c4 request_id=c4-3 round=3 active=1 overlap=false wait_ms=2248.246012
+node-4     | 00:43:17.983 n4        ENTER                resource=R node=n4 client=c4 request_id=c4-3 round=3 sleep_ms=284
+node-4     | 00:43:18.268 n4        EXIT                 resource=R node=n4 client=c4 request_id=c4-3 round=3 cs_s=0.284632
+observer   | 00:43:18.269 observer  END                  seq=26 resource=R node=n4 client=c4 request_id=c4-3 round=3 active=0 completed=13
+node-4     | 00:43:18.276 n4        RELEASE              resource=R node=n4 client=c4 request_id=c4-3 round=3 sync=true
+node-4     | 00:43:18.277 n4        COMMITTED            resource=R node=n4 client=c4 request_id=c4-3 round=3 total_s=2.547268
+client-4   | 00:43:18.277 c4        RECEIVED_COMMITTED   resource=R node=n4 client=c4 request_id=c4-3 latency_s=2.550575 node_wait_s=2.248246 node_total_s=2.547268
+client-4   | 00:43:18.278 c4        REQUEST              resource=R node=n4 client=c4 request_id=c4-4
+node-4     | 00:43:18.280 n4        REQUEST              resource=R node=n4 client=c4 request_id=c4-4 round=4 local_queue_s=0.000099
+node-2     | 00:43:18.280 n2        ACQUIRE              resource=R node=n2 client=c2 request_id=c2-3 round=3 sync=true wait_s=1.882447 znode=lock-0000000013 queue_size=4 queue=lock-0000000013,lock-0000000014,lock-0000000015,lock-0000000016
+node-4     | 00:43:18.281 n4        LOCK_WAIT            resource=R node=n4 client=c4 request_id=c4-4 round=4 path=/contention-n5-r10-s2-20261110T034307-a88211/locks/R
+observer   | 00:43:18.282 observer  BEGIN                seq=27 resource=R node=n2 client=c2 request_id=c2-3 round=3 active=1 overlap=false wait_ms=1882.447400
+node-2     | 00:43:18.283 n2        ENTER                resource=R node=n2 client=c2 request_id=c2-3 round=3 sleep_ms=423
+node-2     | 00:43:18.707 n2        EXIT                 resource=R node=n2 client=c2 request_id=c2-3 round=3 cs_s=0.423596
+observer   | 00:43:18.708 observer  END                  seq=28 resource=R node=n2 client=c2 request_id=c2-3 round=3 active=0 completed=14
+node-2     | 00:43:18.712 n2        RELEASE              resource=R node=n2 client=c2 request_id=c2-3 round=3 sync=true
+node-2     | 00:43:18.714 n2        COMMITTED            resource=R node=n2 client=c2 request_id=c2-3 round=3 total_s=2.317938
+client-2   | 00:43:18.714 c2        RECEIVED_COMMITTED   resource=R node=n2 client=c2 request_id=c2-3 latency_s=2.320902 node_wait_s=1.882447 node_total_s=2.317938
+client-2   | 00:43:18.715 c2        REQUEST              resource=R node=n2 client=c2 request_id=c2-4
+node-2     | 00:43:18.718 n2        REQUEST              resource=R node=n2 client=c2 request_id=c2-4 round=4 local_queue_s=0.000117
+node-3     | 00:43:18.718 n3        ACQUIRE              resource=R node=n3 client=c3 request_id=c3-3 round=3 sync=true wait_s=1.440578 znode=lock-0000000014 queue_size=4 queue=lock-0000000014,lock-0000000015,lock-0000000016,lock-0000000017
+node-2     | 00:43:18.718 n2        LOCK_WAIT            resource=R node=n2 client=c2 request_id=c2-4 round=4 path=/contention-n5-r10-s2-20261110T034307-a88211/locks/R
+observer   | 00:43:18.719 observer  BEGIN                seq=29 resource=R node=n3 client=c3 request_id=c3-3 round=3 active=1 overlap=false wait_ms=1440.578380
+node-3     | 00:43:18.720 n3        ENTER                resource=R node=n3 client=c3 request_id=c3-3 round=3 sleep_ms=493
+node-3     | 00:43:19.214 n3        EXIT                 resource=R node=n3 client=c3 request_id=c3-3 round=3 cs_s=0.493573
+observer   | 00:43:19.215 observer  END                  seq=30 resource=R node=n3 client=c3 request_id=c3-3 round=3 active=0 completed=15
+node-3     | 00:43:19.220 n3        RELEASE              resource=R node=n3 client=c3 request_id=c3-3 round=3 sync=true
+node-3     | 00:43:19.221 n3        COMMITTED            resource=R node=n3 client=c3 request_id=c3-3 round=3 total_s=1.946634
+client-3   | 00:43:19.221 c3        RECEIVED_COMMITTED   resource=R node=n3 client=c3 request_id=c3-3 latency_s=1.949084 node_wait_s=1.440578 node_total_s=1.946634
+client-3   | 00:43:19.222 c3        REQUEST              resource=R node=n3 client=c3 request_id=c3-4
+node-5     | 00:43:19.225 n5        ACQUIRE              resource=R node=n5 client=c5 request_id=c5-4 round=4 sync=true wait_s=1.576280 znode=lock-0000000015 queue_size=4 queue=lock-0000000015,lock-0000000016,lock-0000000017,lock-0000000018
+node-3     | 00:43:19.225 n3        REQUEST              resource=R node=n3 client=c3 request_id=c3-4 round=4 local_queue_s=0.000116
+node-3     | 00:43:19.225 n3        LOCK_WAIT            resource=R node=n3 client=c3 request_id=c3-4 round=4 path=/contention-n5-r10-s2-20261110T034307-a88211/locks/R
+observer   | 00:43:19.226 observer  BEGIN                seq=31 resource=R node=n5 client=c5 request_id=c5-4 round=4 active=1 overlap=false wait_ms=1576.280276
+node-5     | 00:43:19.227 n5        ENTER                resource=R node=n5 client=c5 request_id=c5-4 round=4 sleep_ms=258
+node-5     | 00:43:19.486 n5        EXIT                 resource=R node=n5 client=c5 request_id=c5-4 round=4 cs_s=0.258485
+observer   | 00:43:19.488 observer  END                  seq=32 resource=R node=n5 client=c5 request_id=c5-4 round=4 active=0 completed=16
+node-5     | 00:43:19.492 n5        RELEASE              resource=R node=n5 client=c5 request_id=c5-4 round=4 sync=true
+node-5     | 00:43:19.494 n5        COMMITTED            resource=R node=n5 client=c5 request_id=c5-4 round=4 total_s=1.847928
+client-5   | 00:43:19.494 c5        RECEIVED_COMMITTED   resource=R node=n5 client=c5 request_id=c5-4 latency_s=1.851561 node_wait_s=1.576280 node_total_s=1.847928
+client-5   | 00:43:19.496 c5        REQUEST              resource=R node=n5 client=c5 request_id=c5-5
+node-5     | 00:43:19.499 n5        REQUEST              resource=R node=n5 client=c5 request_id=c5-5 round=5 local_queue_s=0.001179
+node-1     | 00:43:19.499 n1        ACQUIRE              resource=R node=n1 client=c1 request_id=c1-4 round=4 sync=true wait_s=1.516597 znode=lock-0000000016 queue_size=4 queue=lock-0000000016,lock-0000000017,lock-0000000018,lock-0000000019
+node-5     | 00:43:19.500 n5        LOCK_WAIT            resource=R node=n5 client=c5 request_id=c5-5 round=5 path=/contention-n5-r10-s2-20261110T034307-a88211/locks/R
+observer   | 00:43:19.502 observer  BEGIN                seq=33 resource=R node=n1 client=c1 request_id=c1-4 round=4 active=1 overlap=false wait_ms=1516.597188
+node-1     | 00:43:19.503 n1        ENTER                resource=R node=n1 client=c1 request_id=c1-4 round=4 sleep_ms=286
+node-1     | 00:43:19.790 n1        EXIT                 resource=R node=n1 client=c1 request_id=c1-4 round=4 cs_s=0.287049
+observer   | 00:43:19.791 observer  END                  seq=34 resource=R node=n1 client=c1 request_id=c1-4 round=4 active=0 completed=17
+node-1     | 00:43:19.795 n1        RELEASE              resource=R node=n1 client=c1 request_id=c1-4 round=4 sync=true
+node-1     | 00:43:19.796 n1        COMMITTED            resource=R node=n1 client=c1 request_id=c1-4 round=4 total_s=1.816950
+client-1   | 00:43:19.796 c1        RECEIVED_COMMITTED   resource=R node=n1 client=c1 request_id=c1-4 latency_s=1.818724 node_wait_s=1.516597 node_total_s=1.816950
+client-1   | 00:43:19.797 c1        REQUEST              resource=R node=n1 client=c1 request_id=c1-5
+node-1     | 00:43:19.799 n1        REQUEST              resource=R node=n1 client=c1 request_id=c1-5 round=5 local_queue_s=0.000212
+node-1     | 00:43:19.799 n1        LOCK_WAIT            resource=R node=n1 client=c1 request_id=c1-5 round=5 path=/contention-n5-r10-s2-20261110T034307-a88211/locks/R
+node-4     | 00:43:19.801 n4        ACQUIRE              resource=R node=n4 client=c4 request_id=c4-4 round=4 sync=true wait_s=1.517205 znode=lock-0000000017 queue_size=4 queue=lock-0000000017,lock-0000000018,lock-0000000019,lock-0000000020
+observer   | 00:43:19.803 observer  BEGIN                seq=35 resource=R node=n4 client=c4 request_id=c4-4 round=4 active=1 overlap=false wait_ms=1517.205023
+node-4     | 00:43:19.803 n4        ENTER                resource=R node=n4 client=c4 request_id=c4-4 round=4 sleep_ms=326
+node-4     | 00:43:20.130 n4        EXIT                 resource=R node=n4 client=c4 request_id=c4-4 round=4 cs_s=0.326629
+observer   | 00:43:20.132 observer  END                  seq=36 resource=R node=n4 client=c4 request_id=c4-4 round=4 active=0 completed=18
+node-4     | 00:43:20.136 n4        RELEASE              resource=R node=n4 client=c4 request_id=c4-4 round=4 sync=true
+node-4     | 00:43:20.137 n4        COMMITTED            resource=R node=n4 client=c4 request_id=c4-4 round=4 total_s=1.856833
+client-4   | 00:43:20.138 c4        RECEIVED_COMMITTED   resource=R node=n4 client=c4 request_id=c4-4 latency_s=1.859603 node_wait_s=1.517205 node_total_s=1.856833
+client-4   | 00:43:20.139 c4        REQUEST              resource=R node=n4 client=c4 request_id=c4-5
+node-4     | 00:43:20.141 n4        REQUEST              resource=R node=n4 client=c4 request_id=c4-5 round=5 local_queue_s=0.000153
+node-4     | 00:43:20.141 n4        LOCK_WAIT            resource=R node=n4 client=c4 request_id=c4-5 round=5 path=/contention-n5-r10-s2-20261110T034307-a88211/locks/R
+node-2     | 00:43:20.141 n2        ACQUIRE              resource=R node=n2 client=c2 request_id=c2-4 round=4 sync=true wait_s=1.420992 znode=lock-0000000018 queue_size=4 queue=lock-0000000018,lock-0000000019,lock-0000000020,lock-0000000021
+observer   | 00:43:20.143 observer  BEGIN                seq=37 resource=R node=n2 client=c2 request_id=c2-4 round=4 active=1 overlap=false wait_ms=1420.992040
+node-2     | 00:43:20.144 n2        ENTER                resource=R node=n2 client=c2 request_id=c2-4 round=4 sleep_ms=991
+node-2     | 00:43:21.136 n2        EXIT                 resource=R node=n2 client=c2 request_id=c2-4 round=4 cs_s=0.991949
+observer   | 00:43:21.138 observer  END                  seq=38 resource=R node=n2 client=c2 request_id=c2-4 round=4 active=0 completed=19
+node-2     | 00:43:21.144 n2        RELEASE              resource=R node=n2 client=c2 request_id=c2-4 round=4 sync=true
+node-2     | 00:43:21.144 n2        COMMITTED            resource=R node=n2 client=c2 request_id=c2-4 round=4 total_s=2.426674
+client-2   | 00:43:21.145 c2        RECEIVED_COMMITTED   resource=R node=n2 client=c2 request_id=c2-4 latency_s=2.429626 node_wait_s=1.420992 node_total_s=2.426674
+client-2   | 00:43:21.146 c2        REQUEST              resource=R node=n2 client=c2 request_id=c2-5
+node-2     | 00:43:21.148 n2        REQUEST              resource=R node=n2 client=c2 request_id=c2-5 round=5 local_queue_s=0.000143
+node-3     | 00:43:21.148 n3        ACQUIRE              resource=R node=n3 client=c3 request_id=c3-4 round=4 sync=true wait_s=1.920557 znode=lock-0000000019 queue_size=4 queue=lock-0000000019,lock-0000000020,lock-0000000021,lock-0000000022
+node-2     | 00:43:21.149 n2        LOCK_WAIT            resource=R node=n2 client=c2 request_id=c2-5 round=5 path=/contention-n5-r10-s2-20261110T034307-a88211/locks/R
+observer   | 00:43:21.150 observer  BEGIN                seq=39 resource=R node=n3 client=c3 request_id=c3-4 round=4 active=1 overlap=false wait_ms=1920.556747
+node-3     | 00:43:21.150 n3        ENTER                resource=R node=n3 client=c3 request_id=c3-4 round=4 sleep_ms=923
+node-3     | 00:43:22.074 n3        EXIT                 resource=R node=n3 client=c3 request_id=c3-4 round=4 cs_s=0.923455
+observer   | 00:43:22.075 observer  END                  seq=40 resource=R node=n3 client=c3 request_id=c3-4 round=4 active=0 completed=20
+node-3     | 00:43:22.079 n3        RELEASE              resource=R node=n3 client=c3 request_id=c3-4 round=4 sync=true
+node-3     | 00:43:22.080 n3        COMMITTED            resource=R node=n3 client=c3 request_id=c3-4 round=4 total_s=2.854998
+client-3   | 00:43:22.081 c3        RECEIVED_COMMITTED   resource=R node=n3 client=c3 request_id=c3-4 latency_s=2.858059 node_wait_s=1.920557 node_total_s=2.854998
+client-3   | 00:43:22.081 c3        REQUEST              resource=R node=n3 client=c3 request_id=c3-5
+node-3     | 00:43:22.082 n3        REQUEST              resource=R node=n3 client=c3 request_id=c3-5 round=5 local_queue_s=0.000177
+node-3     | 00:43:22.083 n3        LOCK_WAIT            resource=R node=n3 client=c3 request_id=c3-5 round=5 path=/contention-n5-r10-s2-20261110T034307-a88211/locks/R
+node-5     | 00:43:22.084 n5        ACQUIRE              resource=R node=n5 client=c5 request_id=c5-5 round=5 sync=true wait_s=2.581516 znode=lock-0000000020 queue_size=4 queue=lock-0000000020,lock-0000000021,lock-0000000022,lock-0000000023
+observer   | 00:43:22.086 observer  BEGIN                seq=41 resource=R node=n5 client=c5 request_id=c5-5 round=5 active=1 overlap=false wait_ms=2581.516180
+node-5     | 00:43:22.086 n5        ENTER                resource=R node=n5 client=c5 request_id=c5-5 round=5 sleep_ms=629
+node-5     | 00:43:22.716 n5        EXIT                 resource=R node=n5 client=c5 request_id=c5-5 round=5 cs_s=0.629548
+observer   | 00:43:22.717 observer  END                  seq=42 resource=R node=n5 client=c5 request_id=c5-5 round=5 active=0 completed=21
+node-5     | 00:43:22.723 n5        RELEASE              resource=R node=n5 client=c5 request_id=c5-5 round=5 sync=true
+node-5     | 00:43:22.724 n5        COMMITTED            resource=R node=n5 client=c5 request_id=c5-5 round=5 total_s=3.224491
+client-5   | 00:43:22.725 c5        RECEIVED_COMMITTED   resource=R node=n5 client=c5 request_id=c5-5 latency_s=3.228772 node_wait_s=2.581516 node_total_s=3.224491
+client-5   | 00:43:22.726 c5        REQUEST              resource=R node=n5 client=c5 request_id=c5-6
+node-5     | 00:43:22.727 n5        REQUEST              resource=R node=n5 client=c5 request_id=c5-6 round=6 local_queue_s=0.000073
+node-5     | 00:43:22.728 n5        LOCK_WAIT            resource=R node=n5 client=c5 request_id=c5-6 round=6 path=/contention-n5-r10-s2-20261110T034307-a88211/locks/R
+node-1     | 00:43:22.728 n1        ACQUIRE              resource=R node=n1 client=c1 request_id=c1-5 round=5 sync=true wait_s=2.926397 znode=lock-0000000021 queue_size=4 queue=lock-0000000021,lock-0000000022,lock-0000000023,lock-0000000024
+observer   | 00:43:22.730 observer  BEGIN                seq=43 resource=R node=n1 client=c1 request_id=c1-5 round=5 active=1 overlap=false wait_ms=2926.396652
+node-1     | 00:43:22.730 n1        ENTER                resource=R node=n1 client=c1 request_id=c1-5 round=5 sleep_ms=246
+node-1     | 00:43:22.977 n1        EXIT                 resource=R node=n1 client=c1 request_id=c1-5 round=5 cs_s=0.246569
+observer   | 00:43:22.978 observer  END                  seq=44 resource=R node=n1 client=c1 request_id=c1-5 round=5 active=0 completed=22
+node-1     | 00:43:22.982 n1        RELEASE              resource=R node=n1 client=c1 request_id=c1-5 round=5 sync=true
+node-1     | 00:43:22.983 n1        COMMITTED            resource=R node=n1 client=c1 request_id=c1-5 round=5 total_s=3.183887
+client-1   | 00:43:22.983 c1        RECEIVED_COMMITTED   resource=R node=n1 client=c1 request_id=c1-5 latency_s=3.185951 node_wait_s=2.926397 node_total_s=3.183887
+client-1   | 00:43:22.984 c1        REQUEST              resource=R node=n1 client=c1 request_id=c1-6
+node-1     | 00:43:22.985 n1        REQUEST              resource=R node=n1 client=c1 request_id=c1-6 round=6 local_queue_s=0.000093
+node-1     | 00:43:22.985 n1        LOCK_WAIT            resource=R node=n1 client=c1 request_id=c1-6 round=6 path=/contention-n5-r10-s2-20261110T034307-a88211/locks/R
+node-4     | 00:43:22.987 n4        ACQUIRE              resource=R node=n4 client=c4 request_id=c4-5 round=5 sync=true wait_s=2.842830 znode=lock-0000000022 queue_size=4 queue=lock-0000000022,lock-0000000023,lock-0000000024,lock-0000000025
+observer   | 00:43:22.988 observer  BEGIN                seq=45 resource=R node=n4 client=c4 request_id=c4-5 round=5 active=1 overlap=false wait_ms=2842.830321
+node-4     | 00:43:22.989 n4        ENTER                resource=R node=n4 client=c4 request_id=c4-5 round=5 sleep_ms=411
+node-4     | 00:43:23.401 n4        EXIT                 resource=R node=n4 client=c4 request_id=c4-5 round=5 cs_s=0.411452
+observer   | 00:43:23.402 observer  END                  seq=46 resource=R node=n4 client=c4 request_id=c4-5 round=5 active=0 completed=23
+node-4     | 00:43:23.407 n4        RELEASE              resource=R node=n4 client=c4 request_id=c4-5 round=5 sync=true
+node-4     | 00:43:23.408 n4        COMMITTED            resource=R node=n4 client=c4 request_id=c4-5 round=5 total_s=3.267177
+client-4   | 00:43:23.409 c4        RECEIVED_COMMITTED   resource=R node=n4 client=c4 request_id=c4-5 latency_s=3.269297 node_wait_s=2.842830 node_total_s=3.267177
+client-4   | 00:43:23.410 c4        REQUEST              resource=R node=n4 client=c4 request_id=c4-6
+node-4     | 00:43:23.411 n4        REQUEST              resource=R node=n4 client=c4 request_id=c4-6 round=6 local_queue_s=0.000082
+node-4     | 00:43:23.411 n4        LOCK_WAIT            resource=R node=n4 client=c4 request_id=c4-6 round=6 path=/contention-n5-r10-s2-20261110T034307-a88211/locks/R
+node-2     | 00:43:23.412 n2        ACQUIRE              resource=R node=n2 client=c2 request_id=c2-5 round=5 sync=true wait_s=2.260769 znode=lock-0000000023 queue_size=4 queue=lock-0000000023,lock-0000000024,lock-0000000025,lock-0000000026
+observer   | 00:43:23.414 observer  BEGIN                seq=47 resource=R node=n2 client=c2 request_id=c2-5 round=5 active=1 overlap=false wait_ms=2260.769235
+node-2     | 00:43:23.415 n2        ENTER                resource=R node=n2 client=c2 request_id=c2-5 round=5 sleep_ms=602
+node-2     | 00:43:24.018 n2        EXIT                 resource=R node=n2 client=c2 request_id=c2-5 round=5 cs_s=0.602570
+observer   | 00:43:24.019 observer  END                  seq=48 resource=R node=n2 client=c2 request_id=c2-5 round=5 active=0 completed=24
+node-2     | 00:43:24.024 n2        RELEASE              resource=R node=n2 client=c2 request_id=c2-5 round=5 sync=true
+node-2     | 00:43:24.025 n2        COMMITTED            resource=R node=n2 client=c2 request_id=c2-5 round=5 total_s=2.876152
+client-2   | 00:43:24.025 c2        RECEIVED_COMMITTED   resource=R node=n2 client=c2 request_id=c2-5 latency_s=2.878949 node_wait_s=2.260769 node_total_s=2.876152
+client-2   | 00:43:24.026 c2        REQUEST              resource=R node=n2 client=c2 request_id=c2-6
+node-3     | 00:43:24.028 n3        ACQUIRE              resource=R node=n3 client=c3 request_id=c3-5 round=5 sync=true wait_s=1.943283 znode=lock-0000000024 queue_size=4 queue=lock-0000000024,lock-0000000025,lock-0000000026,lock-0000000027
+node-2     | 00:43:24.028 n2        REQUEST              resource=R node=n2 client=c2 request_id=c2-6 round=6 local_queue_s=0.000131
+node-2     | 00:43:24.029 n2        LOCK_WAIT            resource=R node=n2 client=c2 request_id=c2-6 round=6 path=/contention-n5-r10-s2-20261110T034307-a88211/locks/R
+observer   | 00:43:24.030 observer  BEGIN                seq=49 resource=R node=n3 client=c3 request_id=c3-5 round=5 active=1 overlap=false wait_ms=1943.282814
+node-3     | 00:43:24.030 n3        ENTER                resource=R node=n3 client=c3 request_id=c3-5 round=5 sleep_ms=820
+node-3     | 00:43:24.851 n3        EXIT                 resource=R node=n3 client=c3 request_id=c3-5 round=5 cs_s=0.820625
+observer   | 00:43:24.852 observer  END                  seq=50 resource=R node=n3 client=c3 request_id=c3-5 round=5 active=0 completed=25
+node-3     | 00:43:24.858 n3        RELEASE              resource=R node=n3 client=c3 request_id=c3-5 round=5 sync=true
+node-3     | 00:43:24.859 n3        COMMITTED            resource=R node=n3 client=c3 request_id=c3-5 round=5 total_s=2.775911
+client-3   | 00:43:24.859 c3        RECEIVED_COMMITTED   resource=R node=n3 client=c3 request_id=c3-5 latency_s=2.777628 node_wait_s=1.943283 node_total_s=2.775911
+client-3   | 00:43:24.860 c3        REQUEST              resource=R node=n3 client=c3 request_id=c3-6
+node-3     | 00:43:24.861 n3        REQUEST              resource=R node=n3 client=c3 request_id=c3-6 round=6 local_queue_s=0.000086
+node-3     | 00:43:24.861 n3        LOCK_WAIT            resource=R node=n3 client=c3 request_id=c3-6 round=6 path=/contention-n5-r10-s2-20261110T034307-a88211/locks/R
+node-5     | 00:43:24.864 n5        ACQUIRE              resource=R node=n5 client=c5 request_id=c5-6 round=6 sync=true wait_s=2.132823 znode=lock-0000000025 queue_size=4 queue=lock-0000000025,lock-0000000026,lock-0000000027,lock-0000000028
+observer   | 00:43:24.865 observer  BEGIN                seq=51 resource=R node=n5 client=c5 request_id=c5-6 round=6 active=1 overlap=false wait_ms=2132.823449
+node-5     | 00:43:24.866 n5        ENTER                resource=R node=n5 client=c5 request_id=c5-6 round=6 sleep_ms=701
+node-5     | 00:43:25.568 n5        EXIT                 resource=R node=n5 client=c5 request_id=c5-6 round=6 cs_s=0.701842
+observer   | 00:43:25.569 observer  END                  seq=52 resource=R node=n5 client=c5 request_id=c5-6 round=6 active=0 completed=26
+node-5     | 00:43:25.576 n5        RELEASE              resource=R node=n5 client=c5 request_id=c5-6 round=6 sync=true
+node-5     | 00:43:25.577 n5        COMMITTED            resource=R node=n5 client=c5 request_id=c5-6 round=6 total_s=2.849329
+client-5   | 00:43:25.578 c5        RECEIVED_COMMITTED   resource=R node=n5 client=c5 request_id=c5-6 latency_s=2.851688 node_wait_s=2.132823 node_total_s=2.849329
+client-5   | 00:43:25.578 c5        REQUEST              resource=R node=n5 client=c5 request_id=c5-7
+node-5     | 00:43:25.580 n5        REQUEST              resource=R node=n5 client=c5 request_id=c5-7 round=7 local_queue_s=0.000128
+node-1     | 00:43:25.581 n1        ACQUIRE              resource=R node=n1 client=c1 request_id=c1-6 round=6 sync=true wait_s=2.592589 znode=lock-0000000026 queue_size=4 queue=lock-0000000026,lock-0000000027,lock-0000000028,lock-0000000029
+node-5     | 00:43:25.581 n5        LOCK_WAIT            resource=R node=n5 client=c5 request_id=c5-7 round=7 path=/contention-n5-r10-s2-20261110T034307-a88211/locks/R
+observer   | 00:43:25.582 observer  BEGIN                seq=53 resource=R node=n1 client=c1 request_id=c1-6 round=6 active=1 overlap=false wait_ms=2592.589236
+node-1     | 00:43:25.583 n1        ENTER                resource=R node=n1 client=c1 request_id=c1-6 round=6 sleep_ms=979
+node-1     | 00:43:26.563 n1        EXIT                 resource=R node=n1 client=c1 request_id=c1-6 round=6 cs_s=0.979728
+observer   | 00:43:26.565 observer  END                  seq=54 resource=R node=n1 client=c1 request_id=c1-6 round=6 active=0 completed=27
+node-1     | 00:43:26.571 n1        RELEASE              resource=R node=n1 client=c1 request_id=c1-6 round=6 sync=true
+node-1     | 00:43:26.572 n1        COMMITTED            resource=R node=n1 client=c1 request_id=c1-6 round=6 total_s=3.586358
+client-1   | 00:43:26.572 c1        RECEIVED_COMMITTED   resource=R node=n1 client=c1 request_id=c1-6 latency_s=3.588253 node_wait_s=2.592589 node_total_s=3.586358
+client-1   | 00:43:26.573 c1        REQUEST              resource=R node=n1 client=c1 request_id=c1-7
+node-1     | 00:43:26.574 n1        REQUEST              resource=R node=n1 client=c1 request_id=c1-7 round=7 local_queue_s=0.000098
+node-1     | 00:43:26.575 n1        LOCK_WAIT            resource=R node=n1 client=c1 request_id=c1-7 round=7 path=/contention-n5-r10-s2-20261110T034307-a88211/locks/R
+node-4     | 00:43:26.576 n4        ACQUIRE              resource=R node=n4 client=c4 request_id=c4-6 round=6 sync=true wait_s=3.161866 znode=lock-0000000027 queue_size=4 queue=lock-0000000027,lock-0000000028,lock-0000000029,lock-0000000030
+observer   | 00:43:26.578 observer  BEGIN                seq=55 resource=R node=n4 client=c4 request_id=c4-6 round=6 active=1 overlap=false wait_ms=3161.865671
+node-4     | 00:43:26.578 n4        ENTER                resource=R node=n4 client=c4 request_id=c4-6 round=6 sleep_ms=231
+node-4     | 00:43:26.810 n4        EXIT                 resource=R node=n4 client=c4 request_id=c4-6 round=6 cs_s=0.231652
+observer   | 00:43:26.812 observer  END                  seq=56 resource=R node=n4 client=c4 request_id=c4-6 round=6 active=0 completed=28
+node-4     | 00:43:26.818 n4        RELEASE              resource=R node=n4 client=c4 request_id=c4-6 round=6 sync=true
+node-4     | 00:43:26.819 n4        COMMITTED            resource=R node=n4 client=c4 request_id=c4-6 round=6 total_s=3.407294
+client-4   | 00:43:26.819 c4        RECEIVED_COMMITTED   resource=R node=n4 client=c4 request_id=c4-6 latency_s=3.409358 node_wait_s=3.161866 node_total_s=3.407294
+client-4   | 00:43:26.820 c4        REQUEST              resource=R node=n4 client=c4 request_id=c4-7
+node-4     | 00:43:26.822 n4        REQUEST              resource=R node=n4 client=c4 request_id=c4-7 round=7 local_queue_s=0.000138
+node-4     | 00:43:26.822 n4        LOCK_WAIT            resource=R node=n4 client=c4 request_id=c4-7 round=7 path=/contention-n5-r10-s2-20261110T034307-a88211/locks/R
+node-2     | 00:43:26.823 n2        ACQUIRE              resource=R node=n2 client=c2 request_id=c2-6 round=6 sync=true wait_s=2.791181 znode=lock-0000000028 queue_size=4 queue=lock-0000000028,lock-0000000029,lock-0000000030,lock-0000000031
+observer   | 00:43:26.824 observer  BEGIN                seq=57 resource=R node=n2 client=c2 request_id=c2-6 round=6 active=1 overlap=false wait_ms=2791.180624
+node-2     | 00:43:26.824 n2        ENTER                resource=R node=n2 client=c2 request_id=c2-6 round=6 sleep_ms=370
+node-2     | 00:43:27.195 n2        EXIT                 resource=R node=n2 client=c2 request_id=c2-6 round=6 cs_s=0.370458
+observer   | 00:43:27.196 observer  END                  seq=58 resource=R node=n2 client=c2 request_id=c2-6 round=6 active=0 completed=29
+node-2     | 00:43:27.201 n2        RELEASE              resource=R node=n2 client=c2 request_id=c2-6 round=6 sync=true
+node-2     | 00:43:27.202 n2        COMMITTED            resource=R node=n2 client=c2 request_id=c2-6 round=6 total_s=3.173669
+client-2   | 00:43:27.203 c2        RECEIVED_COMMITTED   resource=R node=n2 client=c2 request_id=c2-6 latency_s=3.175988 node_wait_s=2.791181 node_total_s=3.173669
+client-2   | 00:43:27.204 c2        REQUEST              resource=R node=n2 client=c2 request_id=c2-7
+node-2     | 00:43:27.206 n2        REQUEST              resource=R node=n2 client=c2 request_id=c2-7 round=7 local_queue_s=0.000113
+node-2     | 00:43:27.206 n2        LOCK_WAIT            resource=R node=n2 client=c2 request_id=c2-7 round=7 path=/contention-n5-r10-s2-20261110T034307-a88211/locks/R
+node-3     | 00:43:27.207 n3        ACQUIRE              resource=R node=n3 client=c3 request_id=c3-6 round=6 sync=true wait_s=2.342983 znode=lock-0000000029 queue_size=4 queue=lock-0000000029,lock-0000000030,lock-0000000031,lock-0000000032
+observer   | 00:43:27.208 observer  BEGIN                seq=59 resource=R node=n3 client=c3 request_id=c3-6 round=6 active=1 overlap=false wait_ms=2342.983079
+node-3     | 00:43:27.209 n3        ENTER                resource=R node=n3 client=c3 request_id=c3-6 round=6 sleep_ms=285
+node-3     | 00:43:27.495 n3        EXIT                 resource=R node=n3 client=c3 request_id=c3-6 round=6 cs_s=0.285578
+observer   | 00:43:27.496 observer  END                  seq=60 resource=R node=n3 client=c3 request_id=c3-6 round=6 active=0 completed=30
+node-3     | 00:43:27.500 n3        RELEASE              resource=R node=n3 client=c3 request_id=c3-6 round=6 sync=true
+node-3     | 00:43:27.501 n3        COMMITTED            resource=R node=n3 client=c3 request_id=c3-6 round=6 total_s=2.639761
+client-3   | 00:43:27.502 c3        RECEIVED_COMMITTED   resource=R node=n3 client=c3 request_id=c3-6 latency_s=2.641656 node_wait_s=2.342983 node_total_s=2.639761
+client-3   | 00:43:27.503 c3        REQUEST              resource=R node=n3 client=c3 request_id=c3-7
+node-3     | 00:43:27.504 n3        REQUEST              resource=R node=n3 client=c3 request_id=c3-7 round=7 local_queue_s=0.000088
+node-3     | 00:43:27.505 n3        LOCK_WAIT            resource=R node=n3 client=c3 request_id=c3-7 round=7 path=/contention-n5-r10-s2-20261110T034307-a88211/locks/R
+node-5     | 00:43:27.506 n5        ACQUIRE              resource=R node=n5 client=c5 request_id=c5-7 round=7 sync=true wait_s=1.921837 znode=lock-0000000030 queue_size=4 queue=lock-0000000030,lock-0000000031,lock-0000000032,lock-0000000033
+observer   | 00:43:27.508 observer  BEGIN                seq=61 resource=R node=n5 client=c5 request_id=c5-7 round=7 active=1 overlap=false wait_ms=1921.836728
+node-5     | 00:43:27.508 n5        ENTER                resource=R node=n5 client=c5 request_id=c5-7 round=7 sleep_ms=916
+node-5     | 00:43:28.425 n5        EXIT                 resource=R node=n5 client=c5 request_id=c5-7 round=7 cs_s=0.916456
+observer   | 00:43:28.426 observer  END                  seq=62 resource=R node=n5 client=c5 request_id=c5-7 round=7 active=0 completed=31
+node-5     | 00:43:28.432 n5        RELEASE              resource=R node=n5 client=c5 request_id=c5-7 round=7 sync=true
+node-5     | 00:43:28.433 n5        COMMITTED            resource=R node=n5 client=c5 request_id=c5-7 round=7 total_s=2.851959
+client-5   | 00:43:28.433 c5        RECEIVED_COMMITTED   resource=R node=n5 client=c5 request_id=c5-7 latency_s=2.854286 node_wait_s=1.921837 node_total_s=2.851959
+client-5   | 00:43:28.433 c5        REQUEST              resource=R node=n5 client=c5 request_id=c5-8
+node-5     | 00:43:28.435 n5        REQUEST              resource=R node=n5 client=c5 request_id=c5-8 round=8 local_queue_s=0.000116
+node-5     | 00:43:28.435 n5        LOCK_WAIT            resource=R node=n5 client=c5 request_id=c5-8 round=8 path=/contention-n5-r10-s2-20261110T034307-a88211/locks/R
+node-1     | 00:43:28.437 n1        ACQUIRE              resource=R node=n1 client=c1 request_id=c1-7 round=7 sync=true wait_s=1.859532 znode=lock-0000000031 queue_size=4 queue=lock-0000000031,lock-0000000032,lock-0000000033,lock-0000000034
+observer   | 00:43:28.438 observer  BEGIN                seq=63 resource=R node=n1 client=c1 request_id=c1-7 round=7 active=1 overlap=false wait_ms=1859.532392
+node-1     | 00:43:28.439 n1        ENTER                resource=R node=n1 client=c1 request_id=c1-7 round=7 sleep_ms=713
+node-1     | 00:43:29.152 n1        EXIT                 resource=R node=n1 client=c1 request_id=c1-7 round=7 cs_s=0.713432
+observer   | 00:43:29.153 observer  END                  seq=64 resource=R node=n1 client=c1 request_id=c1-7 round=7 active=0 completed=32
+node-1     | 00:43:29.159 n1        RELEASE              resource=R node=n1 client=c1 request_id=c1-7 round=7 sync=true
+node-1     | 00:43:29.159 n1        COMMITTED            resource=R node=n1 client=c1 request_id=c1-7 round=7 total_s=2.584832
+client-1   | 00:43:29.160 c1        RECEIVED_COMMITTED   resource=R node=n1 client=c1 request_id=c1-7 latency_s=2.586567 node_wait_s=1.859532 node_total_s=2.584832
+client-1   | 00:43:29.160 c1        REQUEST              resource=R node=n1 client=c1 request_id=c1-8
+node-1     | 00:43:29.162 n1        REQUEST              resource=R node=n1 client=c1 request_id=c1-8 round=8 local_queue_s=0.000091
+node-1     | 00:43:29.162 n1        LOCK_WAIT            resource=R node=n1 client=c1 request_id=c1-8 round=8 path=/contention-n5-r10-s2-20261110T034307-a88211/locks/R
+node-4     | 00:43:29.164 n4        ACQUIRE              resource=R node=n4 client=c4 request_id=c4-7 round=7 sync=true wait_s=2.339079 znode=lock-0000000032 queue_size=4 queue=lock-0000000032,lock-0000000033,lock-0000000034,lock-0000000035
+observer   | 00:43:29.165 observer  BEGIN                seq=65 resource=R node=n4 client=c4 request_id=c4-7 round=7 active=1 overlap=false wait_ms=2339.079238
+node-4     | 00:43:29.166 n4        ENTER                resource=R node=n4 client=c4 request_id=c4-7 round=7 sleep_ms=865
+node-4     | 00:43:30.032 n4        EXIT                 resource=R node=n4 client=c4 request_id=c4-7 round=7 cs_s=0.865514
+observer   | 00:43:30.033 observer  END                  seq=66 resource=R node=n4 client=c4 request_id=c4-7 round=7 active=0 completed=33
+node-4     | 00:43:30.039 n4        RELEASE              resource=R node=n4 client=c4 request_id=c4-7 round=7 sync=true
+node-4     | 00:43:30.041 n4        COMMITTED            resource=R node=n4 client=c4 request_id=c4-7 round=7 total_s=3.218207
+client-4   | 00:43:30.041 c4        RECEIVED_COMMITTED   resource=R node=n4 client=c4 request_id=c4-7 latency_s=3.220789 node_wait_s=2.339079 node_total_s=3.218207
+client-4   | 00:43:30.042 c4        REQUEST              resource=R node=n4 client=c4 request_id=c4-8
+node-4     | 00:43:30.045 n4        REQUEST              resource=R node=n4 client=c4 request_id=c4-8 round=8 local_queue_s=0.000182
+node-4     | 00:43:30.046 n4        LOCK_WAIT            resource=R node=n4 client=c4 request_id=c4-8 round=8 path=/contention-n5-r10-s2-20261110T034307-a88211/locks/R
+node-2     | 00:43:30.049 n2        ACQUIRE              resource=R node=n2 client=c2 request_id=c2-7 round=7 sync=true wait_s=2.835834 znode=lock-0000000033 queue_size=4 queue=lock-0000000033,lock-0000000034,lock-0000000035,lock-0000000036
+observer   | 00:43:30.050 observer  BEGIN                seq=67 resource=R node=n2 client=c2 request_id=c2-7 round=7 active=1 overlap=false wait_ms=2835.833767
+node-2     | 00:43:30.051 n2        ENTER                resource=R node=n2 client=c2 request_id=c2-7 round=7 sleep_ms=411
+node-2     | 00:43:30.463 n2        EXIT                 resource=R node=n2 client=c2 request_id=c2-7 round=7 cs_s=0.411683
+observer   | 00:43:30.464 observer  END                  seq=68 resource=R node=n2 client=c2 request_id=c2-7 round=7 active=0 completed=34
+node-2     | 00:43:30.470 n2        RELEASE              resource=R node=n2 client=c2 request_id=c2-7 round=7 sync=true
+node-2     | 00:43:30.471 n2        COMMITTED            resource=R node=n2 client=c2 request_id=c2-7 round=7 total_s=3.265043
+client-2   | 00:43:30.471 c2        RECEIVED_COMMITTED   resource=R node=n2 client=c2 request_id=c2-7 latency_s=3.267408 node_wait_s=2.835834 node_total_s=3.265043
+client-2   | 00:43:30.472 c2        REQUEST              resource=R node=n2 client=c2 request_id=c2-8
+node-2     | 00:43:30.474 n2        REQUEST              resource=R node=n2 client=c2 request_id=c2-8 round=8 local_queue_s=0.000124
+node-2     | 00:43:30.474 n2        LOCK_WAIT            resource=R node=n2 client=c2 request_id=c2-8 round=8 path=/contention-n5-r10-s2-20261110T034307-a88211/locks/R
+node-3     | 00:43:30.474 n3        ACQUIRE              resource=R node=n3 client=c3 request_id=c3-7 round=7 sync=true wait_s=2.967209 znode=lock-0000000034 queue_size=4 queue=lock-0000000034,lock-0000000035,lock-0000000036,lock-0000000037
+observer   | 00:43:30.476 observer  BEGIN                seq=69 resource=R node=n3 client=c3 request_id=c3-7 round=7 active=1 overlap=false wait_ms=2967.209426
+node-3     | 00:43:30.477 n3        ENTER                resource=R node=n3 client=c3 request_id=c3-7 round=7 sleep_ms=462
+node-3     | 00:43:30.939 n3        EXIT                 resource=R node=n3 client=c3 request_id=c3-7 round=7 cs_s=0.462610
+observer   | 00:43:30.941 observer  END                  seq=70 resource=R node=n3 client=c3 request_id=c3-7 round=7 active=0 completed=35
+node-3     | 00:43:30.946 n3        RELEASE              resource=R node=n3 client=c3 request_id=c3-7 round=7 sync=true
+node-3     | 00:43:30.947 n3        COMMITTED            resource=R node=n3 client=c3 request_id=c3-7 round=7 total_s=3.442657
+client-3   | 00:43:30.948 c3        RECEIVED_COMMITTED   resource=R node=n3 client=c3 request_id=c3-7 latency_s=3.444945 node_wait_s=2.967209 node_total_s=3.442657
+client-3   | 00:43:30.948 c3        REQUEST              resource=R node=n3 client=c3 request_id=c3-8
+node-3     | 00:43:30.950 n3        REQUEST              resource=R node=n3 client=c3 request_id=c3-8 round=8 local_queue_s=0.000102
+node-3     | 00:43:30.950 n3        LOCK_WAIT            resource=R node=n3 client=c3 request_id=c3-8 round=8 path=/contention-n5-r10-s2-20261110T034307-a88211/locks/R
+node-5     | 00:43:30.952 n5        ACQUIRE              resource=R node=n5 client=c5 request_id=c5-8 round=8 sync=true wait_s=2.514263 znode=lock-0000000035 queue_size=4 queue=lock-0000000035,lock-0000000036,lock-0000000037,lock-0000000038
+observer   | 00:43:30.953 observer  BEGIN                seq=71 resource=R node=n5 client=c5 request_id=c5-8 round=8 active=1 overlap=false wait_ms=2514.263223
+node-5     | 00:43:30.954 n5        ENTER                resource=R node=n5 client=c5 request_id=c5-8 round=8 sleep_ms=239
+node-5     | 00:43:31.194 n5        EXIT                 resource=R node=n5 client=c5 request_id=c5-8 round=8 cs_s=0.239709
+observer   | 00:43:31.195 observer  END                  seq=72 resource=R node=n5 client=c5 request_id=c5-8 round=8 active=0 completed=36
+node-5     | 00:43:31.201 n5        RELEASE              resource=R node=n5 client=c5 request_id=c5-8 round=8 sync=true
+node-5     | 00:43:31.202 n5        COMMITTED            resource=R node=n5 client=c5 request_id=c5-8 round=8 total_s=2.766891
+client-5   | 00:43:31.202 c5        RECEIVED_COMMITTED   resource=R node=n5 client=c5 request_id=c5-8 latency_s=2.768629 node_wait_s=2.514263 node_total_s=2.766891
+client-5   | 00:43:31.204 c5        REQUEST              resource=R node=n5 client=c5 request_id=c5-9
+node-5     | 00:43:31.206 n5        REQUEST              resource=R node=n5 client=c5 request_id=c5-9 round=9 local_queue_s=0.000143
+node-5     | 00:43:31.206 n5        LOCK_WAIT            resource=R node=n5 client=c5 request_id=c5-9 round=9 path=/contention-n5-r10-s2-20261110T034307-a88211/locks/R
+node-1     | 00:43:31.206 n1        ACQUIRE              resource=R node=n1 client=c1 request_id=c1-8 round=8 sync=true wait_s=2.041327 znode=lock-0000000036 queue_size=4 queue=lock-0000000036,lock-0000000037,lock-0000000038,lock-0000000039
+observer   | 00:43:31.208 observer  BEGIN                seq=73 resource=R node=n1 client=c1 request_id=c1-8 round=8 active=1 overlap=false wait_ms=2041.326900
+node-1     | 00:43:31.209 n1        ENTER                resource=R node=n1 client=c1 request_id=c1-8 round=8 sleep_ms=268
+node-1     | 00:43:31.478 n1        EXIT                 resource=R node=n1 client=c1 request_id=c1-8 round=8 cs_s=0.268726
+observer   | 00:43:31.479 observer  END                  seq=74 resource=R node=n1 client=c1 request_id=c1-8 round=8 active=0 completed=37
+node-1     | 00:43:31.483 n1        RELEASE              resource=R node=n1 client=c1 request_id=c1-8 round=8 sync=true
+node-1     | 00:43:31.484 n1        COMMITTED            resource=R node=n1 client=c1 request_id=c1-8 round=8 total_s=2.321792
+client-1   | 00:43:31.484 c1        RECEIVED_COMMITTED   resource=R node=n1 client=c1 request_id=c1-8 latency_s=2.323785 node_wait_s=2.041327 node_total_s=2.321792
+client-1   | 00:43:31.485 c1        REQUEST              resource=R node=n1 client=c1 request_id=c1-9
+node-1     | 00:43:31.487 n1        REQUEST              resource=R node=n1 client=c1 request_id=c1-9 round=9 local_queue_s=0.000217
+node-1     | 00:43:31.487 n1        LOCK_WAIT            resource=R node=n1 client=c1 request_id=c1-9 round=9 path=/contention-n5-r10-s2-20261110T034307-a88211/locks/R
+node-4     | 00:43:31.489 n4        ACQUIRE              resource=R node=n4 client=c4 request_id=c4-8 round=8 sync=true wait_s=1.440005 znode=lock-0000000037 queue_size=4 queue=lock-0000000037,lock-0000000038,lock-0000000039,lock-0000000040
+observer   | 00:43:31.491 observer  BEGIN                seq=75 resource=R node=n4 client=c4 request_id=c4-8 round=8 active=1 overlap=false wait_ms=1440.005356
+node-4     | 00:43:31.491 n4        ENTER                resource=R node=n4 client=c4 request_id=c4-8 round=8 sleep_ms=369
+node-4     | 00:43:31.861 n4        EXIT                 resource=R node=n4 client=c4 request_id=c4-8 round=8 cs_s=0.369459
+observer   | 00:43:31.862 observer  END                  seq=76 resource=R node=n4 client=c4 request_id=c4-8 round=8 active=0 completed=38
+node-4     | 00:43:31.867 n4        RELEASE              resource=R node=n4 client=c4 request_id=c4-8 round=8 sync=true
+node-4     | 00:43:31.868 n4        COMMITTED            resource=R node=n4 client=c4 request_id=c4-8 round=8 total_s=1.822501
+client-4   | 00:43:31.868 c4        RECEIVED_COMMITTED   resource=R node=n4 client=c4 request_id=c4-8 latency_s=1.826066 node_wait_s=1.440005 node_total_s=1.822501
+client-4   | 00:43:31.870 c4        REQUEST              resource=R node=n4 client=c4 request_id=c4-9
+node-4     | 00:43:31.872 n4        REQUEST              resource=R node=n4 client=c4 request_id=c4-9 round=9 local_queue_s=0.000130
+node-4     | 00:43:31.873 n4        LOCK_WAIT            resource=R node=n4 client=c4 request_id=c4-9 round=9 path=/contention-n5-r10-s2-20261110T034307-a88211/locks/R
+node-2     | 00:43:31.872 n2        ACQUIRE              resource=R node=n2 client=c2 request_id=c2-8 round=8 sync=true wait_s=1.395481 znode=lock-0000000038 queue_size=4 queue=lock-0000000038,lock-0000000039,lock-0000000040,lock-0000000041
+observer   | 00:43:31.874 observer  BEGIN                seq=77 resource=R node=n2 client=c2 request_id=c2-8 round=8 active=1 overlap=false wait_ms=1395.480789
+node-2     | 00:43:31.875 n2        ENTER                resource=R node=n2 client=c2 request_id=c2-8 round=8 sleep_ms=354
+node-2     | 00:43:32.230 n2        EXIT                 resource=R node=n2 client=c2 request_id=c2-8 round=8 cs_s=0.354604
+observer   | 00:43:32.231 observer  END                  seq=78 resource=R node=n2 client=c2 request_id=c2-8 round=8 active=0 completed=39
+node-2     | 00:43:32.237 n2        RELEASE              resource=R node=n2 client=c2 request_id=c2-8 round=8 sync=true
+node-2     | 00:43:32.238 n2        COMMITTED            resource=R node=n2 client=c2 request_id=c2-8 round=8 total_s=1.763880
+client-2   | 00:43:32.238 c2        RECEIVED_COMMITTED   resource=R node=n2 client=c2 request_id=c2-8 latency_s=1.766404 node_wait_s=1.395481 node_total_s=1.763880
+client-2   | 00:43:32.239 c2        REQUEST              resource=R node=n2 client=c2 request_id=c2-9
+node-2     | 00:43:32.240 n2        REQUEST              resource=R node=n2 client=c2 request_id=c2-9 round=9 local_queue_s=0.000133
+node-2     | 00:43:32.241 n2        LOCK_WAIT            resource=R node=n2 client=c2 request_id=c2-9 round=9 path=/contention-n5-r10-s2-20261110T034307-a88211/locks/R
+node-3     | 00:43:32.242 n3        ACQUIRE              resource=R node=n3 client=c3 request_id=c3-8 round=8 sync=true wait_s=1.288503 znode=lock-0000000039 queue_size=4 queue=lock-0000000039,lock-0000000040,lock-0000000041,lock-0000000042
+observer   | 00:43:32.244 observer  BEGIN                seq=79 resource=R node=n3 client=c3 request_id=c3-8 round=8 active=1 overlap=false wait_ms=1288.502693
+node-3     | 00:43:32.244 n3        ENTER                resource=R node=n3 client=c3 request_id=c3-8 round=8 sleep_ms=225
+node-3     | 00:43:32.470 n3        EXIT                 resource=R node=n3 client=c3 request_id=c3-8 round=8 cs_s=0.225573
+observer   | 00:43:32.472 observer  END                  seq=80 resource=R node=n3 client=c3 request_id=c3-8 round=8 active=0 completed=40
+node-3     | 00:43:32.478 n3        RELEASE              resource=R node=n3 client=c3 request_id=c3-8 round=8 sync=true
+node-3     | 00:43:32.479 n3        COMMITTED            resource=R node=n3 client=c3 request_id=c3-8 round=8 total_s=1.528519
+client-3   | 00:43:32.479 c3        RECEIVED_COMMITTED   resource=R node=n3 client=c3 request_id=c3-8 latency_s=1.530532 node_wait_s=1.288503 node_total_s=1.528519
+client-3   | 00:43:32.481 c3        REQUEST              resource=R node=n3 client=c3 request_id=c3-9
+node-3     | 00:43:32.483 n3        REQUEST              resource=R node=n3 client=c3 request_id=c3-9 round=9 local_queue_s=0.000117
+node-5     | 00:43:32.483 n5        ACQUIRE              resource=R node=n5 client=c5 request_id=c5-9 round=9 sync=true wait_s=1.274753 znode=lock-0000000040 queue_size=4 queue=lock-0000000040,lock-0000000041,lock-0000000042,lock-0000000043
+node-3     | 00:43:32.483 n3        LOCK_WAIT            resource=R node=n3 client=c3 request_id=c3-9 round=9 path=/contention-n5-r10-s2-20261110T034307-a88211/locks/R
+observer   | 00:43:32.484 observer  BEGIN                seq=81 resource=R node=n5 client=c5 request_id=c5-9 round=9 active=1 overlap=false wait_ms=1274.753409
+node-5     | 00:43:32.485 n5        ENTER                resource=R node=n5 client=c5 request_id=c5-9 round=9 sleep_ms=712
+node-5     | 00:43:33.198 n5        EXIT                 resource=R node=n5 client=c5 request_id=c5-9 round=9 cs_s=0.712875
+observer   | 00:43:33.199 observer  END                  seq=82 resource=R node=n5 client=c5 request_id=c5-9 round=9 active=0 completed=41
+node-5     | 00:43:33.205 n5        RELEASE              resource=R node=n5 client=c5 request_id=c5-9 round=9 sync=true
+node-5     | 00:43:33.206 n5        COMMITTED            resource=R node=n5 client=c5 request_id=c5-9 round=9 total_s=2.000137
+client-5   | 00:43:33.206 c5        RECEIVED_COMMITTED   resource=R node=n5 client=c5 request_id=c5-9 latency_s=2.002682 node_wait_s=1.274753 node_total_s=2.000137
+client-5   | 00:43:33.207 c5        REQUEST              resource=R node=n5 client=c5 request_id=c5-10
+node-1     | 00:43:33.209 n1        ACQUIRE              resource=R node=n1 client=c1 request_id=c1-9 round=9 sync=true wait_s=1.719781 znode=lock-0000000041 queue_size=4 queue=lock-0000000041,lock-0000000042,lock-0000000043,lock-0000000044
+node-5     | 00:43:33.209 n5        REQUEST              resource=R node=n5 client=c5 request_id=c5-10 round=10 local_queue_s=0.000119
+node-5     | 00:43:33.209 n5        LOCK_WAIT            resource=R node=n5 client=c5 request_id=c5-10 round=10 path=/contention-n5-r10-s2-20261110T034307-a88211/locks/R
+observer   | 00:43:33.210 observer  BEGIN                seq=83 resource=R node=n1 client=c1 request_id=c1-9 round=9 active=1 overlap=false wait_ms=1719.781147
+node-1     | 00:43:33.211 n1        ENTER                resource=R node=n1 client=c1 request_id=c1-9 round=9 sleep_ms=706
+node-1     | 00:43:33.918 n1        EXIT                 resource=R node=n1 client=c1 request_id=c1-9 round=9 cs_s=0.706467
+observer   | 00:43:33.919 observer  END                  seq=84 resource=R node=n1 client=c1 request_id=c1-9 round=9 active=0 completed=42
+node-1     | 00:43:33.923 n1        RELEASE              resource=R node=n1 client=c1 request_id=c1-9 round=9 sync=true
+node-1     | 00:43:33.923 n1        COMMITTED            resource=R node=n1 client=c1 request_id=c1-9 round=9 total_s=2.436567
+client-1   | 00:43:33.924 c1        RECEIVED_COMMITTED   resource=R node=n1 client=c1 request_id=c1-9 latency_s=2.438620 node_wait_s=1.719781 node_total_s=2.436567
+client-1   | 00:43:33.925 c1        REQUEST              resource=R node=n1 client=c1 request_id=c1-10
+node-1     | 00:43:33.927 n1        REQUEST              resource=R node=n1 client=c1 request_id=c1-10 round=10 local_queue_s=0.000210
+node-1     | 00:43:33.927 n1        LOCK_WAIT            resource=R node=n1 client=c1 request_id=c1-10 round=10 path=/contention-n5-r10-s2-20261110T034307-a88211/locks/R
+node-4     | 00:43:33.928 n4        ACQUIRE              resource=R node=n4 client=c4 request_id=c4-9 round=9 sync=true wait_s=2.052938 znode=lock-0000000042 queue_size=4 queue=lock-0000000042,lock-0000000043,lock-0000000044,lock-0000000045
+observer   | 00:43:33.929 observer  BEGIN                seq=85 resource=R node=n4 client=c4 request_id=c4-9 round=9 active=1 overlap=false wait_ms=2052.938109
+node-4     | 00:43:33.930 n4        ENTER                resource=R node=n4 client=c4 request_id=c4-9 round=9 sleep_ms=788
+node-4     | 00:43:34.719 n4        EXIT                 resource=R node=n4 client=c4 request_id=c4-9 round=9 cs_s=0.788464
+observer   | 00:43:34.720 observer  END                  seq=86 resource=R node=n4 client=c4 request_id=c4-9 round=9 active=0 completed=43
+node-4     | 00:43:34.725 n4        RELEASE              resource=R node=n4 client=c4 request_id=c4-9 round=9 sync=true
+node-4     | 00:43:34.726 n4        COMMITTED            resource=R node=n4 client=c4 request_id=c4-9 round=9 total_s=2.853628
+client-4   | 00:43:34.726 c4        RECEIVED_COMMITTED   resource=R node=n4 client=c4 request_id=c4-9 latency_s=2.856142 node_wait_s=2.052938 node_total_s=2.853628
+client-4   | 00:43:34.727 c4        REQUEST              resource=R node=n4 client=c4 request_id=c4-10
+node-4     | 00:43:34.728 n4        REQUEST              resource=R node=n4 client=c4 request_id=c4-10 round=10 local_queue_s=0.000190
+node-4     | 00:43:34.728 n4        LOCK_WAIT            resource=R node=n4 client=c4 request_id=c4-10 round=10 path=/contention-n5-r10-s2-20261110T034307-a88211/locks/R
+node-2     | 00:43:34.731 n2        ACQUIRE              resource=R node=n2 client=c2 request_id=c2-9 round=9 sync=true wait_s=2.486843 znode=lock-0000000043 queue_size=4 queue=lock-0000000043,lock-0000000044,lock-0000000045,lock-0000000046
+observer   | 00:43:34.732 observer  BEGIN                seq=87 resource=R node=n2 client=c2 request_id=c2-9 round=9 active=1 overlap=false wait_ms=2486.842576
+node-2     | 00:43:34.732 n2        ENTER                resource=R node=n2 client=c2 request_id=c2-9 round=9 sleep_ms=636
+node-2     | 00:43:35.369 n2        EXIT                 resource=R node=n2 client=c2 request_id=c2-9 round=9 cs_s=0.636373
+observer   | 00:43:35.370 observer  END                  seq=88 resource=R node=n2 client=c2 request_id=c2-9 round=9 active=0 completed=44
+node-2     | 00:43:35.375 n2        RELEASE              resource=R node=n2 client=c2 request_id=c2-9 round=9 sync=true
+node-2     | 00:43:35.376 n2        COMMITTED            resource=R node=n2 client=c2 request_id=c2-9 round=9 total_s=3.135756
+client-2   | 00:43:35.377 c2        RECEIVED_COMMITTED   resource=R node=n2 client=c2 request_id=c2-9 latency_s=3.137495 node_wait_s=2.486843 node_total_s=3.135756
+client-2   | 00:43:35.378 c2        REQUEST              resource=R node=n2 client=c2 request_id=c2-10
+node-2     | 00:43:35.379 n2        REQUEST              resource=R node=n2 client=c2 request_id=c2-10 round=10 local_queue_s=0.000074
+node-2     | 00:43:35.379 n2        LOCK_WAIT            resource=R node=n2 client=c2 request_id=c2-10 round=10 path=/contention-n5-r10-s2-20261110T034307-a88211/locks/R
+node-3     | 00:43:35.381 n3        ACQUIRE              resource=R node=n3 client=c3 request_id=c3-9 round=9 sync=true wait_s=2.895370 znode=lock-0000000044 queue_size=4 queue=lock-0000000044,lock-0000000045,lock-0000000046,lock-0000000047
+observer   | 00:43:35.382 observer  BEGIN                seq=89 resource=R node=n3 client=c3 request_id=c3-9 round=9 active=1 overlap=false wait_ms=2895.369768
+node-3     | 00:43:35.383 n3        ENTER                resource=R node=n3 client=c3 request_id=c3-9 round=9 sleep_ms=315
+node-3     | 00:43:35.698 n3        EXIT                 resource=R node=n3 client=c3 request_id=c3-9 round=9 cs_s=0.315662
+observer   | 00:43:35.700 observer  END                  seq=90 resource=R node=n3 client=c3 request_id=c3-9 round=9 active=0 completed=45
+node-3     | 00:43:35.705 n3        RELEASE              resource=R node=n3 client=c3 request_id=c3-9 round=9 sync=true
+node-3     | 00:43:35.706 n3        COMMITTED            resource=R node=n3 client=c3 request_id=c3-9 round=9 total_s=3.223325
+client-3   | 00:43:35.706 c3        RECEIVED_COMMITTED   resource=R node=n3 client=c3 request_id=c3-9 latency_s=3.225779 node_wait_s=2.895370 node_total_s=3.223325
+client-3   | 00:43:35.707 c3        REQUEST              resource=R node=n3 client=c3 request_id=c3-10
+node-3     | 00:43:35.708 n3        REQUEST              resource=R node=n3 client=c3 request_id=c3-10 round=10 local_queue_s=0.000087
+node-3     | 00:43:35.709 n3        LOCK_WAIT            resource=R node=n3 client=c3 request_id=c3-10 round=10 path=/contention-n5-r10-s2-20261110T034307-a88211/locks/R
+node-5     | 00:43:35.710 n5        ACQUIRE              resource=R node=n5 client=c5 request_id=c5-10 round=10 sync=true wait_s=2.497831 znode=lock-0000000045 queue_size=4 queue=lock-0000000045,lock-0000000046,lock-0000000047,lock-0000000048
+observer   | 00:43:35.711 observer  BEGIN                seq=91 resource=R node=n5 client=c5 request_id=c5-10 round=10 active=1 overlap=false wait_ms=2497.830767
+node-5     | 00:43:35.712 n5        ENTER                resource=R node=n5 client=c5 request_id=c5-10 round=10 sleep_ms=355
+node-5     | 00:43:36.067 n5        EXIT                 resource=R node=n5 client=c5 request_id=c5-10 round=10 cs_s=0.355517
+observer   | 00:43:36.069 observer  END                  seq=92 resource=R node=n5 client=c5 request_id=c5-10 round=10 active=0 completed=46
+node-5     | 00:43:36.073 n5        RELEASE              resource=R node=n5 client=c5 request_id=c5-10 round=10 sync=true
+node-5     | 00:43:36.074 n5        COMMITTED            resource=R node=n5 client=c5 request_id=c5-10 round=10 total_s=2.864393
+client-5   | 00:43:36.074 c5        RECEIVED_COMMITTED   resource=R node=n5 client=c5 request_id=c5-10 latency_s=2.866576 node_wait_s=2.497831 node_total_s=2.864393
+node-5     | 00:43:36.076 n5        CLIENT_FINISHED      client=c5 finished_clients=1
+observer   | 00:43:36.077 observer  DONE                 seq=93 resource=R node=n5 done_nodes=1 active=0
+node-1     | 00:43:36.078 n1        ACQUIRE              resource=R node=n1 client=c1 request_id=c1-10 round=10 sync=true wait_s=2.148348 znode=lock-0000000046 queue_size=4 queue=lock-0000000046,lock-0000000047,lock-0000000048,lock-0000000049
+observer   | 00:43:36.079 observer  BEGIN                seq=94 resource=R node=n1 client=c1 request_id=c1-10 round=10 active=1 overlap=false wait_ms=2148.347526
+node-1     | 00:43:36.080 n1        ENTER                resource=R node=n1 client=c1 request_id=c1-10 round=10 sleep_ms=531
+client-5   | 00:43:36.083 c5        CLIENT_DONE          client=c5 completed=10 total_s=26.803275
+node-5     | 00:43:36.092 n5        NODE_DONE            completed=10 clients=1 recipe_acquire_calls=10 recipe_release_calls=10 evidence_zk_reads=10 observer_messages=42
+node-1     | 00:43:36.612 n1        EXIT                 resource=R node=n1 client=c1 request_id=c1-10 round=10 cs_s=0.531655
+observer   | 00:43:36.613 observer  END                  seq=95 resource=R node=n1 client=c1 request_id=c1-10 round=10 active=0 completed=47
+node-1     | 00:43:36.618 n1        RELEASE              resource=R node=n1 client=c1 request_id=c1-10 round=10 sync=true
+node-1     | 00:43:36.619 n1        COMMITTED            resource=R node=n1 client=c1 request_id=c1-10 round=10 total_s=2.691995
+client-1   | 00:43:36.619 c1        RECEIVED_COMMITTED   resource=R node=n1 client=c1 request_id=c1-10 latency_s=2.693905 node_wait_s=2.148348 node_total_s=2.691995
+node-1     | 00:43:36.621 n1        CLIENT_FINISHED      client=c1 finished_clients=1
+observer   | 00:43:36.622 observer  DONE                 seq=96 resource=R node=n1 done_nodes=2 active=0
+node-4     | 00:43:36.623 n4        ACQUIRE              resource=R node=n4 client=c4 request_id=c4-10 round=10 sync=true wait_s=1.891633 znode=lock-0000000047 queue_size=3 queue=lock-0000000047,lock-0000000048,lock-0000000049
+observer   | 00:43:36.624 observer  BEGIN                seq=97 resource=R node=n4 client=c4 request_id=c4-10 round=10 active=1 overlap=false wait_ms=1891.632746
+node-4     | 00:43:36.625 n4        ENTER                resource=R node=n4 client=c4 request_id=c4-10 round=10 sleep_ms=861
+client-1   | 00:43:36.625 c1        CLIENT_DONE          client=c1 completed=10 total_s=27.327683
+node-1     | 00:43:36.635 n1        NODE_DONE            completed=10 clients=1 recipe_acquire_calls=10 recipe_release_calls=10 evidence_zk_reads=10 observer_messages=42
+node-4     | 00:43:37.487 n4        EXIT                 resource=R node=n4 client=c4 request_id=c4-10 round=10 cs_s=0.861580
+observer   | 00:43:37.488 observer  END                  seq=98 resource=R node=n4 client=c4 request_id=c4-10 round=10 active=0 completed=48
+node-4     | 00:43:37.494 n4        RELEASE              resource=R node=n4 client=c4 request_id=c4-10 round=10 sync=true
+node-4     | 00:43:37.495 n4        COMMITTED            resource=R node=n4 client=c4 request_id=c4-10 round=10 total_s=2.766013
+client-4   | 00:43:37.495 c4        RECEIVED_COMMITTED   resource=R node=n4 client=c4 request_id=c4-10 latency_s=2.767611 node_wait_s=1.891633 node_total_s=2.766013
+node-4     | 00:43:37.497 n4        CLIENT_FINISHED      client=c4 finished_clients=1
+observer   | 00:43:37.498 observer  DONE                 seq=99 resource=R node=n4 done_nodes=3 active=0
+node-2     | 00:43:37.499 n2        ACQUIRE              resource=R node=n2 client=c2 request_id=c2-10 round=10 sync=true wait_s=2.116325 znode=lock-0000000048 queue_size=2 queue=lock-0000000048,lock-0000000049
+observer   | 00:43:37.500 observer  BEGIN                seq=100 resource=R node=n2 client=c2 request_id=c2-10 round=10 active=1 overlap=false wait_ms=2116.325053
+node-2     | 00:43:37.501 n2        ENTER                resource=R node=n2 client=c2 request_id=c2-10 round=10 sleep_ms=650
+client-4   | 00:43:37.502 c4        CLIENT_DONE          client=c4 completed=10 total_s=28.228152
+node-4     | 00:43:37.513 n4        NODE_DONE            completed=10 clients=1 recipe_acquire_calls=10 recipe_release_calls=10 evidence_zk_reads=10 observer_messages=42
+node-2     | 00:43:38.152 n2        EXIT                 resource=R node=n2 client=c2 request_id=c2-10 round=10 cs_s=0.650448
+observer   | 00:43:38.153 observer  END                  seq=101 resource=R node=n2 client=c2 request_id=c2-10 round=10 active=0 completed=49
+node-2     | 00:43:38.159 n2        RELEASE              resource=R node=n2 client=c2 request_id=c2-10 round=10 sync=true
+node-2     | 00:43:38.160 n2        COMMITTED            resource=R node=n2 client=c2 request_id=c2-10 round=10 total_s=2.780407
+client-2   | 00:43:38.160 c2        RECEIVED_COMMITTED   resource=R node=n2 client=c2 request_id=c2-10 latency_s=2.782084 node_wait_s=2.116325 node_total_s=2.780407
+node-2     | 00:43:38.162 n2        CLIENT_FINISHED      client=c2 finished_clients=1
+observer   | 00:43:38.163 observer  DONE                 seq=102 resource=R node=n2 done_nodes=4 active=0
+node-3     | 00:43:38.164 n3        ACQUIRE              resource=R node=n3 client=c3 request_id=c3-10 round=10 sync=true wait_s=2.452084 znode=lock-0000000049 queue_size=1 queue=lock-0000000049
+observer   | 00:43:38.165 observer  BEGIN                seq=103 resource=R node=n3 client=c3 request_id=c3-10 round=10 active=1 overlap=false wait_ms=2452.083538
+node-3     | 00:43:38.166 n3        ENTER                resource=R node=n3 client=c3 request_id=c3-10 round=10 sleep_ms=946
+client-2   | 00:43:38.168 c2        CLIENT_DONE          client=c2 completed=10 total_s=28.835817
+node-2     | 00:43:38.175 n2        NODE_DONE            completed=10 clients=1 recipe_acquire_calls=10 recipe_release_calls=10 evidence_zk_reads=10 observer_messages=42
+node-3     | 00:43:39.113 n3        EXIT                 resource=R node=n3 client=c3 request_id=c3-10 round=10 cs_s=0.946573
+observer   | 00:43:39.114 observer  END                  seq=104 resource=R node=n3 client=c3 request_id=c3-10 round=10 active=0 completed=50
+node-3     | 00:43:39.119 n3        RELEASE              resource=R node=n3 client=c3 request_id=c3-10 round=10 sync=true
+node-3     | 00:43:39.120 n3        COMMITTED            resource=R node=n3 client=c3 request_id=c3-10 round=10 total_s=3.411461
+client-3   | 00:43:39.120 c3        RECEIVED_COMMITTED   resource=R node=n3 client=c3 request_id=c3-10 latency_s=3.412883 node_wait_s=2.452084 node_total_s=3.411461
+node-3     | 00:43:39.122 n3        CLIENT_FINISHED      client=c3 finished_clients=1
+observer   | 00:43:39.123 observer  DONE                 seq=105 resource=R node=n3 done_nodes=5 active=0
+client-3   | 00:43:39.126 c3        CLIENT_DONE          client=c3 completed=10 total_s=29.856210
+node-3     | 00:43:39.132 n3        NODE_DONE            completed=10 clients=1 recipe_acquire_calls=10 recipe_release_calls=10 evidence_zk_reads=10 observer_messages=42
+observer   | 00:43:39.145 observer  SUMMARY              scenario=contention seed=2 nodes=5 expected=50 completed=50 active=0 total_s=28.923334 median_wait_ms=2217.661281 p95_wait_ms=3011.710448 throughput_per_s=1.728708 max_active=1 overlaps=0 barrier_violations=0 invalid_events=0 done_nodes=5 observer_messages=210 status=OK per_client=c1=10;c2=10;c3=10;c4=10;c5=10

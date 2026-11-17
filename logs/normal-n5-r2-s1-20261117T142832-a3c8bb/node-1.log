@@ -1,0 +1,18 @@
+14:28:34.443 n1        ZK_STATE             state=CONNECTED
+14:28:34.593 n1        READY                port=7001 resource=R sync=true barrier=false participants=5 clients=1 namespace=normal-n5-r2-s1-20261117T142832-a3c8bb cs_min_ms=500 cs_max_ms=500
+14:28:35.673 n1        REQUEST              resource=R node=n1 client=c1 request_id=c1-1 round=1 local_queue_s=0.000226
+14:28:35.676 n1        LOCK_WAIT            resource=R node=n1 client=c1 request_id=c1-1 round=1 path=/normal-n5-r2-s1-20261117T142832-a3c8bb/locks/R
+14:28:37.552 n1        ACQUIRE              resource=R node=n1 client=c1 request_id=c1-1 round=1 sync=true wait_s=1.845811 znode=_c_43a2375e-e697-42c3-a338-942ae3638f22-lock-0000000003 queue_size=2 queue=_c_43a2375e-e697-42c3-a338-942ae3638f22-lock-0000000003,_c_ee599f66-d47d-4c8e-baa6-6d66ff72bee9-lock-0000000004
+14:28:37.570 n1        ENTER                resource=R node=n1 client=c1 request_id=c1-1 round=1 sleep_ms=500
+14:28:38.072 n1        EXIT                 resource=R node=n1 client=c1 request_id=c1-1 round=1 cs_s=0.505626
+14:28:38.088 n1        RELEASE              resource=R node=n1 client=c1 request_id=c1-1 round=1 sync=true
+14:28:38.096 n1        COMMITTED            resource=R node=n1 client=c1 request_id=c1-1 round=1 total_s=2.441278
+14:28:40.381 n1        REQUEST              resource=R node=n1 client=c1 request_id=c1-2 round=2 local_queue_s=0.000162
+14:28:40.382 n1        LOCK_WAIT            resource=R node=n1 client=c1 request_id=c1-2 round=2 path=/normal-n5-r2-s1-20261117T142832-a3c8bb/locks/R
+14:28:40.886 n1        ACQUIRE              resource=R node=n1 client=c1 request_id=c1-2 round=2 sync=true wait_s=0.497695 znode=_c_8e192148-4e68-4116-810c-8999a32620e0-lock-0000000008 queue_size=1 queue=_c_8e192148-4e68-4116-810c-8999a32620e0-lock-0000000008
+14:28:40.890 n1        ENTER                resource=R node=n1 client=c1 request_id=c1-2 round=2 sleep_ms=500
+14:28:41.392 n1        EXIT                 resource=R node=n1 client=c1 request_id=c1-2 round=2 cs_s=0.501503
+14:28:41.399 n1        RELEASE              resource=R node=n1 client=c1 request_id=c1-2 round=2 sync=true
+14:28:41.401 n1        COMMITTED            resource=R node=n1 client=c1 request_id=c1-2 round=2 total_s=1.019382
+14:28:41.404 n1        CLIENT_FINISHED      client=c1 finished_clients=1
+14:28:41.422 n1        NODE_DONE            completed=2 clients=1 recipe_acquire_calls=2 recipe_release_calls=2 evidence_zk_reads=2 observer_messages=10

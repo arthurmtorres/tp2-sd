@@ -1,0 +1,18 @@
+14:28:29.115 n4        ZK_STATE             state=CONNECTED
+14:28:29.186 n4        READY                port=7004 resource=R sync=false barrier=false participants=5 clients=1 namespace=nosync-n5-r2-s1-20261117T142827-e95f64 cs_min_ms=500 cs_max_ms=500
+14:28:30.247 n4        REQUEST              resource=R node=n4 client=c4 request_id=c4-1 round=1 local_queue_s=0.000230
+14:28:30.249 n4        SYNC_DISABLED        resource=R node=n4 client=c4 request_id=c4-1 round=1 path=/nosync-n5-r2-s1-20261117T142827-e95f64/locks/R
+14:28:30.264 n4        ACQUIRE              resource=R node=n4 client=c4 request_id=c4-1 round=1 sync=false wait_s=0.000000 znode=- queue_size=0 queue=-
+14:28:30.363 n4        ENTER                resource=R node=n4 client=c4 request_id=c4-1 round=1 sleep_ms=500
+14:28:30.866 n4        EXIT                 resource=R node=n4 client=c4 request_id=c4-1 round=1 cs_s=0.505035
+14:28:30.876 n4        RELEASE              resource=R node=n4 client=c4 request_id=c4-1 round=1 sync=false
+14:28:30.885 n4        COMMITTED            resource=R node=n4 client=c4 request_id=c4-1 round=1 total_s=0.647316
+14:28:30.948 n4        REQUEST              resource=R node=n4 client=c4 request_id=c4-2 round=2 local_queue_s=0.000246
+14:28:30.949 n4        SYNC_DISABLED        resource=R node=n4 client=c4 request_id=c4-2 round=2 path=/nosync-n5-r2-s1-20261117T142827-e95f64/locks/R
+14:28:30.954 n4        ACQUIRE              resource=R node=n4 client=c4 request_id=c4-2 round=2 sync=false wait_s=0.000000 znode=- queue_size=0 queue=-
+14:28:30.960 n4        ENTER                resource=R node=n4 client=c4 request_id=c4-2 round=2 sleep_ms=500
+14:28:31.462 n4        EXIT                 resource=R node=n4 client=c4 request_id=c4-2 round=2 cs_s=0.501629
+14:28:31.466 n4        RELEASE              resource=R node=n4 client=c4 request_id=c4-2 round=2 sync=false
+14:28:31.470 n4        COMMITTED            resource=R node=n4 client=c4 request_id=c4-2 round=2 total_s=0.520448
+14:28:31.474 n4        CLIENT_FINISHED      client=c4 finished_clients=1
+14:28:31.504 n4        NODE_DONE            completed=2 clients=1 recipe_acquire_calls=0 recipe_release_calls=0 evidence_zk_reads=0 observer_messages=10

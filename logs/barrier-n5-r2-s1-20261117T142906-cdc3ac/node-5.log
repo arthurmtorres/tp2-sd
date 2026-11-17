@@ -1,0 +1,24 @@
+14:29:08.330 n5        ZK_STATE             state=CONNECTED
+14:29:08.502 n5        READY                port=7005 resource=R sync=true barrier=true participants=5 clients=1 namespace=barrier-n5-r2-s1-20261117T142906-cdc3ac cs_min_ms=500 cs_max_ms=500
+14:29:09.575 n5        REQUEST              resource=R node=n5 client=c5 request_id=c5-1 round=1 local_queue_s=0.000268
+14:29:09.634 n5        BARRIER_WAIT         resource=R node=n5 client=c5 request_id=c5-1 round=1 participants=5
+14:29:09.675 n5        BARRIER_PASSED       resource=R node=n5 client=c5 request_id=c5-1 round=1
+14:29:09.689 n5        LOCK_WAIT            resource=R node=n5 client=c5 request_id=c5-1 round=1 path=/barrier-n5-r2-s1-20261117T142906-cdc3ac/locks/R
+14:29:10.922 n5        ACQUIRE              resource=R node=n5 client=c5 request_id=c5-1 round=1 sync=true wait_s=1.198900 znode=_c_caa99cd3-00ab-43da-a3e6-52ec31b0f1b8-lock-0000000002 queue_size=3 queue=_c_caa99cd3-00ab-43da-a3e6-52ec31b0f1b8-lock-0000000002,_c_1c2bf475-a438-4ce7-bcd6-49709556140a-lock-0000000003,_c_83b7ade5-63c9-43d7-add2-0016c9eafae9-lock-0000000004
+14:29:10.941 n5        ENTER                resource=R node=n5 client=c5 request_id=c5-1 round=1 sleep_ms=500
+14:29:11.444 n5        EXIT                 resource=R node=n5 client=c5 request_id=c5-1 round=1 cs_s=0.503146
+14:29:11.461 n5        RELEASE              resource=R node=n5 client=c5 request_id=c5-1 round=1 sync=true
+14:29:11.469 n5        COMMITTED            resource=R node=n5 client=c5 request_id=c5-1 round=1 total_s=1.910433
+14:29:12.631 n5        BARRIER_LEFT         resource=R node=n5 client=c5 request_id=c5-1 round=1
+14:29:13.999 n5        REQUEST              resource=R node=n5 client=c5 request_id=c5-2 round=2 local_queue_s=0.000149
+14:29:14.002 n5        BARRIER_WAIT         resource=R node=n5 client=c5 request_id=c5-2 round=2 participants=5
+14:29:14.912 n5        BARRIER_PASSED       resource=R node=n5 client=c5 request_id=c5-2 round=2
+14:29:14.913 n5        LOCK_WAIT            resource=R node=n5 client=c5 request_id=c5-2 round=2 path=/barrier-n5-r2-s1-20261117T142906-cdc3ac/locks/R
+14:29:15.440 n5        ACQUIRE              resource=R node=n5 client=c5 request_id=c5-2 round=2 sync=true wait_s=0.523586 znode=_c_ec538ab4-0dd6-419b-b5a4-d0dfc6b211d1-lock-0000000006 queue_size=4 queue=_c_ec538ab4-0dd6-419b-b5a4-d0dfc6b211d1-lock-0000000006,_c_7801e106-fe54-4131-844f-d7ec93d1c0c1-lock-0000000007,_c_d035ce15-4c3b-4603-ac40-ae4ef830bbe5-lock-0000000008,_c_895180ae-240c-48e2-97d2-487e788ab7ce-lock-0000000009
+14:29:15.444 n5        ENTER                resource=R node=n5 client=c5 request_id=c5-2 round=2 sleep_ms=500
+14:29:15.945 n5        EXIT                 resource=R node=n5 client=c5 request_id=c5-2 round=2 cs_s=0.500640
+14:29:15.954 n5        RELEASE              resource=R node=n5 client=c5 request_id=c5-2 round=2 sync=true
+14:29:15.955 n5        COMMITTED            resource=R node=n5 client=c5 request_id=c5-2 round=2 total_s=1.956219
+14:29:17.534 n5        BARRIER_LEFT         resource=R node=n5 client=c5 request_id=c5-2 round=2
+14:29:17.535 n5        CLIENT_FINISHED      client=c5 finished_clients=1
+14:29:17.552 n5        NODE_DONE            completed=2 clients=1 recipe_acquire_calls=2 recipe_release_calls=2 evidence_zk_reads=2 observer_messages=22

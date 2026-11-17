@@ -1,0 +1,18 @@
+22:26:03.831 n1        ZK_STATE             state=CONNECTED
+22:26:03.925 n1        READY                port=7001 resource=R sync=true barrier=false participants=2 clients=1 namespace=contention-n2-r2-s91-20261117T012602-da0989 cs_min_ms=200 cs_max_ms=1000
+22:26:04.953 n1        REQUEST              resource=R node=n1 client=c1 request_id=c1-1 round=1 local_queue_s=0.000202
+22:26:04.954 n1        LOCK_WAIT            resource=R node=n1 client=c1 request_id=c1-1 round=1 path=/contention-n2-r2-s91-20261117T012602-da0989/locks/R
+22:26:05.812 n1        ACQUIRE              resource=R node=n1 client=c1 request_id=c1-1 round=1 sync=true wait_s=0.840108 znode=_c_e227b36f-9b1a-47b0-a5e5-cb8de21a902a-lock-0000000001 queue_size=1 queue=_c_e227b36f-9b1a-47b0-a5e5-cb8de21a902a-lock-0000000001
+22:26:05.827 n1        ENTER                resource=R node=n1 client=c1 request_id=c1-1 round=1 sleep_ms=578
+22:26:06.406 n1        EXIT                 resource=R node=n1 client=c1 request_id=c1-1 round=1 cs_s=0.582963
+22:26:06.422 n1        RELEASE              resource=R node=n1 client=c1 request_id=c1-1 round=1 sync=true
+22:26:06.425 n1        COMMITTED            resource=R node=n1 client=c1 request_id=c1-1 round=1 total_s=1.484660
+22:26:06.447 n1        REQUEST              resource=R node=n1 client=c1 request_id=c1-2 round=2 local_queue_s=0.000163
+22:26:06.448 n1        LOCK_WAIT            resource=R node=n1 client=c1 request_id=c1-2 round=2 path=/contention-n2-r2-s91-20261117T012602-da0989/locks/R
+22:26:06.841 n1        ACQUIRE              resource=R node=n1 client=c1 request_id=c1-2 round=2 sync=true wait_s=0.388855 znode=_c_a782229e-95f6-44a7-8da1-cf524c3a3040-lock-0000000003 queue_size=1 queue=_c_a782229e-95f6-44a7-8da1-cf524c3a3040-lock-0000000003
+22:26:06.846 n1        ENTER                resource=R node=n1 client=c1 request_id=c1-2 round=2 sleep_ms=369
+22:26:07.216 n1        EXIT                 resource=R node=n1 client=c1 request_id=c1-2 round=2 cs_s=0.370334
+22:26:07.226 n1        RELEASE              resource=R node=n1 client=c1 request_id=c1-2 round=2 sync=true
+22:26:07.228 n1        COMMITTED            resource=R node=n1 client=c1 request_id=c1-2 round=2 total_s=0.780417
+22:26:07.230 n1        CLIENT_FINISHED      client=c1 finished_clients=1
+22:26:07.247 n1        NODE_DONE            completed=2 clients=1 recipe_acquire_calls=2 recipe_release_calls=2 evidence_zk_reads=2 observer_messages=10

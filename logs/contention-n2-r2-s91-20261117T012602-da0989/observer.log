@@ -1,0 +1,12 @@
+22:26:03.049 observer  READY                port=9000 nodes=2 expected=4
+22:26:05.039 observer  BEGIN                seq=1 resource=R node=n2 client=c2 request_id=c2-1 round=1 active=1 overlap=false wait_ms=21.634843
+22:26:05.767 observer  END                  seq=2 resource=R node=n2 client=c2 request_id=c2-1 round=1 active=0 completed=1
+22:26:05.821 observer  BEGIN                seq=3 resource=R node=n1 client=c1 request_id=c1-1 round=1 active=1 overlap=false wait_ms=840.107677
+22:26:06.411 observer  END                  seq=4 resource=R node=n1 client=c1 request_id=c1-1 round=1 active=0 completed=2
+22:26:06.437 observer  BEGIN                seq=5 resource=R node=n2 client=c2 request_id=c2-2 round=2 active=1 overlap=false wait_ms=606.501560
+22:26:06.825 observer  END                  seq=6 resource=R node=n2 client=c2 request_id=c2-2 round=2 active=0 completed=3
+22:26:06.839 observer  DONE                 seq=7 resource=R node=n2 done_nodes=1 active=0
+22:26:06.844 observer  BEGIN                seq=8 resource=R node=n1 client=c1 request_id=c1-2 round=2 active=1 overlap=false wait_ms=388.855224
+22:26:07.218 observer  END                  seq=9 resource=R node=n1 client=c1 request_id=c1-2 round=2 active=0 completed=4
+22:26:07.232 observer  DONE                 seq=10 resource=R node=n1 done_nodes=2 active=0
+22:26:07.262 observer  SUMMARY              scenario=contention seed=91 nodes=2 expected=4 completed=4 active=0 total_s=2.212997 median_wait_ms=497.678392 p95_wait_ms=840.107677 throughput_per_s=1.807504 max_active=1 overlaps=0 barrier_violations=0 invalid_events=0 done_nodes=2 observer_messages=20 status=OK per_client=c1=2;c2=2

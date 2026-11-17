@@ -1,0 +1,6 @@
+14:28:29.737 c5        CONNECTED            node=n5 address=localhost:7005 requests=2
+14:28:30.221 c5        REQUEST              resource=R node=n5 client=c5 request_id=c5-1
+14:28:30.932 c5        RECEIVED_COMMITTED   resource=R node=n5 client=c5 request_id=c5-1 latency_s=0.676837 node_wait_s=0.000000 node_total_s=0.642555
+14:28:30.933 c5        REQUEST              resource=R node=n5 client=c5 request_id=c5-2
+14:28:31.457 c5        RECEIVED_COMMITTED   resource=R node=n5 client=c5 request_id=c5-2 latency_s=0.523773 node_wait_s=0.000000 node_total_s=0.520980
+14:28:31.470 c5        CLIENT_DONE          client=c5 completed=2 total_s=1.831605

@@ -1,0 +1,6 @@
+22:26:04.148 c1        CONNECTED            node=n1 address=localhost:7001 requests=2
+22:26:04.935 c1        REQUEST              resource=R node=n1 client=c1 request_id=c1-1
+22:26:06.445 c1        RECEIVED_COMMITTED   resource=R node=n1 client=c1 request_id=c1-1 latency_s=1.493609 node_wait_s=0.840108 node_total_s=1.484660
+22:26:06.445 c1        REQUEST              resource=R node=n1 client=c1 request_id=c1-2
+22:26:07.228 c1        RECEIVED_COMMITTED   resource=R node=n1 client=c1 request_id=c1-2 latency_s=0.782553 node_wait_s=0.388855 node_total_s=0.780417
+22:26:07.235 c1        CLIENT_DONE          client=c1 completed=2 total_s=3.174860

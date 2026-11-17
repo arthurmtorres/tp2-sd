@@ -1,0 +1,18 @@
+14:28:56.115 c1        CONNECTED            node=n1 address=localhost:7001 requests=8
+14:28:56.563 c1        REQUEST              resource=R node=n1 client=c1 request_id=c1-1
+14:28:57.264 c1        RECEIVED_COMMITTED   resource=R node=n1 client=c1 request_id=c1-1 latency_s=0.682165 node_wait_s=0.017396 node_total_s=0.653576
+14:28:57.264 c1        REQUEST              resource=R node=n1 client=c1 request_id=c1-2
+14:29:00.078 c1        RECEIVED_COMMITTED   resource=R node=n1 client=c1 request_id=c1-2 latency_s=2.812929 node_wait_s=2.287610 node_total_s=2.809853
+14:29:00.079 c1        REQUEST              resource=R node=n1 client=c1 request_id=c1-3
+14:29:00.606 c1        RECEIVED_COMMITTED   resource=R node=n1 client=c1 request_id=c1-3 latency_s=0.526278 node_wait_s=0.006250 node_total_s=0.523664
+14:29:00.607 c1        REQUEST              resource=R node=n1 client=c1 request_id=c1-4
+14:29:01.132 c1        RECEIVED_COMMITTED   resource=R node=n1 client=c1 request_id=c1-4 latency_s=0.524953 node_wait_s=0.007104 node_total_s=0.522424
+14:29:01.133 c1        REQUEST              resource=R node=n1 client=c1 request_id=c1-5
+14:29:02.170 c1        RECEIVED_COMMITTED   resource=R node=n1 client=c1 request_id=c1-5 latency_s=1.036463 node_wait_s=0.518716 node_total_s=1.034497
+14:29:02.170 c1        REQUEST              resource=R node=n1 client=c1 request_id=c1-6
+14:29:03.726 c1        RECEIVED_COMMITTED   resource=R node=n1 client=c1 request_id=c1-6 latency_s=1.555030 node_wait_s=1.036022 node_total_s=1.553011
+14:29:03.727 c1        REQUEST              resource=R node=n1 client=c1 request_id=c1-7
+14:29:04.763 c1        RECEIVED_COMMITTED   resource=R node=n1 client=c1 request_id=c1-7 latency_s=1.035383 node_wait_s=0.517649 node_total_s=1.032710
+14:29:04.764 c1        REQUEST              resource=R node=n1 client=c1 request_id=c1-8
+14:29:05.288 c1        RECEIVED_COMMITTED   resource=R node=n1 client=c1 request_id=c1-8 latency_s=0.523511 node_wait_s=0.006311 node_total_s=0.520664
+14:29:05.301 c1        CLIENT_DONE          client=c1 completed=8 total_s=9.283541
