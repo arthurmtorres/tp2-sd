@@ -1,0 +1,7 @@
+observer   | 03:01:05.360 observer  READY                port=9000 nodes=5 expected=50
+node-5     | [main-SendThread(zookeeper:2181)] WARN org.apache.zookeeper.ClientCnxn - Client session timed out, have not heard from server in 60030ms for session id 0x0
+node-4     | [main-SendThread(zookeeper:2181)] WARN org.apache.zookeeper.ClientCnxn - Client session timed out, have not heard from server in 60030ms for session id 0x0
+node-5     | 03:02:06.685 n5        ERROR                type=IOException message=ZooKeeper indisponível
+node-5     | Exception in thread "main" java.io.IOException: ZooKeeper indisponível
+node-5     | 	at tp2.SyncNode.run(SyncNode.java:69)
+node-5     | 	at tp2.SyncNode.main(SyncNode.java:54)

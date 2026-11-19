@@ -1,0 +1,5 @@
+[main-SendThread(zookeeper:2181)] WARN org.apache.zookeeper.ClientCnxn - Client session timed out, have not heard from server in 60030ms for session id 0x0
+03:03:16.325 n5        ERROR                type=IOException message=ZooKeeper indisponível
+Exception in thread "main" java.io.IOException: ZooKeeper indisponível
+	at tp2.SyncNode.run(SyncNode.java:69)
+	at tp2.SyncNode.main(SyncNode.java:54)

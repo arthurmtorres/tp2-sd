@@ -1,0 +1,74 @@
+03:11:43.833 n2        ZK_STATE             state=CONNECTED
+03:11:43.926 n2        READY                port=7002 resource=R sync=true barrier=false participants=5 clients=1 namespace=normal-n5-r10-s1-20261118T031142-04e3cb cs_min_ms=200 cs_max_ms=1000
+03:11:44.981 n2        REQUEST              resource=R node=n2 client=c2 request_id=c2-1 round=1 local_queue_s=0.000207
+03:11:44.984 n2        LOCK_WAIT            resource=R node=n2 client=c2 request_id=c2-1 round=1 path=/normal-n5-r10-s1-20261118T031142-04e3cb/locks/R
+03:11:47.263 n2        ACQUIRE              resource=R node=n2 client=c2 request_id=c2-1 round=1 sync=true wait_s=2.250414 znode=_c_931a564e-a788-4335-88c5-816d127066bb-lock-0000000003 queue_size=2 queue=_c_931a564e-a788-4335-88c5-816d127066bb-lock-0000000003,_c_0af0dadc-b4c0-4b25-a1e7-a98ff94d297c-lock-0000000004
+03:11:47.285 n2        ENTER                resource=R node=n2 client=c2 request_id=c2-1 round=1 sleep_ms=282
+03:11:47.569 n2        EXIT                 resource=R node=n2 client=c2 request_id=c2-1 round=1 cs_s=0.288086
+03:11:47.587 n2        RELEASE              resource=R node=n2 client=c2 request_id=c2-1 round=1 sync=true
+03:11:47.594 n2        COMMITTED            resource=R node=n2 client=c2 request_id=c2-1 round=1 total_s=2.630647
+03:11:50.870 n2        REQUEST              resource=R node=n2 client=c2 request_id=c2-2 round=2 local_queue_s=0.000225
+03:11:50.871 n2        LOCK_WAIT            resource=R node=n2 client=c2 request_id=c2-2 round=2 path=/normal-n5-r10-s1-20261118T031142-04e3cb/locks/R
+03:11:50.882 n2        ACQUIRE              resource=R node=n2 client=c2 request_id=c2-2 round=2 sync=true wait_s=0.007008 znode=_c_cc42c996-06eb-420f-82be-b159a3fa2149-lock-0000000008 queue_size=1 queue=_c_cc42c996-06eb-420f-82be-b159a3fa2149-lock-0000000008
+03:11:50.885 n2        ENTER                resource=R node=n2 client=c2 request_id=c2-2 round=2 sleep_ms=930
+03:11:51.818 n2        EXIT                 resource=R node=n2 client=c2 request_id=c2-2 round=2 cs_s=0.931509
+03:11:51.828 n2        RELEASE              resource=R node=n2 client=c2 request_id=c2-2 round=2 sync=true
+03:11:51.830 n2        COMMITTED            resource=R node=n2 client=c2 request_id=c2-2 round=2 total_s=0.959278
+03:11:53.336 n2        REQUEST              resource=R node=n2 client=c2 request_id=c2-3 round=3 local_queue_s=0.000220
+03:11:53.336 n2        LOCK_WAIT            resource=R node=n2 client=c2 request_id=c2-3 round=3 path=/normal-n5-r10-s1-20261118T031142-04e3cb/locks/R
+03:11:53.598 n2        ACQUIRE              resource=R node=n2 client=c2 request_id=c2-3 round=3 sync=true wait_s=0.258852 znode=_c_128fdc49-9e12-4302-af9e-3d85687ee781-lock-0000000012 queue_size=2 queue=_c_128fdc49-9e12-4302-af9e-3d85687ee781-lock-0000000012,_c_8a4eba11-4764-4830-8b5a-6b3b03175431-lock-0000000013
+03:11:53.600 n2        ENTER                resource=R node=n2 client=c2 request_id=c2-3 round=3 sleep_ms=449
+03:11:54.050 n2        EXIT                 resource=R node=n2 client=c2 request_id=c2-3 round=3 cs_s=0.449667
+03:11:54.057 n2        RELEASE              resource=R node=n2 client=c2 request_id=c2-3 round=3 sync=true
+03:11:54.060 n2        COMMITTED            resource=R node=n2 client=c2 request_id=c2-3 round=3 total_s=0.722590
+03:11:55.894 n2        REQUEST              resource=R node=n2 client=c2 request_id=c2-4 round=4 local_queue_s=0.000173
+03:11:55.895 n2        LOCK_WAIT            resource=R node=n2 client=c2 request_id=c2-4 round=4 path=/normal-n5-r10-s1-20261118T031142-04e3cb/locks/R
+03:11:57.700 n2        ACQUIRE              resource=R node=n2 client=c2 request_id=c2-4 round=4 sync=true wait_s=1.803055 znode=_c_924a9a0a-a26f-41ac-a605-362c7550aadc-lock-0000000017 queue_size=1 queue=_c_924a9a0a-a26f-41ac-a605-362c7550aadc-lock-0000000017
+03:11:57.704 n2        ENTER                resource=R node=n2 client=c2 request_id=c2-4 round=4 sleep_ms=731
+03:11:58.436 n2        EXIT                 resource=R node=n2 client=c2 request_id=c2-4 round=4 cs_s=0.731923
+03:11:58.442 n2        RELEASE              resource=R node=n2 client=c2 request_id=c2-4 round=4 sync=true
+03:11:58.444 n2        COMMITTED            resource=R node=n2 client=c2 request_id=c2-4 round=4 total_s=2.548735
+03:12:02.042 n2        REQUEST              resource=R node=n2 client=c2 request_id=c2-5 round=5 local_queue_s=0.000185
+03:12:02.043 n2        LOCK_WAIT            resource=R node=n2 client=c2 request_id=c2-5 round=5 path=/normal-n5-r10-s1-20261118T031142-04e3cb/locks/R
+03:12:02.223 n2        ACQUIRE              resource=R node=n2 client=c2 request_id=c2-5 round=5 sync=true wait_s=0.177450 znode=_c_86c91d74-3bd5-43a2-bde9-28edac2a0312-lock-0000000022 queue_size=1 queue=_c_86c91d74-3bd5-43a2-bde9-28edac2a0312-lock-0000000022
+03:12:02.225 n2        ENTER                resource=R node=n2 client=c2 request_id=c2-5 round=5 sleep_ms=792
+03:12:03.018 n2        EXIT                 resource=R node=n2 client=c2 request_id=c2-5 round=5 cs_s=0.792539
+03:12:03.026 n2        RELEASE              resource=R node=n2 client=c2 request_id=c2-5 round=5 sync=true
+03:12:03.027 n2        COMMITTED            resource=R node=n2 client=c2 request_id=c2-5 round=5 total_s=0.984249
+03:12:06.624 n2        REQUEST              resource=R node=n2 client=c2 request_id=c2-6 round=6 local_queue_s=0.000162
+03:12:06.624 n2        LOCK_WAIT            resource=R node=n2 client=c2 request_id=c2-6 round=6 path=/normal-n5-r10-s1-20261118T031142-04e3cb/locks/R
+03:12:08.000 n2        ACQUIRE              resource=R node=n2 client=c2 request_id=c2-6 round=6 sync=true wait_s=1.372132 znode=_c_b79fb509-36e3-44b3-a8bc-3c3bee9141fa-lock-0000000029 queue_size=2 queue=_c_b79fb509-36e3-44b3-a8bc-3c3bee9141fa-lock-0000000029,_c_3d1387e4-1d6b-4bfa-a07f-38601e38f323-lock-0000000030
+03:12:08.003 n2        ENTER                resource=R node=n2 client=c2 request_id=c2-6 round=6 sleep_ms=413
+03:12:08.417 n2        EXIT                 resource=R node=n2 client=c2 request_id=c2-6 round=6 cs_s=0.413503
+03:12:08.421 n2        RELEASE              resource=R node=n2 client=c2 request_id=c2-6 round=6 sync=true
+03:12:08.423 n2        COMMITTED            resource=R node=n2 client=c2 request_id=c2-6 round=6 total_s=1.798826
+03:12:10.135 n2        REQUEST              resource=R node=n2 client=c2 request_id=c2-7 round=7 local_queue_s=0.000140
+03:12:10.135 n2        LOCK_WAIT            resource=R node=n2 client=c2 request_id=c2-7 round=7 path=/normal-n5-r10-s1-20261118T031142-04e3cb/locks/R
+03:12:10.573 n2        ACQUIRE              resource=R node=n2 client=c2 request_id=c2-7 round=7 sync=true wait_s=0.434696 znode=_c_0ce5180e-8745-4828-b4d0-3eba7854b420-lock-0000000034 queue_size=2 queue=_c_0ce5180e-8745-4828-b4d0-3eba7854b420-lock-0000000034,_c_75413e3f-bc64-4859-9988-43b04a47ea54-lock-0000000035
+03:12:10.576 n2        ENTER                resource=R node=n2 client=c2 request_id=c2-7 round=7 sleep_ms=386
+03:12:10.963 n2        EXIT                 resource=R node=n2 client=c2 request_id=c2-7 round=7 cs_s=0.386471
+03:12:10.969 n2        RELEASE              resource=R node=n2 client=c2 request_id=c2-7 round=7 sync=true
+03:12:10.970 n2        COMMITTED            resource=R node=n2 client=c2 request_id=c2-7 round=7 total_s=0.835079
+03:12:14.291 n2        REQUEST              resource=R node=n2 client=c2 request_id=c2-8 round=8 local_queue_s=0.000156
+03:12:14.291 n2        LOCK_WAIT            resource=R node=n2 client=c2 request_id=c2-8 round=8 path=/normal-n5-r10-s1-20261118T031142-04e3cb/locks/R
+03:12:14.298 n2        ACQUIRE              resource=R node=n2 client=c2 request_id=c2-8 round=8 sync=true wait_s=0.005698 znode=_c_3810bef8-d883-4064-9052-230d9dde94e0-lock-0000000039 queue_size=1 queue=_c_3810bef8-d883-4064-9052-230d9dde94e0-lock-0000000039
+03:12:14.300 n2        ENTER                resource=R node=n2 client=c2 request_id=c2-8 round=8 sleep_ms=410
+03:12:14.712 n2        EXIT                 resource=R node=n2 client=c2 request_id=c2-8 round=8 cs_s=0.410625
+03:12:14.719 n2        RELEASE              resource=R node=n2 client=c2 request_id=c2-8 round=8 sync=true
+03:12:14.720 n2        COMMITTED            resource=R node=n2 client=c2 request_id=c2-8 round=8 total_s=0.428895
+03:12:17.583 n2        REQUEST              resource=R node=n2 client=c2 request_id=c2-9 round=9 local_queue_s=0.000243
+03:12:17.583 n2        LOCK_WAIT            resource=R node=n2 client=c2 request_id=c2-9 round=9 path=/normal-n5-r10-s1-20261118T031142-04e3cb/locks/R
+03:12:17.999 n2        ACQUIRE              resource=R node=n2 client=c2 request_id=c2-9 round=9 sync=true wait_s=0.413201 znode=_c_4b3c2275-8d74-464c-b6c2-0aecd2d1b094-lock-0000000044 queue_size=1 queue=_c_4b3c2275-8d74-464c-b6c2-0aecd2d1b094-lock-0000000044
+03:12:18.001 n2        ENTER                resource=R node=n2 client=c2 request_id=c2-9 round=9 sleep_ms=307
+03:12:18.309 n2        EXIT                 resource=R node=n2 client=c2 request_id=c2-9 round=9 cs_s=0.307791
+03:12:18.318 n2        RELEASE              resource=R node=n2 client=c2 request_id=c2-9 round=9 sync=true
+03:12:18.320 n2        COMMITTED            resource=R node=n2 client=c2 request_id=c2-9 round=9 total_s=0.736811
+03:12:21.638 n2        REQUEST              resource=R node=n2 client=c2 request_id=c2-10 round=10 local_queue_s=0.000140
+03:12:21.638 n2        LOCK_WAIT            resource=R node=n2 client=c2 request_id=c2-10 round=10 path=/normal-n5-r10-s1-20261118T031142-04e3cb/locks/R
+03:12:21.794 n2        ACQUIRE              resource=R node=n2 client=c2 request_id=c2-10 round=10 sync=true wait_s=0.153132 znode=_c_310c8b5d-9c2e-4762-8c51-ad936a30c07c-lock-0000000049 queue_size=1 queue=_c_310c8b5d-9c2e-4762-8c51-ad936a30c07c-lock-0000000049
+03:12:21.797 n2        ENTER                resource=R node=n2 client=c2 request_id=c2-10 round=10 sleep_ms=749
+03:12:22.547 n2        EXIT                 resource=R node=n2 client=c2 request_id=c2-10 round=10 cs_s=0.749668
+03:12:22.555 n2        RELEASE              resource=R node=n2 client=c2 request_id=c2-10 round=10 sync=true
+03:12:22.556 n2        COMMITTED            resource=R node=n2 client=c2 request_id=c2-10 round=10 total_s=0.918055
+03:12:22.559 n2        CLIENT_FINISHED      client=c2 finished_clients=1
+03:12:22.575 n2        NODE_DONE            completed=10 clients=1 recipe_acquire_calls=10 recipe_release_calls=10 evidence_zk_reads=10 observer_messages=42

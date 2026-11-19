@@ -1,0 +1,32 @@
+observer   | 03:08:18.531 observer  READY                port=9000 nodes=5 expected=50
+node-2     | [Curator-Framework-0] ERROR org.apache.curator.framework.imps.CuratorFrameworkImpl - Background operation retry gave up
+node-2     | org.apache.zookeeper.KeeperException$ConnectionLossException: KeeperErrorCode = ConnectionLoss
+node-2     | 	at org.apache.zookeeper.KeeperException.create(KeeperException.java:101)
+node-2     | 	at org.apache.curator.framework.imps.CuratorFrameworkImpl.checkBackgroundRetry(CuratorFrameworkImpl.java:921)
+node-2     | 	at org.apache.curator.framework.imps.CuratorFrameworkImpl.performBackgroundOperation(CuratorFrameworkImpl.java:1048)
+node-2     | 	at org.apache.curator.framework.imps.CuratorFrameworkImpl.backgroundOperationsLoop(CuratorFrameworkImpl.java:1006)
+node-2     | 	at org.apache.curator.framework.imps.CuratorFrameworkImpl.access$300(CuratorFrameworkImpl.java:95)
+node-2     | 	at org.apache.curator.framework.imps.CuratorFrameworkImpl$4.call(CuratorFrameworkImpl.java:368)
+node-2     | 	at java.base/java.util.concurrent.FutureTask.run(Unknown Source)
+node-2     | 	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(Unknown Source)
+node-2     | 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+node-2     | 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+node-2     | 	at java.base/java.lang.Thread.run(Unknown Source)
+node-2     | [Curator-Framework-0] ERROR org.apache.curator.framework.imps.CuratorFrameworkImpl - Background retry gave up
+node-2     | org.apache.curator.CuratorConnectionLossException: KeeperErrorCode = ConnectionLoss
+node-2     | 	at org.apache.curator.framework.imps.CuratorFrameworkImpl.performBackgroundOperation(CuratorFrameworkImpl.java:1051)
+node-2     | 	at org.apache.curator.framework.imps.CuratorFrameworkImpl.backgroundOperationsLoop(CuratorFrameworkImpl.java:1006)
+node-2     | 	at org.apache.curator.framework.imps.CuratorFrameworkImpl.access$300(CuratorFrameworkImpl.java:95)
+node-2     | 	at org.apache.curator.framework.imps.CuratorFrameworkImpl$4.call(CuratorFrameworkImpl.java:368)
+node-2     | 	at java.base/java.util.concurrent.FutureTask.run(Unknown Source)
+node-2     | 	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(Unknown Source)
+node-2     | 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+node-2     | 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+node-2     | 	at java.base/java.lang.Thread.run(Unknown Source)
+node-2     | 03:08:48.680 n2        ZK_STATE             state=SUSPENDED
+node-5     | [main-SendThread(zookeeper:2181)] WARN org.apache.zookeeper.ClientCnxn - Client session timed out, have not heard from server in 60030ms for session id 0x0
+node-4     | [main-SendThread(zookeeper:2181)] WARN org.apache.zookeeper.ClientCnxn - Client session timed out, have not heard from server in 60030ms for session id 0x0
+node-5     | 03:09:19.810 n5        ERROR                type=IOException message=ZooKeeper indisponível
+node-5     | Exception in thread "main" java.io.IOException: ZooKeeper indisponível
+node-5     | 	at tp2.SyncNode.run(SyncNode.java:69)
+node-5     | 	at tp2.SyncNode.main(SyncNode.java:54)

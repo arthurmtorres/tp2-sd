@@ -1,0 +1,23 @@
+{
+  "run_id": "normal-n5-r10-s1-20261118T031142-04e3cb",
+  "scenario": "normal",
+  "seed": 1,
+  "nodes": 5,
+  "client_requests": {
+    "c1": 10,
+    "c2": 10,
+    "c3": 10,
+    "c4": 10,
+    "c5": 10
+  },
+  "sync": true,
+  "barrier": false,
+  "cs_min_ms": 200,
+  "cs_max_ms": 1000,
+  "zk": "zookeeper:2181",
+  "demo": false,
+  "observer_port": 9000,
+  "base_port": 7000,
+  "think_min_ms": 1000,
+  "think_max_ms": 5000
+}

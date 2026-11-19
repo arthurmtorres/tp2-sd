@@ -1,0 +1,22 @@
+21:38:43.234 c5        CONNECTED            node=n5 address=node-5:7005 requests=10
+21:38:43.259 c5        REQUEST              resource=R node=n5 client=c5 request_id=c5-1
+21:38:44.880 c5        RECEIVED_COMMITTED   resource=R node=n5 client=c5 request_id=c5-1 latency_s=1.588501 node_wait_s=1.055819 node_total_s=1.559964
+21:38:47.375 c5        REQUEST              resource=R node=n5 client=c5 request_id=c5-2
+21:38:48.368 c5        RECEIVED_COMMITTED   resource=R node=n5 client=c5 request_id=c5-2 latency_s=0.992260 node_wait_s=0.007143 node_total_s=0.988711
+21:38:50.409 c5        REQUEST              resource=R node=n5 client=c5 request_id=c5-3
+21:38:51.515 c5        RECEIVED_COMMITTED   resource=R node=n5 client=c5 request_id=c5-3 latency_s=1.105220 node_wait_s=0.706674 node_total_s=1.101374
+21:38:53.777 c5        REQUEST              resource=R node=n5 client=c5 request_id=c5-4
+21:38:54.899 c5        RECEIVED_COMMITTED   resource=R node=n5 client=c5 request_id=c5-4 latency_s=1.121588 node_wait_s=0.303977 node_total_s=1.118119
+21:38:59.275 c5        REQUEST              resource=R node=n5 client=c5 request_id=c5-5
+21:39:00.119 c5        RECEIVED_COMMITTED   resource=R node=n5 client=c5 request_id=c5-5 latency_s=0.843968 node_wait_s=0.008091 node_total_s=0.840940
+21:39:04.880 c5        REQUEST              resource=R node=n5 client=c5 request_id=c5-6
+21:39:06.224 c5        RECEIVED_COMMITTED   resource=R node=n5 client=c5 request_id=c5-6 latency_s=1.343492 node_wait_s=0.579259 node_total_s=1.340756
+21:39:08.009 c5        REQUEST              resource=R node=n5 client=c5 request_id=c5-7
+21:39:08.960 c5        RECEIVED_COMMITTED   resource=R node=n5 client=c5 request_id=c5-7 latency_s=0.950961 node_wait_s=0.599532 node_total_s=0.948369
+21:39:11.725 c5        REQUEST              resource=R node=n5 client=c5 request_id=c5-8
+21:39:13.062 c5        RECEIVED_COMMITTED   resource=R node=n5 client=c5 request_id=c5-8 latency_s=1.335668 node_wait_s=0.777829 node_total_s=1.332679
+21:39:17.123 c5        REQUEST              resource=R node=n5 client=c5 request_id=c5-9
+21:39:17.570 c5        RECEIVED_COMMITTED   resource=R node=n5 client=c5 request_id=c5-9 latency_s=0.446156 node_wait_s=0.047073 node_total_s=0.442429
+21:39:20.828 c5        REQUEST              resource=R node=n5 client=c5 request_id=c5-10
+21:39:21.309 c5        RECEIVED_COMMITTED   resource=R node=n5 client=c5 request_id=c5-10 latency_s=0.480671 node_wait_s=0.007363 node_total_s=0.478615
+21:39:21.319 c5        CLIENT_DONE          client=c5 completed=10 total_s=38.183914
