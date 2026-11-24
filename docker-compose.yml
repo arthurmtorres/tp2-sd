@@ -1,9 +1,40 @@
-# ZooKeeper mínimo (1 servidor) para a demonstração. Versão fixada.
+# Ensemble ZooKeeper com 3 servidores (quórum = 2). Versão fixada.
+# Do host: zoo1 = localhost:2181, zoo2 = localhost:2182, zoo3 = localhost:2183.
+# Entre si, os servidores se enxergam pela rede do compose (zoo1, zoo2, zoo3),
+# usando as portas 2888 (seguidor -> líder) e 3888 (eleição de líder).
+x-zk-common: &zk-common
+  image: zookeeper:3.9.3
+  environment: &zk-env
+    ZOO_SERVERS: server.1=zoo1:2888:3888;2181 server.2=zoo2:2888:3888;2181 server.3=zoo3:2888:3888;2181
+    ZOO_4LW_COMMANDS_WHITELIST: "mntr,ruok,stat,srvr"
+
 services:
-  zookeeper:
-    image: zookeeper:3.9.3
-    container_name: tp2-zk
+  zoo1:
+    <<: *zk-common
+    container_name: tp2-zk1
+    hostname: zoo1
     ports:
       - "2181:2181"
     environment:
-      ZOO_4LW_COMMANDS_WHITELIST: "mntr,ruok,stat"
+      <<: *zk-env
+      ZOO_MY_ID: 1
+
+  zoo2:
+    <<: *zk-common
+    container_name: tp2-zk2
+    hostname: zoo2
+    ports:
+      - "2182:2181"
+    environment:
+      <<: *zk-env
+      ZOO_MY_ID: 2
+
+  zoo3:
+    <<: *zk-common
+    container_name: tp2-zk3
+    hostname: zoo3
+    ports:
+      - "2183:2181"
+    environment:
+      <<: *zk-env
+      ZOO_MY_ID: 3

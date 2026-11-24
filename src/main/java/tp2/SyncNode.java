@@ -48,10 +48,11 @@ public class SyncNode {
         final Random rnd = new Random(seed * 1000 + id.hashCode());
 
         CuratorFramework cf = CuratorFrameworkFactory.builder()
-                .connectString(zk)
-                .retryPolicy(new ExponentialBackoffRetry(1000, 5))
-                .namespace(ns) // isola cada execução no ZooKeeper
-                .build();
+        .connectString(zk)
+        .retryPolicy(new ExponentialBackoffRetry(1000, 5))
+        .ensembleTracker(false) // <-- ADICIONAR: mantém a lista localhost:2181,2182,2183
+        .namespace(ns)
+        .build();
         cf.getConnectionStateListenable().addListener((c, st) -> Util.log(id, "ZK_STATE", st.name()));
         cf.start();
         if (!cf.blockUntilConnected(30, TimeUnit.SECONDS)) throw new IllegalStateException("ZooKeeper indisponível");
